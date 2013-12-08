@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ProductExportWizard">
+		<item value="/com.holycityaudio.spincad/SpinCADStudio.product" key="productConfig1"/>
+		<item value="true" key="syncProduct"/>
+		<item value="false" key="exportSource"/>
+		<item value="Generate source bundles" key="exportSourceFormat"/>
+		<item value="true" key="p2metadata"/>
+		<item value="true" key="exportDirectory"/>
+		<item value="/com.holycityaudio.spincad/SpinCADStudio.product" key="productConfig0"/>
+		<item value="C:\Users\Tahoe\Desktop" key="destination1"/>
+		<item value="C:\Users\Tahoe\Desktop" key="destination0"/>
+		<item value="true" key="allowBinaryCycles"/>
+		<item value="eclipse" key="productRoot"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="PDEFormActionManager">
+	</section>
+</section>
