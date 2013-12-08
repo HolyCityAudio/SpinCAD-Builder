@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.holycityaudio.spincadmenu/src-gen" editDirectory="/com.holycityaudio.spincadmenu.edit/src"
+    editorDirectory="/com.holycityaudio.spincadmenu.editor/src" modelPluginID="com.holycityaudio.spincadmenu"
+    forceOverwrite="true" modelName="SpinCADMenu" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="com.holycityaudio.spincadmenu.edit"
+    editorPluginID="com.holycityaudio.spincadmenu.editor" runtimeVersion="2.9">
+  <genPackages prefix="SpinCADMenu" basePackage="com.holycityaudio.spincadmenu" disposableProviderFactory="true"
+      fileExtensions="spincadmenu" ecorePackage="SpinCADMenu.ecore#/">
+    <genClasses ecoreClass="SpinCADMenu.ecore#//Menu">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCADMenu.ecore#//Menu/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCADMenu.ecore#//Element"/>
+    <genClasses ecoreClass="SpinCADMenu.ecore#//MENU_HEADER">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCADMenu.ecore#//MENU_HEADER/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCADMenu.ecore#//MENU_ITEM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCADMenu.ecore#//MENU_ITEM/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCADMenu.ecore#//MENU_ITEM/className"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCADMenu.ecore#//TEST_ITEM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCADMenu.ecore#//TEST_ITEM/className"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

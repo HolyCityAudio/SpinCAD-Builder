@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="com.holycityaudio.spincadmenu.sdk"
+	label="SpinCADMenu SDK Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="com.holycityaudio.spincadmenu"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="com.holycityaudio.spincadmenu.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>
