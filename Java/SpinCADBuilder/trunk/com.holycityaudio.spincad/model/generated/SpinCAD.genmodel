@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.holycityaudio.spincad/src-gen" editDirectory="/com.holycityaudio.spincad.edit/src"
+    editorDirectory="/com.holycityaudio.spincad.editor/src" modelPluginID="com.holycityaudio.spincad"
+    forceOverwrite="true" modelName="SpinCAD" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="com.holycityaudio.spincad.edit"
+    editorPluginID="com.holycityaudio.spincad.editor" runtimeVersion="2.9">
+  <genPackages prefix="SpinCAD" basePackage="com.holycityaudio.spincad" disposableProviderFactory="true"
+      fileExtensions="spincad" ecorePackage="SpinCAD.ecore#/">
+    <genClasses ecoreClass="SpinCAD.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Program/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Program/pins"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Program/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Program/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Pin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Pin/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Pin/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//InputPin"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//OutputPin"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//AudioInput"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//AudioOutput"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//ControlInput"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//ControlOutput"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Control">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Control/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Control/label"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Slider"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//CheckBox"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//controlLabel"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//SpinElement"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Equate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equate/ename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equate/value"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Mem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Mem/buffer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Mem/length"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Offset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Offset/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Offset/length"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Comment/remark"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Label/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Macro"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//IsPinConnected">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsPinConnected/arg1"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//IsElse"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//IsEndif"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//GetInputDefault">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/scale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/defaultVal"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Instruction"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Inst_B6_S1_14">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_B6_S1_14/arg1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_B6_S1_14/arg2"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Inst_B15_S1_9">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Inst_B15_S1_9/arg1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_B15_S1_9/arg2"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Inst_B6">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_B6/arg1"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Inst_B24">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_B24/arg1"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Inst_X0"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Inst_S1_14_S1_10">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_S1_14_S1_10/arg1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_S1_14_S1_10/arg2"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//ReadRegister"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//WriteRegisterLowshelf"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//WriteRegisterHighshelf"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//WriteRegister"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Maxx"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//ReadRegisterFilter"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Mulx"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Ldax"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Exp"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Log">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Log/arg1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Log/arg2"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//ScaleOffset"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//WriteDelay"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//WriteAllpass"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//ReadDelay"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//LoadSinLFO">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LoadSinLFO/arg1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LoadSinLFO/arg2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LoadSinLFO/arg3"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//LoadRampLFO">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LoadRampLFO/arg1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LoadRampLFO/arg2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LoadRampLFO/arg3"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//ChorusReadDelay">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ChorusReadDelay/arg1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ChorusReadDelay/arg2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//ChorusReadDelay/arg3"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//ChorusReadValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ChorusReadValue/arg1"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//ChorusScaleOffset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ChorusScaleOffset/arg1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ChorusScaleOffset/arg2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ChorusScaleOffset/arg3"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//ReadDelayPointer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ReadDelayPointer/arg1"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//And"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Or"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Xor"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Jam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Jam/arg1"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Clr"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Not"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Absa"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//Skip">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Skip/flags"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Skip/label"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//SPINMEM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SPINMEM/buffer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SPINMEM/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//SPINMEM/offset"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

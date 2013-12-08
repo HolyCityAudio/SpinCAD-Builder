@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spinCAD" nsURI="http://www.holycityaudio.com/spincad/SpinCAD"
+    nsPrefix="spinCAD">
+  <eClassifiers xsi:type="ecore:EClass" name="Program">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pins" upperBound="-1" eType="#//Pin"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1"
+        eType="#//Control" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//SpinElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pin">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputPin" eSuperTypes="#//Pin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputPin" eSuperTypes="#//Pin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AudioInput" eSuperTypes="#//InputPin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AudioOutput" eSuperTypes="#//OutputPin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlInput" eSuperTypes="#//InputPin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlOutput" eSuperTypes="#//OutputPin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Control">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Slider" eSuperTypes="#//Control"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//Control"/>
+  <eClassifiers xsi:type="ecore:EClass" name="controlLabel" eSuperTypes="#//Control"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpinElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Equate" eSuperTypes="#//SpinElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mem" eSuperTypes="#//SpinElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buffer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Offset" eSuperTypes="#//SpinElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//SpinElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remark" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//SpinElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Macro" eSuperTypes="#//SpinElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IsPinConnected" eSuperTypes="#//Macro">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsElse" eSuperTypes="#//Macro"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IsEndif" eSuperTypes="#//Macro"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GetInputDefault" eSuperTypes="#//Macro">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction" eSuperTypes="#//SpinElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Inst_B6_S1_14" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inst_B15_S1_9" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arg1" eType="#//SPINMEM"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inst_B6" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inst_B24" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inst_X0" eSuperTypes="#//Instruction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Inst_S1_14_S1_10" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadRegister" eSuperTypes="#//Inst_B6_S1_14"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WriteRegisterLowshelf" eSuperTypes="#//Inst_B6_S1_14"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WriteRegisterHighshelf" eSuperTypes="#//Inst_B6_S1_14"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WriteRegister" eSuperTypes="#//Inst_B6_S1_14"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Maxx" eSuperTypes="#//Inst_B6_S1_14"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadRegisterFilter" eSuperTypes="#//Inst_B6_S1_14"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Mulx" eSuperTypes="#//Inst_B6"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Ldax" eSuperTypes="#//Inst_B6"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Exp" eSuperTypes="#//Inst_S1_14_S1_10"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Log" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScaleOffset" eSuperTypes="#//Inst_S1_14_S1_10"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WriteDelay" eSuperTypes="#//Inst_B15_S1_9"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WriteAllpass" eSuperTypes="#//Inst_B15_S1_9"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadDelay" eSuperTypes="#//Inst_B15_S1_9"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LoadSinLFO" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoadRampLFO" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChorusReadDelay" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arg3" eType="#//SPINMEM"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChorusReadValue" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChorusScaleOffset" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadDelayPointer" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="And" eSuperTypes="#//Inst_B24"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Or" eSuperTypes="#//Inst_B24"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Xor" eSuperTypes="#//Inst_B24"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Jam" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clr" eSuperTypes="#//Inst_X0"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Not" eSuperTypes="#//Inst_X0"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Absa" eSuperTypes="#//Inst_X0"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Skip" eSuperTypes="#//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flags" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//Label"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SPINMEM">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buffer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="offset" eType="#//Offset"/>
+  </eClassifiers>
+</ecore:EPackage>
