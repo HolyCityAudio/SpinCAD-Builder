@@ -5,7 +5,7 @@ generate spinCADMenu "http://www.holycityaudio.com/spincadmenu/SpinCADMenu"
 Menu: (elements += Element) * ;
 
 Element: 
-	MENU_HEADER | MENU_ITEM | TEST_ITEM
+	MENU_HEADER | MENU_ITEM
 ;
 
 MENU_HEADER:
@@ -13,7 +13,4 @@ MENU_HEADER:
 
 MENU_ITEM:
 	'@menuitem' name = STRING className = ID;
-	
-TEST_ITEM:
-	'@testItem' className = ID;
 

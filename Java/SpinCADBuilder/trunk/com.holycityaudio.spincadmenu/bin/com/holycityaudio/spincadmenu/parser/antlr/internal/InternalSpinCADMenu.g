@@ -135,16 +135,6 @@ ruleElement returns [EObject current=null]
         $current = $this_MENU_ITEM_1.current; 
         afterParserOrEnumRuleCall();
     }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getElementAccess().getTEST_ITEMParserRuleCall_2()); 
-    }
-    this_TEST_ITEM_2=ruleTEST_ITEM
-    { 
-        $current = $this_TEST_ITEM_2.current; 
-        afterParserOrEnumRuleCall();
-    }
 )
 ;
 
@@ -245,49 +235,6 @@ ruleMENU_ITEM returns [EObject current=null]
        			$current, 
        			"className",
         		lv_className_2_0, 
-        		"ID");
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleTEST_ITEM
-entryRuleTEST_ITEM returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getTEST_ITEMRule()); }
-	 iv_ruleTEST_ITEM=ruleTEST_ITEM 
-	 { $current=$iv_ruleTEST_ITEM.current; } 
-	 EOF 
-;
-
-// Rule TEST_ITEM
-ruleTEST_ITEM returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='@testItem' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getTEST_ITEMAccess().getTestItemKeyword_0());
-    }
-(
-(
-		lv_className_1_0=RULE_ID
-		{
-			newLeafNode(lv_className_1_0, grammarAccess.getTEST_ITEMAccess().getClassNameIDTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTEST_ITEMRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"className",
-        		lv_className_1_0, 
         		"ID");
 	    }
 
