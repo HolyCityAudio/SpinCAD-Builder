@@ -15,11 +15,11 @@ class SpinCADGenerator implements IGenerator {
   // @Inject extension IQualifiedNameProvider
  
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		var pkage = "\\com\\holycityaudio\\SpinCAD\\CADBlocks\\"
+		var pkage = "/com/holycityaudio/SpinCAD/CADBlocks/"
 		fsa.generateFile(pkage + resource.className+"CADBlock.java", toCADBlockCode(resource.contents.head as Program))
-		pkage = "\\com\\holycityaudio\\SpinCAD\\ControlPanel\\"
+		pkage = "/com/holycityaudio/SpinCAD/ControlPanel/"
 		fsa.generateFile(pkage + resource.className+"ControlPanel.java", toControlPanelCode(resource.contents.head as Program))
-		pkage = "\\com\\holycityaudio\\SpinCAD\\test\\"
+		pkage = "/com/holycityaudio/SpinCAD/test/"
 		fsa.generateFile(pkage + resource.className+"Test.java", toTestCode(resource.contents.head as Program))
 	}
 	

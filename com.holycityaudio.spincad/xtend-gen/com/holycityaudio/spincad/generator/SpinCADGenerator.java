@@ -19,7 +19,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 @SuppressWarnings("all")
 public class SpinCADGenerator implements IGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
-    String pkage = "\\com\\holycityaudio\\SpinCAD\\CADBlocks\\";
+    String pkage = "/com/holycityaudio/SpinCAD/CADBlocks/";
     String _className = this.className(resource);
     String _plus = (pkage + _className);
     String _plus_1 = (_plus + "CADBlock.java");
@@ -27,7 +27,7 @@ public class SpinCADGenerator implements IGenerator {
     EObject _head = IterableExtensions.<EObject>head(_contents);
     CharSequence _cADBlockCode = this.toCADBlockCode(((Program) _head));
     fsa.generateFile(_plus_1, _cADBlockCode);
-    pkage = "\\com\\holycityaudio\\SpinCAD\\ControlPanel\\";
+    pkage = "/com/holycityaudio/SpinCAD/ControlPanel/";
     String _className_1 = this.className(resource);
     String _plus_2 = (pkage + _className_1);
     String _plus_3 = (_plus_2 + "ControlPanel.java");
@@ -35,7 +35,7 @@ public class SpinCADGenerator implements IGenerator {
     EObject _head_1 = IterableExtensions.<EObject>head(_contents_1);
     CharSequence _controlPanelCode = this.toControlPanelCode(((Program) _head_1));
     fsa.generateFile(_plus_3, _controlPanelCode);
-    pkage = "\\com\\holycityaudio\\SpinCAD\\test\\";
+    pkage = "/com/holycityaudio/SpinCAD/test/";
     String _className_2 = this.className(resource);
     String _plus_4 = (pkage + _className_2);
     String _plus_5 = (_plus_4 + "Test.java");

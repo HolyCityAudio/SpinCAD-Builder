@@ -11,7 +11,7 @@ import com.holycityaudio.spincadmenu.spinCADMenu.MENU_ITEM
 import com.holycityaudio.spincadmenu.spinCADMenu.MENU_HEADER
 import com.holycityaudio.spincadmenu.spinCADMenu.Element
 import com.holycityaudio.spincadmenu.spinCADMenu.TEST_ITEM
-import com.holycityaudio.spincad.generator.SpinCADTestGenerator
+// import com.holycityaudio.spincad.generator.SpinCADTestGenerator
 
 /**
  * Generates code from your model files on save.
@@ -22,7 +22,8 @@ class SpinCADMenuGenerator implements IGenerator {
 	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
 		// generate menu
-		var pkage = "\\com\\holycityaudio\\SpinCAD\\"
+		// on Windows change these forward slashes to double back slashes
+		var pkage = "/com/holycityaudio/SpinCAD/"
 		fsa.generateFile(pkage + resource.className+"Menu"+".java", toMenuCode(resource.contents.head as Menu))
 		// TODO generate test cases for non-generated CAD Blocks
 		}
