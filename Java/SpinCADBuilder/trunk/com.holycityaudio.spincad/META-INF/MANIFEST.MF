@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: com.holycityaudio.spincad
-Bundle-Vendor: My Company
+Bundle-Vendor: Holy_City_Audio
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: com.holycityaudio.spincad; singleton:=true
 Bundle-ActivationPolicy: lazy
