@@ -57,12 +57,12 @@ public interface Mem extends SpinElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Length</em>' attribute.
-   * @see #setLength(int)
+   * @see #setLength(String)
    * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getMem_Length()
    * @model
    * @generated
    */
-  int getLength();
+  String getLength();
 
   /**
    * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Mem#getLength <em>Length</em>}' attribute.
@@ -72,6 +72,6 @@ public interface Mem extends SpinElement
    * @see #getLength()
    * @generated
    */
-  void setLength(int value);
+  void setLength(String value);
 
 } // Mem

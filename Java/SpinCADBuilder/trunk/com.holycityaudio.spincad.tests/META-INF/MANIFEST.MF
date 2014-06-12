@@ -11,6 +11,11 @@ Require-Bundle: com.holycityaudio.spincad,
  org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional
 Import-Package: org.apache.log4j,
- org.hamcrest.core
+ org.hamcrest.core,
+ org.junit.runner;version="4.5.0",
+ org.junit.runner.manipulation;version="4.5.0",
+ org.junit.runner.notification;version="4.5.0",
+ org.junit.runners;version="4.5.0",
+ org.junit.runners.model;version="4.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.holycityaudio.spincad

@@ -54,7 +54,7 @@ import com.holycityaudio.spincad.spinCAD.IsEndif
 import com.holycityaudio.spincad.spinCAD.Maxx
 import com.holycityaudio.spincad.spinCAD.controlLabel
 import com.holycityaudio.spincad.spinCAD.CheckBox
-import com.holycityaudio.spincad.spinCAD.GetInputDefault
+import com.holycityaudio.spincad.spinCAD.GetInputDefaultimport com.holycityaudio.spincad.spinCAD.GetDelayScale
 
 class SpinCADBlockGenerator {
  
@@ -119,7 +119,6 @@ def codeGenerate(String blockName, Program pr) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					Mem:{genMem(e)}
-					Equate:{setEquate(e)}
 					Offset:{genOffset(e) }
 				}»
 			«ENDFOR»
@@ -139,12 +138,11 @@ def codeGenerate(String blockName, Program pr) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					Instruction:{genInstruction(e)}
+					Equate:{setEquate(e)}
 					Macro: { genMacro(e) }
 				}»
 			«ENDFOR»
 
-			// Say 'bye-bye'
-			// System.out.println("«pr.getName»" + " code gen!");
 			}
 			
 			// create setters and getter for control panel variables
@@ -258,6 +256,12 @@ def genGetInputDefault(GetInputDefault g)'''
 			}»	
 		'''
 	}
+	
+def genGetDelayScale(GetDelayScale g) {
+	'''
+	// GETdELAYsCALE PLACE HOLDER!
+	'''
+}	
 
 // try to figure out a way to distinguish REGx equates from INT or DOUBLE
 // this seems to have worked!

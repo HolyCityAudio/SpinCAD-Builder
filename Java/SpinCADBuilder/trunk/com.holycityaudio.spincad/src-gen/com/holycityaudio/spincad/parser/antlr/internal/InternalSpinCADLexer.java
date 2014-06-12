@@ -17,6 +17,7 @@ public class InternalSpinCADLexer extends Lexer {
     public static final int T__29=29;
     public static final int T__64=64;
     public static final int T__28=28;
+    public static final int T__65=65;
     public static final int T__27=27;
     public static final int T__62=62;
     public static final int T__26=26;
@@ -25,8 +26,8 @@ public class InternalSpinCADLexer extends Lexer {
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int T__21=21;
     public static final int RULE_ANY_OTHER=11;
+    public static final int T__21=21;
     public static final int T__20=20;
     public static final int T__61=61;
     public static final int EOF=-1;
@@ -428,10 +429,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:27:7: ( 'rdax' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:27:9: 'rdax'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:27:7: ( '@getDelayScale' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:27:9: '@getDelayScale'
             {
-            match("rdax"); 
+            match("@getDelayScale"); 
 
 
             }
@@ -449,10 +450,11 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:28:7: ( ',' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:28:9: ','
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:28:7: ( 'rdax' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:28:9: 'rdax'
             {
-            match(','); 
+            match("rdax"); 
+
 
             }
 
@@ -469,11 +471,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:29:7: ( 'wrlx' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:29:9: 'wrlx'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:29:7: ( ',' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:29:9: ','
             {
-            match("wrlx"); 
-
+            match(','); 
 
             }
 
@@ -490,10 +491,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:30:7: ( 'wrhx' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:30:9: 'wrhx'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:30:7: ( 'wrlx' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:30:9: 'wrlx'
             {
-            match("wrhx"); 
+            match("wrlx"); 
 
 
             }
@@ -511,10 +512,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:31:7: ( 'wrax' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:31:9: 'wrax'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:31:7: ( 'wrhx' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:31:9: 'wrhx'
             {
-            match("wrax"); 
+            match("wrhx"); 
 
 
             }
@@ -532,10 +533,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:32:7: ( 'maxx' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:32:9: 'maxx'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:32:7: ( 'wrax' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:32:9: 'wrax'
             {
-            match("maxx"); 
+            match("wrax"); 
 
 
             }
@@ -553,10 +554,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:33:7: ( 'rdfx' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:33:9: 'rdfx'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:33:7: ( 'maxx' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:33:9: 'maxx'
             {
-            match("rdfx"); 
+            match("maxx"); 
 
 
             }
@@ -574,10 +575,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:34:7: ( 'mulx' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:34:9: 'mulx'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:34:7: ( 'rdfx' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:34:9: 'rdfx'
             {
-            match("mulx"); 
+            match("rdfx"); 
 
 
             }
@@ -595,10 +596,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:35:7: ( 'ldax' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:35:9: 'ldax'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:35:7: ( 'mulx' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:35:9: 'mulx'
             {
-            match("ldax"); 
+            match("mulx"); 
 
 
             }
@@ -616,10 +617,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:36:7: ( 'exp' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:36:9: 'exp'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:36:7: ( 'ldax' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:36:9: 'ldax'
             {
-            match("exp"); 
+            match("ldax"); 
 
 
             }
@@ -637,10 +638,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:37:7: ( 'log' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:37:9: 'log'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:37:7: ( 'exp' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:37:9: 'exp'
             {
-            match("log"); 
+            match("exp"); 
 
 
             }
@@ -658,10 +659,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:38:7: ( 'sof' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:38:9: 'sof'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:38:7: ( 'log' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:38:9: 'log'
             {
-            match("sof"); 
+            match("log"); 
 
 
             }
@@ -679,10 +680,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:39:7: ( 'wra' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:39:9: 'wra'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:39:7: ( 'sof' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:39:9: 'sof'
             {
-            match("wra"); 
+            match("sof"); 
 
 
             }
@@ -700,10 +701,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:40:7: ( 'wrap' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:40:9: 'wrap'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:40:7: ( 'wra' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:40:9: 'wra'
             {
-            match("wrap"); 
+            match("wra"); 
 
 
             }
@@ -721,10 +722,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:41:7: ( 'rda' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:41:9: 'rda'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:41:7: ( 'wrap' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:41:9: 'wrap'
             {
-            match("rda"); 
+            match("wrap"); 
 
 
             }
@@ -742,10 +743,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:42:7: ( 'wlds' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:42:9: 'wlds'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:42:7: ( 'rda' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:42:9: 'rda'
             {
-            match("wlds"); 
+            match("rda"); 
 
 
             }
@@ -763,10 +764,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:43:7: ( 'wldr' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:43:9: 'wldr'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:43:7: ( 'wlds' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:43:9: 'wlds'
             {
-            match("wldr"); 
+            match("wlds"); 
 
 
             }
@@ -784,10 +785,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:44:7: ( 'cho rda' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:44:9: 'cho rda'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:44:7: ( 'wldr' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:44:9: 'wldr'
             {
-            match("cho rda"); 
+            match("wldr"); 
 
 
             }
@@ -805,10 +806,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:45:7: ( 'cho rdal' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:45:9: 'cho rdal'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:45:7: ( 'cho rda' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:45:9: 'cho rda'
             {
-            match("cho rdal"); 
+            match("cho rda"); 
 
 
             }
@@ -826,10 +827,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:46:7: ( 'cho sof' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:46:9: 'cho sof'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:46:7: ( 'cho rdal' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:46:9: 'cho rdal'
             {
-            match("cho sof"); 
+            match("cho rdal"); 
 
 
             }
@@ -847,10 +848,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:47:7: ( 'rmpa' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:47:9: 'rmpa'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:47:7: ( 'cho sof' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:47:9: 'cho sof'
             {
-            match("rmpa"); 
+            match("cho sof"); 
 
 
             }
@@ -868,10 +869,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:48:7: ( 'and' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:48:9: 'and'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:48:7: ( 'rmpa' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:48:9: 'rmpa'
             {
-            match("and"); 
+            match("rmpa"); 
 
 
             }
@@ -889,10 +890,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:49:7: ( 'or' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:49:9: 'or'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:49:7: ( 'and' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:49:9: 'and'
             {
-            match("or"); 
+            match("and"); 
 
 
             }
@@ -910,10 +911,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:50:7: ( 'xor' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:50:9: 'xor'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:50:7: ( 'or' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:50:9: 'or'
             {
-            match("xor"); 
+            match("or"); 
 
 
             }
@@ -931,10 +932,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:51:7: ( 'jam' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:51:9: 'jam'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:51:7: ( 'xor' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:51:9: 'xor'
             {
-            match("jam"); 
+            match("xor"); 
 
 
             }
@@ -952,10 +953,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:52:7: ( 'clr' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:52:9: 'clr'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:52:7: ( 'jam' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:52:9: 'jam'
             {
-            match("clr"); 
+            match("jam"); 
 
 
             }
@@ -973,10 +974,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:53:7: ( 'not' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:53:9: 'not'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:53:7: ( 'clr' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:53:9: 'clr'
             {
-            match("not"); 
+            match("clr"); 
 
 
             }
@@ -994,10 +995,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:54:7: ( 'absa' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:54:9: 'absa'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:54:7: ( 'not' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:54:9: 'not'
             {
-            match("absa"); 
+            match("not"); 
 
 
             }
@@ -1015,10 +1016,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:55:7: ( 'skp' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:55:9: 'skp'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:55:7: ( 'absa' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:55:9: 'absa'
             {
-            match("skp"); 
+            match("absa"); 
 
 
             }
@@ -1036,10 +1037,11 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:56:7: ( '-' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:56:9: '-'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:56:7: ( 'skp' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:56:9: 'skp'
             {
-            match('-'); 
+            match("skp"); 
+
 
             }
 
@@ -1056,10 +1058,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:57:7: ( '.' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:57:9: '.'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:57:7: ( '-' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:57:9: '-'
             {
-            match('.'); 
+            match('-'); 
 
             }
 
@@ -1076,10 +1078,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:58:7: ( '|' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:58:9: '|'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:58:7: ( '.' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:58:9: '.'
             {
-            match('|'); 
+            match('.'); 
 
             }
 
@@ -1096,10 +1098,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:59:7: ( '#' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:59:9: '#'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:59:7: ( '|' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:59:9: '|'
             {
-            match('#'); 
+            match('|'); 
 
             }
 
@@ -1116,10 +1118,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:60:7: ( '^' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:60:9: '^'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:60:7: ( '#' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:60:9: '#'
             {
-            match('^'); 
+            match('#'); 
 
             }
 
@@ -1136,10 +1138,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:61:7: ( '+' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:61:9: '+'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:61:7: ( '^' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:61:9: '^'
             {
-            match('+'); 
+            match('^'); 
 
             }
 
@@ -1156,10 +1158,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:62:7: ( '%' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:62:9: '%'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:62:7: ( '+' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:62:9: '+'
             {
-            match('%'); 
+            match('+'); 
 
             }
 
@@ -1176,10 +1178,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:63:7: ( '$' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:63:9: '$'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:63:7: ( '%' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:63:9: '%'
             {
-            match('$'); 
+            match('%'); 
 
             }
 
@@ -1191,16 +1193,36 @@ public class InternalSpinCADLexer extends Lexer {
     }
     // $ANTLR end "T__64"
 
+    // $ANTLR start "T__65"
+    public final void mT__65() throws RecognitionException {
+        try {
+            int _type = T__65;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:64:7: ( '$' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:64:9: '$'
+            {
+            match('$'); 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__65"
+
     // $ANTLR start "RULE_SC_COMMENT"
     public final void mRULE_SC_COMMENT() throws RecognitionException {
         try {
             int _type = RULE_SC_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3821:17: ( ';' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\r' )? '\\n' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3821:19: ';' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\r' )? '\\n'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3910:17: ( ';' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\r' )? '\\n' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3910:19: ';' (~ ( ( '\\n' | '\\r' ) ) )* ( '\\r' )? '\\n'
             {
             match(';'); 
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3821:23: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3910:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop1:
             do {
                 int alt1=2;
@@ -1213,7 +1235,7 @@ public class InternalSpinCADLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3821:23: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3910:23: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1233,7 +1255,7 @@ public class InternalSpinCADLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3821:39: ( '\\r' )?
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3910:39: ( '\\r' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -1242,7 +1264,7 @@ public class InternalSpinCADLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3821:39: '\\r'
+                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3910:39: '\\r'
                     {
                     match('\r'); 
 
@@ -1268,10 +1290,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3823:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3823:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3912:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3912:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3823:11: ( '^' )?
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3912:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -1280,7 +1302,7 @@ public class InternalSpinCADLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3823:11: '^'
+                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3912:11: '^'
                     {
                     match('^'); 
 
@@ -1298,7 +1320,7 @@ public class InternalSpinCADLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3823:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3912:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -1347,10 +1369,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3825:10: ( ( '0' .. '9' )+ )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3825:12: ( '0' .. '9' )+
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3914:10: ( ( '0' .. '9' )+ )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3914:12: ( '0' .. '9' )+
             {
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3825:12: ( '0' .. '9' )+
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3914:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -1364,7 +1386,7 @@ public class InternalSpinCADLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3825:13: '0' .. '9'
+            	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3914:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1396,10 +1418,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1417,10 +1439,10 @@ public class InternalSpinCADLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1436,7 +1458,7 @@ public class InternalSpinCADLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1452,7 +1474,7 @@ public class InternalSpinCADLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1477,10 +1499,10 @@ public class InternalSpinCADLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1496,7 +1518,7 @@ public class InternalSpinCADLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1512,7 +1534,7 @@ public class InternalSpinCADLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3827:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3916:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1555,12 +1577,12 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3829:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3829:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3918:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3918:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3829:24: ( options {greedy=false; } : . )*
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3918:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -1585,7 +1607,7 @@ public class InternalSpinCADLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3829:52: .
+            	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3918:52: .
             	    {
             	    matchAny(); 
 
@@ -1615,12 +1637,12 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3831:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3831:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3920:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3920:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3831:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3920:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1633,7 +1655,7 @@ public class InternalSpinCADLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3831:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3920:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1653,7 +1675,7 @@ public class InternalSpinCADLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3831:40: ( ( '\\r' )? '\\n' )?
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3920:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1662,9 +1684,9 @@ public class InternalSpinCADLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3831:41: ( '\\r' )? '\\n'
+                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3920:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3831:41: ( '\\r' )?
+                    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3920:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1673,7 +1695,7 @@ public class InternalSpinCADLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3831:41: '\\r'
+                            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3920:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1705,10 +1727,10 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3833:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3833:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3922:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3922:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3833:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3922:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1762,8 +1784,8 @@ public class InternalSpinCADLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3835:16: ( . )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3835:18: .
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3924:16: ( . )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3924:18: .
             {
             matchAny(); 
 
@@ -1778,8 +1800,8 @@ public class InternalSpinCADLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | RULE_SC_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt14=61;
+        // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | RULE_SC_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt14=62;
         alt14 = dfa14.predict(input);
         switch (alt14) {
             case 1 :
@@ -2154,56 +2176,63 @@ public class InternalSpinCADLexer extends Lexer {
                 }
                 break;
             case 54 :
-                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:328: RULE_SC_COMMENT
+                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:328: T__65
+                {
+                mT__65(); 
+
+                }
+                break;
+            case 55 :
+                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:334: RULE_SC_COMMENT
                 {
                 mRULE_SC_COMMENT(); 
 
                 }
                 break;
-            case 55 :
-                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:344: RULE_ID
+            case 56 :
+                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:350: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 56 :
-                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:352: RULE_INT
+            case 57 :
+                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:358: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 57 :
-                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:361: RULE_STRING
+            case 58 :
+                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:367: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 58 :
-                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:373: RULE_ML_COMMENT
+            case 59 :
+                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:379: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 59 :
-                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:389: RULE_SL_COMMENT
+            case 60 :
+                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:395: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 60 :
-                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:405: RULE_WS
+            case 61 :
+                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:411: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 61 :
-                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:413: RULE_ANY_OTHER
+            case 62 :
+                // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:1:419: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -2218,51 +2247,51 @@ public class InternalSpinCADLexer extends Lexer {
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
         "\1\uffff\1\37\3\51\1\uffff\1\51\1\uffff\10\51\4\uffff\1\104\3\uffff"+
-        "\1\37\2\uffff\3\37\11\uffff\2\51\1\uffff\4\51\1\131\1\uffff\2\51"+
-        "\1\uffff\15\51\23\uffff\1\156\1\157\1\160\3\51\1\uffff\1\165\4\51"+
-        "\1\174\2\51\1\u0080\1\u0081\1\u0082\1\51\1\u0084\1\u0085\1\51\1"+
-        "\u0087\1\u0088\1\u0089\5\uffff\1\u008c\1\u008d\1\51\1\u008f\1\uffff"+
-        "\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1\u0095\1\uffff\1\u0096"+
-        "\1\u0097\1\u0098\6\uffff\1\u009b\7\uffff\1\51\17\uffff\1\u00a3\5"+
-        "\uffff\1\u00a7\6\uffff";
+        "\1\37\2\uffff\3\37\11\uffff\2\51\1\uffff\4\51\1\132\1\uffff\2\51"+
+        "\1\uffff\15\51\24\uffff\1\160\1\161\1\162\3\51\1\uffff\1\167\4\51"+
+        "\1\176\2\51\1\u0082\1\u0083\1\u0084\1\51\1\u0086\1\u0087\1\51\1"+
+        "\u0089\1\u008a\1\u008b\6\uffff\1\u0090\1\u0091\1\51\1\u0093\1\uffff"+
+        "\1\u0094\1\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\uffff\1\u009a"+
+        "\1\u009b\1\u009c\6\uffff\1\u009f\11\uffff\1\51\17\uffff\1\u00a7"+
+        "\5\uffff\1\u00ab\6\uffff";
     static final String DFA14_eofS =
-        "\u00ab\uffff";
+        "\u00af\uffff";
     static final String DFA14_minS =
         "\1\0\1\141\1\161\1\141\1\146\1\uffff\1\144\1\uffff\1\154\1\144\1"+
         "\153\1\150\1\142\1\157\1\141\1\157\4\uffff\1\101\3\uffff\1\0\2\uffff"+
-        "\2\0\1\52\3\uffff\1\165\1\150\2\uffff\1\154\1\uffff\1\165\1\160"+
-        "\1\uffff\1\155\1\170\1\154\1\146\1\60\1\uffff\1\141\1\160\1\uffff"+
+        "\2\0\1\52\3\uffff\1\165\1\150\2\uffff\1\154\1\145\1\165\1\160\1"+
+        "\uffff\1\155\1\170\1\154\1\146\1\60\1\uffff\1\141\1\160\1\uffff"+
         "\1\141\1\144\1\141\1\147\1\146\1\160\1\157\1\162\1\144\1\163\1\162"+
-        "\1\155\1\164\16\uffff\1\144\1\156\3\uffff\3\60\2\170\1\163\1\uffff"+
-        "\1\60\1\170\1\141\2\170\1\60\1\162\1\170\3\60\1\40\2\60\1\141\3"+
-        "\60\1\151\1\164\3\uffff\2\60\1\145\1\60\1\uffff\6\60\1\uffff\3\60"+
-        "\3\uffff\1\162\2\uffff\1\60\3\uffff\1\157\1\162\2\uffff\1\164\12"+
-        "\uffff\1\144\2\uffff\1\111\1\157\1\60\1\141\2\uffff\1\154\1\uffff"+
-        "\1\154\1\111\5\uffff";
+        "\1\155\1\164\16\uffff\1\144\1\156\3\uffff\1\164\3\60\2\170\1\163"+
+        "\1\uffff\1\60\1\170\1\141\2\170\1\60\1\162\1\170\3\60\1\40\2\60"+
+        "\1\141\3\60\1\151\1\164\1\104\3\uffff\2\60\1\145\1\60\1\uffff\6"+
+        "\60\1\uffff\3\60\3\uffff\1\162\2\uffff\1\60\3\uffff\1\157\1\162"+
+        "\4\uffff\1\164\12\uffff\1\144\2\uffff\1\111\1\157\1\60\1\141\2\uffff"+
+        "\1\154\1\uffff\1\154\1\111\5\uffff";
     static final String DFA14_maxS =
         "\1\uffff\1\163\1\170\1\165\1\162\1\uffff\1\155\1\uffff\1\162\2\157"+
         "\1\154\1\156\1\157\1\141\1\157\4\uffff\1\172\3\uffff\1\uffff\2\uffff"+
-        "\2\uffff\1\57\3\uffff\1\165\1\157\2\uffff\1\156\1\uffff\1\165\1"+
-        "\160\1\uffff\1\155\1\170\1\154\1\146\1\172\1\uffff\1\146\1\160\1"+
-        "\uffff\1\154\1\144\1\141\1\147\1\146\1\160\1\157\1\162\1\144\1\163"+
-        "\1\162\1\155\1\164\16\uffff\1\144\1\156\3\uffff\3\172\2\170\1\163"+
+        "\2\uffff\1\57\3\uffff\1\165\1\157\2\uffff\1\156\1\145\1\165\1\160"+
+        "\1\uffff\1\155\1\170\1\154\1\146\1\172\1\uffff\1\146\1\160\1\uffff"+
+        "\1\154\1\144\1\141\1\147\1\146\1\160\1\157\1\162\1\144\1\163\1\162"+
+        "\1\155\1\164\16\uffff\1\144\1\156\3\uffff\1\164\3\172\2\170\1\163"+
         "\1\uffff\1\172\1\170\1\141\2\170\1\172\1\163\1\170\3\172\1\40\2"+
-        "\172\1\141\3\172\1\151\1\164\3\uffff\2\172\1\145\1\172\1\uffff\6"+
-        "\172\1\uffff\3\172\3\uffff\1\163\2\uffff\1\172\3\uffff\1\157\1\162"+
-        "\2\uffff\1\164\12\uffff\1\144\2\uffff\1\117\1\157\1\172\1\141\2"+
-        "\uffff\1\154\1\uffff\1\154\1\117\5\uffff";
+        "\172\1\141\3\172\1\151\1\164\1\111\3\uffff\2\172\1\145\1\172\1\uffff"+
+        "\6\172\1\uffff\3\172\3\uffff\1\163\2\uffff\1\172\3\uffff\1\157\1"+
+        "\162\4\uffff\1\164\12\uffff\1\144\2\uffff\1\117\1\157\1\172\1\141"+
+        "\2\uffff\1\154\1\uffff\1\154\1\117\5\uffff";
     static final String DFA14_acceptS =
-        "\5\uffff\1\14\1\uffff\1\22\10\uffff\1\56\1\57\1\60\1\61\1\uffff"+
-        "\1\63\1\64\1\65\1\uffff\1\67\1\70\3\uffff\1\74\1\75\1\1\2\uffff"+
-        "\1\6\1\15\1\uffff\1\20\2\uffff\1\67\5\uffff\1\14\2\uffff\1\22\15"+
-        "\uffff\1\56\1\57\1\60\1\61\1\62\1\63\1\64\1\65\1\66\1\70\1\71\1"+
-        "\72\1\73\1\74\2\uffff\1\7\1\16\1\17\6\uffff\1\47\24\uffff\1\11\1"+
-        "\32\1\12\4\uffff\1\37\6\uffff\1\35\3\uffff\1\33\1\34\1\55\1\uffff"+
-        "\1\52\1\46\1\uffff\1\50\1\51\1\53\2\uffff\1\26\1\30\1\uffff\1\21"+
-        "\1\27\1\45\1\23\1\24\1\25\1\36\1\40\1\41\1\31\1\uffff\1\44\1\54"+
-        "\4\uffff\1\2\1\3\1\uffff\1\13\2\uffff\1\43\1\42\1\4\1\5\1\10";
+        "\5\uffff\1\14\1\uffff\1\23\10\uffff\1\57\1\60\1\61\1\62\1\uffff"+
+        "\1\64\1\65\1\66\1\uffff\1\70\1\71\3\uffff\1\75\1\76\1\1\2\uffff"+
+        "\1\6\1\15\4\uffff\1\70\5\uffff\1\14\2\uffff\1\23\15\uffff\1\57\1"+
+        "\60\1\61\1\62\1\63\1\64\1\65\1\66\1\67\1\71\1\72\1\73\1\74\1\75"+
+        "\2\uffff\1\7\1\16\1\17\7\uffff\1\50\25\uffff\1\11\1\33\1\12\4\uffff"+
+        "\1\40\6\uffff\1\36\3\uffff\1\34\1\35\1\56\1\uffff\1\53\1\47\1\uffff"+
+        "\1\51\1\52\1\54\2\uffff\1\20\1\21\1\27\1\31\1\uffff\1\22\1\30\1"+
+        "\46\1\24\1\25\1\26\1\37\1\41\1\42\1\32\1\uffff\1\45\1\55\4\uffff"+
+        "\1\2\1\3\1\uffff\1\13\2\uffff\1\44\1\43\1\4\1\5\1\10";
     static final String DFA14_specialS =
-        "\1\3\27\uffff\1\0\2\uffff\1\1\1\2\u008e\uffff}>";
+        "\1\3\27\uffff\1\1\2\uffff\1\0\1\2\u0092\uffff}>";
     static final String[] DFA14_transitionS = {
             "\11\37\2\36\2\37\1\36\22\37\1\36\1\37\1\33\1\23\1\27\1\26\1"+
             "\37\1\34\3\37\1\25\1\7\1\20\1\21\1\35\12\32\1\5\1\30\4\37\1"+
@@ -2307,21 +2336,20 @@ public class InternalSpinCADLexer extends Lexer {
             "",
             "",
             "\1\121\1\uffff\1\122",
-            "",
             "\1\123",
             "\1\124",
-            "",
             "\1\125",
+            "",
             "\1\126",
             "\1\127",
             "\1\130",
+            "\1\131",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
-            "\1\132\4\uffff\1\133",
-            "\1\134",
+            "\1\133\4\uffff\1\134",
+            "\1\135",
             "",
-            "\1\137\6\uffff\1\136\3\uffff\1\135",
-            "\1\140",
+            "\1\140\6\uffff\1\137\3\uffff\1\136",
             "\1\141",
             "\1\142",
             "\1\143",
@@ -2333,109 +2361,114 @@ public class InternalSpinCADLexer extends Lexer {
             "\1\151",
             "\1\152",
             "\1\153",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\154",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\155",
+            "\1\156",
             "",
             "",
             "",
+            "\1\157",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\161",
-            "\1\162",
             "\1\163",
+            "\1\164",
+            "\1\165",
             "",
-            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\27\51\1\164\2\51",
-            "\1\166",
-            "\1\167",
+            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\27\51\1\166\2\51",
             "\1\170",
             "\1\171",
-            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\17\51\1\173\7\51"+
-            "\1\172\2\51",
-            "\1\176\1\175",
-            "\1\177",
+            "\1\172",
+            "\1\173",
+            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\17\51\1\175\7\51"+
+            "\1\174\2\51",
+            "\1\u0080\1\177",
+            "\1\u0081",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u0083",
+            "\1\u0085",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u0086",
+            "\1\u0088",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u008a",
-            "\1\u008b",
+            "\1\u008c",
+            "\1\u008d",
+            "\1\u008f\4\uffff\1\u008e",
             "",
             "",
             "",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u008e",
-            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "",
-            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u0092",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "",
+            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
             "",
             "",
-            "\1\u0099\1\u009a",
+            "\1\u009d\1\u009e",
             "",
             "",
             "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
             "",
             "",
             "",
-            "\1\u009c",
-            "\1\u009d",
-            "",
-            "",
-            "\1\u009e",
+            "\1\u00a0",
+            "\1\u00a1",
             "",
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\u009f",
-            "",
-            "",
-            "\1\u00a0\5\uffff\1\u00a1",
             "\1\u00a2",
-            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
-            "\1\u00a4",
             "",
             "",
-            "\1\u00a5",
             "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u00a3",
+            "",
+            "",
+            "\1\u00a4\5\uffff\1\u00a5",
             "\1\u00a6",
-            "\1\u00a8\2\uffff\1\u00aa\2\uffff\1\u00a9",
+            "\12\51\7\uffff\32\51\4\uffff\1\51\1\uffff\32\51",
+            "\1\u00a8",
+            "",
+            "",
+            "\1\u00a9",
+            "",
+            "\1\u00aa",
+            "\1\u00ac\2\uffff\1\u00ae\2\uffff\1\u00ad",
             "",
             "",
             "",
@@ -2473,27 +2506,27 @@ public class InternalSpinCADLexer extends Lexer {
             this.transition = DFA14_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | RULE_SC_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | T__53 | T__54 | T__55 | T__56 | T__57 | T__58 | T__59 | T__60 | T__61 | T__62 | T__63 | T__64 | T__65 | RULE_SC_COMMENT | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_24 = input.LA(1);
+                        int LA14_27 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_24>='\u0000' && LA14_24<='\uFFFF')) ) {s = 72;}
+                        if ( ((LA14_27>='\u0000' && LA14_27<='\uFFFF')) ) {s = 74;}
 
                         else s = 31;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA14_27 = input.LA(1);
+                        int LA14_24 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_27>='\u0000' && LA14_27<='\uFFFF')) ) {s = 74;}
+                        if ( ((LA14_24>='\u0000' && LA14_24<='\uFFFF')) ) {s = 72;}
 
                         else s = 31;
 

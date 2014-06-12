@@ -61,6 +61,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/scale"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/defaultVal"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//GetDelayScale">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetDelayScale/buffer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetDelayScale/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetDelayScale/control"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Instruction"/>
     <genClasses ecoreClass="SpinCAD.ecore#//Inst_B6_S1_14">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_B6_S1_14/arg1"/>

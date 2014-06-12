@@ -55,7 +55,7 @@ public class MemImpl extends SpinElementImpl implements Mem
    * @generated
    * @ordered
    */
-  protected static final int LENGTH_EDEFAULT = 0;
+  protected static final String LENGTH_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getLength() <em>Length</em>}' attribute.
@@ -65,7 +65,7 @@ public class MemImpl extends SpinElementImpl implements Mem
    * @generated
    * @ordered
    */
-  protected int length = LENGTH_EDEFAULT;
+  protected String length = LENGTH_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,7 +116,7 @@ public class MemImpl extends SpinElementImpl implements Mem
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getLength()
+  public String getLength()
   {
     return length;
   }
@@ -126,9 +126,9 @@ public class MemImpl extends SpinElementImpl implements Mem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLength(int newLength)
+  public void setLength(String newLength)
   {
-    int oldLength = length;
+    String oldLength = length;
     length = newLength;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.MEM__LENGTH, oldLength, length));
@@ -166,7 +166,7 @@ public class MemImpl extends SpinElementImpl implements Mem
         setBuffer((String)newValue);
         return;
       case SpinCADPackage.MEM__LENGTH:
-        setLength((Integer)newValue);
+        setLength((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -205,7 +205,7 @@ public class MemImpl extends SpinElementImpl implements Mem
       case SpinCADPackage.MEM__BUFFER:
         return BUFFER_EDEFAULT == null ? buffer != null : !BUFFER_EDEFAULT.equals(buffer);
       case SpinCADPackage.MEM__LENGTH:
-        return length != LENGTH_EDEFAULT;
+        return LENGTH_EDEFAULT == null ? length != null : !LENGTH_EDEFAULT.equals(length);
     }
     return super.eIsSet(featureID);
   }
