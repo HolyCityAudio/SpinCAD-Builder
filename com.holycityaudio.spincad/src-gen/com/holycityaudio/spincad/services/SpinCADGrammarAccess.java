@@ -456,13 +456,13 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cBufferAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cBufferIDTerminalRuleCall_1_0 = (RuleCall)cBufferAssignment_1.eContents().get(0);
 		private final Assignment cLengthAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLengthINTTerminalRuleCall_2_0 = (RuleCall)cLengthAssignment_2.eContents().get(0);
+		private final RuleCall cLengthSPINREGISTERParserRuleCall_2_0 = (RuleCall)cLengthAssignment_2.eContents().get(0);
 		
 		//Mem:
-		//	"mem" buffer=ID length=INT;
+		//	"mem" buffer=ID length=SPINREGISTER;
 		public ParserRule getRule() { return rule; }
 
-		//"mem" buffer=ID length=INT
+		//"mem" buffer=ID length=SPINREGISTER
 		public Group getGroup() { return cGroup; }
 
 		//"mem"
@@ -474,11 +474,11 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getBufferIDTerminalRuleCall_1_0() { return cBufferIDTerminalRuleCall_1_0; }
 
-		//length=INT
+		//length=SPINREGISTER
 		public Assignment getLengthAssignment_2() { return cLengthAssignment_2; }
 
-		//INT
-		public RuleCall getLengthINTTerminalRuleCall_2_0() { return cLengthINTTerminalRuleCall_2_0; }
+		//SPINREGISTER
+		public RuleCall getLengthSPINREGISTERParserRuleCall_2_0() { return cLengthSPINREGISTERParserRuleCall_2_0; }
 	}
 
 	public class OffsetElements extends AbstractParserRuleElementFinder {
@@ -560,13 +560,14 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cIsElseParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cIsEndifParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cGetInputDefaultParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cGetDelayScaleParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//// - SpinCAD macro for conditional expressions within generateCode()
 		//Macro:
-		//	IsPinConnected | IsElse | IsEndif | GetInputDefault;
+		//	IsPinConnected | IsElse | IsEndif | GetInputDefault | GetDelayScale;
 		public ParserRule getRule() { return rule; }
 
-		//IsPinConnected | IsElse | IsEndif | GetInputDefault
+		//IsPinConnected | IsElse | IsEndif | GetInputDefault | GetDelayScale
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//IsPinConnected
@@ -580,6 +581,9 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 		//GetInputDefault
 		public RuleCall getGetInputDefaultParserRuleCall_3() { return cGetInputDefaultParserRuleCall_3; }
+
+		//GetDelayScale
+		public RuleCall getGetDelayScaleParserRuleCall_4() { return cGetDelayScaleParserRuleCall_4; }
 	}
 
 	public class IsPinConnectedElements extends AbstractParserRuleElementFinder {
@@ -692,6 +696,46 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 		//SPINDOUBLE
 		public RuleCall getDefaultValSPINDOUBLEParserRuleCall_4_0() { return cDefaultValSPINDOUBLEParserRuleCall_4_0; }
+	}
+
+	public class GetDelayScaleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GetDelayScale");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGetDelayScaleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cBufferAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cBufferIDTerminalRuleCall_1_0 = (RuleCall)cBufferAssignment_1.eContents().get(0);
+		private final Assignment cLengthAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLengthIDTerminalRuleCall_2_0 = (RuleCall)cLengthAssignment_2.eContents().get(0);
+		private final Assignment cControlAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cControlIDTerminalRuleCall_3_0 = (RuleCall)cControlAssignment_3.eContents().get(0);
+		
+		//GetDelayScale:
+		//	"@getDelayScale" buffer=ID length=ID control=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"@getDelayScale" buffer=ID length=ID control=ID
+		public Group getGroup() { return cGroup; }
+
+		//"@getDelayScale"
+		public Keyword getGetDelayScaleKeyword_0() { return cGetDelayScaleKeyword_0; }
+
+		//buffer=ID
+		public Assignment getBufferAssignment_1() { return cBufferAssignment_1; }
+
+		//ID
+		public RuleCall getBufferIDTerminalRuleCall_1_0() { return cBufferIDTerminalRuleCall_1_0; }
+
+		//length=ID
+		public Assignment getLengthAssignment_2() { return cLengthAssignment_2; }
+
+		//ID
+		public RuleCall getLengthIDTerminalRuleCall_2_0() { return cLengthIDTerminalRuleCall_2_0; }
+
+		//control=ID
+		public Assignment getControlAssignment_3() { return cControlAssignment_3; }
+
+		//ID
+		public RuleCall getControlIDTerminalRuleCall_3_0() { return cControlIDTerminalRuleCall_3_0; }
 	}
 
 	public class InstructionElements extends AbstractParserRuleElementFinder {
@@ -2105,6 +2149,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	private IsElseElements pIsElse;
 	private IsEndifElements pIsEndif;
 	private GetInputDefaultElements pGetInputDefault;
+	private GetDelayScaleElements pGetDelayScale;
 	private InstructionElements pInstruction;
 	private Inst_B6_S1_14Elements pInst_B6_S1_14;
 	private Inst_B15_S1_9Elements pInst_B15_S1_9;
@@ -2330,7 +2375,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Mem:
-	//	"mem" buffer=ID length=INT;
+	//	"mem" buffer=ID length=SPINREGISTER;
 	public MemElements getMemAccess() {
 		return (pMem != null) ? pMem : (pMem = new MemElements());
 	}
@@ -2371,7 +2416,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// - SpinCAD macro for conditional expressions within generateCode()
 	//Macro:
-	//	IsPinConnected | IsElse | IsEndif | GetInputDefault;
+	//	IsPinConnected | IsElse | IsEndif | GetInputDefault | GetDelayScale;
 	public MacroElements getMacroAccess() {
 		return (pMacro != null) ? pMacro : (pMacro = new MacroElements());
 	}
@@ -2418,6 +2463,16 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getGetInputDefaultRule() {
 		return getGetInputDefaultAccess().getRule();
+	}
+
+	//GetDelayScale:
+	//	"@getDelayScale" buffer=ID length=ID control=ID;
+	public GetDelayScaleElements getGetDelayScaleAccess() {
+		return (pGetDelayScale != null) ? pGetDelayScale : (pGetDelayScale = new GetDelayScaleElements());
+	}
+	
+	public ParserRule getGetDelayScaleRule() {
+		return getGetDelayScaleAccess().getRule();
 	}
 
 	//Instruction:

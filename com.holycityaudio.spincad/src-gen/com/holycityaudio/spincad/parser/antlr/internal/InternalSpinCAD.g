@@ -946,19 +946,19 @@ ruleMem returns [EObject current=null]
 )
 )(
 (
-		lv_length_2_0=RULE_INT
-		{
-			newLeafNode(lv_length_2_0, grammarAccess.getMemAccess().getLengthINTTerminalRuleCall_2_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getMemAccess().getLengthSPINREGISTERParserRuleCall_2_0()); 
+	    }
+		lv_length_2_0=ruleSPINREGISTER		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getMemRule());
+	            $current = createModelElementForParent(grammarAccess.getMemRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"length",
         		lv_length_2_0, 
-        		"INT");
+        		"SPINREGISTER");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -1165,6 +1165,16 @@ ruleMacro returns [EObject current=null]
         $current = $this_GetInputDefault_3.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getMacroAccess().getGetDelayScaleParserRuleCall_4()); 
+    }
+    this_GetDelayScale_4=ruleGetDelayScale
+    { 
+        $current = $this_GetDelayScale_4.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -1364,6 +1374,85 @@ ruleGetInputDefault returns [EObject current=null]
         		lv_defaultVal_4_0, 
         		"SPINDOUBLE");
 	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleGetDelayScale
+entryRuleGetDelayScale returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getGetDelayScaleRule()); }
+	 iv_ruleGetDelayScale=ruleGetDelayScale 
+	 { $current=$iv_ruleGetDelayScale.current; } 
+	 EOF 
+;
+
+// Rule GetDelayScale
+ruleGetDelayScale returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='@getDelayScale' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getGetDelayScaleAccess().getGetDelayScaleKeyword_0());
+    }
+(
+(
+		lv_buffer_1_0=RULE_ID
+		{
+			newLeafNode(lv_buffer_1_0, grammarAccess.getGetDelayScaleAccess().getBufferIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGetDelayScaleRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"buffer",
+        		lv_buffer_1_0, 
+        		"ID");
+	    }
+
+)
+)(
+(
+		lv_length_2_0=RULE_ID
+		{
+			newLeafNode(lv_length_2_0, grammarAccess.getGetDelayScaleAccess().getLengthIDTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGetDelayScaleRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"length",
+        		lv_length_2_0, 
+        		"ID");
+	    }
+
+)
+)(
+(
+		lv_control_3_0=RULE_ID
+		{
+			newLeafNode(lv_control_3_0, grammarAccess.getGetDelayScaleAccess().getControlIDTerminalRuleCall_3_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGetDelayScaleRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"control",
+        		lv_control_3_0, 
+        		"ID");
 	    }
 
 )

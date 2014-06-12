@@ -190,6 +190,11 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
         return createGetInputDefaultAdapter();
       }
       @Override
+      public Adapter caseGetDelayScale(GetDelayScale object)
+      {
+        return createGetDelayScaleAdapter();
+      }
+      @Override
       public Adapter caseInstruction(Instruction object)
       {
         return createInstructionAdapter();
@@ -732,6 +737,21 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGetInputDefaultAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.GetDelayScale <em>Get Delay Scale</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.GetDelayScale
+   * @generated
+   */
+  public Adapter createGetDelayScaleAdapter()
   {
     return null;
   }

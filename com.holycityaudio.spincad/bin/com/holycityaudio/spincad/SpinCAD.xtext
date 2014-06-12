@@ -64,7 +64,7 @@ Equate:
 ;
 
 Mem:
-	'mem' buffer = ID length = INT 
+	'mem' buffer = ID length = SPINREGISTER
 ;
 
 Offset:
@@ -81,13 +81,14 @@ Label:
 // - SpinCAD macro for conditional expressions within generateCode()
 Macro:
 	IsPinConnected 
-  | IsElse | IsEndif | GetInputDefault
+  | IsElse | IsEndif | GetInputDefault | GetDelayScale
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
 IsElse: {IsElse} '@else';
 IsEndif: {IsEndif} "@endif";
 GetInputDefault: '@getInputDefault' name = ID variable = ID scale = SPINDOUBLE defaultVal = SPINDOUBLE;
+GetDelayScale: '@getDelayScale' buffer = ID length = ID control = ID;
 
 Instruction:
 	Inst_B15_S1_9 |
