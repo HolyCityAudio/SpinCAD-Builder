@@ -891,6 +891,43 @@ public interface SpinCADPackage extends EPackage
   int GET_DELAY_SCALE_FEATURE_COUNT = MACRO_FEATURE_COUNT + 3;
 
   /**
+   * The meta object id for the '{@link com.holycityaudio.spincad.spinCAD.impl.SetOutputPinImpl <em>Set Output Pin</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.holycityaudio.spincad.spinCAD.impl.SetOutputPinImpl
+   * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getSetOutputPin()
+   * @generated
+   */
+  int SET_OUTPUT_PIN = 24;
+
+  /**
+   * The feature id for the '<em><b>Pin Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_OUTPUT_PIN__PIN_NAME = MACRO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Var Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_OUTPUT_PIN__VAR_NAME = MACRO_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Set Output Pin</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_OUTPUT_PIN_FEATURE_COUNT = MACRO_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link com.holycityaudio.spincad.spinCAD.impl.InstructionImpl <em>Instruction</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -898,7 +935,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getInstruction()
    * @generated
    */
-  int INSTRUCTION = 24;
+  int INSTRUCTION = 25;
 
   /**
    * The number of structural features of the '<em>Instruction</em>' class.
@@ -917,7 +954,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getInst_B6_S1_14()
    * @generated
    */
-  int INST_B6_S1_14 = 25;
+  int INST_B6_S1_14 = 26;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -954,7 +991,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getInst_B15_S1_9()
    * @generated
    */
-  int INST_B15_S1_9 = 26;
+  int INST_B15_S1_9 = 27;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' containment reference.
@@ -991,7 +1028,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getInst_B6()
    * @generated
    */
-  int INST_B6 = 27;
+  int INST_B6 = 28;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1019,7 +1056,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getInst_B24()
    * @generated
    */
-  int INST_B24 = 28;
+  int INST_B24 = 29;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1047,7 +1084,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getInst_X0()
    * @generated
    */
-  int INST_X0 = 29;
+  int INST_X0 = 30;
 
   /**
    * The number of structural features of the '<em>Inst X0</em>' class.
@@ -1066,7 +1103,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getInst_S1_14_S1_10()
    * @generated
    */
-  int INST_S1_14_S1_10 = 30;
+  int INST_S1_14_S1_10 = 31;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1103,7 +1140,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getReadRegister()
    * @generated
    */
-  int READ_REGISTER = 31;
+  int READ_REGISTER = 32;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1140,7 +1177,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getWriteRegisterLowshelf()
    * @generated
    */
-  int WRITE_REGISTER_LOWSHELF = 32;
+  int WRITE_REGISTER_LOWSHELF = 33;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1177,7 +1214,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getWriteRegisterHighshelf()
    * @generated
    */
-  int WRITE_REGISTER_HIGHSHELF = 33;
+  int WRITE_REGISTER_HIGHSHELF = 34;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1214,7 +1251,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getWriteRegister()
    * @generated
    */
-  int WRITE_REGISTER = 34;
+  int WRITE_REGISTER = 35;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1251,7 +1288,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getMaxx()
    * @generated
    */
-  int MAXX = 35;
+  int MAXX = 36;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1288,7 +1325,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getReadRegisterFilter()
    * @generated
    */
-  int READ_REGISTER_FILTER = 36;
+  int READ_REGISTER_FILTER = 37;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1325,7 +1362,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getMulx()
    * @generated
    */
-  int MULX = 37;
+  int MULX = 38;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1353,7 +1390,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getLdax()
    * @generated
    */
-  int LDAX = 38;
+  int LDAX = 39;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1381,7 +1418,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getExp()
    * @generated
    */
-  int EXP = 39;
+  int EXP = 40;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1418,7 +1455,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getLog()
    * @generated
    */
-  int LOG = 40;
+  int LOG = 41;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1455,7 +1492,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getScaleOffset()
    * @generated
    */
-  int SCALE_OFFSET = 41;
+  int SCALE_OFFSET = 42;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1492,7 +1529,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getWriteDelay()
    * @generated
    */
-  int WRITE_DELAY = 42;
+  int WRITE_DELAY = 43;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' containment reference.
@@ -1529,7 +1566,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getWriteAllpass()
    * @generated
    */
-  int WRITE_ALLPASS = 43;
+  int WRITE_ALLPASS = 44;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' containment reference.
@@ -1566,7 +1603,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getReadDelay()
    * @generated
    */
-  int READ_DELAY = 44;
+  int READ_DELAY = 45;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' containment reference.
@@ -1603,7 +1640,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getLoadSinLFO()
    * @generated
    */
-  int LOAD_SIN_LFO = 45;
+  int LOAD_SIN_LFO = 46;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1649,7 +1686,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getLoadRampLFO()
    * @generated
    */
-  int LOAD_RAMP_LFO = 46;
+  int LOAD_RAMP_LFO = 47;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1695,7 +1732,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getChorusReadDelay()
    * @generated
    */
-  int CHORUS_READ_DELAY = 47;
+  int CHORUS_READ_DELAY = 48;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1741,7 +1778,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getChorusReadValue()
    * @generated
    */
-  int CHORUS_READ_VALUE = 48;
+  int CHORUS_READ_VALUE = 49;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1769,7 +1806,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getChorusScaleOffset()
    * @generated
    */
-  int CHORUS_SCALE_OFFSET = 49;
+  int CHORUS_SCALE_OFFSET = 50;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1815,7 +1852,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getReadDelayPointer()
    * @generated
    */
-  int READ_DELAY_POINTER = 50;
+  int READ_DELAY_POINTER = 51;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1843,7 +1880,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getAnd()
    * @generated
    */
-  int AND = 51;
+  int AND = 52;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1871,7 +1908,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getOr()
    * @generated
    */
-  int OR = 52;
+  int OR = 53;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1899,7 +1936,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getXor()
    * @generated
    */
-  int XOR = 53;
+  int XOR = 54;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1927,7 +1964,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getJam()
    * @generated
    */
-  int JAM = 54;
+  int JAM = 55;
 
   /**
    * The feature id for the '<em><b>Arg1</b></em>' attribute.
@@ -1955,7 +1992,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getClr()
    * @generated
    */
-  int CLR = 55;
+  int CLR = 56;
 
   /**
    * The number of structural features of the '<em>Clr</em>' class.
@@ -1974,7 +2011,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getNot()
    * @generated
    */
-  int NOT = 56;
+  int NOT = 57;
 
   /**
    * The number of structural features of the '<em>Not</em>' class.
@@ -1993,7 +2030,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getAbsa()
    * @generated
    */
-  int ABSA = 57;
+  int ABSA = 58;
 
   /**
    * The number of structural features of the '<em>Absa</em>' class.
@@ -2012,7 +2049,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getSkip()
    * @generated
    */
-  int SKIP = 58;
+  int SKIP = 59;
 
   /**
    * The feature id for the '<em><b>Flags</b></em>' attribute.
@@ -2049,7 +2086,7 @@ public interface SpinCADPackage extends EPackage
    * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getSPINMEM()
    * @generated
    */
-  int SPINMEM = 59;
+  int SPINMEM = 60;
 
   /**
    * The feature id for the '<em><b>Buffer</b></em>' attribute.
@@ -2591,6 +2628,38 @@ public interface SpinCADPackage extends EPackage
    * @generated
    */
   EAttribute getGetDelayScale_Control();
+
+  /**
+   * Returns the meta object for class '{@link com.holycityaudio.spincad.spinCAD.SetOutputPin <em>Set Output Pin</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set Output Pin</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.SetOutputPin
+   * @generated
+   */
+  EClass getSetOutputPin();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.SetOutputPin#getPinName <em>Pin Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pin Name</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.SetOutputPin#getPinName()
+   * @see #getSetOutputPin()
+   * @generated
+   */
+  EAttribute getSetOutputPin_PinName();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.SetOutputPin#getVarName <em>Var Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Var Name</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.SetOutputPin#getVarName()
+   * @see #getSetOutputPin()
+   * @generated
+   */
+  EAttribute getSetOutputPin_VarName();
 
   /**
    * Returns the meta object for class '{@link com.holycityaudio.spincad.spinCAD.Instruction <em>Instruction</em>}'.
@@ -3736,6 +3805,32 @@ public interface SpinCADPackage extends EPackage
      * @generated
      */
     EAttribute GET_DELAY_SCALE__CONTROL = eINSTANCE.getGetDelayScale_Control();
+
+    /**
+     * The meta object literal for the '{@link com.holycityaudio.spincad.spinCAD.impl.SetOutputPinImpl <em>Set Output Pin</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.holycityaudio.spincad.spinCAD.impl.SetOutputPinImpl
+     * @see com.holycityaudio.spincad.spinCAD.impl.SpinCADPackageImpl#getSetOutputPin()
+     * @generated
+     */
+    EClass SET_OUTPUT_PIN = eINSTANCE.getSetOutputPin();
+
+    /**
+     * The meta object literal for the '<em><b>Pin Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_OUTPUT_PIN__PIN_NAME = eINSTANCE.getSetOutputPin_PinName();
+
+    /**
+     * The meta object literal for the '<em><b>Var Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SET_OUTPUT_PIN__VAR_NAME = eINSTANCE.getSetOutputPin_VarName();
 
     /**
      * The meta object literal for the '{@link com.holycityaudio.spincad.spinCAD.impl.InstructionImpl <em>Instruction</em>}' class.

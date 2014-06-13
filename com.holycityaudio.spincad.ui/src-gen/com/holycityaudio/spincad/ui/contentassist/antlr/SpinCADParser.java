@@ -74,6 +74,7 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIsEndifAccess().getGroup(), "rule__IsEndif__Group__0");
 					put(grammarAccess.getGetInputDefaultAccess().getGroup(), "rule__GetInputDefault__Group__0");
 					put(grammarAccess.getGetDelayScaleAccess().getGroup(), "rule__GetDelayScale__Group__0");
+					put(grammarAccess.getSetOutputPinAccess().getGroup(), "rule__SetOutputPin__Group__0");
 					put(grammarAccess.getReadRegisterAccess().getGroup(), "rule__ReadRegister__Group__0");
 					put(grammarAccess.getWriteRegisterLowshelfAccess().getGroup(), "rule__WriteRegisterLowshelf__Group__0");
 					put(grammarAccess.getWriteRegisterHighshelfAccess().getGroup(), "rule__WriteRegisterHighshelf__Group__0");
@@ -146,6 +147,8 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGetDelayScaleAccess().getBufferAssignment_1(), "rule__GetDelayScale__BufferAssignment_1");
 					put(grammarAccess.getGetDelayScaleAccess().getLengthAssignment_2(), "rule__GetDelayScale__LengthAssignment_2");
 					put(grammarAccess.getGetDelayScaleAccess().getControlAssignment_3(), "rule__GetDelayScale__ControlAssignment_3");
+					put(grammarAccess.getSetOutputPinAccess().getPinNameAssignment_1(), "rule__SetOutputPin__PinNameAssignment_1");
+					put(grammarAccess.getSetOutputPinAccess().getVarNameAssignment_2(), "rule__SetOutputPin__VarNameAssignment_2");
 					put(grammarAccess.getReadRegisterAccess().getArg1Assignment_1(), "rule__ReadRegister__Arg1Assignment_1");
 					put(grammarAccess.getReadRegisterAccess().getArg2Assignment_3(), "rule__ReadRegister__Arg2Assignment_3");
 					put(grammarAccess.getWriteRegisterLowshelfAccess().getArg1Assignment_1(), "rule__WriteRegisterLowshelf__Arg1Assignment_1");
