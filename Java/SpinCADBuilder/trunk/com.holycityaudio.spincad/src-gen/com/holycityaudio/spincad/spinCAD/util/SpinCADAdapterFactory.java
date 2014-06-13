@@ -195,6 +195,11 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
         return createGetDelayScaleAdapter();
       }
       @Override
+      public Adapter caseSetOutputPin(SetOutputPin object)
+      {
+        return createSetOutputPinAdapter();
+      }
+      @Override
       public Adapter caseInstruction(Instruction object)
       {
         return createInstructionAdapter();
@@ -752,6 +757,21 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGetDelayScaleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.SetOutputPin <em>Set Output Pin</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.SetOutputPin
+   * @generated
+   */
+  public Adapter createSetOutputPinAdapter()
   {
     return null;
   }

@@ -51,6 +51,7 @@ import com.holycityaudio.spincad.spinCAD.ReadDelayPointer;
 import com.holycityaudio.spincad.spinCAD.ReadRegister;
 import com.holycityaudio.spincad.spinCAD.ReadRegisterFilter;
 import com.holycityaudio.spincad.spinCAD.ScaleOffset;
+import com.holycityaudio.spincad.spinCAD.SetOutputPin;
 import com.holycityaudio.spincad.spinCAD.Skip;
 import com.holycityaudio.spincad.spinCAD.Slider;
 import com.holycityaudio.spincad.spinCAD.SpinCADFactory;
@@ -246,6 +247,13 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * @generated
    */
   private EClass getDelayScaleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass setOutputPinEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1047,6 +1055,36 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getSetOutputPin()
+  {
+    return setOutputPinEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSetOutputPin_PinName()
+  {
+    return (EAttribute)setOutputPinEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSetOutputPin_VarName()
+  {
+    return (EAttribute)setOutputPinEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getInstruction()
   {
     return instructionEClass;
@@ -1804,6 +1842,10 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(getDelayScaleEClass, GET_DELAY_SCALE__LENGTH);
     createEAttribute(getDelayScaleEClass, GET_DELAY_SCALE__CONTROL);
 
+    setOutputPinEClass = createEClass(SET_OUTPUT_PIN);
+    createEAttribute(setOutputPinEClass, SET_OUTPUT_PIN__PIN_NAME);
+    createEAttribute(setOutputPinEClass, SET_OUTPUT_PIN__VAR_NAME);
+
     instructionEClass = createEClass(INSTRUCTION);
 
     inst_B6_S1_14EClass = createEClass(INST_B6_S1_14);
@@ -1956,6 +1998,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     isEndifEClass.getESuperTypes().add(this.getMacro());
     getInputDefaultEClass.getESuperTypes().add(this.getMacro());
     getDelayScaleEClass.getESuperTypes().add(this.getMacro());
+    setOutputPinEClass.getESuperTypes().add(this.getMacro());
     instructionEClass.getESuperTypes().add(this.getSpinElement());
     inst_B6_S1_14EClass.getESuperTypes().add(this.getInstruction());
     inst_B15_S1_9EClass.getESuperTypes().add(this.getInstruction());
@@ -2064,6 +2107,10 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getGetDelayScale_Buffer(), ecorePackage.getEString(), "buffer", null, 0, 1, GetDelayScale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGetDelayScale_Length(), ecorePackage.getEString(), "length", null, 0, 1, GetDelayScale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGetDelayScale_Control(), ecorePackage.getEString(), "control", null, 0, 1, GetDelayScale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(setOutputPinEClass, SetOutputPin.class, "SetOutputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSetOutputPin_PinName(), ecorePackage.getEString(), "pinName", null, 0, 1, SetOutputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSetOutputPin_VarName(), ecorePackage.getEString(), "varName", null, 0, 1, SetOutputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

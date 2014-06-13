@@ -1175,6 +1175,16 @@ ruleMacro returns [EObject current=null]
         $current = $this_GetDelayScale_4.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getMacroAccess().getSetOutputPinParserRuleCall_5()); 
+    }
+    this_SetOutputPin_5=ruleSetOutputPin
+    { 
+        $current = $this_SetOutputPin_5.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -1452,6 +1462,67 @@ ruleGetDelayScale returns [EObject current=null]
        			$current, 
        			"control",
         		lv_control_3_0, 
+        		"ID");
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleSetOutputPin
+entryRuleSetOutputPin returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSetOutputPinRule()); }
+	 iv_ruleSetOutputPin=ruleSetOutputPin 
+	 { $current=$iv_ruleSetOutputPin.current; } 
+	 EOF 
+;
+
+// Rule SetOutputPin
+ruleSetOutputPin returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='@setOutputPin' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getSetOutputPinAccess().getSetOutputPinKeyword_0());
+    }
+(
+(
+		lv_pinName_1_0=RULE_ID
+		{
+			newLeafNode(lv_pinName_1_0, grammarAccess.getSetOutputPinAccess().getPinNameIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSetOutputPinRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"pinName",
+        		lv_pinName_1_0, 
+        		"ID");
+	    }
+
+)
+)(
+(
+		lv_varName_2_0=RULE_ID
+		{
+			newLeafNode(lv_varName_2_0, grammarAccess.getSetOutputPinAccess().getVarNameIDTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSetOutputPinRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"varName",
+        		lv_varName_2_0, 
         		"ID");
 	    }
 

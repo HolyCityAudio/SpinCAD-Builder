@@ -55,6 +55,7 @@ import com.holycityaudio.spincad.spinCAD.Maxx
 import com.holycityaudio.spincad.spinCAD.controlLabel
 import com.holycityaudio.spincad.spinCAD.CheckBox
 import com.holycityaudio.spincad.spinCAD.GetInputDefaultimport com.holycityaudio.spincad.spinCAD.GetDelayScale
+import com.holycityaudio.spincad.spinCAD.SetOutputPin
 
 class SpinCADBlockGenerator {
  
@@ -88,6 +89,7 @@ def codeGenerate(String blockName, Program pr) {
 		public class «blockName+"CADBlock"» extends SpinCADBlock {
 
 			private static final long serialVersionUID = 1L;
+			
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					Equate:{genEquate(e)}
@@ -118,7 +120,6 @@ def codeGenerate(String blockName, Program pr) {
 			// Iterate through mem and equ statements, allocate accordingly
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					Mem:{genMem(e)}
 					Offset:{genOffset(e) }
 				}»
 			«ENDFOR»
@@ -131,14 +132,15 @@ def codeGenerate(String blockName, Program pr) {
 			«FOR Pin p : pr.pins»
 			«switch p {
 				InputPin: {connect(p)}
-				OutputPin: {setOutput(p)}
 			}»
 			«ENDFOR»
+			
 			// finally, generate the instructions
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					Instruction:{genInstruction(e)}
 					Equate:{setEquate(e)}
+					Mem:{genMem(e)}
 					Macro: { genMacro(e) }
 				}»
 			«ENDFOR»
@@ -151,8 +153,6 @@ def codeGenerate(String blockName, Program pr) {
  					Slider:{genSliderSG(pr, e)}
 					CheckBox:{genCheckBoxSG(pr, e)}
 					controlLabel:{genControlLabelSG(pr, e)}
-			
-
 			}»
 			«ENDFOR»
 		}	
@@ -187,6 +187,7 @@ def genCheckBoxSG(Program program, CheckBox cB) {
 	def genAudioInput(Pin p) ''' 
 		addInputPin(this, "«p.name»");
 	'''
+	
 	def genAudioOutput(Pin p) '''
 		addOutputPin(this, "«p.name»");
 	'''
@@ -194,9 +195,11 @@ def genCheckBoxSG(Program program, CheckBox cB) {
 	def genControlInput(Pin p) '''
 		addControlInputPin(this, "«p.name»");
 	'''
+	
 	def genControlOutput(Pin p) '''
 		addControlOutputPin(this, "«p.name»");
 	'''
+	
 	def connect(Pin p) '''
 		sp = this.getPin("«p.name»").getPinConnection();
 		int «p.varName» = -1;
@@ -205,6 +208,7 @@ def genCheckBoxSG(Program program, CheckBox cB) {
 		}
 
 	'''
+	
 	def setOutput(Pin p) '''
 		this.getPin("«p.name»").setRegister(«p.varName»);
 	'''
@@ -253,6 +257,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			IsElse: genElse(inst)
 			IsEndif: genEndif(inst)
 			GetInputDefault: genGetInputDefault(inst)
+			SetOutputPin: genSetOutputPin(inst)
 			}»	
 		'''
 	}
@@ -260,6 +265,12 @@ def genGetInputDefault(GetInputDefault g)'''
 def genGetDelayScale(GetDelayScale g) {
 	'''
 	// GETdELAYsCALE PLACE HOLDER!
+	'''
+}	
+
+def genSetOutputPin(SetOutputPin p) {
+	'''
+		this.getPin("«p.pinName»").setRegister(«p.varName»);
 	'''
 }	
 
@@ -393,7 +404,7 @@ def genWriteAllpass(WriteAllpass inst) {
 	}
 
 	
-		def genDelayInst(Inst_B15_S1_9 inst, String className) { 
+def genDelayInst(Inst_B15_S1_9 inst, String className) { 
 		
 		if(inst.arg1.getBuffer.endsWith("+") || inst.arg1.getBuffer.endsWith("-")) {
 	 		if(inst.getArg1.getValue != 0) {'''

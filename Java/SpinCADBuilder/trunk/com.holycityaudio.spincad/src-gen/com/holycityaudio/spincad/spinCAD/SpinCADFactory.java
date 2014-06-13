@@ -239,6 +239,15 @@ public interface SpinCADFactory extends EFactory
   GetDelayScale createGetDelayScale();
 
   /**
+   * Returns a new object of class '<em>Set Output Pin</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Set Output Pin</em>'.
+   * @generated
+   */
+  SetOutputPin createSetOutputPin();
+
+  /**
    * Returns a new object of class '<em>Instruction</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

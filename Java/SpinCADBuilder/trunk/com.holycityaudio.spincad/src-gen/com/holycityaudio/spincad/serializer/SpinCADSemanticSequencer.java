@@ -41,6 +41,7 @@ import com.holycityaudio.spincad.spinCAD.ReadRegister;
 import com.holycityaudio.spincad.spinCAD.ReadRegisterFilter;
 import com.holycityaudio.spincad.spinCAD.SPINMEM;
 import com.holycityaudio.spincad.spinCAD.ScaleOffset;
+import com.holycityaudio.spincad.spinCAD.SetOutputPin;
 import com.holycityaudio.spincad.spinCAD.Skip;
 import com.holycityaudio.spincad.spinCAD.Slider;
 import com.holycityaudio.spincad.spinCAD.SpinCADPackage;
@@ -375,6 +376,14 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 				   context == grammarAccess.getScaleOffsetRule() ||
 				   context == grammarAccess.getSpinElementRule()) {
 					sequence_ScaleOffset(context, (ScaleOffset) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpinCADPackage.SET_OUTPUT_PIN:
+				if(context == grammarAccess.getMacroRule() ||
+				   context == grammarAccess.getSetOutputPinRule() ||
+				   context == grammarAccess.getSpinElementRule()) {
+					sequence_SetOutputPin(context, (SetOutputPin) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1097,6 +1106,25 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getScaleOffsetAccess().getArg1SPINDOUBLEParserRuleCall_1_0(), semanticObject.getArg1());
 		feeder.accept(grammarAccess.getScaleOffsetAccess().getArg2SPINDOUBLEParserRuleCall_3_0(), semanticObject.getArg2());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (pinName=ID varName=ID)
+	 */
+	protected void sequence_SetOutputPin(EObject context, SetOutputPin semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.SET_OUTPUT_PIN__PIN_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.SET_OUTPUT_PIN__PIN_NAME));
+			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.SET_OUTPUT_PIN__VAR_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.SET_OUTPUT_PIN__VAR_NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSetOutputPinAccess().getPinNameIDTerminalRuleCall_1_0(), semanticObject.getPinName());
+		feeder.accept(grammarAccess.getSetOutputPinAccess().getVarNameIDTerminalRuleCall_2_0(), semanticObject.getVarName());
 		feeder.finish();
 	}
 	
