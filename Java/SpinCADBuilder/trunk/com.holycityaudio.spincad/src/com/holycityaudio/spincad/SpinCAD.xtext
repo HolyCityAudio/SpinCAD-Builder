@@ -79,18 +79,22 @@ Label:
 ;
 
 // - SpinCAD macro for conditional expressions within generateCode()
+// also for special function calls etc.
 Macro:
 	IsPinConnected 
-  | IsElse | IsEndif | GetInputDefault | GetDelayScale | SetOutputPin
+  | IsElse | IsEndif | GetInputDefault | GetDelayScaleControl | SetOutputPin | GetBaseAddress
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
 IsElse: {IsElse} '@else';
 IsEndif: {IsEndif} "@endif";
 GetInputDefault: '@getInputDefault' name = ID variable = ID scale = SPINDOUBLE defaultVal = SPINDOUBLE;
-GetDelayScale: '@getDelayScale' buffer = ID length = ID control = ID;
+GetDelayScaleControl: '@getDelayScaleControl' length = ID buffer = ID (control = ID)?;
+GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = ID varName = ID;
 
+
+//------------------------ regular Spin ASM instructions
 Instruction:
 	Inst_B15_S1_9 |
 	Inst_B6_S1_14 |

@@ -17,7 +17,8 @@ import com.holycityaudio.spincad.spinCAD.ControlInput;
 import com.holycityaudio.spincad.spinCAD.ControlOutput;
 import com.holycityaudio.spincad.spinCAD.Equate;
 import com.holycityaudio.spincad.spinCAD.Exp;
-import com.holycityaudio.spincad.spinCAD.GetDelayScale;
+import com.holycityaudio.spincad.spinCAD.GetBaseAddress;
+import com.holycityaudio.spincad.spinCAD.GetDelayScaleControl;
 import com.holycityaudio.spincad.spinCAD.GetInputDefault;
 import com.holycityaudio.spincad.spinCAD.InputPin;
 import com.holycityaudio.spincad.spinCAD.Inst_B15_S1_9;
@@ -246,7 +247,14 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass getDelayScaleEClass = null;
+  private EClass getDelayScaleControlEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass getBaseAddressEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1015,9 +1023,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGetDelayScale()
+  public EClass getGetDelayScaleControl()
   {
-    return getDelayScaleEClass;
+    return getDelayScaleControlEClass;
   }
 
   /**
@@ -1025,9 +1033,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGetDelayScale_Buffer()
+  public EAttribute getGetDelayScaleControl_Length()
   {
-    return (EAttribute)getDelayScaleEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)getDelayScaleControlEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1035,9 +1043,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGetDelayScale_Length()
+  public EAttribute getGetDelayScaleControl_Buffer()
   {
-    return (EAttribute)getDelayScaleEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)getDelayScaleControlEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1045,9 +1053,19 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGetDelayScale_Control()
+  public EAttribute getGetDelayScaleControl_Control()
   {
-    return (EAttribute)getDelayScaleEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)getDelayScaleControlEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGetBaseAddress()
+  {
+    return getBaseAddressEClass;
   }
 
   /**
@@ -1837,10 +1855,12 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(getInputDefaultEClass, GET_INPUT_DEFAULT__SCALE);
     createEAttribute(getInputDefaultEClass, GET_INPUT_DEFAULT__DEFAULT_VAL);
 
-    getDelayScaleEClass = createEClass(GET_DELAY_SCALE);
-    createEAttribute(getDelayScaleEClass, GET_DELAY_SCALE__BUFFER);
-    createEAttribute(getDelayScaleEClass, GET_DELAY_SCALE__LENGTH);
-    createEAttribute(getDelayScaleEClass, GET_DELAY_SCALE__CONTROL);
+    getDelayScaleControlEClass = createEClass(GET_DELAY_SCALE_CONTROL);
+    createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__LENGTH);
+    createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__BUFFER);
+    createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__CONTROL);
+
+    getBaseAddressEClass = createEClass(GET_BASE_ADDRESS);
 
     setOutputPinEClass = createEClass(SET_OUTPUT_PIN);
     createEAttribute(setOutputPinEClass, SET_OUTPUT_PIN__PIN_NAME);
@@ -1997,7 +2017,8 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     isElseEClass.getESuperTypes().add(this.getMacro());
     isEndifEClass.getESuperTypes().add(this.getMacro());
     getInputDefaultEClass.getESuperTypes().add(this.getMacro());
-    getDelayScaleEClass.getESuperTypes().add(this.getMacro());
+    getDelayScaleControlEClass.getESuperTypes().add(this.getMacro());
+    getBaseAddressEClass.getESuperTypes().add(this.getMacro());
     setOutputPinEClass.getESuperTypes().add(this.getMacro());
     instructionEClass.getESuperTypes().add(this.getSpinElement());
     inst_B6_S1_14EClass.getESuperTypes().add(this.getInstruction());
@@ -2103,10 +2124,12 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getGetInputDefault_Scale(), ecorePackage.getEString(), "scale", null, 0, 1, GetInputDefault.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGetInputDefault_DefaultVal(), ecorePackage.getEString(), "defaultVal", null, 0, 1, GetInputDefault.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(getDelayScaleEClass, GetDelayScale.class, "GetDelayScale", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGetDelayScale_Buffer(), ecorePackage.getEString(), "buffer", null, 0, 1, GetDelayScale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGetDelayScale_Length(), ecorePackage.getEString(), "length", null, 0, 1, GetDelayScale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGetDelayScale_Control(), ecorePackage.getEString(), "control", null, 0, 1, GetDelayScale.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(getDelayScaleControlEClass, GetDelayScaleControl.class, "GetDelayScaleControl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGetDelayScaleControl_Length(), ecorePackage.getEString(), "length", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGetDelayScaleControl_Buffer(), ecorePackage.getEString(), "buffer", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGetDelayScaleControl_Control(), ecorePackage.getEString(), "control", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(getBaseAddressEClass, GetBaseAddress.class, "GetBaseAddress", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(setOutputPinEClass, SetOutputPin.class, "SetOutputPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSetOutputPin_PinName(), ecorePackage.getEString(), "pinName", null, 0, 1, SetOutputPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
