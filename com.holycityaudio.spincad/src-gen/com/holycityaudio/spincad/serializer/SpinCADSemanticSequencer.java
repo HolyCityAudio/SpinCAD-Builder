@@ -17,7 +17,8 @@ import com.holycityaudio.spincad.spinCAD.ControlInput;
 import com.holycityaudio.spincad.spinCAD.ControlOutput;
 import com.holycityaudio.spincad.spinCAD.Equate;
 import com.holycityaudio.spincad.spinCAD.Exp;
-import com.holycityaudio.spincad.spinCAD.GetDelayScale;
+import com.holycityaudio.spincad.spinCAD.GetBaseAddress;
+import com.holycityaudio.spincad.spinCAD.GetDelayScaleControl;
 import com.holycityaudio.spincad.spinCAD.GetInputDefault;
 import com.holycityaudio.spincad.spinCAD.IsElse;
 import com.holycityaudio.spincad.spinCAD.IsEndif;
@@ -185,11 +186,19 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case SpinCADPackage.GET_DELAY_SCALE:
-				if(context == grammarAccess.getGetDelayScaleRule() ||
+			case SpinCADPackage.GET_BASE_ADDRESS:
+				if(context == grammarAccess.getGetBaseAddressRule() ||
 				   context == grammarAccess.getMacroRule() ||
 				   context == grammarAccess.getSpinElementRule()) {
-					sequence_GetDelayScale(context, (GetDelayScale) semanticObject); 
+					sequence_GetBaseAddress(context, (GetBaseAddress) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpinCADPackage.GET_DELAY_SCALE_CONTROL:
+				if(context == grammarAccess.getGetDelayScaleControlRule() ||
+				   context == grammarAccess.getMacroRule() ||
+				   context == grammarAccess.getSpinElementRule()) {
+					sequence_GetDelayScaleControl(context, (GetDelayScaleControl) semanticObject); 
 					return; 
 				}
 				else break;
@@ -712,23 +721,19 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (buffer=ID length=ID control=ID)
+	 *     {GetBaseAddress}
 	 */
-	protected void sequence_GetDelayScale(EObject context, GetDelayScale semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.GET_DELAY_SCALE__BUFFER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.GET_DELAY_SCALE__BUFFER));
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.GET_DELAY_SCALE__LENGTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.GET_DELAY_SCALE__LENGTH));
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.GET_DELAY_SCALE__CONTROL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.GET_DELAY_SCALE__CONTROL));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getGetDelayScaleAccess().getBufferIDTerminalRuleCall_1_0(), semanticObject.getBuffer());
-		feeder.accept(grammarAccess.getGetDelayScaleAccess().getLengthIDTerminalRuleCall_2_0(), semanticObject.getLength());
-		feeder.accept(grammarAccess.getGetDelayScaleAccess().getControlIDTerminalRuleCall_3_0(), semanticObject.getControl());
-		feeder.finish();
+	protected void sequence_GetBaseAddress(EObject context, GetBaseAddress semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (length=ID buffer=ID control=ID?)
+	 */
+	protected void sequence_GetDelayScaleControl(EObject context, GetDelayScaleControl semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -230,13 +230,22 @@ public interface SpinCADFactory extends EFactory
   GetInputDefault createGetInputDefault();
 
   /**
-   * Returns a new object of class '<em>Get Delay Scale</em>'.
+   * Returns a new object of class '<em>Get Delay Scale Control</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Get Delay Scale</em>'.
+   * @return a new object of class '<em>Get Delay Scale Control</em>'.
    * @generated
    */
-  GetDelayScale createGetDelayScale();
+  GetDelayScaleControl createGetDelayScaleControl();
+
+  /**
+   * Returns a new object of class '<em>Get Base Address</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Get Base Address</em>'.
+   * @generated
+   */
+  GetBaseAddress createGetBaseAddress();
 
   /**
    * Returns a new object of class '<em>Set Output Pin</em>'.

@@ -54,8 +54,9 @@ import com.holycityaudio.spincad.spinCAD.IsEndif
 import com.holycityaudio.spincad.spinCAD.Maxx
 import com.holycityaudio.spincad.spinCAD.controlLabel
 import com.holycityaudio.spincad.spinCAD.CheckBox
-import com.holycityaudio.spincad.spinCAD.GetInputDefaultimport com.holycityaudio.spincad.spinCAD.GetDelayScale
-import com.holycityaudio.spincad.spinCAD.SetOutputPin
+import com.holycityaudio.spincad.spinCAD.GetInputDefaultimport com.holycityaudio.spincad.spinCAD.SetOutputPin
+import com.holycityaudio.spincad.spinCAD.GetBaseAddress
+import com.holycityaudio.spincad.spinCAD.GetDelayScaleControl
 
 class SpinCADBlockGenerator {
  
@@ -222,7 +223,6 @@ def genCheckBoxSG(Program program, CheckBox cB) {
 	def genIsPinConnected(IsPinConnected p) {
 		'''
 		if(this.getPin("«p.arg1»").getPinConnection() != null) {
-			System.out.println("IsPinConnected! " + "«p.arg1»"); 
 		'''
 	}
 	
@@ -258,13 +258,27 @@ def genGetInputDefault(GetInputDefault g)'''
 			IsEndif: genEndif(inst)
 			GetInputDefault: genGetInputDefault(inst)
 			SetOutputPin: genSetOutputPin(inst)
+			GetBaseAddress: genGetBaseAddress(inst)
+			GetDelayScaleControl: genGetDelayScaleControl(inst)
 			}»	
 		'''
 	}
 	
-def genGetDelayScale(GetDelayScale g) {
+def genGetDelayScaleControl(GetDelayScaleControl g) {
 	'''
-	// GETdELAYsCALE PLACE HOLDER!
+		sfxb.clear();
+		sfxb.or(32767 * 256);
+		«IF g.control != null»
+		sfxb.mulx(«g.control»);
+		«ENDIF»
+		sfxb.scaleOffset((double)(«g.length»/32768.0), (double) («g.buffer»/32768.0));
+		sfxb.writeRegister(ADDR_PTR, 0);	
+	'''
+}	
+
+def genGetBaseAddress(GetBaseAddress g) {
+	'''
+	int	delayOffset = sfxb.getDelayMemAllocated() + 1;
 	'''
 }	
 

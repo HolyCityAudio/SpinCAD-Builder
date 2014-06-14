@@ -260,12 +260,21 @@ public class SpinCADSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SpinCADPackage.GET_DELAY_SCALE:
+      case SpinCADPackage.GET_DELAY_SCALE_CONTROL:
       {
-        GetDelayScale getDelayScale = (GetDelayScale)theEObject;
-        T result = caseGetDelayScale(getDelayScale);
-        if (result == null) result = caseMacro(getDelayScale);
-        if (result == null) result = caseSpinElement(getDelayScale);
+        GetDelayScaleControl getDelayScaleControl = (GetDelayScaleControl)theEObject;
+        T result = caseGetDelayScaleControl(getDelayScaleControl);
+        if (result == null) result = caseMacro(getDelayScaleControl);
+        if (result == null) result = caseSpinElement(getDelayScaleControl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpinCADPackage.GET_BASE_ADDRESS:
+      {
+        GetBaseAddress getBaseAddress = (GetBaseAddress)theEObject;
+        T result = caseGetBaseAddress(getBaseAddress);
+        if (result == null) result = caseMacro(getBaseAddress);
+        if (result == null) result = caseSpinElement(getBaseAddress);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -991,17 +1000,33 @@ public class SpinCADSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Get Delay Scale</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Get Delay Scale Control</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Get Delay Scale</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Get Delay Scale Control</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGetDelayScale(GetDelayScale object)
+  public T caseGetDelayScaleControl(GetDelayScaleControl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Get Base Address</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Get Base Address</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGetBaseAddress(GetBaseAddress object)
   {
     return null;
   }

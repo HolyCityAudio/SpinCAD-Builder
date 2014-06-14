@@ -190,9 +190,14 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
         return createGetInputDefaultAdapter();
       }
       @Override
-      public Adapter caseGetDelayScale(GetDelayScale object)
+      public Adapter caseGetDelayScaleControl(GetDelayScaleControl object)
       {
-        return createGetDelayScaleAdapter();
+        return createGetDelayScaleControlAdapter();
+      }
+      @Override
+      public Adapter caseGetBaseAddress(GetBaseAddress object)
+      {
+        return createGetBaseAddressAdapter();
       }
       @Override
       public Adapter caseSetOutputPin(SetOutputPin object)
@@ -747,16 +752,31 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.GetDelayScale <em>Get Delay Scale</em>}'.
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.GetDelayScaleControl <em>Get Delay Scale Control</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.holycityaudio.spincad.spinCAD.GetDelayScale
+   * @see com.holycityaudio.spincad.spinCAD.GetDelayScaleControl
    * @generated
    */
-  public Adapter createGetDelayScaleAdapter()
+  public Adapter createGetDelayScaleControlAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.GetBaseAddress <em>Get Base Address</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.GetBaseAddress
+   * @generated
+   */
+  public Adapter createGetBaseAddressAdapter()
   {
     return null;
   }

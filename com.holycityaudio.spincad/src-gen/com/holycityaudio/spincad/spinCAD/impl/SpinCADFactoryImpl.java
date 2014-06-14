@@ -87,7 +87,8 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
       case SpinCADPackage.IS_ELSE: return createIsElse();
       case SpinCADPackage.IS_ENDIF: return createIsEndif();
       case SpinCADPackage.GET_INPUT_DEFAULT: return createGetInputDefault();
-      case SpinCADPackage.GET_DELAY_SCALE: return createGetDelayScale();
+      case SpinCADPackage.GET_DELAY_SCALE_CONTROL: return createGetDelayScaleControl();
+      case SpinCADPackage.GET_BASE_ADDRESS: return createGetBaseAddress();
       case SpinCADPackage.SET_OUTPUT_PIN: return createSetOutputPin();
       case SpinCADPackage.INSTRUCTION: return createInstruction();
       case SpinCADPackage.INST_B6_S1_14: return createInst_B6_S1_14();
@@ -388,10 +389,21 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GetDelayScale createGetDelayScale()
+  public GetDelayScaleControl createGetDelayScaleControl()
   {
-    GetDelayScaleImpl getDelayScale = new GetDelayScaleImpl();
-    return getDelayScale;
+    GetDelayScaleControlImpl getDelayScaleControl = new GetDelayScaleControlImpl();
+    return getDelayScaleControl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GetBaseAddress createGetBaseAddress()
+  {
+    GetBaseAddressImpl getBaseAddress = new GetBaseAddressImpl();
+    return getBaseAddress;
   }
 
   /**

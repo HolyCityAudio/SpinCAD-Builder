@@ -1168,11 +1168,11 @@ ruleMacro returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getMacroAccess().getGetDelayScaleParserRuleCall_4()); 
+        newCompositeNode(grammarAccess.getMacroAccess().getGetDelayScaleControlParserRuleCall_4()); 
     }
-    this_GetDelayScale_4=ruleGetDelayScale
+    this_GetDelayScaleControl_4=ruleGetDelayScaleControl
     { 
-        $current = $this_GetDelayScale_4.current; 
+        $current = $this_GetDelayScaleControl_4.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -1183,6 +1183,16 @@ ruleMacro returns [EObject current=null]
     this_SetOutputPin_5=ruleSetOutputPin
     { 
         $current = $this_SetOutputPin_5.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getMacroAccess().getGetBaseAddressParserRuleCall_6()); 
+    }
+    this_GetBaseAddress_6=ruleGetBaseAddress
+    { 
+        $current = $this_GetBaseAddress_6.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1394,56 +1404,56 @@ ruleGetInputDefault returns [EObject current=null]
 
 
 
-// Entry rule entryRuleGetDelayScale
-entryRuleGetDelayScale returns [EObject current=null] 
+// Entry rule entryRuleGetDelayScaleControl
+entryRuleGetDelayScaleControl returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getGetDelayScaleRule()); }
-	 iv_ruleGetDelayScale=ruleGetDelayScale 
-	 { $current=$iv_ruleGetDelayScale.current; } 
+	{ newCompositeNode(grammarAccess.getGetDelayScaleControlRule()); }
+	 iv_ruleGetDelayScaleControl=ruleGetDelayScaleControl 
+	 { $current=$iv_ruleGetDelayScaleControl.current; } 
 	 EOF 
 ;
 
-// Rule GetDelayScale
-ruleGetDelayScale returns [EObject current=null] 
+// Rule GetDelayScaleControl
+ruleGetDelayScaleControl returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='@getDelayScale' 
+(	otherlv_0='@getDelayScaleControl' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getGetDelayScaleAccess().getGetDelayScaleKeyword_0());
+    	newLeafNode(otherlv_0, grammarAccess.getGetDelayScaleControlAccess().getGetDelayScaleControlKeyword_0());
     }
 (
 (
-		lv_buffer_1_0=RULE_ID
+		lv_length_1_0=RULE_ID
 		{
-			newLeafNode(lv_buffer_1_0, grammarAccess.getGetDelayScaleAccess().getBufferIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_length_1_0, grammarAccess.getGetDelayScaleControlAccess().getLengthIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getGetDelayScaleRule());
+	            $current = createModelElement(grammarAccess.getGetDelayScaleControlRule());
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"buffer",
-        		lv_buffer_1_0, 
+       			"length",
+        		lv_length_1_0, 
         		"ID");
 	    }
 
 )
 )(
 (
-		lv_length_2_0=RULE_ID
+		lv_buffer_2_0=RULE_ID
 		{
-			newLeafNode(lv_length_2_0, grammarAccess.getGetDelayScaleAccess().getLengthIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_buffer_2_0, grammarAccess.getGetDelayScaleControlAccess().getBufferIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getGetDelayScaleRule());
+	            $current = createModelElement(grammarAccess.getGetDelayScaleControlRule());
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"length",
-        		lv_length_2_0, 
+       			"buffer",
+        		lv_buffer_2_0, 
         		"ID");
 	    }
 
@@ -1452,11 +1462,11 @@ ruleGetDelayScale returns [EObject current=null]
 (
 		lv_control_3_0=RULE_ID
 		{
-			newLeafNode(lv_control_3_0, grammarAccess.getGetDelayScaleAccess().getControlIDTerminalRuleCall_3_0()); 
+			newLeafNode(lv_control_3_0, grammarAccess.getGetDelayScaleControlAccess().getControlIDTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getGetDelayScaleRule());
+	            $current = createModelElement(grammarAccess.getGetDelayScaleControlRule());
 	        }
        		setWithLastConsumed(
        			$current, 
@@ -1466,7 +1476,38 @@ ruleGetDelayScale returns [EObject current=null]
 	    }
 
 )
-))
+)?)
+;
+
+
+
+
+
+// Entry rule entryRuleGetBaseAddress
+entryRuleGetBaseAddress returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getGetBaseAddressRule()); }
+	 iv_ruleGetBaseAddress=ruleGetBaseAddress 
+	 { $current=$iv_ruleGetBaseAddress.current; } 
+	 EOF 
+;
+
+// Rule GetBaseAddress
+ruleGetBaseAddress returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getGetBaseAddressAccess().getGetBaseAddressAction_0(),
+            $current);
+    }
+)	otherlv_1='@getBaseAddress' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getGetBaseAddressAccess().getGetBaseAddressKeyword_1());
+    }
+)
 ;
 
 
