@@ -2,7 +2,6 @@
  */
 package com.holycityaudio.spincad.spinCAD.impl;
 
-import com.holycityaudio.spincad.spinCAD.Control;
 import com.holycityaudio.spincad.spinCAD.Pin;
 import com.holycityaudio.spincad.spinCAD.Program;
 import com.holycityaudio.spincad.spinCAD.SpinCADPackage;
@@ -33,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.ProgramImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.ProgramImpl#getPins <em>Pins</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.ProgramImpl#getControls <em>Controls</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.ProgramImpl#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
@@ -71,16 +69,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * @ordered
    */
   protected EList<Pin> pins;
-
-  /**
-   * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getControls()
-   * @generated
-   * @ordered
-   */
-  protected EList<Control> controls;
 
   /**
    * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
@@ -155,20 +143,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Control> getControls()
-  {
-    if (controls == null)
-    {
-      controls = new EObjectContainmentEList<Control>(Control.class, this, SpinCADPackage.PROGRAM__CONTROLS);
-    }
-    return controls;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<SpinElement> getElements()
   {
     if (elements == null)
@@ -190,8 +164,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
     {
       case SpinCADPackage.PROGRAM__PINS:
         return ((InternalEList<?>)getPins()).basicRemove(otherEnd, msgs);
-      case SpinCADPackage.PROGRAM__CONTROLS:
-        return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
       case SpinCADPackage.PROGRAM__ELEMENTS:
         return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
     }
@@ -212,8 +184,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
         return getName();
       case SpinCADPackage.PROGRAM__PINS:
         return getPins();
-      case SpinCADPackage.PROGRAM__CONTROLS:
-        return getControls();
       case SpinCADPackage.PROGRAM__ELEMENTS:
         return getElements();
     }
@@ -237,10 +207,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
       case SpinCADPackage.PROGRAM__PINS:
         getPins().clear();
         getPins().addAll((Collection<? extends Pin>)newValue);
-        return;
-      case SpinCADPackage.PROGRAM__CONTROLS:
-        getControls().clear();
-        getControls().addAll((Collection<? extends Control>)newValue);
         return;
       case SpinCADPackage.PROGRAM__ELEMENTS:
         getElements().clear();
@@ -266,9 +232,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
       case SpinCADPackage.PROGRAM__PINS:
         getPins().clear();
         return;
-      case SpinCADPackage.PROGRAM__CONTROLS:
-        getControls().clear();
-        return;
       case SpinCADPackage.PROGRAM__ELEMENTS:
         getElements().clear();
         return;
@@ -290,8 +253,6 @@ public class ProgramImpl extends MinimalEObjectImpl.Container implements Program
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SpinCADPackage.PROGRAM__PINS:
         return pins != null && !pins.isEmpty();
-      case SpinCADPackage.PROGRAM__CONTROLS:
-        return controls != null && !controls.isEmpty();
       case SpinCADPackage.PROGRAM__ELEMENTS:
         return elements != null && !elements.isEmpty();
     }

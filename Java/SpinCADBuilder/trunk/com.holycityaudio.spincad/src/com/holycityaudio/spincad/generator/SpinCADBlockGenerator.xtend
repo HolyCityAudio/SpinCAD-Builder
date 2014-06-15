@@ -4,59 +4,55 @@
 package com.holycityaudio.spincad.generator
 
 //import com.google.inject.Inject 
-import com.holycityaudio.spincad.spinCAD.And
-import com.holycityaudio.spincad.spinCAD.ChorusReadDelay
-import com.holycityaudio.spincad.spinCAD.ChorusReadValue
-import com.holycityaudio.spincad.spinCAD.ReadDelayPointer
 import com.holycityaudio.spincad.spinCAD.SpinElement
 import com.holycityaudio.spincad.spinCAD.Equate
-import com.holycityaudio.spincad.spinCAD.Exp
 import com.holycityaudio.spincad.spinCAD.Instruction
-import com.holycityaudio.spincad.spinCAD.Inst_B15_S1_9
-import com.holycityaudio.spincad.spinCAD.Jam
-import com.holycityaudio.spincad.spinCAD.Label
-import com.holycityaudio.spincad.spinCAD.Ldax
-import com.holycityaudio.spincad.spinCAD.LoadRampLFO
-import com.holycityaudio.spincad.spinCAD.LoadSinLFO
-import com.holycityaudio.spincad.spinCAD.Log
 import com.holycityaudio.spincad.spinCAD.Mem
-import com.holycityaudio.spincad.spinCAD.Mulx
-import com.holycityaudio.spincad.spinCAD.Or
 import com.holycityaudio.spincad.spinCAD.Program
-import com.holycityaudio.spincad.spinCAD.ReadDelay
-import com.holycityaudio.spincad.spinCAD.ReadRegister
-import com.holycityaudio.spincad.spinCAD.ReadRegisterFilter
-import com.holycityaudio.spincad.spinCAD.ScaleOffset
-import com.holycityaudio.spincad.spinCAD.Offset
-import com.holycityaudio.spincad.spinCAD.Skip
-import com.holycityaudio.spincad.spinCAD.Slider
-import com.holycityaudio.spincad.spinCAD.WriteAllpass
-import com.holycityaudio.spincad.spinCAD.WriteDelay
-import com.holycityaudio.spincad.spinCAD.WriteRegister
-import com.holycityaudio.spincad.spinCAD.WriteRegisterHighshelf
-import com.holycityaudio.spincad.spinCAD.WriteRegisterLowshelf
-import com.holycityaudio.spincad.spinCAD.Xor
-
-import com.holycityaudio.spincad.spinCAD.Absa
-import com.holycityaudio.spincad.spinCAD.Not
-import com.holycityaudio.spincad.spinCAD.Clr
-import com.holycityaudio.spincad.spinCAD.Pin
 import com.holycityaudio.spincad.spinCAD.AudioInput
 import com.holycityaudio.spincad.spinCAD.AudioOutput
 import com.holycityaudio.spincad.spinCAD.ControlOutput
 import com.holycityaudio.spincad.spinCAD.ControlInput
 import com.holycityaudio.spincad.spinCAD.InputPin
-import com.holycityaudio.spincad.spinCAD.OutputPin
 import com.holycityaudio.spincad.spinCAD.Macro
+import com.holycityaudio.spincad.spinCAD.Pin
+import com.holycityaudio.spincad.spinCAD.Offset
 import com.holycityaudio.spincad.spinCAD.IsPinConnected
 import com.holycityaudio.spincad.spinCAD.IsElse
 import com.holycityaudio.spincad.spinCAD.IsEndif
-import com.holycityaudio.spincad.spinCAD.Maxx
-import com.holycityaudio.spincad.spinCAD.controlLabel
-import com.holycityaudio.spincad.spinCAD.CheckBox
-import com.holycityaudio.spincad.spinCAD.GetInputDefaultimport com.holycityaudio.spincad.spinCAD.SetOutputPin
+import com.holycityaudio.spincad.spinCAD.GetInputDefault
+import com.holycityaudio.spincad.spinCAD.SetOutputPin
 import com.holycityaudio.spincad.spinCAD.GetBaseAddress
 import com.holycityaudio.spincad.spinCAD.GetDelayScaleControl
+import java.awt.Label
+import com.holycityaudio.spincad.spinCAD.Absa
+import com.holycityaudio.spincad.spinCAD.And
+import com.holycityaudio.spincad.spinCAD.ChorusReadDelay
+import com.holycityaudio.spincad.spinCAD.ChorusReadValue
+import com.holycityaudio.spincad.spinCAD.Clr
+import com.holycityaudio.spincad.spinCAD.Exp
+import com.holycityaudio.spincad.spinCAD.Jam
+import com.holycityaudio.spincad.spinCAD.Ldax
+import com.holycityaudio.spincad.spinCAD.LoadRampLFO
+import com.holycityaudio.spincad.spinCAD.LoadSinLFO
+import com.holycityaudio.spincad.spinCAD.Or
+import com.holycityaudio.spincad.spinCAD.Not
+import com.holycityaudio.spincad.spinCAD.Skip
+import com.holycityaudio.spincad.spinCAD.Xor
+import com.holycityaudio.spincad.spinCAD.WriteRegisterHighshelf
+import com.holycityaudio.spincad.spinCAD.WriteRegisterLowshelf
+import com.holycityaudio.spincad.spinCAD.WriteRegister
+import com.holycityaudio.spincad.spinCAD.WriteDelay
+import com.holycityaudio.spincad.spinCAD.WriteAllpass
+import com.holycityaudio.spincad.spinCAD.ScaleOffset
+import com.holycityaudio.spincad.spinCAD.ReadRegisterFilter
+import com.holycityaudio.spincad.spinCAD.ReadRegister
+import com.holycityaudio.spincad.spinCAD.ReadDelay
+import com.holycityaudio.spincad.spinCAD.ReadDelayPointer
+import com.holycityaudio.spincad.spinCAD.Log
+import com.holycityaudio.spincad.spinCAD.Maxx
+import com.holycityaudio.spincad.spinCAD.Mulx
+import com.holycityaudio.spincad.spinCAD.Inst_B15_S1_9
 
 class SpinCADBlockGenerator {
  
@@ -86,6 +82,7 @@ def codeGenerate(String blockName, Program pr) {
 		import com.holycityaudio.SpinCAD.SpinCADBlock;
 		import com.holycityaudio.SpinCAD.SpinCADPin;
 		import com.holycityaudio.SpinCAD.SpinFXBlock;
+ 		import com.holycityaudio.SpinCAD.ControlPanel.«blockName+"ControlPanel"»;
 		
 		public class «blockName+"CADBlock"» extends SpinCADBlock {
 
@@ -99,6 +96,7 @@ def codeGenerate(String blockName, Program pr) {
 
 			public «blockName+"CADBlock"»(int x, int y) {
 				super(x, y);
+				controlPanelImplemented = true;
 				setName("«pr.name»");	
 				// Iterate through pin definitions and allocate or assign as needed
 				«FOR Pin p : pr.pins»
@@ -113,7 +111,7 @@ def codeGenerate(String blockName, Program pr) {
 		
 			// In the event there are parameters editable by control panel
 			public void editBlock(){ 
-	//			new «blockName+"ControlPanel"»(this);
+				new «blockName+"ControlPanel"»(this);
 			}	
 				
 			public void generateCode(SpinFXBlock sfxb) {
@@ -151,40 +149,35 @@ def codeGenerate(String blockName, Program pr) {
 			// create setters and getter for control panel variables
 			«FOR SpinElement e : pr.elements»
 				«switch e {
- 					Slider:{genSliderSG(pr, e)}
-					CheckBox:{genCheckBoxSG(pr, e)}
-					controlLabel:{genControlLabelSG(pr, e)}
+					Equate: { sortSetterGetter(e) }
 			}»
 			«ENDFOR»
 		}	
 	'''
 	}
 
-	
-def genSliderSG(Program pr, Slider sl) { '''
-	public void set«sl.getVarName»(double __param) {
-		«sl.getVarName» = __param;	
+def sortSetterGetter(Equate e) { 
+	'''
+	«IF e.control == "SliderLabel"»
+		«genSetterGetter(e)»
+	«ENDIF»
+	'''
+}
+
+// this will generate setters and getters in the CADBlock class	
+def genSetterGetter(Equate e) { '''
+	public void set«e.ename»(double __param) {
+		«e.ename» = __param;	
 	}
 	
-	
-	public double get«sl.getVarName»() {
-		return «sl.getVarName»;	
+	public double get«e.ename»() {
+		return «e.ename»;	
 	}
 	
 	'''			
 	}
-	
-def genControlLabelSG(Program pr, controlLabel cl) { '''
-				«cl.getVarName»Label = new JLabel();
-				frame.getContentPane().add(«cl.getVarName»Label);
-				'''
-	}
 
-def genCheckBoxSG(Program program, CheckBox cB) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub genCheckBox")
-	}
-
-
+//-------------------------------------------------------------
 	def genAudioInput(Pin p) ''' 
 		addInputPin(this, "«p.name»");
 	'''

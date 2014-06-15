@@ -72,10 +72,6 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
       case SpinCADPackage.AUDIO_OUTPUT: return createAudioOutput();
       case SpinCADPackage.CONTROL_INPUT: return createControlInput();
       case SpinCADPackage.CONTROL_OUTPUT: return createControlOutput();
-      case SpinCADPackage.CONTROL: return createControl();
-      case SpinCADPackage.SLIDER: return createSlider();
-      case SpinCADPackage.CHECK_BOX: return createCheckBox();
-      case SpinCADPackage.CONTROL_LABEL: return createcontrolLabel();
       case SpinCADPackage.SPIN_ELEMENT: return createSpinElement();
       case SpinCADPackage.EQUATE: return createEquate();
       case SpinCADPackage.MEM: return createMem();
@@ -217,50 +213,6 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
   {
     ControlOutputImpl controlOutput = new ControlOutputImpl();
     return controlOutput;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Control createControl()
-  {
-    ControlImpl control = new ControlImpl();
-    return control;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Slider createSlider()
-  {
-    SliderImpl slider = new SliderImpl();
-    return slider;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CheckBox createCheckBox()
-  {
-    CheckBoxImpl checkBox = new CheckBoxImpl();
-    return checkBox;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public controlLabel createcontrolLabel()
-  {
-    controlLabelImpl controlLabel = new controlLabelImpl();
-    return controlLabel;
   }
 
   /**

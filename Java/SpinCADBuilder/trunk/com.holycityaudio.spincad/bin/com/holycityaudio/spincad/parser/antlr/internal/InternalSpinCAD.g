@@ -120,34 +120,16 @@ ruleProgram returns [EObject current=null]
 )+(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getProgramAccess().getControlsControlParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getProgramAccess().getElementsSpinElementParserRuleCall_3_0()); 
 	    }
-		lv_controls_3_0=ruleControl		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getProgramRule());
-	        }
-       		add(
-       			$current, 
-       			"controls",
-        		lv_controls_3_0, 
-        		"Control");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getProgramAccess().getElementsSpinElementParserRuleCall_4_0()); 
-	    }
-		lv_elements_4_0=ruleSpinElement		{
+		lv_elements_3_0=ruleSpinElement		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getProgramRule());
 	        }
        		add(
        			$current, 
        			"elements",
-        		lv_elements_4_0, 
+        		lv_elements_3_0, 
         		"SpinElement");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -524,239 +506,6 @@ ruleControlOutput returns [EObject current=null]
 
 
 
-// Entry rule entryRuleControl
-entryRuleControl returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getControlRule()); }
-	 iv_ruleControl=ruleControl 
-	 { $current=$iv_ruleControl.current; } 
-	 EOF 
-;
-
-// Rule Control
-ruleControl returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getControlAccess().getSliderParserRuleCall_0()); 
-    }
-    this_Slider_0=ruleSlider
-    { 
-        $current = $this_Slider_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getControlAccess().getCheckBoxParserRuleCall_1()); 
-    }
-    this_CheckBox_1=ruleCheckBox
-    { 
-        $current = $this_CheckBox_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getControlAccess().getControlLabelParserRuleCall_2()); 
-    }
-    this_controlLabel_2=rulecontrolLabel
-    { 
-        $current = $this_controlLabel_2.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleSlider
-entryRuleSlider returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getSliderRule()); }
-	 iv_ruleSlider=ruleSlider 
-	 { $current=$iv_ruleSlider.current; } 
-	 EOF 
-;
-
-// Rule Slider
-ruleSlider returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='@slider' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getSliderAccess().getSliderKeyword_0());
-    }
-(
-(
-		lv_varName_1_0=RULE_ID
-		{
-			newLeafNode(lv_varName_1_0, grammarAccess.getSliderAccess().getVarNameIDTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSliderRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"varName",
-        		lv_varName_1_0, 
-        		"ID");
-	    }
-
-)
-)(
-(
-		lv_label_2_0=RULE_ID
-		{
-			newLeafNode(lv_label_2_0, grammarAccess.getSliderAccess().getLabelIDTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSliderRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"label",
-        		lv_label_2_0, 
-        		"ID");
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRuleCheckBox
-entryRuleCheckBox returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getCheckBoxRule()); }
-	 iv_ruleCheckBox=ruleCheckBox 
-	 { $current=$iv_ruleCheckBox.current; } 
-	 EOF 
-;
-
-// Rule CheckBox
-ruleCheckBox returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='@checkbox' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getCheckBoxAccess().getCheckboxKeyword_0());
-    }
-(
-(
-		lv_varName_1_0=RULE_ID
-		{
-			newLeafNode(lv_varName_1_0, grammarAccess.getCheckBoxAccess().getVarNameIDTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCheckBoxRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"varName",
-        		lv_varName_1_0, 
-        		"ID");
-	    }
-
-)
-)(
-(
-		lv_label_2_0=RULE_ID
-		{
-			newLeafNode(lv_label_2_0, grammarAccess.getCheckBoxAccess().getLabelIDTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCheckBoxRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"label",
-        		lv_label_2_0, 
-        		"ID");
-	    }
-
-)
-))
-;
-
-
-
-
-
-// Entry rule entryRulecontrolLabel
-entryRulecontrolLabel returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getControlLabelRule()); }
-	 iv_rulecontrolLabel=rulecontrolLabel 
-	 { $current=$iv_rulecontrolLabel.current; } 
-	 EOF 
-;
-
-// Rule controlLabel
-rulecontrolLabel returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='@controlLabel' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getControlLabelAccess().getControlLabelKeyword_0());
-    }
-(
-(
-		lv_varName_1_0=RULE_ID
-		{
-			newLeafNode(lv_varName_1_0, grammarAccess.getControlLabelAccess().getVarNameIDTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getControlLabelRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"varName",
-        		lv_varName_1_0, 
-        		"ID");
-	    }
-
-)
-)(
-(
-		lv_label_2_0=RULE_ID
-		{
-			newLeafNode(lv_label_2_0, grammarAccess.getControlLabelAccess().getLabelIDTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getControlLabelRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"label",
-        		lv_label_2_0, 
-        		"ID");
-	    }
-
-)
-))
-;
-
-
-
-
-
 // Entry rule entryRuleSpinElement
 entryRuleSpinElement returns [EObject current=null] 
 	:
@@ -901,7 +650,97 @@ ruleEquate returns [EObject current=null]
 	    }
 
 )
-))
+)((
+(
+		lv_control_3_0=RULE_ID
+		{
+			newLeafNode(lv_control_3_0, grammarAccess.getEquateAccess().getControlIDTerminalRuleCall_3_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEquateRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"control",
+        		lv_control_3_0, 
+        		"ID");
+	    }
+
+)
+)(
+(
+		lv_label_4_0=RULE_ID
+		{
+			newLeafNode(lv_label_4_0, grammarAccess.getEquateAccess().getLabelIDTerminalRuleCall_3_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEquateRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"label",
+        		lv_label_4_0, 
+        		"ID");
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEquateAccess().getMaxSPINDOUBLEParserRuleCall_3_2_0()); 
+	    }
+		lv_max_5_0=ruleSPINDOUBLE		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEquateRule());
+	        }
+       		set(
+       			$current, 
+       			"max",
+        		lv_max_5_0, 
+        		"SPINDOUBLE");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEquateAccess().getOffsetSPINDOUBLEParserRuleCall_3_3_0()); 
+	    }
+		lv_Offset_6_0=ruleSPINDOUBLE		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEquateRule());
+	        }
+       		set(
+       			$current, 
+       			"Offset",
+        		lv_Offset_6_0, 
+        		"SPINDOUBLE");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_Func_7_0=RULE_ID
+		{
+			newLeafNode(lv_Func_7_0, grammarAccess.getEquateAccess().getFuncIDTerminalRuleCall_3_4_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEquateRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"Func",
+        		lv_Func_7_0, 
+        		"ID");
+	    }
+
+)
+))?)
 ;
 
 

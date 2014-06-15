@@ -6,8 +6,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pins" upperBound="-1" eType="#//Pin"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controls" upperBound="-1"
-        eType="#//Control" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//SpinElement" containment="true"/>
   </eClassifiers>
@@ -21,17 +19,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="AudioOutput" eSuperTypes="#//OutputPin"/>
   <eClassifiers xsi:type="ecore:EClass" name="ControlInput" eSuperTypes="#//InputPin"/>
   <eClassifiers xsi:type="ecore:EClass" name="ControlOutput" eSuperTypes="#//OutputPin"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Control">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="varName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Slider" eSuperTypes="#//Control"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//Control"/>
-  <eClassifiers xsi:type="ecore:EClass" name="controlLabel" eSuperTypes="#//Control"/>
   <eClassifiers xsi:type="ecore:EClass" name="SpinElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Equate" eSuperTypes="#//SpinElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="control" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Func" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mem" eSuperTypes="#//SpinElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="buffer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

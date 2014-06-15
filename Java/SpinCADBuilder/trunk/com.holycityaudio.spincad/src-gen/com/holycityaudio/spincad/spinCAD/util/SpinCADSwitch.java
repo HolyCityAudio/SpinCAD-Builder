@@ -138,37 +138,6 @@ public class SpinCADSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SpinCADPackage.CONTROL:
-      {
-        Control control = (Control)theEObject;
-        T result = caseControl(control);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SpinCADPackage.SLIDER:
-      {
-        Slider slider = (Slider)theEObject;
-        T result = caseSlider(slider);
-        if (result == null) result = caseControl(slider);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SpinCADPackage.CHECK_BOX:
-      {
-        CheckBox checkBox = (CheckBox)theEObject;
-        T result = caseCheckBox(checkBox);
-        if (result == null) result = caseControl(checkBox);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SpinCADPackage.CONTROL_LABEL:
-      {
-        controlLabel controlLabel = (controlLabel)theEObject;
-        T result = casecontrolLabel(controlLabel);
-        if (result == null) result = caseControl(controlLabel);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SpinCADPackage.SPIN_ELEMENT:
       {
         SpinElement spinElement = (SpinElement)theEObject;
@@ -755,70 +724,6 @@ public class SpinCADSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseControlOutput(ControlOutput object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Control</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Control</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseControl(Control object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Slider</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Slider</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSlider(Slider object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Check Box</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Check Box</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCheckBox(CheckBox object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>control Label</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>control Label</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casecontrolLabel(controlLabel object)
   {
     return null;
   }
