@@ -5,7 +5,6 @@ generate spinCAD "http://www.holycityaudio.com/spincad/SpinCAD"
 Program:
 	'@name' name = ID
 	(pins += Pin)+ 
-	(controls += Control)*
 	(elements += SpinElement)+
 	;
 
@@ -38,30 +37,13 @@ ControlOutput:
 	'@controlOutput' varName = ID name = ID
 ;
 
-// ---------- Controls (popup control panel for block settings) ------------------
-
-Control:
-	Slider | CheckBox | controlLabel;
-
-Slider:
-	'@slider' varName = ID label = ID
-;
-
-CheckBox:
-	'@checkbox' varName = ID label = ID
-;
-	
-controlLabel:
-	'@controlLabel' varName = ID label = ID
-;
-	
 // --------------- Spin ASM Elements	
 SpinElement:
 	Equate | Mem | Instruction | Label | Comment | Macro | Offset;
 
+// this now includes info to help set up control panels
 Equate:
-	'equ' ename = ID value = SPINDOUBLE 
-;
+	'equ' ename = ID value = SPINDOUBLE (control = ID label = ID max = SPINDOUBLE Offset = SPINDOUBLE Func = ID)?;
 
 Mem:
 	'mem' buffer = ID length = SPINREGISTER

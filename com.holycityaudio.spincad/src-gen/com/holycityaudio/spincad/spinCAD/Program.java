@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Program#getName <em>Name</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Program#getPins <em>Pins</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.Program#getControls <em>Controls</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Program#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
@@ -68,22 +67,6 @@ public interface Program extends EObject
    * @generated
    */
   EList<Pin> getPins();
-
-  /**
-   * Returns the value of the '<em><b>Controls</b></em>' containment reference list.
-   * The list contents are of type {@link com.holycityaudio.spincad.spinCAD.Control}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Controls</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Controls</em>' containment reference list.
-   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getProgram_Controls()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Control> getControls();
 
   /**
    * Returns the value of the '<em><b>Elements</b></em>' containment reference list.

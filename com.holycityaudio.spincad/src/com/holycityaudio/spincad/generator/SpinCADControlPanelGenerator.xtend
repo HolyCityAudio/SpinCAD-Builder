@@ -5,11 +5,8 @@ package com.holycityaudio.spincad.generator
 
 //import com.google.inject.Inject
 
-import com.holycityaudio.spincad.spinCAD.CheckBox
 import com.holycityaudio.spincad.spinCAD.Program
-import com.holycityaudio.spincad.spinCAD.Slider
-import com.holycityaudio.spincad.spinCAD.SpinElement
-import com.holycityaudio.spincad.spinCAD.controlLabel
+import com.holycityaudio.spincad.spinCAD.SpinElementimport com.holycityaudio.spincad.spinCAD.Equate
 
 class SpinCADControlPanelGenerator {
 	
@@ -45,23 +42,23 @@ class SpinCADControlPanelGenerator {
 		import javax.swing.event.ChangeListener;
 		import javax.swing.BoxLayout;
 		import javax.swing.JSlider;
+		import javax.swing.JLabel;
 		import com.holycityaudio.SpinCAD.CADBlocks.«blockName+"CADBlock"»;
 
 		public class «blockName+"ControlPanel"» {
 		private JFrame frame;
 
-		private «blockName+"CADBlock"» spbCB;
+		private «blockName+"CADBlock"» gCB;
+		// declare the controls
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					Slider:{declareSlider(pr, e)}
-					CheckBox:{declareCheckBox(pr, e)}
-					controlLabel:{declareControlLabel(pr, e)}
+					Equate: { declareControl(e) }
 				}»
 			«ENDFOR»
 
 		public «blockName+"ControlPanel"»(«blockName+"CADBlock"» genericCADBlock) {
 		
-		spbCB = genericCADBlock;
+		gCB = genericCADBlock;
 
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
@@ -71,93 +68,113 @@ class SpinCADControlPanelGenerator {
 				frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					Slider:{genSlider(blockName, e)}
-					CheckBox:{genCheckBox(pr, e)}
-					controlLabel:{genControlLabel(pr, e)}
+					Equate: { sortControl(blockName, e)}
 				}»
 			«ENDFOR»
 
 				frame.setVisible(true);		
 				frame.pack();
 				frame.setResizable(false);
-				frame.setLocation(spbCB.getX() + 100, spbCB.getY() + 100);
+				frame.setLocation(gCB.getX() + 100, gCB.getY() + 100);
 			}
 		});
 		}
 
 		class «blockName»SliderListener implements ChangeListener { 
 		public void stateChanged(ChangeEvent ce) {
-			/*
-			if(ce.getSource() == lSlider) {
-				spbBMEQ.setBass((double) (lSlider.getValue()/100.0));
-				updateBassLabel();
+			«FOR SpinElement e : pr.elements»
+				«switch e {
+					Equate: { genControlListener(e)}
+				}»
+			«ENDFOR»
 			}
-			else if(ce.getSource() == mSlider) {
-				int resValue = mSlider.getValue();
-				double mid = (double) (resValue/100.0);
-				spbBMEQ.setMid(mid);
-				updateMidLabel();
-			}
-			else if(ce.getSource() == tSlider) {
-				int trebValue = tSlider.getValue();
-				double treble = (double) (trebValue/100.0);
-				spbBMEQ.setTreble(treble);
-				updateTrebleLabel();
-			}
-			*/
 		}
-		
-		/*		
-		private void updateBassLabel() {
-			lLabel.setText("Bass " + String.format("%4.2f", spbBMEQ.getBass() * 10));		
-		}
-
-		private void updateMidLabel() {
-			mLabel.setText("Mid " + String.format("%4.2f", spbBMEQ.getMid() * 10));		
-		}
-
-		private void updateTrebleLabel() {
-			tLabel.setText("Treble " + String.format("%4.2f", spbBMEQ.getTreble() * 10));		
-		}
-		*/
-		} 
-		}
+		«FOR SpinElement e : pr.elements»
+			«switch e {
+				Equate: { genLabelUpdater(e)}
+			}»
+		«ENDFOR»
+	}
 	'''
 	}
+	
+def declareControl(Equate e) {
+	'''
+	«IF e.control == "SliderLabel"»
+		JSlider «e.ename»Slider;
+		JLabel  «e.ename»Label;
+		
+	«ENDIF»	'''
+}
 
-def genCheckBox(Program program, CheckBox cB) {
+def sortControl(String blockName, Equate e) {
+	'''
+	«IF e.control == "SliderLabel"»
+		«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, 0, «e.max», (int) gCB.get«e.ename»());
+		«e.ename»Slider.addChangeListener(new «blockName»SliderListener());
+		«e.ename»Label = new JLabel();
+		update«e.ename»Label();
+		frame.getContentPane().add(«e.ename»Label);
+		frame.getContentPane().add(«e.ename»Slider);		
+	«ENDIF»
+	'''
+}
+
+def genControlListener(Equate e) {
+	'''
+	«IF e.control == "SliderLabel"»
+		if(ce.getSource() == «e.ename»Slider) {
+			gCB.set«e.ename»((double) («e.ename»Slider.getValue()/100.0));
+			update«e.ename»Label();
+		}
+	«ENDIF»
+	'''
+}
+
+def genLabelUpdater(Equate e) {
+	'''
+	«IF e.control == "SliderLabel"»
+		private void update«e.ename»Label() {
+			«e.ename»Label.setText("«e.label» " + String.format("%4.2f", gCB.get«e.ename»() * 10));		
+		}
+	«ENDIF»
+		
+	'''
+}
+
+def genCheckBox(Equate e) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub genCheckBox")
 	}
 
-def declareCheckBox(Program program, CheckBox cB) {
+def declareCheckBox(Equate e) {
 				'''
-				JCheckbox «cB.getVarName»Checkbox;
+				JCheckbox «e.ename»Checkbox;
 				'''	
 			}
 
-def genSlider(String blockName, Slider sl) { '''
-				«sl.getVarName»Slider = new JSlider(JSlider.HORIZONTAL, 1, 100, (int) (100 * spbCB.get«sl.getVarName»()));
+def genSlider(String blockName, String sl) { '''
+				«sl»Slider = new JSlider(JSlider.HORIZONTAL, 1, 100, (int) (100 * spbCB.get«sl»()));
 				
 				«blockName»SliderListener bSL = new «blockName»SliderListener();
 
-				«sl.getVarName»Slider.addChangeListener(bSL);
+				«sl»Slider.addChangeListener(bSL);
 
-				frame.getContentPane().add(«sl.getVarName»Slider);'''
+				frame.getContentPane().add(«sl»Slider);'''
 	}
 
-def declareSlider(Program pr, Slider sl) { '''
-				JSlider «sl.getVarName»Slider;
+def declareSlider(Program pr, String sl) { '''
+				JSlider «sl»Slider;
 				'''
 	}
 
-def genControlLabel(Program pr, controlLabel cl) { '''
-				«cl.getVarName»Label = new JLabel();
-				frame.getContentPane().add(«cl.getVarName»Label);
+def genControlLabel(Equate e) { '''
+				«e.ename»Label = new JLabel();
+				frame.getContentPane().add(«e.ename»Label);
 				'''
 	}
 
-def declareControlLabel(Program pr, controlLabel cl) { '''
-				JLabel «cl.getVarName»Label;
+def declareControlLabel(Equate e) { '''
+				JLabel «e.ename»Label;
 				'''
 	}
 

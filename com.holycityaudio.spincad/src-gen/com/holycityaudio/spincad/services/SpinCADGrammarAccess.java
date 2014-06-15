@@ -26,16 +26,14 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cPinsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cPinsPinParserRuleCall_2_0 = (RuleCall)cPinsAssignment_2.eContents().get(0);
-		private final Assignment cControlsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cControlsControlParserRuleCall_3_0 = (RuleCall)cControlsAssignment_3.eContents().get(0);
-		private final Assignment cElementsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cElementsSpinElementParserRuleCall_4_0 = (RuleCall)cElementsAssignment_4.eContents().get(0);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsSpinElementParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
 		
 		//Program:
-		//	"@name" name=ID pins+=Pin+ controls+=Control* elements+=SpinElement+;
+		//	"@name" name=ID pins+=Pin+ elements+=SpinElement+;
 		public ParserRule getRule() { return rule; }
 
-		//"@name" name=ID pins+=Pin+ controls+=Control* elements+=SpinElement+
+		//"@name" name=ID pins+=Pin+ elements+=SpinElement+
 		public Group getGroup() { return cGroup; }
 
 		//"@name"
@@ -53,17 +51,11 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//Pin
 		public RuleCall getPinsPinParserRuleCall_2_0() { return cPinsPinParserRuleCall_2_0; }
 
-		//controls+=Control*
-		public Assignment getControlsAssignment_3() { return cControlsAssignment_3; }
-
-		//Control
-		public RuleCall getControlsControlParserRuleCall_3_0() { return cControlsControlParserRuleCall_3_0; }
-
 		//elements+=SpinElement+
-		public Assignment getElementsAssignment_4() { return cElementsAssignment_4; }
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
 
 		//SpinElement
-		public RuleCall getElementsSpinElementParserRuleCall_4_0() { return cElementsSpinElementParserRuleCall_4_0; }
+		public RuleCall getElementsSpinElementParserRuleCall_3_0() { return cElementsSpinElementParserRuleCall_3_0; }
 	}
 
 	public class PinElements extends AbstractParserRuleElementFinder {
@@ -255,127 +247,6 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 	}
 
-	public class ControlElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Control");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSliderParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cCheckBoxParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cControlLabelParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		
-		//// ---------- Controls (popup control panel for block settings) ------------------
-		//Control:
-		//	Slider | CheckBox | controlLabel;
-		public ParserRule getRule() { return rule; }
-
-		//Slider | CheckBox | controlLabel
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//Slider
-		public RuleCall getSliderParserRuleCall_0() { return cSliderParserRuleCall_0; }
-
-		//CheckBox
-		public RuleCall getCheckBoxParserRuleCall_1() { return cCheckBoxParserRuleCall_1; }
-
-		//controlLabel
-		public RuleCall getControlLabelParserRuleCall_2() { return cControlLabelParserRuleCall_2; }
-	}
-
-	public class SliderElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Slider");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSliderKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarNameIDTerminalRuleCall_1_0 = (RuleCall)cVarNameAssignment_1.eContents().get(0);
-		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLabelIDTerminalRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
-		
-		//Slider:
-		//	"@slider" varName=ID label=ID;
-		public ParserRule getRule() { return rule; }
-
-		//"@slider" varName=ID label=ID
-		public Group getGroup() { return cGroup; }
-
-		//"@slider"
-		public Keyword getSliderKeyword_0() { return cSliderKeyword_0; }
-
-		//varName=ID
-		public Assignment getVarNameAssignment_1() { return cVarNameAssignment_1; }
-
-		//ID
-		public RuleCall getVarNameIDTerminalRuleCall_1_0() { return cVarNameIDTerminalRuleCall_1_0; }
-
-		//label=ID
-		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
-
-		//ID
-		public RuleCall getLabelIDTerminalRuleCall_2_0() { return cLabelIDTerminalRuleCall_2_0; }
-	}
-
-	public class CheckBoxElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "CheckBox");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cCheckboxKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarNameIDTerminalRuleCall_1_0 = (RuleCall)cVarNameAssignment_1.eContents().get(0);
-		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLabelIDTerminalRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
-		
-		//CheckBox:
-		//	"@checkbox" varName=ID label=ID;
-		public ParserRule getRule() { return rule; }
-
-		//"@checkbox" varName=ID label=ID
-		public Group getGroup() { return cGroup; }
-
-		//"@checkbox"
-		public Keyword getCheckboxKeyword_0() { return cCheckboxKeyword_0; }
-
-		//varName=ID
-		public Assignment getVarNameAssignment_1() { return cVarNameAssignment_1; }
-
-		//ID
-		public RuleCall getVarNameIDTerminalRuleCall_1_0() { return cVarNameIDTerminalRuleCall_1_0; }
-
-		//label=ID
-		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
-
-		//ID
-		public RuleCall getLabelIDTerminalRuleCall_2_0() { return cLabelIDTerminalRuleCall_2_0; }
-	}
-
-	public class ControlLabelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "controlLabel");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cControlLabelKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cVarNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cVarNameIDTerminalRuleCall_1_0 = (RuleCall)cVarNameAssignment_1.eContents().get(0);
-		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLabelIDTerminalRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
-		
-		//controlLabel:
-		//	"@controlLabel" varName=ID label=ID;
-		public ParserRule getRule() { return rule; }
-
-		//"@controlLabel" varName=ID label=ID
-		public Group getGroup() { return cGroup; }
-
-		//"@controlLabel"
-		public Keyword getControlLabelKeyword_0() { return cControlLabelKeyword_0; }
-
-		//varName=ID
-		public Assignment getVarNameAssignment_1() { return cVarNameAssignment_1; }
-
-		//ID
-		public RuleCall getVarNameIDTerminalRuleCall_1_0() { return cVarNameIDTerminalRuleCall_1_0; }
-
-		//label=ID
-		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
-
-		//ID
-		public RuleCall getLabelIDTerminalRuleCall_2_0() { return cLabelIDTerminalRuleCall_2_0; }
-	}
-
 	public class SpinElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SpinElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -425,12 +296,24 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEnameIDTerminalRuleCall_1_0 = (RuleCall)cEnameAssignment_1.eContents().get(0);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueSPINDOUBLEParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cControlAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cControlIDTerminalRuleCall_3_0_0 = (RuleCall)cControlAssignment_3_0.eContents().get(0);
+		private final Assignment cLabelAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cLabelIDTerminalRuleCall_3_1_0 = (RuleCall)cLabelAssignment_3_1.eContents().get(0);
+		private final Assignment cMaxAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cMaxSPINDOUBLEParserRuleCall_3_2_0 = (RuleCall)cMaxAssignment_3_2.eContents().get(0);
+		private final Assignment cOffsetAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cOffsetSPINDOUBLEParserRuleCall_3_3_0 = (RuleCall)cOffsetAssignment_3_3.eContents().get(0);
+		private final Assignment cFuncAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
+		private final RuleCall cFuncIDTerminalRuleCall_3_4_0 = (RuleCall)cFuncAssignment_3_4.eContents().get(0);
 		
+		//// this now includes info to help set up control panels
 		//Equate:
-		//	"equ" ename=ID value=SPINDOUBLE;
+		//	"equ" ename=ID value=SPINDOUBLE (control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?;
 		public ParserRule getRule() { return rule; }
 
-		//"equ" ename=ID value=SPINDOUBLE
+		//"equ" ename=ID value=SPINDOUBLE (control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?
 		public Group getGroup() { return cGroup; }
 
 		//"equ"
@@ -447,6 +330,39 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 		//SPINDOUBLE
 		public RuleCall getValueSPINDOUBLEParserRuleCall_2_0() { return cValueSPINDOUBLEParserRuleCall_2_0; }
+
+		//(control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//control=ID
+		public Assignment getControlAssignment_3_0() { return cControlAssignment_3_0; }
+
+		//ID
+		public RuleCall getControlIDTerminalRuleCall_3_0_0() { return cControlIDTerminalRuleCall_3_0_0; }
+
+		//label=ID
+		public Assignment getLabelAssignment_3_1() { return cLabelAssignment_3_1; }
+
+		//ID
+		public RuleCall getLabelIDTerminalRuleCall_3_1_0() { return cLabelIDTerminalRuleCall_3_1_0; }
+
+		//max=SPINDOUBLE
+		public Assignment getMaxAssignment_3_2() { return cMaxAssignment_3_2; }
+
+		//SPINDOUBLE
+		public RuleCall getMaxSPINDOUBLEParserRuleCall_3_2_0() { return cMaxSPINDOUBLEParserRuleCall_3_2_0; }
+
+		//Offset=SPINDOUBLE
+		public Assignment getOffsetAssignment_3_3() { return cOffsetAssignment_3_3; }
+
+		//SPINDOUBLE
+		public RuleCall getOffsetSPINDOUBLEParserRuleCall_3_3_0() { return cOffsetSPINDOUBLEParserRuleCall_3_3_0; }
+
+		//Func=ID
+		public Assignment getFuncAssignment_3_4() { return cFuncAssignment_3_4; }
+
+		//ID
+		public RuleCall getFuncIDTerminalRuleCall_3_4_0() { return cFuncIDTerminalRuleCall_3_4_0; }
 	}
 
 	public class MemElements extends AbstractParserRuleElementFinder {
@@ -2196,10 +2112,6 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	private AudioOutputElements pAudioOutput;
 	private ControlInputElements pControlInput;
 	private ControlOutputElements pControlOutput;
-	private ControlElements pControl;
-	private SliderElements pSlider;
-	private CheckBoxElements pCheckBox;
-	private ControlLabelElements pControlLabel;
 	private SpinElementElements pSpinElement;
 	private EquateElements pEquate;
 	private MemElements pMem;
@@ -2296,7 +2208,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Program:
-	//	"@name" name=ID pins+=Pin+ controls+=Control* elements+=SpinElement+;
+	//	"@name" name=ID pins+=Pin+ elements+=SpinElement+;
 	public ProgramElements getProgramAccess() {
 		return (pProgram != null) ? pProgram : (pProgram = new ProgramElements());
 	}
@@ -2376,47 +2288,6 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		return getControlOutputAccess().getRule();
 	}
 
-	//// ---------- Controls (popup control panel for block settings) ------------------
-	//Control:
-	//	Slider | CheckBox | controlLabel;
-	public ControlElements getControlAccess() {
-		return (pControl != null) ? pControl : (pControl = new ControlElements());
-	}
-	
-	public ParserRule getControlRule() {
-		return getControlAccess().getRule();
-	}
-
-	//Slider:
-	//	"@slider" varName=ID label=ID;
-	public SliderElements getSliderAccess() {
-		return (pSlider != null) ? pSlider : (pSlider = new SliderElements());
-	}
-	
-	public ParserRule getSliderRule() {
-		return getSliderAccess().getRule();
-	}
-
-	//CheckBox:
-	//	"@checkbox" varName=ID label=ID;
-	public CheckBoxElements getCheckBoxAccess() {
-		return (pCheckBox != null) ? pCheckBox : (pCheckBox = new CheckBoxElements());
-	}
-	
-	public ParserRule getCheckBoxRule() {
-		return getCheckBoxAccess().getRule();
-	}
-
-	//controlLabel:
-	//	"@controlLabel" varName=ID label=ID;
-	public ControlLabelElements getControlLabelAccess() {
-		return (pControlLabel != null) ? pControlLabel : (pControlLabel = new ControlLabelElements());
-	}
-	
-	public ParserRule getControlLabelRule() {
-		return getControlLabelAccess().getRule();
-	}
-
 	//// --------------- Spin ASM Elements	
 	//SpinElement:
 	//	Equate | Mem | Instruction | Label | Comment | Macro | Offset;
@@ -2428,8 +2299,9 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		return getSpinElementAccess().getRule();
 	}
 
+	//// this now includes info to help set up control panels
 	//Equate:
-	//	"equ" ename=ID value=SPINDOUBLE;
+	//	"equ" ename=ID value=SPINDOUBLE (control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?;
 	public EquateElements getEquateAccess() {
 		return (pEquate != null) ? pEquate : (pEquate = new EquateElements());
 	}

@@ -95,42 +95,6 @@ public interface SpinCADFactory extends EFactory
   ControlOutput createControlOutput();
 
   /**
-   * Returns a new object of class '<em>Control</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Control</em>'.
-   * @generated
-   */
-  Control createControl();
-
-  /**
-   * Returns a new object of class '<em>Slider</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Slider</em>'.
-   * @generated
-   */
-  Slider createSlider();
-
-  /**
-   * Returns a new object of class '<em>Check Box</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Check Box</em>'.
-   * @generated
-   */
-  CheckBox createCheckBox();
-
-  /**
-   * Returns a new object of class '<em>control Label</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>control Label</em>'.
-   * @generated
-   */
-  controlLabel createcontrolLabel();
-
-  /**
    * Returns a new object of class '<em>Spin Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

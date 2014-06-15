@@ -7,7 +7,6 @@ import com.holycityaudio.spincad.spinCAD.Absa;
 import com.holycityaudio.spincad.spinCAD.And;
 import com.holycityaudio.spincad.spinCAD.AudioInput;
 import com.holycityaudio.spincad.spinCAD.AudioOutput;
-import com.holycityaudio.spincad.spinCAD.CheckBox;
 import com.holycityaudio.spincad.spinCAD.ChorusReadDelay;
 import com.holycityaudio.spincad.spinCAD.ChorusReadValue;
 import com.holycityaudio.spincad.spinCAD.ChorusScaleOffset;
@@ -44,7 +43,6 @@ import com.holycityaudio.spincad.spinCAD.SPINMEM;
 import com.holycityaudio.spincad.spinCAD.ScaleOffset;
 import com.holycityaudio.spincad.spinCAD.SetOutputPin;
 import com.holycityaudio.spincad.spinCAD.Skip;
-import com.holycityaudio.spincad.spinCAD.Slider;
 import com.holycityaudio.spincad.spinCAD.SpinCADPackage;
 import com.holycityaudio.spincad.spinCAD.WriteAllpass;
 import com.holycityaudio.spincad.spinCAD.WriteDelay;
@@ -52,7 +50,6 @@ import com.holycityaudio.spincad.spinCAD.WriteRegister;
 import com.holycityaudio.spincad.spinCAD.WriteRegisterHighshelf;
 import com.holycityaudio.spincad.spinCAD.WriteRegisterLowshelf;
 import com.holycityaudio.spincad.spinCAD.Xor;
-import com.holycityaudio.spincad.spinCAD.controlLabel;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.serializer.acceptor.ISemanticSequenceAcceptor;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
@@ -104,13 +101,6 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 				   context == grammarAccess.getOutputPinRule() ||
 				   context == grammarAccess.getPinRule()) {
 					sequence_AudioOutput(context, (AudioOutput) semanticObject); 
-					return; 
-				}
-				else break;
-			case SpinCADPackage.CHECK_BOX:
-				if(context == grammarAccess.getCheckBoxRule() ||
-				   context == grammarAccess.getControlRule()) {
-					sequence_CheckBox(context, (CheckBox) semanticObject); 
 					return; 
 				}
 				else break;
@@ -404,13 +394,6 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case SpinCADPackage.SLIDER:
-				if(context == grammarAccess.getControlRule() ||
-				   context == grammarAccess.getSliderRule()) {
-					sequence_Slider(context, (Slider) semanticObject); 
-					return; 
-				}
-				else break;
 			case SpinCADPackage.WRITE_ALLPASS:
 				if(context == grammarAccess.getInst_B15_S1_9Rule() ||
 				   context == grammarAccess.getInstructionRule() ||
@@ -462,13 +445,6 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 				   context == grammarAccess.getSpinElementRule() ||
 				   context == grammarAccess.getXorRule()) {
 					sequence_Xor(context, (Xor) semanticObject); 
-					return; 
-				}
-				else break;
-			case SpinCADPackage.CONTROL_LABEL:
-				if(context == grammarAccess.getControlRule() ||
-				   context == grammarAccess.getControlLabelRule()) {
-					sequence_controlLabel(context, (controlLabel) semanticObject); 
 					return; 
 				}
 				else break;
@@ -535,25 +511,6 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getAudioOutputAccess().getVarNameIDTerminalRuleCall_1_0(), semanticObject.getVarName());
 		feeder.accept(grammarAccess.getAudioOutputAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (varName=ID label=ID)
-	 */
-	protected void sequence_CheckBox(EObject context, CheckBox semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.CONTROL__VAR_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.CONTROL__VAR_NAME));
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.CONTROL__LABEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.CONTROL__LABEL));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCheckBoxAccess().getVarNameIDTerminalRuleCall_1_0(), semanticObject.getVarName());
-		feeder.accept(grammarAccess.getCheckBoxAccess().getLabelIDTerminalRuleCall_2_0(), semanticObject.getLabel());
 		feeder.finish();
 	}
 	
@@ -683,20 +640,10 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (ename=ID value=SPINDOUBLE)
+	 *     (ename=ID value=SPINDOUBLE (control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?)
 	 */
 	protected void sequence_Equate(EObject context, Equate semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.EQUATE__ENAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.EQUATE__ENAME));
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.EQUATE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.EQUATE__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getEquateAccess().getEnameIDTerminalRuleCall_1_0(), semanticObject.getEname());
-		feeder.accept(grammarAccess.getEquateAccess().getValueSPINDOUBLEParserRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1007,7 +954,7 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=ID pins+=Pin+ controls+=Control* elements+=SpinElement+)
+	 *     (name=ID pins+=Pin+ elements+=SpinElement+)
 	 */
 	protected void sequence_Program(EObject context, Program semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1155,25 +1102,6 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (varName=ID label=ID)
-	 */
-	protected void sequence_Slider(EObject context, Slider semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.CONTROL__VAR_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.CONTROL__VAR_NAME));
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.CONTROL__LABEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.CONTROL__LABEL));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSliderAccess().getVarNameIDTerminalRuleCall_1_0(), semanticObject.getVarName());
-		feeder.accept(grammarAccess.getSliderAccess().getLabelIDTerminalRuleCall_2_0(), semanticObject.getLabel());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (arg1=SPINMEM arg2=SPINDOUBLE)
 	 */
 	protected void sequence_WriteAllpass(EObject context, WriteAllpass semanticObject) {
@@ -1279,25 +1207,6 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getXorAccess().getArg1BINARY24ParserRuleCall_1_0(), semanticObject.getArg1());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (varName=ID label=ID)
-	 */
-	protected void sequence_controlLabel(EObject context, controlLabel semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.CONTROL__VAR_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.CONTROL__VAR_NAME));
-			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.CONTROL__LABEL) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.CONTROL__LABEL));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getControlLabelAccess().getVarNameIDTerminalRuleCall_1_0(), semanticObject.getVarName());
-		feeder.accept(grammarAccess.getControlLabelAccess().getLabelIDTerminalRuleCall_2_0(), semanticObject.getLabel());
 		feeder.finish();
 	}
 }

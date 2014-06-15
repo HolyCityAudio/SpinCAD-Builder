@@ -10,7 +10,6 @@
     <genClasses ecoreClass="SpinCAD.ecore#//Program">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Program/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Program/pins"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Program/controls"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Program/elements"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Pin">
@@ -23,17 +22,15 @@
     <genClasses ecoreClass="SpinCAD.ecore#//AudioOutput"/>
     <genClasses ecoreClass="SpinCAD.ecore#//ControlInput"/>
     <genClasses ecoreClass="SpinCAD.ecore#//ControlOutput"/>
-    <genClasses ecoreClass="SpinCAD.ecore#//Control">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Control/varName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Control/label"/>
-    </genClasses>
-    <genClasses ecoreClass="SpinCAD.ecore#//Slider"/>
-    <genClasses ecoreClass="SpinCAD.ecore#//CheckBox"/>
-    <genClasses ecoreClass="SpinCAD.ecore#//controlLabel"/>
     <genClasses ecoreClass="SpinCAD.ecore#//SpinElement"/>
     <genClasses ecoreClass="SpinCAD.ecore#//Equate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equate/ename"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equate/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equate/control"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equate/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equate/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equate/Offset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equate/Func"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Mem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Mem/buffer"/>
