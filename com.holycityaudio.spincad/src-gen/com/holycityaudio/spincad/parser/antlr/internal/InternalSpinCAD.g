@@ -652,9 +652,9 @@ ruleEquate returns [EObject current=null]
 )
 )((
 (
-		lv_control_3_0=RULE_ID
+		lv_controlType_3_0=RULE_ID
 		{
-			newLeafNode(lv_control_3_0, grammarAccess.getEquateAccess().getControlIDTerminalRuleCall_3_0_0()); 
+			newLeafNode(lv_controlType_3_0, grammarAccess.getEquateAccess().getControlTypeIDTerminalRuleCall_3_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -662,17 +662,17 @@ ruleEquate returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"control",
-        		lv_control_3_0, 
+       			"controlType",
+        		lv_controlType_3_0, 
         		"ID");
 	    }
 
 )
 )(
 (
-		lv_label_4_0=RULE_ID
+		lv_controlName_4_0=RULE_ID
 		{
-			newLeafNode(lv_label_4_0, grammarAccess.getEquateAccess().getLabelIDTerminalRuleCall_3_1_0()); 
+			newLeafNode(lv_controlName_4_0, grammarAccess.getEquateAccess().getControlNameIDTerminalRuleCall_3_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -680,8 +680,8 @@ ruleEquate returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"label",
-        		lv_label_4_0, 
+       			"controlName",
+        		lv_controlName_4_0, 
         		"ID");
 	    }
 
@@ -707,36 +707,18 @@ ruleEquate returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEquateAccess().getOffsetSPINDOUBLEParserRuleCall_3_3_0()); 
+	        newCompositeNode(grammarAccess.getEquateAccess().getMultiplierSPINDOUBLEParserRuleCall_3_3_0()); 
 	    }
-		lv_Offset_6_0=ruleSPINDOUBLE		{
+		lv_multiplier_6_0=ruleSPINDOUBLE		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEquateRule());
 	        }
        		set(
        			$current, 
-       			"Offset",
-        		lv_Offset_6_0, 
+       			"multiplier",
+        		lv_multiplier_6_0, 
         		"SPINDOUBLE");
 	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(
-(
-		lv_Func_7_0=RULE_ID
-		{
-			newLeafNode(lv_Func_7_0, grammarAccess.getEquateAccess().getFuncIDTerminalRuleCall_3_4_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getEquateRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"Func",
-        		lv_Func_7_0, 
-        		"ID");
 	    }
 
 )
@@ -1263,9 +1245,27 @@ ruleGetDelayScaleControl returns [EObject current=null]
     }
 (
 (
-		lv_length_1_0=RULE_ID
+		lv_ratio_1_0=RULE_ID
 		{
-			newLeafNode(lv_length_1_0, grammarAccess.getGetDelayScaleControlAccess().getLengthIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_ratio_1_0, grammarAccess.getGetDelayScaleControlAccess().getRatioIDTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGetDelayScaleControlRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"ratio",
+        		lv_ratio_1_0, 
+        		"ID");
+	    }
+
+)
+)(
+(
+		lv_length_2_0=RULE_ID
+		{
+			newLeafNode(lv_length_2_0, grammarAccess.getGetDelayScaleControlAccess().getLengthIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1274,16 +1274,16 @@ ruleGetDelayScaleControl returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"length",
-        		lv_length_1_0, 
+        		lv_length_2_0, 
         		"ID");
 	    }
 
 )
 )(
 (
-		lv_buffer_2_0=RULE_ID
+		lv_offset_3_0=RULE_ID
 		{
-			newLeafNode(lv_buffer_2_0, grammarAccess.getGetDelayScaleControlAccess().getBufferIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_offset_3_0, grammarAccess.getGetDelayScaleControlAccess().getOffsetIDTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1291,17 +1291,17 @@ ruleGetDelayScaleControl returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"buffer",
-        		lv_buffer_2_0, 
+       			"offset",
+        		lv_offset_3_0, 
         		"ID");
 	    }
 
 )
 )(
 (
-		lv_control_3_0=RULE_ID
+		lv_control_4_0=RULE_ID
 		{
-			newLeafNode(lv_control_3_0, grammarAccess.getGetDelayScaleControlAccess().getControlIDTerminalRuleCall_3_0()); 
+			newLeafNode(lv_control_4_0, grammarAccess.getGetDelayScaleControlAccess().getControlIDTerminalRuleCall_4_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1310,7 +1310,7 @@ ruleGetDelayScaleControl returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"control",
-        		lv_control_3_0, 
+        		lv_control_4_0, 
         		"ID");
 	    }
 

@@ -13,11 +13,10 @@ package com.holycityaudio.spincad.spinCAD;
  * <ul>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getEname <em>Ename</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getValue <em>Value</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getControl <em>Control</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getLabel <em>Label</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getControlType <em>Control Type</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getControlName <em>Control Name</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMax <em>Max</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getOffset <em>Offset</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getFunc <em>Func</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMultiplier <em>Multiplier</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,56 +79,56 @@ public interface Equate extends SpinElement
   void setValue(String value);
 
   /**
-   * Returns the value of the '<em><b>Control</b></em>' attribute.
+   * Returns the value of the '<em><b>Control Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Control</em>' attribute isn't clear,
+   * If the meaning of the '<em>Control Type</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Control</em>' attribute.
-   * @see #setControl(String)
-   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_Control()
+   * @return the value of the '<em>Control Type</em>' attribute.
+   * @see #setControlType(String)
+   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_ControlType()
    * @model
    * @generated
    */
-  String getControl();
+  String getControlType();
 
   /**
-   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getControl <em>Control</em>}' attribute.
+   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getControlType <em>Control Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Control</em>' attribute.
-   * @see #getControl()
+   * @param value the new value of the '<em>Control Type</em>' attribute.
+   * @see #getControlType()
    * @generated
    */
-  void setControl(String value);
+  void setControlType(String value);
 
   /**
-   * Returns the value of the '<em><b>Label</b></em>' attribute.
+   * Returns the value of the '<em><b>Control Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Label</em>' attribute isn't clear,
+   * If the meaning of the '<em>Control Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Label</em>' attribute.
-   * @see #setLabel(String)
-   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_Label()
+   * @return the value of the '<em>Control Name</em>' attribute.
+   * @see #setControlName(String)
+   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_ControlName()
    * @model
    * @generated
    */
-  String getLabel();
+  String getControlName();
 
   /**
-   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getLabel <em>Label</em>}' attribute.
+   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getControlName <em>Control Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Label</em>' attribute.
-   * @see #getLabel()
+   * @param value the new value of the '<em>Control Name</em>' attribute.
+   * @see #getControlName()
    * @generated
    */
-  void setLabel(String value);
+  void setControlName(String value);
 
   /**
    * Returns the value of the '<em><b>Max</b></em>' attribute.
@@ -158,55 +157,29 @@ public interface Equate extends SpinElement
   void setMax(String value);
 
   /**
-   * Returns the value of the '<em><b>Offset</b></em>' attribute.
+   * Returns the value of the '<em><b>Multiplier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Offset</em>' attribute isn't clear,
+   * If the meaning of the '<em>Multiplier</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Offset</em>' attribute.
-   * @see #setOffset(String)
-   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_Offset()
+   * @return the value of the '<em>Multiplier</em>' attribute.
+   * @see #setMultiplier(String)
+   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_Multiplier()
    * @model
    * @generated
    */
-  String getOffset();
+  String getMultiplier();
 
   /**
-   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getOffset <em>Offset</em>}' attribute.
+   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getMultiplier <em>Multiplier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Offset</em>' attribute.
-   * @see #getOffset()
+   * @param value the new value of the '<em>Multiplier</em>' attribute.
+   * @see #getMultiplier()
    * @generated
    */
-  void setOffset(String value);
-
-  /**
-   * Returns the value of the '<em><b>Func</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Func</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Func</em>' attribute.
-   * @see #setFunc(String)
-   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_Func()
-   * @model
-   * @generated
-   */
-  String getFunc();
-
-  /**
-   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getFunc <em>Func</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Func</em>' attribute.
-   * @see #getFunc()
-   * @generated
-   */
-  void setFunc(String value);
+  void setMultiplier(String value);
 
 } // Equate

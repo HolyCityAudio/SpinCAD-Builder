@@ -721,7 +721,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEquate_Control()
+  public EAttribute getEquate_ControlType()
   {
     return (EAttribute)equateEClass.getEStructuralFeatures().get(2);
   }
@@ -731,7 +731,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEquate_Label()
+  public EAttribute getEquate_ControlName()
   {
     return (EAttribute)equateEClass.getEStructuralFeatures().get(3);
   }
@@ -751,19 +751,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEquate_Offset()
+  public EAttribute getEquate_Multiplier()
   {
     return (EAttribute)equateEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEquate_Func()
-  {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -981,7 +971,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGetDelayScaleControl_Length()
+  public EAttribute getGetDelayScaleControl_Ratio()
   {
     return (EAttribute)getDelayScaleControlEClass.getEStructuralFeatures().get(0);
   }
@@ -991,7 +981,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGetDelayScaleControl_Buffer()
+  public EAttribute getGetDelayScaleControl_Length()
   {
     return (EAttribute)getDelayScaleControlEClass.getEStructuralFeatures().get(1);
   }
@@ -1001,9 +991,19 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getGetDelayScaleControl_Control()
+  public EAttribute getGetDelayScaleControl_Offset()
   {
     return (EAttribute)getDelayScaleControlEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGetDelayScaleControl_Control()
+  {
+    return (EAttribute)getDelayScaleControlEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1762,11 +1762,10 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     equateEClass = createEClass(EQUATE);
     createEAttribute(equateEClass, EQUATE__ENAME);
     createEAttribute(equateEClass, EQUATE__VALUE);
-    createEAttribute(equateEClass, EQUATE__CONTROL);
-    createEAttribute(equateEClass, EQUATE__LABEL);
+    createEAttribute(equateEClass, EQUATE__CONTROL_TYPE);
+    createEAttribute(equateEClass, EQUATE__CONTROL_NAME);
     createEAttribute(equateEClass, EQUATE__MAX);
-    createEAttribute(equateEClass, EQUATE__OFFSET);
-    createEAttribute(equateEClass, EQUATE__FUNC);
+    createEAttribute(equateEClass, EQUATE__MULTIPLIER);
 
     memEClass = createEClass(MEM);
     createEAttribute(memEClass, MEM__BUFFER);
@@ -1798,8 +1797,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(getInputDefaultEClass, GET_INPUT_DEFAULT__DEFAULT_VAL);
 
     getDelayScaleControlEClass = createEClass(GET_DELAY_SCALE_CONTROL);
+    createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__RATIO);
     createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__LENGTH);
-    createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__BUFFER);
+    createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__OFFSET);
     createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__CONTROL);
 
     getBaseAddressEClass = createEClass(GET_BASE_ADDRESS);
@@ -2022,11 +2022,10 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEClass(equateEClass, Equate.class, "Equate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEquate_Ename(), ecorePackage.getEString(), "ename", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEquate_Value(), ecorePackage.getEString(), "value", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_Control(), ecorePackage.getEString(), "control", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_Label(), ecorePackage.getEString(), "label", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEquate_ControlType(), ecorePackage.getEString(), "controlType", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEquate_ControlName(), ecorePackage.getEString(), "controlName", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEquate_Max(), ecorePackage.getEString(), "max", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_Offset(), ecorePackage.getEString(), "Offset", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_Func(), ecorePackage.getEString(), "Func", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEquate_Multiplier(), ecorePackage.getEString(), "multiplier", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(memEClass, Mem.class, "Mem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMem_Buffer(), ecorePackage.getEString(), "buffer", null, 0, 1, Mem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2058,8 +2057,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getGetInputDefault_DefaultVal(), ecorePackage.getEString(), "defaultVal", null, 0, 1, GetInputDefault.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(getDelayScaleControlEClass, GetDelayScaleControl.class, "GetDelayScaleControl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGetDelayScaleControl_Ratio(), ecorePackage.getEString(), "ratio", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGetDelayScaleControl_Length(), ecorePackage.getEString(), "length", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGetDelayScaleControl_Buffer(), ecorePackage.getEString(), "buffer", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGetDelayScaleControl_Offset(), ecorePackage.getEString(), "offset", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGetDelayScaleControl_Control(), ecorePackage.getEString(), "control", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(getBaseAddressEClass, GetBaseAddress.class, "GetBaseAddress", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

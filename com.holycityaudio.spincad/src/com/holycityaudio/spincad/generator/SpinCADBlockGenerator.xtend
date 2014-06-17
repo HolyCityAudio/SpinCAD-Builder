@@ -158,7 +158,7 @@ def codeGenerate(String blockName, Program pr) {
 
 def sortSetterGetter(Equate e) { 
 	'''
-	«IF e.control == "SliderLabel"»
+	«IF e.controlType == "SliderLabel"»
 		«genSetterGetter(e)»
 	«ENDIF»
 	'''
@@ -256,16 +256,17 @@ def genGetInputDefault(GetInputDefault g)'''
 			}»	
 		'''
 	}
-	
+
+
+// scale = (95/100) * tap1 * (bufferLength/32768.0);  
+// offset = (bufferBase + tap1 * (5/100.0) * bufferLength)/32768.0;  	
+
 def genGetDelayScaleControl(GetDelayScaleControl g) {
 	'''
-		sfxb.clear();
-		sfxb.or(32767 * 256);
 		«IF g.control != null»
 		sfxb.mulx(«g.control»);
 		«ENDIF»
-		sfxb.scaleOffset((double)(«g.length»/32768.0), (double) («g.buffer»/32768.0));
-		sfxb.writeRegister(ADDR_PTR, 0);	
+		sfxb.scaleOffset((0.95 * «g.ratio» * «g.length»)/32768.0, («g.offset» + (0.05 * «g.ratio» * «g.length»))/32768.0);
 	'''
 }	
 

@@ -100,7 +100,7 @@ class SpinCADControlPanelGenerator {
 	
 def declareControl(Equate e) {
 	'''
-	«IF e.control == "SliderLabel"»
+	«IF e.controlType == "SliderLabel"»
 		JSlider «e.ename»Slider;
 		JLabel  «e.ename»Label;
 		
@@ -109,8 +109,8 @@ def declareControl(Equate e) {
 
 def sortControl(String blockName, Equate e) {
 	'''
-	«IF e.control == "SliderLabel"»
-		«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, 0, «e.max», (int) gCB.get«e.ename»());
+	«IF e.controlType == "SliderLabel"»
+		«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, 0, «e.max» * «e.multiplier», (int) gCB.get«e.ename»());
 		«e.ename»Slider.addChangeListener(new «blockName»SliderListener());
 		«e.ename»Label = new JLabel();
 		update«e.ename»Label();
@@ -122,9 +122,9 @@ def sortControl(String blockName, Equate e) {
 
 def genControlListener(Equate e) {
 	'''
-	«IF e.control == "SliderLabel"»
+	«IF e.controlType == "SliderLabel"»
 		if(ce.getSource() == «e.ename»Slider) {
-			gCB.set«e.ename»((double) («e.ename»Slider.getValue()/100.0));
+			gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
 			update«e.ename»Label();
 		}
 	«ENDIF»
@@ -133,9 +133,9 @@ def genControlListener(Equate e) {
 
 def genLabelUpdater(Equate e) {
 	'''
-	«IF e.control == "SliderLabel"»
+	«IF e.controlType == "SliderLabel"»
 		private void update«e.ename»Label() {
-			«e.ename»Label.setText("«e.label» " + String.format("%4.2f", gCB.get«e.ename»() * 10));		
+			«e.ename»Label.setText("«e.controlName» " + String.format("%4.2f", gCB.get«e.ename»()));		
 		}
 	«ENDIF»
 		
