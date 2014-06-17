@@ -409,22 +409,22 @@ public interface SpinCADPackage extends EPackage
   int EQUATE__VALUE = SPIN_ELEMENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Control</b></em>' attribute.
+   * The feature id for the '<em><b>Control Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EQUATE__CONTROL = SPIN_ELEMENT_FEATURE_COUNT + 2;
+  int EQUATE__CONTROL_TYPE = SPIN_ELEMENT_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * The feature id for the '<em><b>Control Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EQUATE__LABEL = SPIN_ELEMENT_FEATURE_COUNT + 3;
+  int EQUATE__CONTROL_NAME = SPIN_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -436,22 +436,13 @@ public interface SpinCADPackage extends EPackage
   int EQUATE__MAX = SPIN_ELEMENT_FEATURE_COUNT + 4;
 
   /**
-   * The feature id for the '<em><b>Offset</b></em>' attribute.
+   * The feature id for the '<em><b>Multiplier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EQUATE__OFFSET = SPIN_ELEMENT_FEATURE_COUNT + 5;
-
-  /**
-   * The feature id for the '<em><b>Func</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUATE__FUNC = SPIN_ELEMENT_FEATURE_COUNT + 6;
+  int EQUATE__MULTIPLIER = SPIN_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Equate</em>' class.
@@ -460,7 +451,7 @@ public interface SpinCADPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EQUATE_FEATURE_COUNT = SPIN_ELEMENT_FEATURE_COUNT + 7;
+  int EQUATE_FEATURE_COUNT = SPIN_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link com.holycityaudio.spincad.spinCAD.impl.MemImpl <em>Mem</em>}' class.
@@ -743,22 +734,31 @@ public interface SpinCADPackage extends EPackage
   int GET_DELAY_SCALE_CONTROL = 19;
 
   /**
+   * The feature id for the '<em><b>Ratio</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GET_DELAY_SCALE_CONTROL__RATIO = MACRO_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Length</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GET_DELAY_SCALE_CONTROL__LENGTH = MACRO_FEATURE_COUNT + 0;
+  int GET_DELAY_SCALE_CONTROL__LENGTH = MACRO_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Buffer</b></em>' attribute.
+   * The feature id for the '<em><b>Offset</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GET_DELAY_SCALE_CONTROL__BUFFER = MACRO_FEATURE_COUNT + 1;
+  int GET_DELAY_SCALE_CONTROL__OFFSET = MACRO_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Control</b></em>' attribute.
@@ -767,7 +767,7 @@ public interface SpinCADPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_DELAY_SCALE_CONTROL__CONTROL = MACRO_FEATURE_COUNT + 2;
+  int GET_DELAY_SCALE_CONTROL__CONTROL = MACRO_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Get Delay Scale Control</em>' class.
@@ -776,7 +776,7 @@ public interface SpinCADPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GET_DELAY_SCALE_CONTROL_FEATURE_COUNT = MACRO_FEATURE_COUNT + 3;
+  int GET_DELAY_SCALE_CONTROL_FEATURE_COUNT = MACRO_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.holycityaudio.spincad.spinCAD.impl.GetBaseAddressImpl <em>Get Base Address</em>}' class.
@@ -2210,26 +2210,26 @@ public interface SpinCADPackage extends EPackage
   EAttribute getEquate_Value();
 
   /**
-   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getControl <em>Control</em>}'.
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getControlType <em>Control Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Control</em>'.
-   * @see com.holycityaudio.spincad.spinCAD.Equate#getControl()
+   * @return the meta object for the attribute '<em>Control Type</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.Equate#getControlType()
    * @see #getEquate()
    * @generated
    */
-  EAttribute getEquate_Control();
+  EAttribute getEquate_ControlType();
 
   /**
-   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getLabel <em>Label</em>}'.
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getControlName <em>Control Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Label</em>'.
-   * @see com.holycityaudio.spincad.spinCAD.Equate#getLabel()
+   * @return the meta object for the attribute '<em>Control Name</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.Equate#getControlName()
    * @see #getEquate()
    * @generated
    */
-  EAttribute getEquate_Label();
+  EAttribute getEquate_ControlName();
 
   /**
    * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getMax <em>Max</em>}'.
@@ -2243,26 +2243,15 @@ public interface SpinCADPackage extends EPackage
   EAttribute getEquate_Max();
 
   /**
-   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getOffset <em>Offset</em>}'.
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getMultiplier <em>Multiplier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Offset</em>'.
-   * @see com.holycityaudio.spincad.spinCAD.Equate#getOffset()
+   * @return the meta object for the attribute '<em>Multiplier</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.Equate#getMultiplier()
    * @see #getEquate()
    * @generated
    */
-  EAttribute getEquate_Offset();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getFunc <em>Func</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Func</em>'.
-   * @see com.holycityaudio.spincad.spinCAD.Equate#getFunc()
-   * @see #getEquate()
-   * @generated
-   */
-  EAttribute getEquate_Func();
+  EAttribute getEquate_Multiplier();
 
   /**
    * Returns the meta object for class '{@link com.holycityaudio.spincad.spinCAD.Mem <em>Mem</em>}'.
@@ -2486,6 +2475,17 @@ public interface SpinCADPackage extends EPackage
   EClass getGetDelayScaleControl();
 
   /**
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.GetDelayScaleControl#getRatio <em>Ratio</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ratio</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.GetDelayScaleControl#getRatio()
+   * @see #getGetDelayScaleControl()
+   * @generated
+   */
+  EAttribute getGetDelayScaleControl_Ratio();
+
+  /**
    * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.GetDelayScaleControl#getLength <em>Length</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2497,15 +2497,15 @@ public interface SpinCADPackage extends EPackage
   EAttribute getGetDelayScaleControl_Length();
 
   /**
-   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.GetDelayScaleControl#getBuffer <em>Buffer</em>}'.
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.GetDelayScaleControl#getOffset <em>Offset</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Buffer</em>'.
-   * @see com.holycityaudio.spincad.spinCAD.GetDelayScaleControl#getBuffer()
+   * @return the meta object for the attribute '<em>Offset</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.GetDelayScaleControl#getOffset()
    * @see #getGetDelayScaleControl()
    * @generated
    */
-  EAttribute getGetDelayScaleControl_Buffer();
+  EAttribute getGetDelayScaleControl_Offset();
 
   /**
    * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.GetDelayScaleControl#getControl <em>Control</em>}'.
@@ -3430,20 +3430,20 @@ public interface SpinCADPackage extends EPackage
     EAttribute EQUATE__VALUE = eINSTANCE.getEquate_Value();
 
     /**
-     * The meta object literal for the '<em><b>Control</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Control Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EQUATE__CONTROL = eINSTANCE.getEquate_Control();
+    EAttribute EQUATE__CONTROL_TYPE = eINSTANCE.getEquate_ControlType();
 
     /**
-     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Control Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EQUATE__LABEL = eINSTANCE.getEquate_Label();
+    EAttribute EQUATE__CONTROL_NAME = eINSTANCE.getEquate_ControlName();
 
     /**
      * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
@@ -3454,20 +3454,12 @@ public interface SpinCADPackage extends EPackage
     EAttribute EQUATE__MAX = eINSTANCE.getEquate_Max();
 
     /**
-     * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Multiplier</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EQUATE__OFFSET = eINSTANCE.getEquate_Offset();
-
-    /**
-     * The meta object literal for the '<em><b>Func</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EQUATE__FUNC = eINSTANCE.getEquate_Func();
+    EAttribute EQUATE__MULTIPLIER = eINSTANCE.getEquate_Multiplier();
 
     /**
      * The meta object literal for the '{@link com.holycityaudio.spincad.spinCAD.impl.MemImpl <em>Mem</em>}' class.
@@ -3658,6 +3650,14 @@ public interface SpinCADPackage extends EPackage
     EClass GET_DELAY_SCALE_CONTROL = eINSTANCE.getGetDelayScaleControl();
 
     /**
+     * The meta object literal for the '<em><b>Ratio</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GET_DELAY_SCALE_CONTROL__RATIO = eINSTANCE.getGetDelayScaleControl_Ratio();
+
+    /**
      * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3666,12 +3666,12 @@ public interface SpinCADPackage extends EPackage
     EAttribute GET_DELAY_SCALE_CONTROL__LENGTH = eINSTANCE.getGetDelayScaleControl_Length();
 
     /**
-     * The meta object literal for the '<em><b>Buffer</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GET_DELAY_SCALE_CONTROL__BUFFER = eINSTANCE.getGetDelayScaleControl_Buffer();
+    EAttribute GET_DELAY_SCALE_CONTROL__OFFSET = eINSTANCE.getGetDelayScaleControl_Offset();
 
     /**
      * The meta object literal for the '<em><b>Control</b></em>' attribute feature.

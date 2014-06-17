@@ -640,7 +640,7 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (ename=ID value=SPINDOUBLE (control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?)
+	 *     (ename=ID value=SPINDOUBLE (controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?)
 	 */
 	protected void sequence_Equate(EObject context, Equate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -677,7 +677,7 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (length=ID buffer=ID control=ID?)
+	 *     (ratio=ID length=ID offset=ID control=ID?)
 	 */
 	protected void sequence_GetDelayScaleControl(EObject context, GetDelayScaleControl semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

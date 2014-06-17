@@ -20,11 +20,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getEname <em>Ename</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getValue <em>Value</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getControl <em>Control</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getLabel <em>Label</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getControlType <em>Control Type</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getControlName <em>Control Name</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getMax <em>Max</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getOffset <em>Offset</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getFunc <em>Func</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getMultiplier <em>Multiplier</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,44 +72,44 @@ public class EquateImpl extends SpinElementImpl implements Equate
   protected String value = VALUE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getControl() <em>Control</em>}' attribute.
+   * The default value of the '{@link #getControlType() <em>Control Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getControl()
+   * @see #getControlType()
    * @generated
    * @ordered
    */
-  protected static final String CONTROL_EDEFAULT = null;
+  protected static final String CONTROL_TYPE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getControl() <em>Control</em>}' attribute.
+   * The cached value of the '{@link #getControlType() <em>Control Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getControl()
+   * @see #getControlType()
    * @generated
    * @ordered
    */
-  protected String control = CONTROL_EDEFAULT;
+  protected String controlType = CONTROL_TYPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
+   * The default value of the '{@link #getControlName() <em>Control Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabel()
+   * @see #getControlName()
    * @generated
    * @ordered
    */
-  protected static final String LABEL_EDEFAULT = null;
+  protected static final String CONTROL_NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
+   * The cached value of the '{@link #getControlName() <em>Control Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLabel()
+   * @see #getControlName()
    * @generated
    * @ordered
    */
-  protected String label = LABEL_EDEFAULT;
+  protected String controlName = CONTROL_NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
@@ -133,44 +132,24 @@ public class EquateImpl extends SpinElementImpl implements Equate
   protected String max = MAX_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
+   * The default value of the '{@link #getMultiplier() <em>Multiplier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOffset()
+   * @see #getMultiplier()
    * @generated
    * @ordered
    */
-  protected static final String OFFSET_EDEFAULT = null;
+  protected static final String MULTIPLIER_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
+   * The cached value of the '{@link #getMultiplier() <em>Multiplier</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOffset()
+   * @see #getMultiplier()
    * @generated
    * @ordered
    */
-  protected String offset = OFFSET_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getFunc() <em>Func</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFunc()
-   * @generated
-   * @ordered
-   */
-  protected static final String FUNC_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getFunc() <em>Func</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFunc()
-   * @generated
-   * @ordered
-   */
-  protected String func = FUNC_EDEFAULT;
+  protected String multiplier = MULTIPLIER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -244,9 +223,9 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getControl()
+  public String getControlType()
   {
-    return control;
+    return controlType;
   }
 
   /**
@@ -254,12 +233,12 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setControl(String newControl)
+  public void setControlType(String newControlType)
   {
-    String oldControl = control;
-    control = newControl;
+    String oldControlType = controlType;
+    controlType = newControlType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__CONTROL, oldControl, control));
+      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__CONTROL_TYPE, oldControlType, controlType));
   }
 
   /**
@@ -267,9 +246,9 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLabel()
+  public String getControlName()
   {
-    return label;
+    return controlName;
   }
 
   /**
@@ -277,12 +256,12 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLabel(String newLabel)
+  public void setControlName(String newControlName)
   {
-    String oldLabel = label;
-    label = newLabel;
+    String oldControlName = controlName;
+    controlName = newControlName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__LABEL, oldLabel, label));
+      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__CONTROL_NAME, oldControlName, controlName));
   }
 
   /**
@@ -313,9 +292,9 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getOffset()
+  public String getMultiplier()
   {
-    return offset;
+    return multiplier;
   }
 
   /**
@@ -323,35 +302,12 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOffset(String newOffset)
+  public void setMultiplier(String newMultiplier)
   {
-    String oldOffset = offset;
-    offset = newOffset;
+    String oldMultiplier = multiplier;
+    multiplier = newMultiplier;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__OFFSET, oldOffset, offset));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getFunc()
-  {
-    return func;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFunc(String newFunc)
-  {
-    String oldFunc = func;
-    func = newFunc;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__FUNC, oldFunc, func));
+      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__MULTIPLIER, oldMultiplier, multiplier));
   }
 
   /**
@@ -368,16 +324,14 @@ public class EquateImpl extends SpinElementImpl implements Equate
         return getEname();
       case SpinCADPackage.EQUATE__VALUE:
         return getValue();
-      case SpinCADPackage.EQUATE__CONTROL:
-        return getControl();
-      case SpinCADPackage.EQUATE__LABEL:
-        return getLabel();
+      case SpinCADPackage.EQUATE__CONTROL_TYPE:
+        return getControlType();
+      case SpinCADPackage.EQUATE__CONTROL_NAME:
+        return getControlName();
       case SpinCADPackage.EQUATE__MAX:
         return getMax();
-      case SpinCADPackage.EQUATE__OFFSET:
-        return getOffset();
-      case SpinCADPackage.EQUATE__FUNC:
-        return getFunc();
+      case SpinCADPackage.EQUATE__MULTIPLIER:
+        return getMultiplier();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -398,20 +352,17 @@ public class EquateImpl extends SpinElementImpl implements Equate
       case SpinCADPackage.EQUATE__VALUE:
         setValue((String)newValue);
         return;
-      case SpinCADPackage.EQUATE__CONTROL:
-        setControl((String)newValue);
+      case SpinCADPackage.EQUATE__CONTROL_TYPE:
+        setControlType((String)newValue);
         return;
-      case SpinCADPackage.EQUATE__LABEL:
-        setLabel((String)newValue);
+      case SpinCADPackage.EQUATE__CONTROL_NAME:
+        setControlName((String)newValue);
         return;
       case SpinCADPackage.EQUATE__MAX:
         setMax((String)newValue);
         return;
-      case SpinCADPackage.EQUATE__OFFSET:
-        setOffset((String)newValue);
-        return;
-      case SpinCADPackage.EQUATE__FUNC:
-        setFunc((String)newValue);
+      case SpinCADPackage.EQUATE__MULTIPLIER:
+        setMultiplier((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -433,20 +384,17 @@ public class EquateImpl extends SpinElementImpl implements Equate
       case SpinCADPackage.EQUATE__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
-      case SpinCADPackage.EQUATE__CONTROL:
-        setControl(CONTROL_EDEFAULT);
+      case SpinCADPackage.EQUATE__CONTROL_TYPE:
+        setControlType(CONTROL_TYPE_EDEFAULT);
         return;
-      case SpinCADPackage.EQUATE__LABEL:
-        setLabel(LABEL_EDEFAULT);
+      case SpinCADPackage.EQUATE__CONTROL_NAME:
+        setControlName(CONTROL_NAME_EDEFAULT);
         return;
       case SpinCADPackage.EQUATE__MAX:
         setMax(MAX_EDEFAULT);
         return;
-      case SpinCADPackage.EQUATE__OFFSET:
-        setOffset(OFFSET_EDEFAULT);
-        return;
-      case SpinCADPackage.EQUATE__FUNC:
-        setFunc(FUNC_EDEFAULT);
+      case SpinCADPackage.EQUATE__MULTIPLIER:
+        setMultiplier(MULTIPLIER_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -466,16 +414,14 @@ public class EquateImpl extends SpinElementImpl implements Equate
         return ENAME_EDEFAULT == null ? ename != null : !ENAME_EDEFAULT.equals(ename);
       case SpinCADPackage.EQUATE__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-      case SpinCADPackage.EQUATE__CONTROL:
-        return CONTROL_EDEFAULT == null ? control != null : !CONTROL_EDEFAULT.equals(control);
-      case SpinCADPackage.EQUATE__LABEL:
-        return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+      case SpinCADPackage.EQUATE__CONTROL_TYPE:
+        return CONTROL_TYPE_EDEFAULT == null ? controlType != null : !CONTROL_TYPE_EDEFAULT.equals(controlType);
+      case SpinCADPackage.EQUATE__CONTROL_NAME:
+        return CONTROL_NAME_EDEFAULT == null ? controlName != null : !CONTROL_NAME_EDEFAULT.equals(controlName);
       case SpinCADPackage.EQUATE__MAX:
         return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
-      case SpinCADPackage.EQUATE__OFFSET:
-        return OFFSET_EDEFAULT == null ? offset != null : !OFFSET_EDEFAULT.equals(offset);
-      case SpinCADPackage.EQUATE__FUNC:
-        return FUNC_EDEFAULT == null ? func != null : !FUNC_EDEFAULT.equals(func);
+      case SpinCADPackage.EQUATE__MULTIPLIER:
+        return MULTIPLIER_EDEFAULT == null ? multiplier != null : !MULTIPLIER_EDEFAULT.equals(multiplier);
     }
     return super.eIsSet(featureID);
   }
@@ -495,16 +441,14 @@ public class EquateImpl extends SpinElementImpl implements Equate
     result.append(ename);
     result.append(", value: ");
     result.append(value);
-    result.append(", control: ");
-    result.append(control);
-    result.append(", label: ");
-    result.append(label);
+    result.append(", controlType: ");
+    result.append(controlType);
+    result.append(", controlName: ");
+    result.append(controlName);
     result.append(", max: ");
     result.append(max);
-    result.append(", Offset: ");
-    result.append(offset);
-    result.append(", Func: ");
-    result.append(func);
+    result.append(", multiplier: ");
+    result.append(multiplier);
     result.append(')');
     return result.toString();
   }

@@ -124,11 +124,10 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getControlOutputAccess().getNameAssignment_2(), "rule__ControlOutput__NameAssignment_2");
 					put(grammarAccess.getEquateAccess().getEnameAssignment_1(), "rule__Equate__EnameAssignment_1");
 					put(grammarAccess.getEquateAccess().getValueAssignment_2(), "rule__Equate__ValueAssignment_2");
-					put(grammarAccess.getEquateAccess().getControlAssignment_3_0(), "rule__Equate__ControlAssignment_3_0");
-					put(grammarAccess.getEquateAccess().getLabelAssignment_3_1(), "rule__Equate__LabelAssignment_3_1");
+					put(grammarAccess.getEquateAccess().getControlTypeAssignment_3_0(), "rule__Equate__ControlTypeAssignment_3_0");
+					put(grammarAccess.getEquateAccess().getControlNameAssignment_3_1(), "rule__Equate__ControlNameAssignment_3_1");
 					put(grammarAccess.getEquateAccess().getMaxAssignment_3_2(), "rule__Equate__MaxAssignment_3_2");
-					put(grammarAccess.getEquateAccess().getOffsetAssignment_3_3(), "rule__Equate__OffsetAssignment_3_3");
-					put(grammarAccess.getEquateAccess().getFuncAssignment_3_4(), "rule__Equate__FuncAssignment_3_4");
+					put(grammarAccess.getEquateAccess().getMultiplierAssignment_3_3(), "rule__Equate__MultiplierAssignment_3_3");
 					put(grammarAccess.getMemAccess().getBufferAssignment_1(), "rule__Mem__BufferAssignment_1");
 					put(grammarAccess.getMemAccess().getLengthAssignment_2(), "rule__Mem__LengthAssignment_2");
 					put(grammarAccess.getOffsetAccess().getNameAssignment_1(), "rule__Offset__NameAssignment_1");
@@ -140,9 +139,10 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGetInputDefaultAccess().getVariableAssignment_2(), "rule__GetInputDefault__VariableAssignment_2");
 					put(grammarAccess.getGetInputDefaultAccess().getScaleAssignment_3(), "rule__GetInputDefault__ScaleAssignment_3");
 					put(grammarAccess.getGetInputDefaultAccess().getDefaultValAssignment_4(), "rule__GetInputDefault__DefaultValAssignment_4");
-					put(grammarAccess.getGetDelayScaleControlAccess().getLengthAssignment_1(), "rule__GetDelayScaleControl__LengthAssignment_1");
-					put(grammarAccess.getGetDelayScaleControlAccess().getBufferAssignment_2(), "rule__GetDelayScaleControl__BufferAssignment_2");
-					put(grammarAccess.getGetDelayScaleControlAccess().getControlAssignment_3(), "rule__GetDelayScaleControl__ControlAssignment_3");
+					put(grammarAccess.getGetDelayScaleControlAccess().getRatioAssignment_1(), "rule__GetDelayScaleControl__RatioAssignment_1");
+					put(grammarAccess.getGetDelayScaleControlAccess().getLengthAssignment_2(), "rule__GetDelayScaleControl__LengthAssignment_2");
+					put(grammarAccess.getGetDelayScaleControlAccess().getOffsetAssignment_3(), "rule__GetDelayScaleControl__OffsetAssignment_3");
+					put(grammarAccess.getGetDelayScaleControlAccess().getControlAssignment_4(), "rule__GetDelayScaleControl__ControlAssignment_4");
 					put(grammarAccess.getSetOutputPinAccess().getPinNameAssignment_1(), "rule__SetOutputPin__PinNameAssignment_1");
 					put(grammarAccess.getSetOutputPinAccess().getVarNameAssignment_2(), "rule__SetOutputPin__VarNameAssignment_2");
 					put(grammarAccess.getReadRegisterAccess().getArg1Assignment_1(), "rule__ReadRegister__Arg1Assignment_1");

@@ -297,23 +297,21 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cValueSPINDOUBLEParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cControlAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cControlIDTerminalRuleCall_3_0_0 = (RuleCall)cControlAssignment_3_0.eContents().get(0);
-		private final Assignment cLabelAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cLabelIDTerminalRuleCall_3_1_0 = (RuleCall)cLabelAssignment_3_1.eContents().get(0);
+		private final Assignment cControlTypeAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cControlTypeIDTerminalRuleCall_3_0_0 = (RuleCall)cControlTypeAssignment_3_0.eContents().get(0);
+		private final Assignment cControlNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cControlNameIDTerminalRuleCall_3_1_0 = (RuleCall)cControlNameAssignment_3_1.eContents().get(0);
 		private final Assignment cMaxAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cMaxSPINDOUBLEParserRuleCall_3_2_0 = (RuleCall)cMaxAssignment_3_2.eContents().get(0);
-		private final Assignment cOffsetAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
-		private final RuleCall cOffsetSPINDOUBLEParserRuleCall_3_3_0 = (RuleCall)cOffsetAssignment_3_3.eContents().get(0);
-		private final Assignment cFuncAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
-		private final RuleCall cFuncIDTerminalRuleCall_3_4_0 = (RuleCall)cFuncAssignment_3_4.eContents().get(0);
+		private final Assignment cMultiplierAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cMultiplierSPINDOUBLEParserRuleCall_3_3_0 = (RuleCall)cMultiplierAssignment_3_3.eContents().get(0);
 		
 		//// this now includes info to help set up control panels
 		//Equate:
-		//	"equ" ename=ID value=SPINDOUBLE (control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?;
+		//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?;
 		public ParserRule getRule() { return rule; }
 
-		//"equ" ename=ID value=SPINDOUBLE (control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?
+		//"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?
 		public Group getGroup() { return cGroup; }
 
 		//"equ"
@@ -331,20 +329,20 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//SPINDOUBLE
 		public RuleCall getValueSPINDOUBLEParserRuleCall_2_0() { return cValueSPINDOUBLEParserRuleCall_2_0; }
 
-		//(control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?
+		//(controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//control=ID
-		public Assignment getControlAssignment_3_0() { return cControlAssignment_3_0; }
+		//controlType=ID
+		public Assignment getControlTypeAssignment_3_0() { return cControlTypeAssignment_3_0; }
 
 		//ID
-		public RuleCall getControlIDTerminalRuleCall_3_0_0() { return cControlIDTerminalRuleCall_3_0_0; }
+		public RuleCall getControlTypeIDTerminalRuleCall_3_0_0() { return cControlTypeIDTerminalRuleCall_3_0_0; }
 
-		//label=ID
-		public Assignment getLabelAssignment_3_1() { return cLabelAssignment_3_1; }
+		//controlName=ID
+		public Assignment getControlNameAssignment_3_1() { return cControlNameAssignment_3_1; }
 
 		//ID
-		public RuleCall getLabelIDTerminalRuleCall_3_1_0() { return cLabelIDTerminalRuleCall_3_1_0; }
+		public RuleCall getControlNameIDTerminalRuleCall_3_1_0() { return cControlNameIDTerminalRuleCall_3_1_0; }
 
 		//max=SPINDOUBLE
 		public Assignment getMaxAssignment_3_2() { return cMaxAssignment_3_2; }
@@ -352,17 +350,11 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//SPINDOUBLE
 		public RuleCall getMaxSPINDOUBLEParserRuleCall_3_2_0() { return cMaxSPINDOUBLEParserRuleCall_3_2_0; }
 
-		//Offset=SPINDOUBLE
-		public Assignment getOffsetAssignment_3_3() { return cOffsetAssignment_3_3; }
+		//multiplier=SPINDOUBLE
+		public Assignment getMultiplierAssignment_3_3() { return cMultiplierAssignment_3_3; }
 
 		//SPINDOUBLE
-		public RuleCall getOffsetSPINDOUBLEParserRuleCall_3_3_0() { return cOffsetSPINDOUBLEParserRuleCall_3_3_0; }
-
-		//Func=ID
-		public Assignment getFuncAssignment_3_4() { return cFuncAssignment_3_4; }
-
-		//ID
-		public RuleCall getFuncIDTerminalRuleCall_3_4_0() { return cFuncIDTerminalRuleCall_3_4_0; }
+		public RuleCall getMultiplierSPINDOUBLEParserRuleCall_3_3_0() { return cMultiplierSPINDOUBLEParserRuleCall_3_3_0; }
 	}
 
 	public class MemElements extends AbstractParserRuleElementFinder {
@@ -627,40 +619,48 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GetDelayScaleControl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cGetDelayScaleControlKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cLengthAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cLengthIDTerminalRuleCall_1_0 = (RuleCall)cLengthAssignment_1.eContents().get(0);
-		private final Assignment cBufferAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cBufferIDTerminalRuleCall_2_0 = (RuleCall)cBufferAssignment_2.eContents().get(0);
-		private final Assignment cControlAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cControlIDTerminalRuleCall_3_0 = (RuleCall)cControlAssignment_3.eContents().get(0);
+		private final Assignment cRatioAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRatioIDTerminalRuleCall_1_0 = (RuleCall)cRatioAssignment_1.eContents().get(0);
+		private final Assignment cLengthAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLengthIDTerminalRuleCall_2_0 = (RuleCall)cLengthAssignment_2.eContents().get(0);
+		private final Assignment cOffsetAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cOffsetIDTerminalRuleCall_3_0 = (RuleCall)cOffsetAssignment_3.eContents().get(0);
+		private final Assignment cControlAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cControlIDTerminalRuleCall_4_0 = (RuleCall)cControlAssignment_4.eContents().get(0);
 		
 		//GetDelayScaleControl:
-		//	"@getDelayScaleControl" length=ID buffer=ID control=ID?;
+		//	"@getDelayScaleControl" ratio=ID length=ID offset=ID control=ID?;
 		public ParserRule getRule() { return rule; }
 
-		//"@getDelayScaleControl" length=ID buffer=ID control=ID?
+		//"@getDelayScaleControl" ratio=ID length=ID offset=ID control=ID?
 		public Group getGroup() { return cGroup; }
 
 		//"@getDelayScaleControl"
 		public Keyword getGetDelayScaleControlKeyword_0() { return cGetDelayScaleControlKeyword_0; }
 
+		//ratio=ID
+		public Assignment getRatioAssignment_1() { return cRatioAssignment_1; }
+
+		//ID
+		public RuleCall getRatioIDTerminalRuleCall_1_0() { return cRatioIDTerminalRuleCall_1_0; }
+
 		//length=ID
-		public Assignment getLengthAssignment_1() { return cLengthAssignment_1; }
+		public Assignment getLengthAssignment_2() { return cLengthAssignment_2; }
 
 		//ID
-		public RuleCall getLengthIDTerminalRuleCall_1_0() { return cLengthIDTerminalRuleCall_1_0; }
+		public RuleCall getLengthIDTerminalRuleCall_2_0() { return cLengthIDTerminalRuleCall_2_0; }
 
-		//buffer=ID
-		public Assignment getBufferAssignment_2() { return cBufferAssignment_2; }
+		//offset=ID
+		public Assignment getOffsetAssignment_3() { return cOffsetAssignment_3; }
 
 		//ID
-		public RuleCall getBufferIDTerminalRuleCall_2_0() { return cBufferIDTerminalRuleCall_2_0; }
+		public RuleCall getOffsetIDTerminalRuleCall_3_0() { return cOffsetIDTerminalRuleCall_3_0; }
 
 		//control=ID?
-		public Assignment getControlAssignment_3() { return cControlAssignment_3; }
+		public Assignment getControlAssignment_4() { return cControlAssignment_4; }
 
 		//ID
-		public RuleCall getControlIDTerminalRuleCall_3_0() { return cControlIDTerminalRuleCall_3_0; }
+		public RuleCall getControlIDTerminalRuleCall_4_0() { return cControlIDTerminalRuleCall_4_0; }
 	}
 
 	public class GetBaseAddressElements extends AbstractParserRuleElementFinder {
@@ -2301,7 +2301,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// this now includes info to help set up control panels
 	//Equate:
-	//	"equ" ename=ID value=SPINDOUBLE (control=ID label=ID max=SPINDOUBLE Offset=SPINDOUBLE Func=ID)?;
+	//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?;
 	public EquateElements getEquateAccess() {
 		return (pEquate != null) ? pEquate : (pEquate = new EquateElements());
 	}
@@ -2403,7 +2403,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//GetDelayScaleControl:
-	//	"@getDelayScaleControl" length=ID buffer=ID control=ID?;
+	//	"@getDelayScaleControl" ratio=ID length=ID offset=ID control=ID?;
 	public GetDelayScaleControlElements getGetDelayScaleControlAccess() {
 		return (pGetDelayScaleControl != null) ? pGetDelayScaleControl : (pGetDelayScaleControl = new GetDelayScaleControlElements());
 	}
