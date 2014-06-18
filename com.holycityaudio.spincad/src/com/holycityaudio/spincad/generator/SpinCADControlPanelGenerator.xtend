@@ -135,7 +135,7 @@ def genLabelUpdater(Equate e) {
 	'''
 	«IF e.controlType == "SliderLabel"»
 		private void update«e.ename»Label() {
-			«e.ename»Label.setText("«e.controlName» " + String.format("%4.2f", gCB.get«e.ename»()));		
+			«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.get«e.ename»()));		
 		}
 	«ENDIF»
 		

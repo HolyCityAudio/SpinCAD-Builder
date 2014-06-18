@@ -740,6 +740,24 @@ ruleEquate returns [EObject current=null]
 	    }
 
 )
+)(
+(
+		lv_precision_8_0=RULE_INT
+		{
+			newLeafNode(lv_precision_8_0, grammarAccess.getEquateAccess().getPrecisionINTTerminalRuleCall_3_5_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEquateRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"precision",
+        		lv_precision_8_0, 
+        		"INT");
+	    }
+
+)
 ))?)
 ;
 

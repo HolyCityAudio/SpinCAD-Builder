@@ -3191,6 +3191,7 @@ rule__Equate__Group_3__4
     }
 :
 	rule__Equate__Group_3__4__Impl
+	rule__Equate__Group_3__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -3211,6 +3212,36 @@ rule__Equate__Group_3__4__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__Equate__Group_3__5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Equate__Group_3__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Equate__Group_3__5__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEquateAccess().getPrecisionAssignment_3_5()); }
+(rule__Equate__PrecisionAssignment_3_5)
+{ after(grammarAccess.getEquateAccess().getPrecisionAssignment_3_5()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -8297,6 +8328,21 @@ rule__Equate__MultiplierAssignment_3_4
 (
 { before(grammarAccess.getEquateAccess().getMultiplierSPINDOUBLEParserRuleCall_3_4_0()); }
 	ruleSPINDOUBLE{ after(grammarAccess.getEquateAccess().getMultiplierSPINDOUBLEParserRuleCall_3_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Equate__PrecisionAssignment_3_5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEquateAccess().getPrecisionINTTerminalRuleCall_3_5_0()); }
+	RULE_INT{ after(grammarAccess.getEquateAccess().getPrecisionINTTerminalRuleCall_3_5_0()); }
 )
 
 ;
