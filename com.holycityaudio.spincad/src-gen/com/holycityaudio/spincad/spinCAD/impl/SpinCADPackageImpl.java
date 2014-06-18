@@ -781,6 +781,16 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getEquate_Option()
+  {
+    return (EAttribute)equateEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMem()
   {
     return memEClass;
@@ -1788,6 +1798,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(equateEClass, EQUATE__MAX_VAL);
     createEAttribute(equateEClass, EQUATE__MULTIPLIER);
     createEAttribute(equateEClass, EQUATE__PRECISION);
+    createEAttribute(equateEClass, EQUATE__OPTION);
 
     memEClass = createEClass(MEM);
     createEAttribute(memEClass, MEM__BUFFER);
@@ -2050,6 +2061,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getEquate_MaxVal(), ecorePackage.getEString(), "maxVal", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEquate_Multiplier(), ecorePackage.getEString(), "multiplier", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEquate_Precision(), ecorePackage.getEInt(), "precision", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEquate_Option(), ecorePackage.getEString(), "option", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(memEClass, Mem.class, "Mem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMem_Buffer(), ecorePackage.getEString(), "buffer", null, 0, 1, Mem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

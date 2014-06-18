@@ -3220,6 +3220,7 @@ rule__Equate__Group_3__5
     }
 :
 	rule__Equate__Group_3__5__Impl
+	rule__Equate__Group_3__6
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -3240,6 +3241,36 @@ rule__Equate__Group_3__5__Impl
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__Equate__Group_3__6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Equate__Group_3__6__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Equate__Group_3__6__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEquateAccess().getOptionAssignment_3_6()); }
+(rule__Equate__OptionAssignment_3_6)?
+{ after(grammarAccess.getEquateAccess().getOptionAssignment_3_6()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -8343,6 +8374,21 @@ rule__Equate__PrecisionAssignment_3_5
 (
 { before(grammarAccess.getEquateAccess().getPrecisionINTTerminalRuleCall_3_5_0()); }
 	RULE_INT{ after(grammarAccess.getEquateAccess().getPrecisionINTTerminalRuleCall_3_5_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Equate__OptionAssignment_3_6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEquateAccess().getOptionIDTerminalRuleCall_3_6_0()); }
+	RULE_ID{ after(grammarAccess.getEquateAccess().getOptionIDTerminalRuleCall_3_6_0()); }
 )
 
 ;
