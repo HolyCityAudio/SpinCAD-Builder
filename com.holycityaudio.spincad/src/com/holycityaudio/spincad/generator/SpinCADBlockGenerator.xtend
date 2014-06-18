@@ -98,6 +98,13 @@ def codeGenerate(String blockName, Program pr) {
 				super(x, y);
 				controlPanelImplemented = true;
 				setName("«pr.name»");	
+				«FOR SpinElement e : pr.elements»
+					«switch e {
+						// variables should be allocated within the CADBlock constructor
+						Equate:{setEquateVar(e)}
+					}»
+				«ENDFOR»
+
 				// Iterate through pin definitions and allocate or assign as needed
 				«FOR Pin p : pr.pins»
 					«switch p {
@@ -138,7 +145,8 @@ def codeGenerate(String blockName, Program pr) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					Instruction:{genInstruction(e)}
-					Equate:{setEquate(e)}
+					// registers should be allocated within the generateCode() method
+					Equate:{setEquateReg(e)}
 					Mem:{genMem(e)}
 					Macro: { genMacro(e) }
 				}»
@@ -293,9 +301,14 @@ def genSetOutputPin(SetOutputPin p) {
 		«ENDIF»
 	'''
 
-	def setEquate(Equate e) '''
+	def setEquateReg(Equate e) '''
 		«IF e.getValue.toUpperCase.startsWith("REG",0)»
 		«e.getEname» = sfxb.allocateReg();
+		«ENDIF»
+	'''
+
+	def setEquateVar(Equate e) '''
+		«IF e.getValue.toUpperCase.startsWith("REG",0)»
 		«ELSE»
 		«e.getEname» = «e.getValue»;
 		«ENDIF»

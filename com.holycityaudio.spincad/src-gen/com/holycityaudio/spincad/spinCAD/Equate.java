@@ -15,7 +15,8 @@ package com.holycityaudio.spincad.spinCAD;
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getValue <em>Value</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getControlType <em>Control Type</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getControlName <em>Control Name</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMax <em>Max</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMinVal <em>Min Val</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMaxVal <em>Max Val</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMultiplier <em>Multiplier</em>}</li>
  * </ul>
  * </p>
@@ -131,30 +132,56 @@ public interface Equate extends SpinElement
   void setControlName(String value);
 
   /**
-   * Returns the value of the '<em><b>Max</b></em>' attribute.
+   * Returns the value of the '<em><b>Min Val</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Max</em>' attribute isn't clear,
+   * If the meaning of the '<em>Min Val</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Max</em>' attribute.
-   * @see #setMax(String)
-   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_Max()
+   * @return the value of the '<em>Min Val</em>' attribute.
+   * @see #setMinVal(String)
+   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_MinVal()
    * @model
    * @generated
    */
-  String getMax();
+  String getMinVal();
 
   /**
-   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getMax <em>Max</em>}' attribute.
+   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getMinVal <em>Min Val</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Max</em>' attribute.
-   * @see #getMax()
+   * @param value the new value of the '<em>Min Val</em>' attribute.
+   * @see #getMinVal()
    * @generated
    */
-  void setMax(String value);
+  void setMinVal(String value);
+
+  /**
+   * Returns the value of the '<em><b>Max Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Max Val</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Max Val</em>' attribute.
+   * @see #setMaxVal(String)
+   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_MaxVal()
+   * @model
+   * @generated
+   */
+  String getMaxVal();
+
+  /**
+   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getMaxVal <em>Max Val</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Max Val</em>' attribute.
+   * @see #getMaxVal()
+   * @generated
+   */
+  void setMaxVal(String value);
 
   /**
    * Returns the value of the '<em><b>Multiplier</b></em>' attribute.

@@ -640,7 +640,7 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (ename=ID value=SPINDOUBLE (controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?)
+	 *     (ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE)?)
 	 */
 	protected void sequence_Equate(EObject context, Equate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

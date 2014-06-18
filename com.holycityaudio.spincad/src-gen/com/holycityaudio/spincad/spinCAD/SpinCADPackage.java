@@ -427,13 +427,22 @@ public interface SpinCADPackage extends EPackage
   int EQUATE__CONTROL_NAME = SPIN_ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Max</b></em>' attribute.
+   * The feature id for the '<em><b>Min Val</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EQUATE__MAX = SPIN_ELEMENT_FEATURE_COUNT + 4;
+  int EQUATE__MIN_VAL = SPIN_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Max Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATE__MAX_VAL = SPIN_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Multiplier</b></em>' attribute.
@@ -442,7 +451,7 @@ public interface SpinCADPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EQUATE__MULTIPLIER = SPIN_ELEMENT_FEATURE_COUNT + 5;
+  int EQUATE__MULTIPLIER = SPIN_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Equate</em>' class.
@@ -451,7 +460,7 @@ public interface SpinCADPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EQUATE_FEATURE_COUNT = SPIN_ELEMENT_FEATURE_COUNT + 6;
+  int EQUATE_FEATURE_COUNT = SPIN_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link com.holycityaudio.spincad.spinCAD.impl.MemImpl <em>Mem</em>}' class.
@@ -2232,15 +2241,26 @@ public interface SpinCADPackage extends EPackage
   EAttribute getEquate_ControlName();
 
   /**
-   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getMax <em>Max</em>}'.
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getMinVal <em>Min Val</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Max</em>'.
-   * @see com.holycityaudio.spincad.spinCAD.Equate#getMax()
+   * @return the meta object for the attribute '<em>Min Val</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.Equate#getMinVal()
    * @see #getEquate()
    * @generated
    */
-  EAttribute getEquate_Max();
+  EAttribute getEquate_MinVal();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getMaxVal <em>Max Val</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Max Val</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.Equate#getMaxVal()
+   * @see #getEquate()
+   * @generated
+   */
+  EAttribute getEquate_MaxVal();
 
   /**
    * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getMultiplier <em>Multiplier</em>}'.
@@ -3446,12 +3466,20 @@ public interface SpinCADPackage extends EPackage
     EAttribute EQUATE__CONTROL_NAME = eINSTANCE.getEquate_ControlName();
 
     /**
-     * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Min Val</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EQUATE__MAX = eINSTANCE.getEquate_Max();
+    EAttribute EQUATE__MIN_VAL = eINSTANCE.getEquate_MinVal();
+
+    /**
+     * The meta object literal for the '<em><b>Max Val</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EQUATE__MAX_VAL = eINSTANCE.getEquate_MaxVal();
 
     /**
      * The meta object literal for the '<em><b>Multiplier</b></em>' attribute feature.

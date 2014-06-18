@@ -22,7 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getValue <em>Value</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getControlType <em>Control Type</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getControlName <em>Control Name</em>}</li>
- *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getMax <em>Max</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getMinVal <em>Min Val</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getMaxVal <em>Max Val</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getMultiplier <em>Multiplier</em>}</li>
  * </ul>
  * </p>
@@ -112,24 +113,44 @@ public class EquateImpl extends SpinElementImpl implements Equate
   protected String controlName = CONTROL_NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
+   * The default value of the '{@link #getMinVal() <em>Min Val</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMax()
+   * @see #getMinVal()
    * @generated
    * @ordered
    */
-  protected static final String MAX_EDEFAULT = null;
+  protected static final String MIN_VAL_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
+   * The cached value of the '{@link #getMinVal() <em>Min Val</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMax()
+   * @see #getMinVal()
    * @generated
    * @ordered
    */
-  protected String max = MAX_EDEFAULT;
+  protected String minVal = MIN_VAL_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMaxVal() <em>Max Val</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMaxVal()
+   * @generated
+   * @ordered
+   */
+  protected static final String MAX_VAL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMaxVal() <em>Max Val</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMaxVal()
+   * @generated
+   * @ordered
+   */
+  protected String maxVal = MAX_VAL_EDEFAULT;
 
   /**
    * The default value of the '{@link #getMultiplier() <em>Multiplier</em>}' attribute.
@@ -269,9 +290,9 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMax()
+  public String getMinVal()
   {
-    return max;
+    return minVal;
   }
 
   /**
@@ -279,12 +300,35 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMax(String newMax)
+  public void setMinVal(String newMinVal)
   {
-    String oldMax = max;
-    max = newMax;
+    String oldMinVal = minVal;
+    minVal = newMinVal;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__MAX, oldMax, max));
+      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__MIN_VAL, oldMinVal, minVal));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getMaxVal()
+  {
+    return maxVal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMaxVal(String newMaxVal)
+  {
+    String oldMaxVal = maxVal;
+    maxVal = newMaxVal;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__MAX_VAL, oldMaxVal, maxVal));
   }
 
   /**
@@ -328,8 +372,10 @@ public class EquateImpl extends SpinElementImpl implements Equate
         return getControlType();
       case SpinCADPackage.EQUATE__CONTROL_NAME:
         return getControlName();
-      case SpinCADPackage.EQUATE__MAX:
-        return getMax();
+      case SpinCADPackage.EQUATE__MIN_VAL:
+        return getMinVal();
+      case SpinCADPackage.EQUATE__MAX_VAL:
+        return getMaxVal();
       case SpinCADPackage.EQUATE__MULTIPLIER:
         return getMultiplier();
     }
@@ -358,8 +404,11 @@ public class EquateImpl extends SpinElementImpl implements Equate
       case SpinCADPackage.EQUATE__CONTROL_NAME:
         setControlName((String)newValue);
         return;
-      case SpinCADPackage.EQUATE__MAX:
-        setMax((String)newValue);
+      case SpinCADPackage.EQUATE__MIN_VAL:
+        setMinVal((String)newValue);
+        return;
+      case SpinCADPackage.EQUATE__MAX_VAL:
+        setMaxVal((String)newValue);
         return;
       case SpinCADPackage.EQUATE__MULTIPLIER:
         setMultiplier((String)newValue);
@@ -390,8 +439,11 @@ public class EquateImpl extends SpinElementImpl implements Equate
       case SpinCADPackage.EQUATE__CONTROL_NAME:
         setControlName(CONTROL_NAME_EDEFAULT);
         return;
-      case SpinCADPackage.EQUATE__MAX:
-        setMax(MAX_EDEFAULT);
+      case SpinCADPackage.EQUATE__MIN_VAL:
+        setMinVal(MIN_VAL_EDEFAULT);
+        return;
+      case SpinCADPackage.EQUATE__MAX_VAL:
+        setMaxVal(MAX_VAL_EDEFAULT);
         return;
       case SpinCADPackage.EQUATE__MULTIPLIER:
         setMultiplier(MULTIPLIER_EDEFAULT);
@@ -418,8 +470,10 @@ public class EquateImpl extends SpinElementImpl implements Equate
         return CONTROL_TYPE_EDEFAULT == null ? controlType != null : !CONTROL_TYPE_EDEFAULT.equals(controlType);
       case SpinCADPackage.EQUATE__CONTROL_NAME:
         return CONTROL_NAME_EDEFAULT == null ? controlName != null : !CONTROL_NAME_EDEFAULT.equals(controlName);
-      case SpinCADPackage.EQUATE__MAX:
-        return MAX_EDEFAULT == null ? max != null : !MAX_EDEFAULT.equals(max);
+      case SpinCADPackage.EQUATE__MIN_VAL:
+        return MIN_VAL_EDEFAULT == null ? minVal != null : !MIN_VAL_EDEFAULT.equals(minVal);
+      case SpinCADPackage.EQUATE__MAX_VAL:
+        return MAX_VAL_EDEFAULT == null ? maxVal != null : !MAX_VAL_EDEFAULT.equals(maxVal);
       case SpinCADPackage.EQUATE__MULTIPLIER:
         return MULTIPLIER_EDEFAULT == null ? multiplier != null : !MULTIPLIER_EDEFAULT.equals(multiplier);
     }
@@ -445,8 +499,10 @@ public class EquateImpl extends SpinElementImpl implements Equate
     result.append(controlType);
     result.append(", controlName: ");
     result.append(controlName);
-    result.append(", max: ");
-    result.append(max);
+    result.append(", minVal: ");
+    result.append(minVal);
+    result.append(", maxVal: ");
+    result.append(maxVal);
     result.append(", multiplier: ");
     result.append(multiplier);
     result.append(')');
