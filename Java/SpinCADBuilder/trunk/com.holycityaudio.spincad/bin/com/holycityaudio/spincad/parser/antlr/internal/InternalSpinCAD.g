@@ -758,7 +758,25 @@ ruleEquate returns [EObject current=null]
 	    }
 
 )
-))?)
+)(
+(
+		lv_option_9_0=RULE_ID
+		{
+			newLeafNode(lv_option_9_0, grammarAccess.getEquateAccess().getOptionIDTerminalRuleCall_3_6_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEquateRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"option",
+        		lv_option_9_0, 
+        		"ID");
+	    }
+
+)
+)?)?)
 ;
 
 

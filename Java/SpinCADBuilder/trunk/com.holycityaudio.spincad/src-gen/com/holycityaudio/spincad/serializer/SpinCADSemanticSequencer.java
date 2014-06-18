@@ -649,7 +649,8 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *             minVal=SPINDOUBLE 
 	 *             maxVal=SPINDOUBLE 
 	 *             multiplier=SPINDOUBLE 
-	 *             precision=INT
+	 *             precision=INT 
+	 *             option=ID?
 	 *         )?
 	 *     )
 	 */

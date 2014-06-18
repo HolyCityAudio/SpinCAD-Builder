@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getMaxVal <em>Max Val</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getMultiplier <em>Multiplier</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getPrecision <em>Precision</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.impl.EquateImpl#getOption <em>Option</em>}</li>
  * </ul>
  * </p>
  *
@@ -192,6 +193,26 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * @ordered
    */
   protected int precision = PRECISION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getOption() <em>Option</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOption()
+   * @generated
+   * @ordered
+   */
+  protected static final String OPTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOption() <em>Option</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOption()
+   * @generated
+   * @ordered
+   */
+  protected String option = OPTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -403,6 +424,29 @@ public class EquateImpl extends SpinElementImpl implements Equate
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getOption()
+  {
+    return option;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOption(String newOption)
+  {
+    String oldOption = option;
+    option = newOption;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.EQUATE__OPTION, oldOption, option));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -424,6 +468,8 @@ public class EquateImpl extends SpinElementImpl implements Equate
         return getMultiplier();
       case SpinCADPackage.EQUATE__PRECISION:
         return getPrecision();
+      case SpinCADPackage.EQUATE__OPTION:
+        return getOption();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -461,6 +507,9 @@ public class EquateImpl extends SpinElementImpl implements Equate
         return;
       case SpinCADPackage.EQUATE__PRECISION:
         setPrecision((Integer)newValue);
+        return;
+      case SpinCADPackage.EQUATE__OPTION:
+        setOption((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -500,6 +549,9 @@ public class EquateImpl extends SpinElementImpl implements Equate
       case SpinCADPackage.EQUATE__PRECISION:
         setPrecision(PRECISION_EDEFAULT);
         return;
+      case SpinCADPackage.EQUATE__OPTION:
+        setOption(OPTION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -530,6 +582,8 @@ public class EquateImpl extends SpinElementImpl implements Equate
         return MULTIPLIER_EDEFAULT == null ? multiplier != null : !MULTIPLIER_EDEFAULT.equals(multiplier);
       case SpinCADPackage.EQUATE__PRECISION:
         return precision != PRECISION_EDEFAULT;
+      case SpinCADPackage.EQUATE__OPTION:
+        return OPTION_EDEFAULT == null ? option != null : !OPTION_EDEFAULT.equals(option);
     }
     return super.eIsSet(featureID);
   }
@@ -561,6 +615,8 @@ public class EquateImpl extends SpinElementImpl implements Equate
     result.append(multiplier);
     result.append(", precision: ");
     result.append(precision);
+    result.append(", option: ");
+    result.append(option);
     result.append(')');
     return result.toString();
   }

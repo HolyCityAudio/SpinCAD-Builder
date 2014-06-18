@@ -19,6 +19,7 @@ package com.holycityaudio.spincad.spinCAD;
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMaxVal <em>Max Val</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMultiplier <em>Multiplier</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getPrecision <em>Precision</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getOption <em>Option</em>}</li>
  * </ul>
  * </p>
  *
@@ -235,5 +236,31 @@ public interface Equate extends SpinElement
    * @generated
    */
   void setPrecision(int value);
+
+  /**
+   * Returns the value of the '<em><b>Option</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Option</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Option</em>' attribute.
+   * @see #setOption(String)
+   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_Option()
+   * @model
+   * @generated
+   */
+  String getOption();
+
+  /**
+   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getOption <em>Option</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Option</em>' attribute.
+   * @see #getOption()
+   * @generated
+   */
+  void setOption(String value);
 
 } // Equate

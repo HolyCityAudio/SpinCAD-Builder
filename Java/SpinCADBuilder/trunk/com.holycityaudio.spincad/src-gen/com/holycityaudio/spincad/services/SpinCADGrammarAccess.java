@@ -309,15 +309,17 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMultiplierSPINDOUBLEParserRuleCall_3_4_0 = (RuleCall)cMultiplierAssignment_3_4.eContents().get(0);
 		private final Assignment cPrecisionAssignment_3_5 = (Assignment)cGroup_3.eContents().get(5);
 		private final RuleCall cPrecisionINTTerminalRuleCall_3_5_0 = (RuleCall)cPrecisionAssignment_3_5.eContents().get(0);
+		private final Assignment cOptionAssignment_3_6 = (Assignment)cGroup_3.eContents().get(6);
+		private final RuleCall cOptionIDTerminalRuleCall_3_6_0 = (RuleCall)cOptionAssignment_3_6.eContents().get(0);
 		
 		//// this now includes info to help set up control panels
 		//Equate:
 		//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE
-		//	multiplier=SPINDOUBLE precision=INT)?;
+		//	multiplier=SPINDOUBLE precision=INT option=ID?)?;
 		public ParserRule getRule() { return rule; }
 
 		//"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE
-		//precision=INT)?
+		//precision=INT option=ID?)?
 		public Group getGroup() { return cGroup; }
 
 		//"equ"
@@ -335,7 +337,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//SPINDOUBLE
 		public RuleCall getValueSPINDOUBLEParserRuleCall_2_0() { return cValueSPINDOUBLEParserRuleCall_2_0; }
 
-		//(controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT)?
+		//(controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT option=ID?)?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//controlType=ID
@@ -373,6 +375,12 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 		//INT
 		public RuleCall getPrecisionINTTerminalRuleCall_3_5_0() { return cPrecisionINTTerminalRuleCall_3_5_0; }
+
+		//option=ID?
+		public Assignment getOptionAssignment_3_6() { return cOptionAssignment_3_6; }
+
+		//ID
+		public RuleCall getOptionIDTerminalRuleCall_3_6_0() { return cOptionIDTerminalRuleCall_3_6_0; }
 	}
 
 	public class MemElements extends AbstractParserRuleElementFinder {
@@ -2320,7 +2328,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	//// this now includes info to help set up control panels
 	//Equate:
 	//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE
-	//	multiplier=SPINDOUBLE precision=INT)?;
+	//	multiplier=SPINDOUBLE precision=INT option=ID?)?;
 	public EquateElements getEquateAccess() {
 		return (pEquate != null) ? pEquate : (pEquate = new EquateElements());
 	}
