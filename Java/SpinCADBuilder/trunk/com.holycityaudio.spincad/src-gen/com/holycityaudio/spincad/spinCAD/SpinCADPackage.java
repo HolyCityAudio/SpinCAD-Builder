@@ -454,13 +454,22 @@ public interface SpinCADPackage extends EPackage
   int EQUATE__MULTIPLIER = SPIN_ELEMENT_FEATURE_COUNT + 6;
 
   /**
+   * The feature id for the '<em><b>Precision</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EQUATE__PRECISION = SPIN_ELEMENT_FEATURE_COUNT + 7;
+
+  /**
    * The number of structural features of the '<em>Equate</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EQUATE_FEATURE_COUNT = SPIN_ELEMENT_FEATURE_COUNT + 7;
+  int EQUATE_FEATURE_COUNT = SPIN_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link com.holycityaudio.spincad.spinCAD.impl.MemImpl <em>Mem</em>}' class.
@@ -2274,6 +2283,17 @@ public interface SpinCADPackage extends EPackage
   EAttribute getEquate_Multiplier();
 
   /**
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.Equate#getPrecision <em>Precision</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Precision</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.Equate#getPrecision()
+   * @see #getEquate()
+   * @generated
+   */
+  EAttribute getEquate_Precision();
+
+  /**
    * Returns the meta object for class '{@link com.holycityaudio.spincad.spinCAD.Mem <em>Mem</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3488,6 +3508,14 @@ public interface SpinCADPackage extends EPackage
      * @generated
      */
     EAttribute EQUATE__MULTIPLIER = eINSTANCE.getEquate_Multiplier();
+
+    /**
+     * The meta object literal for the '<em><b>Precision</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EQUATE__PRECISION = eINSTANCE.getEquate_Precision();
 
     /**
      * The meta object literal for the '{@link com.holycityaudio.spincad.spinCAD.impl.MemImpl <em>Mem</em>}' class.

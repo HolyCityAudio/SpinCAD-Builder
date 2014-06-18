@@ -129,6 +129,7 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEquateAccess().getMinValAssignment_3_2(), "rule__Equate__MinValAssignment_3_2");
 					put(grammarAccess.getEquateAccess().getMaxValAssignment_3_3(), "rule__Equate__MaxValAssignment_3_3");
 					put(grammarAccess.getEquateAccess().getMultiplierAssignment_3_4(), "rule__Equate__MultiplierAssignment_3_4");
+					put(grammarAccess.getEquateAccess().getPrecisionAssignment_3_5(), "rule__Equate__PrecisionAssignment_3_5");
 					put(grammarAccess.getMemAccess().getBufferAssignment_1(), "rule__Mem__BufferAssignment_1");
 					put(grammarAccess.getMemAccess().getLengthAssignment_2(), "rule__Mem__LengthAssignment_2");
 					put(grammarAccess.getOffsetAccess().getNameAssignment_1(), "rule__Offset__NameAssignment_1");

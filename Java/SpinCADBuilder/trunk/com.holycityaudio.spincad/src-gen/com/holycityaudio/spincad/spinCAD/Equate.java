@@ -18,6 +18,7 @@ package com.holycityaudio.spincad.spinCAD;
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMinVal <em>Min Val</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMaxVal <em>Max Val</em>}</li>
  *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getMultiplier <em>Multiplier</em>}</li>
+ *   <li>{@link com.holycityaudio.spincad.spinCAD.Equate#getPrecision <em>Precision</em>}</li>
  * </ul>
  * </p>
  *
@@ -208,5 +209,31 @@ public interface Equate extends SpinElement
    * @generated
    */
   void setMultiplier(String value);
+
+  /**
+   * Returns the value of the '<em><b>Precision</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Precision</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Precision</em>' attribute.
+   * @see #setPrecision(int)
+   * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getEquate_Precision()
+   * @model
+   * @generated
+   */
+  int getPrecision();
+
+  /**
+   * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.Equate#getPrecision <em>Precision</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Precision</em>' attribute.
+   * @see #getPrecision()
+   * @generated
+   */
+  void setPrecision(int value);
 
 } // Equate
