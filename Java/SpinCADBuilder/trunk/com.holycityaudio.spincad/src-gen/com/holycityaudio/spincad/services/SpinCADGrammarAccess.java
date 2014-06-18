@@ -301,17 +301,21 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cControlTypeIDTerminalRuleCall_3_0_0 = (RuleCall)cControlTypeAssignment_3_0.eContents().get(0);
 		private final Assignment cControlNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cControlNameIDTerminalRuleCall_3_1_0 = (RuleCall)cControlNameAssignment_3_1.eContents().get(0);
-		private final Assignment cMaxAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cMaxSPINDOUBLEParserRuleCall_3_2_0 = (RuleCall)cMaxAssignment_3_2.eContents().get(0);
-		private final Assignment cMultiplierAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
-		private final RuleCall cMultiplierSPINDOUBLEParserRuleCall_3_3_0 = (RuleCall)cMultiplierAssignment_3_3.eContents().get(0);
+		private final Assignment cMinValAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cMinValSPINDOUBLEParserRuleCall_3_2_0 = (RuleCall)cMinValAssignment_3_2.eContents().get(0);
+		private final Assignment cMaxValAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cMaxValSPINDOUBLEParserRuleCall_3_3_0 = (RuleCall)cMaxValAssignment_3_3.eContents().get(0);
+		private final Assignment cMultiplierAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
+		private final RuleCall cMultiplierSPINDOUBLEParserRuleCall_3_4_0 = (RuleCall)cMultiplierAssignment_3_4.eContents().get(0);
 		
 		//// this now includes info to help set up control panels
 		//Equate:
-		//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?;
+		//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE
+		//	multiplier=SPINDOUBLE)?;
 		public ParserRule getRule() { return rule; }
 
-		//"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?
+		//"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE
+		//multiplier=SPINDOUBLE)?
 		public Group getGroup() { return cGroup; }
 
 		//"equ"
@@ -329,7 +333,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//SPINDOUBLE
 		public RuleCall getValueSPINDOUBLEParserRuleCall_2_0() { return cValueSPINDOUBLEParserRuleCall_2_0; }
 
-		//(controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?
+		//(controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE)?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//controlType=ID
@@ -344,17 +348,23 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getControlNameIDTerminalRuleCall_3_1_0() { return cControlNameIDTerminalRuleCall_3_1_0; }
 
-		//max=SPINDOUBLE
-		public Assignment getMaxAssignment_3_2() { return cMaxAssignment_3_2; }
+		//minVal=SPINDOUBLE
+		public Assignment getMinValAssignment_3_2() { return cMinValAssignment_3_2; }
 
 		//SPINDOUBLE
-		public RuleCall getMaxSPINDOUBLEParserRuleCall_3_2_0() { return cMaxSPINDOUBLEParserRuleCall_3_2_0; }
+		public RuleCall getMinValSPINDOUBLEParserRuleCall_3_2_0() { return cMinValSPINDOUBLEParserRuleCall_3_2_0; }
+
+		//maxVal=SPINDOUBLE
+		public Assignment getMaxValAssignment_3_3() { return cMaxValAssignment_3_3; }
+
+		//SPINDOUBLE
+		public RuleCall getMaxValSPINDOUBLEParserRuleCall_3_3_0() { return cMaxValSPINDOUBLEParserRuleCall_3_3_0; }
 
 		//multiplier=SPINDOUBLE
-		public Assignment getMultiplierAssignment_3_3() { return cMultiplierAssignment_3_3; }
+		public Assignment getMultiplierAssignment_3_4() { return cMultiplierAssignment_3_4; }
 
 		//SPINDOUBLE
-		public RuleCall getMultiplierSPINDOUBLEParserRuleCall_3_3_0() { return cMultiplierSPINDOUBLEParserRuleCall_3_3_0; }
+		public RuleCall getMultiplierSPINDOUBLEParserRuleCall_3_4_0() { return cMultiplierSPINDOUBLEParserRuleCall_3_4_0; }
 	}
 
 	public class MemElements extends AbstractParserRuleElementFinder {
@@ -2301,7 +2311,8 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// this now includes info to help set up control panels
 	//Equate:
-	//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID max=SPINDOUBLE multiplier=SPINDOUBLE)?;
+	//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE
+	//	multiplier=SPINDOUBLE)?;
 	public EquateElements getEquateAccess() {
 		return (pEquate != null) ? pEquate : (pEquate = new EquateElements());
 	}

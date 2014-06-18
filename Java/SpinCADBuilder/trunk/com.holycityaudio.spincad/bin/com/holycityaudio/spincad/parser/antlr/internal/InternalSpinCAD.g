@@ -689,16 +689,16 @@ ruleEquate returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEquateAccess().getMaxSPINDOUBLEParserRuleCall_3_2_0()); 
+	        newCompositeNode(grammarAccess.getEquateAccess().getMinValSPINDOUBLEParserRuleCall_3_2_0()); 
 	    }
-		lv_max_5_0=ruleSPINDOUBLE		{
+		lv_minVal_5_0=ruleSPINDOUBLE		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEquateRule());
 	        }
        		set(
        			$current, 
-       			"max",
-        		lv_max_5_0, 
+       			"minVal",
+        		lv_minVal_5_0, 
         		"SPINDOUBLE");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -707,16 +707,34 @@ ruleEquate returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEquateAccess().getMultiplierSPINDOUBLEParserRuleCall_3_3_0()); 
+	        newCompositeNode(grammarAccess.getEquateAccess().getMaxValSPINDOUBLEParserRuleCall_3_3_0()); 
 	    }
-		lv_multiplier_6_0=ruleSPINDOUBLE		{
+		lv_maxVal_6_0=ruleSPINDOUBLE		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEquateRule());
+	        }
+       		set(
+       			$current, 
+       			"maxVal",
+        		lv_maxVal_6_0, 
+        		"SPINDOUBLE");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEquateAccess().getMultiplierSPINDOUBLEParserRuleCall_3_4_0()); 
+	    }
+		lv_multiplier_7_0=ruleSPINDOUBLE		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEquateRule());
 	        }
        		set(
        			$current, 
        			"multiplier",
-        		lv_multiplier_6_0, 
+        		lv_multiplier_7_0, 
         		"SPINDOUBLE");
 	        afterParserOrEnumRuleCall();
 	    }

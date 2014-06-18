@@ -43,7 +43,7 @@ SpinElement:
 
 // this now includes info to help set up control panels
 Equate:
-	'equ' ename = ID value = SPINDOUBLE (controlType = ID controlName = ID max = SPINDOUBLE multiplier = SPINDOUBLE)?;
+	'equ' ename = ID value = SPINDOUBLE (controlType = ID controlName = ID minVal = SPINDOUBLE maxVal = SPINDOUBLE multiplier = SPINDOUBLE)?;
 
 Mem:
 	'mem' buffer = ID length = SPINREGISTER

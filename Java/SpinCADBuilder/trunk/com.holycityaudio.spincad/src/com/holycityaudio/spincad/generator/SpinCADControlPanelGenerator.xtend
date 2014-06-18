@@ -110,7 +110,7 @@ def declareControl(Equate e) {
 def sortControl(String blockName, Equate e) {
 	'''
 	«IF e.controlType == "SliderLabel"»
-		«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, 0, «e.max» * «e.multiplier», (int) gCB.get«e.ename»());
+		«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 		«e.ename»Slider.addChangeListener(new «blockName»SliderListener());
 		«e.ename»Label = new JLabel();
 		update«e.ename»Label();

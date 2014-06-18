@@ -741,7 +741,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEquate_Max()
+  public EAttribute getEquate_MinVal()
   {
     return (EAttribute)equateEClass.getEStructuralFeatures().get(4);
   }
@@ -751,9 +751,19 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEquate_Multiplier()
+  public EAttribute getEquate_MaxVal()
   {
     return (EAttribute)equateEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEquate_Multiplier()
+  {
+    return (EAttribute)equateEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1764,7 +1774,8 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(equateEClass, EQUATE__VALUE);
     createEAttribute(equateEClass, EQUATE__CONTROL_TYPE);
     createEAttribute(equateEClass, EQUATE__CONTROL_NAME);
-    createEAttribute(equateEClass, EQUATE__MAX);
+    createEAttribute(equateEClass, EQUATE__MIN_VAL);
+    createEAttribute(equateEClass, EQUATE__MAX_VAL);
     createEAttribute(equateEClass, EQUATE__MULTIPLIER);
 
     memEClass = createEClass(MEM);
@@ -2024,7 +2035,8 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getEquate_Value(), ecorePackage.getEString(), "value", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEquate_ControlType(), ecorePackage.getEString(), "controlType", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEquate_ControlName(), ecorePackage.getEString(), "controlName", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_Max(), ecorePackage.getEString(), "max", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEquate_MinVal(), ecorePackage.getEString(), "minVal", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEquate_MaxVal(), ecorePackage.getEString(), "maxVal", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEquate_Multiplier(), ecorePackage.getEString(), "multiplier", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(memEClass, Mem.class, "Mem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
