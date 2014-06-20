@@ -169,6 +169,14 @@ public class SpinCADSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SpinCADPackage.BOOL:
+      {
+        Bool bool = (Bool)theEObject;
+        T result = caseBool(bool);
+        if (result == null) result = caseSpinElement(bool);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SpinCADPackage.COMMENT:
       {
         Comment comment = (Comment)theEObject;
@@ -199,6 +207,15 @@ public class SpinCADSwitch<T> extends Switch<T>
         T result = caseIsPinConnected(isPinConnected);
         if (result == null) result = caseMacro(isPinConnected);
         if (result == null) result = caseSpinElement(isPinConnected);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpinCADPackage.IS_TRUE:
+      {
+        IsTrue isTrue = (IsTrue)theEObject;
+        T result = caseIsTrue(isTrue);
+        if (result == null) result = caseMacro(isTrue);
+        if (result == null) result = caseSpinElement(isTrue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -793,6 +810,22 @@ public class SpinCADSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBool(Bool object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -852,6 +885,22 @@ public class SpinCADSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIsPinConnected(IsPinConnected object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Is True</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Is True</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIsTrue(IsTrue object)
   {
     return null;
   }

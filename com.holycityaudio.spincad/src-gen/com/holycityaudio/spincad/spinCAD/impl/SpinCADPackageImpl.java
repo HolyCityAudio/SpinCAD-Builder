@@ -6,6 +6,7 @@ import com.holycityaudio.spincad.spinCAD.Absa;
 import com.holycityaudio.spincad.spinCAD.And;
 import com.holycityaudio.spincad.spinCAD.AudioInput;
 import com.holycityaudio.spincad.spinCAD.AudioOutput;
+import com.holycityaudio.spincad.spinCAD.Bool;
 import com.holycityaudio.spincad.spinCAD.ChorusReadDelay;
 import com.holycityaudio.spincad.spinCAD.ChorusReadValue;
 import com.holycityaudio.spincad.spinCAD.ChorusScaleOffset;
@@ -29,6 +30,7 @@ import com.holycityaudio.spincad.spinCAD.Instruction;
 import com.holycityaudio.spincad.spinCAD.IsElse;
 import com.holycityaudio.spincad.spinCAD.IsEndif;
 import com.holycityaudio.spincad.spinCAD.IsPinConnected;
+import com.holycityaudio.spincad.spinCAD.IsTrue;
 import com.holycityaudio.spincad.spinCAD.Jam;
 import com.holycityaudio.spincad.spinCAD.Label;
 import com.holycityaudio.spincad.spinCAD.Ldax;
@@ -166,6 +168,13 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass boolEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass commentEClass = null;
 
   /**
@@ -188,6 +197,13 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * @generated
    */
   private EClass isPinConnectedEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass isTrueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -851,6 +867,56 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getBool()
+  {
+    return boolEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBool_Ename()
+  {
+    return (EAttribute)boolEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBool_Value()
+  {
+    return (EAttribute)boolEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBool_ControlType()
+  {
+    return (EAttribute)boolEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getBool_ControlName()
+  {
+    return (EAttribute)boolEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getComment()
   {
     return commentEClass;
@@ -914,6 +980,26 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
   public EAttribute getIsPinConnected_Arg1()
   {
     return (EAttribute)isPinConnectedEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIsTrue()
+  {
+    return isTrueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIsTrue_Arg1()
+  {
+    return (EAttribute)isTrueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1808,6 +1894,12 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(offsetEClass, OFFSET__NAME);
     createEAttribute(offsetEClass, OFFSET__LENGTH);
 
+    boolEClass = createEClass(BOOL);
+    createEAttribute(boolEClass, BOOL__ENAME);
+    createEAttribute(boolEClass, BOOL__VALUE);
+    createEAttribute(boolEClass, BOOL__CONTROL_TYPE);
+    createEAttribute(boolEClass, BOOL__CONTROL_NAME);
+
     commentEClass = createEClass(COMMENT);
     createEAttribute(commentEClass, COMMENT__REMARK);
 
@@ -1818,6 +1910,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
 
     isPinConnectedEClass = createEClass(IS_PIN_CONNECTED);
     createEAttribute(isPinConnectedEClass, IS_PIN_CONNECTED__ARG1);
+
+    isTrueEClass = createEClass(IS_TRUE);
+    createEAttribute(isTrueEClass, IS_TRUE__ARG1);
 
     isElseEClass = createEClass(IS_ELSE);
 
@@ -1982,10 +2077,12 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     equateEClass.getESuperTypes().add(this.getSpinElement());
     memEClass.getESuperTypes().add(this.getSpinElement());
     offsetEClass.getESuperTypes().add(this.getSpinElement());
+    boolEClass.getESuperTypes().add(this.getSpinElement());
     commentEClass.getESuperTypes().add(this.getSpinElement());
     labelEClass.getESuperTypes().add(this.getSpinElement());
     macroEClass.getESuperTypes().add(this.getSpinElement());
     isPinConnectedEClass.getESuperTypes().add(this.getMacro());
+    isTrueEClass.getESuperTypes().add(this.getMacro());
     isElseEClass.getESuperTypes().add(this.getMacro());
     isEndifEClass.getESuperTypes().add(this.getMacro());
     getInputDefaultEClass.getESuperTypes().add(this.getMacro());
@@ -2071,6 +2168,12 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getOffset_Name(), ecorePackage.getEString(), "name", null, 0, 1, Offset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getOffset_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Offset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(boolEClass, Bool.class, "Bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getBool_Ename(), ecorePackage.getEString(), "ename", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBool_Value(), ecorePackage.getEString(), "value", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBool_ControlType(), ecorePackage.getEString(), "controlType", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getBool_ControlName(), ecorePackage.getEString(), "controlName", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComment_Remark(), ecorePackage.getEString(), "remark", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2081,6 +2184,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
 
     initEClass(isPinConnectedEClass, IsPinConnected.class, "IsPinConnected", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getIsPinConnected_Arg1(), ecorePackage.getEString(), "arg1", null, 0, 1, IsPinConnected.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(isTrueEClass, IsTrue.class, "IsTrue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIsTrue_Arg1(), ecorePackage.getEString(), "arg1", null, 0, 1, IsTrue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(isElseEClass, IsElse.class, "IsElse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

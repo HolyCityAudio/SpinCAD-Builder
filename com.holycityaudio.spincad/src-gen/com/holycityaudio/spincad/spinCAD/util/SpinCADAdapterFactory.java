@@ -135,6 +135,11 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
         return createOffsetAdapter();
       }
       @Override
+      public Adapter caseBool(Bool object)
+      {
+        return createBoolAdapter();
+      }
+      @Override
       public Adapter caseComment(Comment object)
       {
         return createCommentAdapter();
@@ -153,6 +158,11 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
       public Adapter caseIsPinConnected(IsPinConnected object)
       {
         return createIsPinConnectedAdapter();
+      }
+      @Override
+      public Adapter caseIsTrue(IsTrue object)
+      {
+        return createIsTrueAdapter();
       }
       @Override
       public Adapter caseIsElse(IsElse object)
@@ -567,6 +577,21 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.Bool <em>Bool</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.Bool
+   * @generated
+   */
+  public Adapter createBoolAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.Comment <em>Comment</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -622,6 +647,21 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIsPinConnectedAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.IsTrue <em>Is True</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.IsTrue
+   * @generated
+   */
+  public Adapter createIsTrueAdapter()
   {
     return null;
   }

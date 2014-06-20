@@ -76,10 +76,12 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
       case SpinCADPackage.EQUATE: return createEquate();
       case SpinCADPackage.MEM: return createMem();
       case SpinCADPackage.OFFSET: return createOffset();
+      case SpinCADPackage.BOOL: return createBool();
       case SpinCADPackage.COMMENT: return createComment();
       case SpinCADPackage.LABEL: return createLabel();
       case SpinCADPackage.MACRO: return createMacro();
       case SpinCADPackage.IS_PIN_CONNECTED: return createIsPinConnected();
+      case SpinCADPackage.IS_TRUE: return createIsTrue();
       case SpinCADPackage.IS_ELSE: return createIsElse();
       case SpinCADPackage.IS_ENDIF: return createIsEndif();
       case SpinCADPackage.GET_INPUT_DEFAULT: return createGetInputDefault();
@@ -264,6 +266,17 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Bool createBool()
+  {
+    BoolImpl bool = new BoolImpl();
+    return bool;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Comment createComment()
   {
     CommentImpl comment = new CommentImpl();
@@ -301,6 +314,17 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
   {
     IsPinConnectedImpl isPinConnected = new IsPinConnectedImpl();
     return isPinConnected;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public IsTrue createIsTrue()
+  {
+    IsTrueImpl isTrue = new IsTrueImpl();
+    return isTrue;
   }
 
   /**

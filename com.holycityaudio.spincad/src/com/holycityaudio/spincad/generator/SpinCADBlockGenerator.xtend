@@ -53,6 +53,7 @@ import com.holycityaudio.spincad.spinCAD.Log
 import com.holycityaudio.spincad.spinCAD.Maxx
 import com.holycityaudio.spincad.spinCAD.Mulx
 import com.holycityaudio.spincad.spinCAD.Inst_B15_S1_9
+import com.holycityaudio.spincad.spinCAD.Bool
 
 class SpinCADBlockGenerator {
  
@@ -91,6 +92,7 @@ def codeGenerate(String blockName, Program pr) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					Equate:{genEquate(e)}
+					Bool:{genBool(e)}
 				}»
 			«ENDFOR»
 
@@ -102,6 +104,7 @@ def codeGenerate(String blockName, Program pr) {
 					«switch e {
 						// variables should be allocated within the CADBlock constructor
 						Equate:{setEquateVar(e)}
+						Bool:{setBoolVar(e)}
 					}»
 				«ENDFOR»
 
@@ -157,22 +160,30 @@ def codeGenerate(String blockName, Program pr) {
 			// create setters and getter for control panel variables
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					Equate: { sortSetterGetter(e) }
+					Equate: { sortEquateSetterGetter(e) }
+					Bool: { sortBoolSetterGetter(e) }
 			}»
 			«ENDFOR»
 		}	
 	'''
 	}
 
-def sortSetterGetter(Equate e) { 
+def sortEquateSetterGetter(Equate e) { 
 	'''
 	«IF e.controlType == "SliderLabel"»
 		«genSetterGetter(e)»
 	«ENDIF»
-	'''
+'''
 }
 
-// this will generate setters and getters in the CADBlock class	
+def sortBoolSetterGetter(Bool e) { 
+	'''
+	«IF (e.controlType == "CheckBox")»
+		«genSetterGetterBool(e)»
+	«ENDIF»	'''
+}
+	
+// this will generate setters and getters in the CADBlock class	for a double
 def genSetterGetter(Equate e) { '''
 	public void set«e.ename»(double __param) {
 		«e.ename» = __param;	
@@ -185,6 +196,19 @@ def genSetterGetter(Equate e) { '''
 	'''			
 	}
 
+// this will generate setters and getters in the CADBlock class	for a boolean
+def genSetterGetterBool(Bool e) { '''
+	public void set«e.ename»(boolean __param) {
+		«e.ename» = __param;	
+	}
+	
+	public boolean get«e.ename»() {
+		return «e.ename»;	
+	}
+	
+	'''			
+	}
+	
 //-------------------------------------------------------------
 	def genAudioInput(Pin p) ''' 
 		addInputPin(this, "«p.name»");
@@ -301,6 +325,10 @@ def genSetOutputPin(SetOutputPin p) {
 		«ENDIF»
 	'''
 
+	def genBool(Bool e) '''
+		private boolean «e.getEname»;
+	'''
+
 	def setEquateReg(Equate e) '''
 		«IF e.getValue.toUpperCase.startsWith("REG",0)»
 		«e.getEname» = sfxb.allocateReg();
@@ -313,6 +341,10 @@ def genSetOutputPin(SetOutputPin p) {
 		«e.getEname» = «e.getValue»;
 		«ENDIF»
 	'''
+	
+	def setBoolVar(Bool e) '''
+		«e.getEname» = «e.getValue»;
+		'''
 
 	def genOffset(Offset e) '''
 		int «e.getName» = «e.getLength»;

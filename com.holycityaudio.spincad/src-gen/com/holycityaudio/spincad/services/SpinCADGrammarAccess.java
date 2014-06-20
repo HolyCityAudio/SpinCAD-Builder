@@ -251,41 +251,45 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SpinElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cEquateParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cMemParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cInstructionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cLabelParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cCommentParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cMacroParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cOffsetParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cBoolParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMemParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cInstructionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cLabelParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cCommentParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cMacroParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cOffsetParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//// --------------- Spin ASM Elements	
 		//SpinElement:
-		//	Equate | Mem | Instruction | Label | Comment | Macro | Offset;
+		//	Equate | Bool | Mem | Instruction | Label | Comment | Macro | Offset;
 		public ParserRule getRule() { return rule; }
 
-		//Equate | Mem | Instruction | Label | Comment | Macro | Offset
+		//Equate | Bool | Mem | Instruction | Label | Comment | Macro | Offset
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Equate
 		public RuleCall getEquateParserRuleCall_0() { return cEquateParserRuleCall_0; }
 
+		//Bool
+		public RuleCall getBoolParserRuleCall_1() { return cBoolParserRuleCall_1; }
+
 		//Mem
-		public RuleCall getMemParserRuleCall_1() { return cMemParserRuleCall_1; }
+		public RuleCall getMemParserRuleCall_2() { return cMemParserRuleCall_2; }
 
 		//Instruction
-		public RuleCall getInstructionParserRuleCall_2() { return cInstructionParserRuleCall_2; }
+		public RuleCall getInstructionParserRuleCall_3() { return cInstructionParserRuleCall_3; }
 
 		//Label
-		public RuleCall getLabelParserRuleCall_3() { return cLabelParserRuleCall_3; }
+		public RuleCall getLabelParserRuleCall_4() { return cLabelParserRuleCall_4; }
 
 		//Comment
-		public RuleCall getCommentParserRuleCall_4() { return cCommentParserRuleCall_4; }
+		public RuleCall getCommentParserRuleCall_5() { return cCommentParserRuleCall_5; }
 
 		//Macro
-		public RuleCall getMacroParserRuleCall_5() { return cMacroParserRuleCall_5; }
+		public RuleCall getMacroParserRuleCall_6() { return cMacroParserRuleCall_6; }
 
 		//Offset
-		public RuleCall getOffsetParserRuleCall_6() { return cOffsetParserRuleCall_6; }
+		public RuleCall getOffsetParserRuleCall_7() { return cOffsetParserRuleCall_7; }
 	}
 
 	public class EquateElements extends AbstractParserRuleElementFinder {
@@ -301,25 +305,26 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cControlTypeIDTerminalRuleCall_3_0_0 = (RuleCall)cControlTypeAssignment_3_0.eContents().get(0);
 		private final Assignment cControlNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cControlNameIDTerminalRuleCall_3_1_0 = (RuleCall)cControlNameAssignment_3_1.eContents().get(0);
-		private final Assignment cMinValAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cMinValSPINDOUBLEParserRuleCall_3_2_0 = (RuleCall)cMinValAssignment_3_2.eContents().get(0);
-		private final Assignment cMaxValAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
-		private final RuleCall cMaxValSPINDOUBLEParserRuleCall_3_3_0 = (RuleCall)cMaxValAssignment_3_3.eContents().get(0);
-		private final Assignment cMultiplierAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
-		private final RuleCall cMultiplierSPINDOUBLEParserRuleCall_3_4_0 = (RuleCall)cMultiplierAssignment_3_4.eContents().get(0);
-		private final Assignment cPrecisionAssignment_3_5 = (Assignment)cGroup_3.eContents().get(5);
-		private final RuleCall cPrecisionINTTerminalRuleCall_3_5_0 = (RuleCall)cPrecisionAssignment_3_5.eContents().get(0);
-		private final Assignment cOptionAssignment_3_6 = (Assignment)cGroup_3.eContents().get(6);
-		private final RuleCall cOptionIDTerminalRuleCall_3_6_0 = (RuleCall)cOptionAssignment_3_6.eContents().get(0);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Assignment cMinValAssignment_3_2_0 = (Assignment)cGroup_3_2.eContents().get(0);
+		private final RuleCall cMinValSPINDOUBLEParserRuleCall_3_2_0_0 = (RuleCall)cMinValAssignment_3_2_0.eContents().get(0);
+		private final Assignment cMaxValAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cMaxValSPINDOUBLEParserRuleCall_3_2_1_0 = (RuleCall)cMaxValAssignment_3_2_1.eContents().get(0);
+		private final Assignment cMultiplierAssignment_3_2_2 = (Assignment)cGroup_3_2.eContents().get(2);
+		private final RuleCall cMultiplierSPINDOUBLEParserRuleCall_3_2_2_0 = (RuleCall)cMultiplierAssignment_3_2_2.eContents().get(0);
+		private final Assignment cPrecisionAssignment_3_2_3 = (Assignment)cGroup_3_2.eContents().get(3);
+		private final RuleCall cPrecisionINTTerminalRuleCall_3_2_3_0 = (RuleCall)cPrecisionAssignment_3_2_3.eContents().get(0);
+		private final Assignment cOptionAssignment_3_2_4 = (Assignment)cGroup_3_2.eContents().get(4);
+		private final RuleCall cOptionIDTerminalRuleCall_3_2_4_0 = (RuleCall)cOptionAssignment_3_2_4.eContents().get(0);
 		
 		//// this now includes info to help set up control panels
 		//Equate:
-		//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE
-		//	multiplier=SPINDOUBLE precision=INT option=ID?)?;
+		//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE
+		//	multiplier=SPINDOUBLE precision=INT option=ID?)?)?;
 		public ParserRule getRule() { return rule; }
 
-		//"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE
-		//precision=INT option=ID?)?
+		//"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE
+		//multiplier=SPINDOUBLE precision=INT option=ID?)?)?
 		public Group getGroup() { return cGroup; }
 
 		//"equ"
@@ -337,7 +342,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//SPINDOUBLE
 		public RuleCall getValueSPINDOUBLEParserRuleCall_2_0() { return cValueSPINDOUBLEParserRuleCall_2_0; }
 
-		//(controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT option=ID?)?
+		//(controlType=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT option=ID?)?)?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//controlType=ID
@@ -352,35 +357,38 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getControlNameIDTerminalRuleCall_3_1_0() { return cControlNameIDTerminalRuleCall_3_1_0; }
 
+		//(minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT option=ID?)?
+		public Group getGroup_3_2() { return cGroup_3_2; }
+
 		//minVal=SPINDOUBLE
-		public Assignment getMinValAssignment_3_2() { return cMinValAssignment_3_2; }
+		public Assignment getMinValAssignment_3_2_0() { return cMinValAssignment_3_2_0; }
 
 		//SPINDOUBLE
-		public RuleCall getMinValSPINDOUBLEParserRuleCall_3_2_0() { return cMinValSPINDOUBLEParserRuleCall_3_2_0; }
+		public RuleCall getMinValSPINDOUBLEParserRuleCall_3_2_0_0() { return cMinValSPINDOUBLEParserRuleCall_3_2_0_0; }
 
 		//maxVal=SPINDOUBLE
-		public Assignment getMaxValAssignment_3_3() { return cMaxValAssignment_3_3; }
+		public Assignment getMaxValAssignment_3_2_1() { return cMaxValAssignment_3_2_1; }
 
 		//SPINDOUBLE
-		public RuleCall getMaxValSPINDOUBLEParserRuleCall_3_3_0() { return cMaxValSPINDOUBLEParserRuleCall_3_3_0; }
+		public RuleCall getMaxValSPINDOUBLEParserRuleCall_3_2_1_0() { return cMaxValSPINDOUBLEParserRuleCall_3_2_1_0; }
 
 		//multiplier=SPINDOUBLE
-		public Assignment getMultiplierAssignment_3_4() { return cMultiplierAssignment_3_4; }
+		public Assignment getMultiplierAssignment_3_2_2() { return cMultiplierAssignment_3_2_2; }
 
 		//SPINDOUBLE
-		public RuleCall getMultiplierSPINDOUBLEParserRuleCall_3_4_0() { return cMultiplierSPINDOUBLEParserRuleCall_3_4_0; }
+		public RuleCall getMultiplierSPINDOUBLEParserRuleCall_3_2_2_0() { return cMultiplierSPINDOUBLEParserRuleCall_3_2_2_0; }
 
 		//precision=INT
-		public Assignment getPrecisionAssignment_3_5() { return cPrecisionAssignment_3_5; }
+		public Assignment getPrecisionAssignment_3_2_3() { return cPrecisionAssignment_3_2_3; }
 
 		//INT
-		public RuleCall getPrecisionINTTerminalRuleCall_3_5_0() { return cPrecisionINTTerminalRuleCall_3_5_0; }
+		public RuleCall getPrecisionINTTerminalRuleCall_3_2_3_0() { return cPrecisionINTTerminalRuleCall_3_2_3_0; }
 
 		//option=ID?
-		public Assignment getOptionAssignment_3_6() { return cOptionAssignment_3_6; }
+		public Assignment getOptionAssignment_3_2_4() { return cOptionAssignment_3_2_4; }
 
 		//ID
-		public RuleCall getOptionIDTerminalRuleCall_3_6_0() { return cOptionIDTerminalRuleCall_3_6_0; }
+		public RuleCall getOptionIDTerminalRuleCall_3_2_4_0() { return cOptionIDTerminalRuleCall_3_2_4_0; }
 	}
 
 	public class MemElements extends AbstractParserRuleElementFinder {
@@ -447,11 +455,65 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getLengthINTTerminalRuleCall_2_0() { return cLengthINTTerminalRuleCall_2_0; }
 	}
 
+	public class BoolElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Bool");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBoolKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cEnameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cEnameIDTerminalRuleCall_1_0 = (RuleCall)cEnameAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValueBOOLEANParserRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cControlTypeAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final RuleCall cControlTypeIDTerminalRuleCall_3_0_0 = (RuleCall)cControlTypeAssignment_3_0.eContents().get(0);
+		private final Assignment cControlNameAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cControlNameIDTerminalRuleCall_3_1_0 = (RuleCall)cControlNameAssignment_3_1.eContents().get(0);
+		
+		//// SpinCAD logical variable, associated with a Checkbox
+		//Bool:
+		//	"bool" ename=ID value=BOOLEAN (controlType=ID controlName=ID)?;
+		public ParserRule getRule() { return rule; }
+
+		//"bool" ename=ID value=BOOLEAN (controlType=ID controlName=ID)?
+		public Group getGroup() { return cGroup; }
+
+		//"bool"
+		public Keyword getBoolKeyword_0() { return cBoolKeyword_0; }
+
+		//ename=ID
+		public Assignment getEnameAssignment_1() { return cEnameAssignment_1; }
+
+		//ID
+		public RuleCall getEnameIDTerminalRuleCall_1_0() { return cEnameIDTerminalRuleCall_1_0; }
+
+		//value=BOOLEAN
+		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+
+		//BOOLEAN
+		public RuleCall getValueBOOLEANParserRuleCall_2_0() { return cValueBOOLEANParserRuleCall_2_0; }
+
+		//(controlType=ID controlName=ID)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//controlType=ID
+		public Assignment getControlTypeAssignment_3_0() { return cControlTypeAssignment_3_0; }
+
+		//ID
+		public RuleCall getControlTypeIDTerminalRuleCall_3_0_0() { return cControlTypeIDTerminalRuleCall_3_0_0; }
+
+		//controlName=ID
+		public Assignment getControlNameAssignment_3_1() { return cControlNameAssignment_3_1; }
+
+		//ID
+		public RuleCall getControlNameIDTerminalRuleCall_3_1_0() { return cControlNameIDTerminalRuleCall_3_1_0; }
+	}
+
 	public class CommentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Comment");
 		private final Assignment cRemarkAssignment = (Assignment)rule.eContents().get(1);
 		private final RuleCall cRemarkSC_COMMENTTerminalRuleCall_0 = (RuleCall)cRemarkAssignment.eContents().get(0);
 		
+		//// place a comment in the code
 		//Comment:
 		//	remark=SC_COMMENT;
 		public ParserRule getRule() { return rule; }
@@ -491,42 +553,46 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Macro");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cIsPinConnectedParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cIsElseParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cIsEndifParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cGetInputDefaultParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cGetDelayScaleControlParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cSetOutputPinParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cGetBaseAddressParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cIsTrueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cIsElseParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cIsEndifParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cGetInputDefaultParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cGetDelayScaleControlParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cSetOutputPinParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cGetBaseAddressParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//// - SpinCAD macro for conditional expressions within generateCode()
 		//// also for special function calls etc.
 		//Macro:
-		//	IsPinConnected | IsElse | IsEndif | GetInputDefault | GetDelayScaleControl | SetOutputPin | GetBaseAddress;
+		//	IsPinConnected | IsTrue | IsElse | IsEndif | GetInputDefault | GetDelayScaleControl | SetOutputPin | GetBaseAddress;
 		public ParserRule getRule() { return rule; }
 
-		//IsPinConnected | IsElse | IsEndif | GetInputDefault | GetDelayScaleControl | SetOutputPin | GetBaseAddress
+		//IsPinConnected | IsTrue | IsElse | IsEndif | GetInputDefault | GetDelayScaleControl | SetOutputPin | GetBaseAddress
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//IsPinConnected
 		public RuleCall getIsPinConnectedParserRuleCall_0() { return cIsPinConnectedParserRuleCall_0; }
 
+		//IsTrue
+		public RuleCall getIsTrueParserRuleCall_1() { return cIsTrueParserRuleCall_1; }
+
 		//IsElse
-		public RuleCall getIsElseParserRuleCall_1() { return cIsElseParserRuleCall_1; }
+		public RuleCall getIsElseParserRuleCall_2() { return cIsElseParserRuleCall_2; }
 
 		//IsEndif
-		public RuleCall getIsEndifParserRuleCall_2() { return cIsEndifParserRuleCall_2; }
+		public RuleCall getIsEndifParserRuleCall_3() { return cIsEndifParserRuleCall_3; }
 
 		//GetInputDefault
-		public RuleCall getGetInputDefaultParserRuleCall_3() { return cGetInputDefaultParserRuleCall_3; }
+		public RuleCall getGetInputDefaultParserRuleCall_4() { return cGetInputDefaultParserRuleCall_4; }
 
 		//GetDelayScaleControl
-		public RuleCall getGetDelayScaleControlParserRuleCall_4() { return cGetDelayScaleControlParserRuleCall_4; }
+		public RuleCall getGetDelayScaleControlParserRuleCall_5() { return cGetDelayScaleControlParserRuleCall_5; }
 
 		//SetOutputPin
-		public RuleCall getSetOutputPinParserRuleCall_5() { return cSetOutputPinParserRuleCall_5; }
+		public RuleCall getSetOutputPinParserRuleCall_6() { return cSetOutputPinParserRuleCall_6; }
 
 		//GetBaseAddress
-		public RuleCall getGetBaseAddressParserRuleCall_6() { return cGetBaseAddressParserRuleCall_6; }
+		public RuleCall getGetBaseAddressParserRuleCall_7() { return cGetBaseAddressParserRuleCall_7; }
 	}
 
 	public class IsPinConnectedElements extends AbstractParserRuleElementFinder {
@@ -545,6 +611,30 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"@isPinConnected"
 		public Keyword getIsPinConnectedKeyword_0() { return cIsPinConnectedKeyword_0; }
+
+		//arg1=ID
+		public Assignment getArg1Assignment_1() { return cArg1Assignment_1; }
+
+		//ID
+		public RuleCall getArg1IDTerminalRuleCall_1_0() { return cArg1IDTerminalRuleCall_1_0; }
+	}
+
+	public class IsTrueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "IsTrue");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIsTrueKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cArg1Assignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cArg1IDTerminalRuleCall_1_0 = (RuleCall)cArg1Assignment_1.eContents().get(0);
+		
+		//IsTrue:
+		//	"@isTrue" arg1=ID;
+		public ParserRule getRule() { return rule; }
+
+		//"@isTrue" arg1=ID
+		public Group getGroup() { return cGroup; }
+
+		//"@isTrue"
+		public Keyword getIsTrueKeyword_0() { return cIsTrueKeyword_0; }
 
 		//arg1=ID
 		public Assignment getArg1Assignment_1() { return cArg1Assignment_1; }
@@ -2128,6 +2218,26 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//ID*
 		public RuleCall getIDTerminalRuleCall_1_2() { return cIDTerminalRuleCall_1_2; }
 	}
+
+	public class BOOLEANElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cTrueKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFalseKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//BOOLEAN:
+		//	"true" | "false";
+		public ParserRule getRule() { return rule; }
+
+		//"true" | "false"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"true"
+		public Keyword getTrueKeyword_0() { return cTrueKeyword_0; }
+
+		//"false"
+		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
+	}
 	
 	
 	private ProgramElements pProgram;
@@ -2142,10 +2252,12 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	private EquateElements pEquate;
 	private MemElements pMem;
 	private OffsetElements pOffset;
+	private BoolElements pBool;
 	private CommentElements pComment;
 	private LabelElements pLabel;
 	private MacroElements pMacro;
 	private IsPinConnectedElements pIsPinConnected;
+	private IsTrueElements pIsTrue;
 	private IsElseElements pIsElse;
 	private IsEndifElements pIsEndif;
 	private GetInputDefaultElements pGetInputDefault;
@@ -2194,6 +2306,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	private SPINMEMElements pSPINMEM;
 	private SPINBUFElements pSPINBUF;
 	private BINARY24Elements pBINARY24;
+	private BOOLEANElements pBOOLEAN;
 	
 	private final Grammar grammar;
 
@@ -2316,7 +2429,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// --------------- Spin ASM Elements	
 	//SpinElement:
-	//	Equate | Mem | Instruction | Label | Comment | Macro | Offset;
+	//	Equate | Bool | Mem | Instruction | Label | Comment | Macro | Offset;
 	public SpinElementElements getSpinElementAccess() {
 		return (pSpinElement != null) ? pSpinElement : (pSpinElement = new SpinElementElements());
 	}
@@ -2327,8 +2440,8 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// this now includes info to help set up control panels
 	//Equate:
-	//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID minVal=SPINDOUBLE maxVal=SPINDOUBLE
-	//	multiplier=SPINDOUBLE precision=INT option=ID?)?;
+	//	"equ" ename=ID value=SPINDOUBLE (controlType=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE
+	//	multiplier=SPINDOUBLE precision=INT option=ID?)?)?;
 	public EquateElements getEquateAccess() {
 		return (pEquate != null) ? pEquate : (pEquate = new EquateElements());
 	}
@@ -2357,6 +2470,18 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		return getOffsetAccess().getRule();
 	}
 
+	//// SpinCAD logical variable, associated with a Checkbox
+	//Bool:
+	//	"bool" ename=ID value=BOOLEAN (controlType=ID controlName=ID)?;
+	public BoolElements getBoolAccess() {
+		return (pBool != null) ? pBool : (pBool = new BoolElements());
+	}
+	
+	public ParserRule getBoolRule() {
+		return getBoolAccess().getRule();
+	}
+
+	//// place a comment in the code
 	//Comment:
 	//	remark=SC_COMMENT;
 	public CommentElements getCommentAccess() {
@@ -2380,7 +2505,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	//// - SpinCAD macro for conditional expressions within generateCode()
 	//// also for special function calls etc.
 	//Macro:
-	//	IsPinConnected | IsElse | IsEndif | GetInputDefault | GetDelayScaleControl | SetOutputPin | GetBaseAddress;
+	//	IsPinConnected | IsTrue | IsElse | IsEndif | GetInputDefault | GetDelayScaleControl | SetOutputPin | GetBaseAddress;
 	public MacroElements getMacroAccess() {
 		return (pMacro != null) ? pMacro : (pMacro = new MacroElements());
 	}
@@ -2397,6 +2522,16 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getIsPinConnectedRule() {
 		return getIsPinConnectedAccess().getRule();
+	}
+
+	//IsTrue:
+	//	"@isTrue" arg1=ID;
+	public IsTrueElements getIsTrueAccess() {
+		return (pIsTrue != null) ? pIsTrue : (pIsTrue = new IsTrueElements());
+	}
+	
+	public ParserRule getIsTrueRule() {
+		return getIsTrueAccess().getRule();
 	}
 
 	//IsElse:
@@ -2881,6 +3016,16 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getBINARY24Rule() {
 		return getBINARY24Access().getRule();
+	}
+
+	//BOOLEAN:
+	//	"true" | "false";
+	public BOOLEANElements getBOOLEANAccess() {
+		return (pBOOLEAN != null) ? pBOOLEAN : (pBOOLEAN = new BOOLEANElements());
+	}
+	
+	public ParserRule getBOOLEANRule() {
+		return getBOOLEANAccess().getRule();
 	}
 
 	//terminal ID:

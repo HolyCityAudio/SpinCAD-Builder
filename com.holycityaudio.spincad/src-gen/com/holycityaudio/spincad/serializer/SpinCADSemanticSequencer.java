@@ -7,6 +7,7 @@ import com.holycityaudio.spincad.spinCAD.Absa;
 import com.holycityaudio.spincad.spinCAD.And;
 import com.holycityaudio.spincad.spinCAD.AudioInput;
 import com.holycityaudio.spincad.spinCAD.AudioOutput;
+import com.holycityaudio.spincad.spinCAD.Bool;
 import com.holycityaudio.spincad.spinCAD.ChorusReadDelay;
 import com.holycityaudio.spincad.spinCAD.ChorusReadValue;
 import com.holycityaudio.spincad.spinCAD.ChorusScaleOffset;
@@ -22,6 +23,7 @@ import com.holycityaudio.spincad.spinCAD.GetInputDefault;
 import com.holycityaudio.spincad.spinCAD.IsElse;
 import com.holycityaudio.spincad.spinCAD.IsEndif;
 import com.holycityaudio.spincad.spinCAD.IsPinConnected;
+import com.holycityaudio.spincad.spinCAD.IsTrue;
 import com.holycityaudio.spincad.spinCAD.Jam;
 import com.holycityaudio.spincad.spinCAD.Label;
 import com.holycityaudio.spincad.spinCAD.Ldax;
@@ -101,6 +103,13 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 				   context == grammarAccess.getOutputPinRule() ||
 				   context == grammarAccess.getPinRule()) {
 					sequence_AudioOutput(context, (AudioOutput) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpinCADPackage.BOOL:
+				if(context == grammarAccess.getBoolRule() ||
+				   context == grammarAccess.getSpinElementRule()) {
+					sequence_Bool(context, (Bool) semanticObject); 
 					return; 
 				}
 				else break;
@@ -221,6 +230,14 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 				   context == grammarAccess.getMacroRule() ||
 				   context == grammarAccess.getSpinElementRule()) {
 					sequence_IsPinConnected(context, (IsPinConnected) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpinCADPackage.IS_TRUE:
+				if(context == grammarAccess.getIsTrueRule() ||
+				   context == grammarAccess.getMacroRule() ||
+				   context == grammarAccess.getSpinElementRule()) {
+					sequence_IsTrue(context, (IsTrue) semanticObject); 
 					return; 
 				}
 				else break;
@@ -517,6 +534,15 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
+	 *     (ename=ID value=BOOLEAN (controlType=ID controlName=ID)?)
+	 */
+	protected void sequence_Bool(EObject context, Bool semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (arg1=SPINREGISTER arg2=SPINCHOREGFLAGS arg3=SPINMEM)
 	 */
 	protected void sequence_ChorusReadDelay(EObject context, ChorusReadDelay semanticObject) {
@@ -643,15 +669,7 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         ename=ID 
 	 *         value=SPINDOUBLE 
-	 *         (
-	 *             controlType=ID 
-	 *             controlName=ID 
-	 *             minVal=SPINDOUBLE 
-	 *             maxVal=SPINDOUBLE 
-	 *             multiplier=SPINDOUBLE 
-	 *             precision=INT 
-	 *             option=ID?
-	 *         )?
+	 *         (controlType=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT option=ID?)?)?
 	 *     )
 	 */
 	protected void sequence_Equate(EObject context, Equate semanticObject) {
@@ -751,6 +769,22 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getIsPinConnectedAccess().getArg1IDTerminalRuleCall_1_0(), semanticObject.getArg1());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     arg1=ID
+	 */
+	protected void sequence_IsTrue(EObject context, IsTrue semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.IS_TRUE__ARG1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.IS_TRUE__ARG1));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getIsTrueAccess().getArg1IDTerminalRuleCall_1_0(), semanticObject.getArg1());
 		feeder.finish();
 	}
 	

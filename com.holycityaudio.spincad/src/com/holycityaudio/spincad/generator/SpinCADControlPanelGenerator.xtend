@@ -7,6 +7,7 @@ package com.holycityaudio.spincad.generator
 
 import com.holycityaudio.spincad.spinCAD.Program
 import com.holycityaudio.spincad.spinCAD.SpinElementimport com.holycityaudio.spincad.spinCAD.Equate
+import com.holycityaudio.spincad.spinCAD.Bool
 
 class SpinCADControlPanelGenerator {
 	
@@ -40,9 +41,12 @@ class SpinCADControlPanelGenerator {
 		import javax.swing.SwingUtilities;
 		import javax.swing.event.ChangeEvent;
 		import javax.swing.event.ChangeListener;
+		import java.awt.event.ItemEvent;
 		import javax.swing.BoxLayout;
 		import javax.swing.JSlider;
 		import javax.swing.JLabel;
+		import javax.swing.JCheckBox;
+		
 		import com.holycityaudio.SpinCAD.CADBlocks.«blockName+"CADBlock"»;
 
 		public class «blockName+"ControlPanel"» {
@@ -52,7 +56,8 @@ class SpinCADControlPanelGenerator {
 		// declare the controls
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					Equate: { declareControl(e) }
+					Equate: { declareEquate(e) }
+					Bool: { declareBool(e) }
 				}»
 			«ENDFOR»
 
@@ -68,7 +73,8 @@ class SpinCADControlPanelGenerator {
 				frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					Equate: { sortControl(blockName, e)}
+					Equate: { sortEquateControl(blockName, e)}
+					Bool: { sortBoolControl(blockName, e)}
 				}»
 			«ENDFOR»
 
@@ -80,6 +86,7 @@ class SpinCADControlPanelGenerator {
 		});
 		}
 
+		// add change listener for Sliders 
 		class «blockName»SliderListener implements ChangeListener { 
 		public void stateChanged(ChangeEvent ce) {
 			«FOR SpinElement e : pr.elements»
@@ -89,6 +96,22 @@ class SpinCADControlPanelGenerator {
 			«ENDFOR»
 			}
 		}
+		// add item listener for Bool (CheckbBox) 
+		class «blockName»ItemListener implements java.awt.event.ItemListener { 
+		public void stateChanged(ChangeEvent ce) {
+			«FOR SpinElement e : pr.elements»
+				«switch e {
+					Bool: { genControlListenerBool(e)}
+				}»
+			«ENDFOR»
+			}
+		@Override
+		public void itemStateChanged(ItemEvent arg0) {
+		// TODO Auto-generated method stub
+			
+		}
+	}
+
 		«FOR SpinElement e : pr.elements»
 			«switch e {
 				Equate: { genLabelUpdater(e)}
@@ -98,16 +121,22 @@ class SpinCADControlPanelGenerator {
 	'''
 	}
 	
-def declareControl(Equate e) {
+def declareEquate(Equate e) {
 	'''
 	«IF e.controlType == "SliderLabel"»
 		JSlider «e.ename»Slider;
-		JLabel  «e.ename»Label;
-		
+		JLabel  «e.ename»Label;	
 	«ENDIF»	'''
 }
 
-def sortControl(String blockName, Equate e) {
+def declareBool(Bool e) {
+	'''
+	«IF e.controlType == 'CheckBox'»
+		JCheckBox «e.ename»CheckBox;		
+	«ENDIF»	'''
+}
+
+def sortEquateControl(String blockName, Equate e) {
 	'''
 	«IF e.controlType == "SliderLabel"»
 		«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
@@ -117,7 +146,17 @@ def sortControl(String blockName, Equate e) {
 		frame.getContentPane().add(«e.ename»Label);
 		frame.getContentPane().add(«e.ename»Slider);		
 	«ENDIF»
+'''
+}
+
+def sortBoolControl(String blockName, Bool e) {
 	'''
+	«IF e.controlType == "CheckBox"»
+		«e.ename»CheckBox = new JCheckBox();
+		«e.ename»CheckBox.setText("«e.controlName»");
+		«e.ename»CheckBox.addItemListener(new «blockName»ItemListener());
+		frame.getContentPane().add(«e.ename»CheckBox);		
+	«ENDIF»	'''
 }
 
 def genControlListener(Equate e) {
@@ -128,9 +167,18 @@ def genControlListener(Equate e) {
 			update«e.ename»Label();
 		}
 	«ENDIF»
-	'''
+'''
 }
+def genControlListenerBool(Bool e) {
+	'''
+	«IF e.controlType == "CheckBox"»
+		if(ce.getSource() == «e.ename»CheckBox) {
+			gCB.set«e.ename»((boolean) («e.ename»CheckBox.isSelected()));
+		}
+	«ENDIF»	'''
 
+
+}
 def genLabelUpdater(Equate e) {
 	'''
 	«IF e.controlType == "SliderLabel"»
@@ -148,13 +196,15 @@ def genLabelUpdater(Equate e) {
 	'''
 }
 
+// -- think all these below here should be deprecated/tossed out
+
 def genCheckBox(Equate e) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub genCheckBox")
 	}
 
 def declareCheckBox(Equate e) {
 				'''
-				JCheckbox «e.ename»Checkbox;
+				JCheckBox «e.ename»CheckBox;
 				'''	
 			}
 
