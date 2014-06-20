@@ -39,11 +39,11 @@ ControlOutput:
 
 // --------------- Spin ASM Elements	
 SpinElement:
-	Equate | Mem | Instruction | Label | Comment | Macro | Offset;
+	Equate | Bool | Mem | Instruction | Label | Comment | Macro | Offset;
 
 // this now includes info to help set up control panels
 Equate:
-	'equ' ename = ID value = SPINDOUBLE (controlType = ID controlName = ID minVal = SPINDOUBLE maxVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?;
+	'equ' ename = ID value = SPINDOUBLE (controlType = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?)?;
 
 Mem:
 	'mem' buffer = ID length = SPINREGISTER
@@ -53,6 +53,12 @@ Offset:
 	'offset' name = ID length = INT 
 ;
 
+// SpinCAD logical variable, associated with a Checkbox
+Bool:
+	'bool' ename = ID value = BOOLEAN (controlType = ID controlName = ID)?
+;
+
+// place a comment in the code
 Comment:
 	remark = SC_COMMENT;
 
@@ -63,11 +69,12 @@ Label:
 // - SpinCAD macro for conditional expressions within generateCode()
 // also for special function calls etc.
 Macro:
-	IsPinConnected 
+	IsPinConnected | IsTrue
   | IsElse | IsEndif | GetInputDefault | GetDelayScaleControl | SetOutputPin | GetBaseAddress
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
+IsTrue returns IsTrue: '@isTrue' arg1 = ID;
 IsElse: {IsElse} '@else';
 IsEndif: {IsEndif} "@endif";
 GetInputDefault: '@getInputDefault' name = ID variable = ID scale = SPINDOUBLE defaultVal = SPINDOUBLE;
@@ -192,4 +199,8 @@ SPINBUF: ID('#'|'^')?('+'|'-')?
 
 BINARY24: 
 	((('%' INT) (ID) * ) | ('$' (INT)* (ID)*))
+;
+
+BOOLEAN: "true" | "false"
+	
 ;

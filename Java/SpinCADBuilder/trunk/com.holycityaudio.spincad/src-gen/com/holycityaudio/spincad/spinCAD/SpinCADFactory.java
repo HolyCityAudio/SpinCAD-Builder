@@ -131,6 +131,15 @@ public interface SpinCADFactory extends EFactory
   Offset createOffset();
 
   /**
+   * Returns a new object of class '<em>Bool</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bool</em>'.
+   * @generated
+   */
+  Bool createBool();
+
+  /**
    * Returns a new object of class '<em>Comment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -165,6 +174,15 @@ public interface SpinCADFactory extends EFactory
    * @generated
    */
   IsPinConnected createIsPinConnected();
+
+  /**
+   * Returns a new object of class '<em>Is True</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Is True</em>'.
+   * @generated
+   */
+  IsTrue createIsTrue();
 
   /**
    * Returns a new object of class '<em>Is Else</em>'.

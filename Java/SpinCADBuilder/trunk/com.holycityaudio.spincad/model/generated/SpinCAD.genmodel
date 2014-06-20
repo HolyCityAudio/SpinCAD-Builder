@@ -42,6 +42,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Offset/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Offset/length"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Bool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Bool/ename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Bool/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Bool/controlType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Bool/controlName"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Comment/remark"/>
     </genClasses>
@@ -51,6 +57,9 @@
     <genClasses ecoreClass="SpinCAD.ecore#//Macro"/>
     <genClasses ecoreClass="SpinCAD.ecore#//IsPinConnected">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsPinConnected/arg1"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//IsTrue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsTrue/arg1"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//IsElse"/>
     <genClasses ecoreClass="SpinCAD.ecore#//IsEndif"/>
