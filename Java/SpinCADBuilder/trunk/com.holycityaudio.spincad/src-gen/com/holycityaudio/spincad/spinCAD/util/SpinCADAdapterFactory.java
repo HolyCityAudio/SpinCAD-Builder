@@ -120,9 +120,9 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
         return createSpinElementAdapter();
       }
       @Override
-      public Adapter caseEquate(Equate object)
+      public Adapter caseSpinEquate(SpinEquate object)
       {
-        return createEquateAdapter();
+        return createSpinEquateAdapter();
       }
       @Override
       public Adapter caseMem(Mem object)
@@ -135,9 +135,24 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
         return createOffsetAdapter();
       }
       @Override
-      public Adapter caseBool(Bool object)
+      public Adapter caseSpinBool(SpinBool object)
       {
-        return createBoolAdapter();
+        return createSpinBoolAdapter();
+      }
+      @Override
+      public Adapter caseControl(Control object)
+      {
+        return createControlAdapter();
+      }
+      @Override
+      public Adapter caseSpinSliderLabel(SpinSliderLabel object)
+      {
+        return createSpinSliderLabelAdapter();
+      }
+      @Override
+      public Adapter caseSpinCheckBox(SpinCheckBox object)
+      {
+        return createSpinCheckBoxAdapter();
       }
       @Override
       public Adapter caseComment(Comment object)
@@ -532,16 +547,16 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.Equate <em>Equate</em>}'.
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.SpinEquate <em>Spin Equate</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.holycityaudio.spincad.spinCAD.Equate
+   * @see com.holycityaudio.spincad.spinCAD.SpinEquate
    * @generated
    */
-  public Adapter createEquateAdapter()
+  public Adapter createSpinEquateAdapter()
   {
     return null;
   }
@@ -577,16 +592,61 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.Bool <em>Bool</em>}'.
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.SpinBool <em>Spin Bool</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.holycityaudio.spincad.spinCAD.Bool
+   * @see com.holycityaudio.spincad.spinCAD.SpinBool
    * @generated
    */
-  public Adapter createBoolAdapter()
+  public Adapter createSpinBoolAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.Control <em>Control</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.Control
+   * @generated
+   */
+  public Adapter createControlAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.SpinSliderLabel <em>Spin Slider Label</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.SpinSliderLabel
+   * @generated
+   */
+  public Adapter createSpinSliderLabelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.SpinCheckBox <em>Spin Check Box</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.SpinCheckBox
+   * @generated
+   */
+  public Adapter createSpinCheckBoxAdapter()
   {
     return null;
   }

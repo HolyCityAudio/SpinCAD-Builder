@@ -5,7 +5,6 @@ package com.holycityaudio.spincad.generator
 
 //import com.google.inject.Inject 
 import com.holycityaudio.spincad.spinCAD.SpinElement
-import com.holycityaudio.spincad.spinCAD.Equate
 import com.holycityaudio.spincad.spinCAD.Instruction
 import com.holycityaudio.spincad.spinCAD.Mem
 import com.holycityaudio.spincad.spinCAD.Program
@@ -53,7 +52,16 @@ import com.holycityaudio.spincad.spinCAD.Log
 import com.holycityaudio.spincad.spinCAD.Maxx
 import com.holycityaudio.spincad.spinCAD.Mulx
 import com.holycityaudio.spincad.spinCAD.Inst_B15_S1_9
-import com.holycityaudio.spincad.spinCAD.Bool
+import com.holycityaudio.spincad.spinCAD.SpinBool
+import com.holycityaudio.spincad.spinCAD.SpinEquate
+import com.holycityaudio.spincad.spinCAD.IsTrue
+
+import com.holycityaudio.spincad.generator.SliderLabel
+import com.holycityaudio.spincad.generator.CheckBox
+import com.holycityaudio.spincad.generator.spcbBool
+import com.holycityaudio.spincad.generator.spcbEquate
+import com.holycityaudio.spincad.spinCAD.SpinCheckBox
+import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
 
 class SpinCADBlockGenerator {
  
@@ -90,9 +98,11 @@ def codeGenerate(String blockName, Program pr) {
 			private static final long serialVersionUID = 1L;
 			
 			«FOR SpinElement e : pr.elements»
+			// declare variables
 				«switch e {
-					Equate:{genEquate(e)}
-					Bool:{genBool(e)}
+					// variables should be allocated within the CADBlock constructor
+					SpinEquate:{spcbEquate.declareVar(e)}
+					SpinBool:{spcbBool.declareVar(e)}
 				}»
 			«ENDFOR»
 
@@ -100,14 +110,6 @@ def codeGenerate(String blockName, Program pr) {
 				super(x, y);
 				controlPanelImplemented = true;
 				setName("«pr.name»");	
-				«FOR SpinElement e : pr.elements»
-					«switch e {
-						// variables should be allocated within the CADBlock constructor
-						Equate:{setEquateVar(e)}
-						Bool:{setBoolVar(e)}
-					}»
-				«ENDFOR»
-
 				// Iterate through pin definitions and allocate or assign as needed
 				«FOR Pin p : pr.pins»
 					«switch p {
@@ -127,6 +129,14 @@ def codeGenerate(String blockName, Program pr) {
 			public void generateCode(SpinFXBlock sfxb) {
 	
 			// Iterate through mem and equ statements, allocate accordingly
+			«FOR SpinElement e : pr.elements»
+				«switch e {
+					// variables should be allocated within the CADBlock constructor
+					SpinEquate:{spcbEquate.initialize(e)}
+					SpinBool:{spcbBool.initialize(e)}
+				}»
+			«ENDFOR»
+
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					Offset:{genOffset(e) }
@@ -149,7 +159,8 @@ def codeGenerate(String blockName, Program pr) {
 				«switch e {
 					Instruction:{genInstruction(e)}
 					// registers should be allocated within the generateCode() method
-					Equate:{setEquateReg(e)}
+					// TODO add a line for Bool here
+					SpinEquate:{setEquateReg(e)}
 					Mem:{genMem(e)}
 					Macro: { genMacro(e) }
 				}»
@@ -160,55 +171,14 @@ def codeGenerate(String blockName, Program pr) {
 			// create setters and getter for control panel variables
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					Equate: { sortEquateSetterGetter(e) }
-					Bool: { sortBoolSetterGetter(e) }
-			}»
+					SpinCheckBox:{CheckBox.genSetterGetter(e)}
+					SpinSliderLabel:{SliderLabel.genSetterGetter(e)}
+				}»
 			«ENDFOR»
 		}	
 	'''
 	}
 
-def sortEquateSetterGetter(Equate e) { 
-	'''
-	«IF e.controlType == "SliderLabel"»
-		«genSetterGetter(e)»
-	«ENDIF»
-'''
-}
-
-def sortBoolSetterGetter(Bool e) { 
-	'''
-	«IF (e.controlType == "CheckBox")»
-		«genSetterGetterBool(e)»
-	«ENDIF»	'''
-}
-	
-// this will generate setters and getters in the CADBlock class	for a double
-def genSetterGetter(Equate e) { '''
-	public void set«e.ename»(double __param) {
-		«e.ename» = __param;	
-	}
-	
-	public double get«e.ename»() {
-		return «e.ename»;	
-	}
-	
-	'''			
-	}
-
-// this will generate setters and getters in the CADBlock class	for a boolean
-def genSetterGetterBool(Bool e) { '''
-	public void set«e.ename»(boolean __param) {
-		«e.ename» = __param;	
-	}
-	
-	public boolean get«e.ename»() {
-		return «e.ename»;	
-	}
-	
-	'''			
-	}
-	
 //-------------------------------------------------------------
 	def genAudioInput(Pin p) ''' 
 		addInputPin(this, "«p.name»");
@@ -238,7 +208,6 @@ def genSetterGetterBool(Bool e) { '''
 	def setOutput(Pin p) '''
 		this.getPin("«p.name»").setRegister(«p.varName»);
 	'''
-	
 	// TODO the idea of isPinConnected() is to create conditional sections within codeGenerate() 
 	// of any given block.  For example, if the pin is connected, then take the value of the source.
 	// Otherwise, assign a default value.  Maybe I can generalize that last part a bit better.
@@ -251,7 +220,12 @@ def genSetterGetterBool(Bool e) { '''
 		'''
 	}
 	
-	def genElse(IsElse e) '''
+	def genIsTrue(IsTrue p) {
+		'''
+		if(«p.variable» == true) {
+		'''
+	}
+		def genElse(IsElse e) '''
 	} else {
 	'''
 	
@@ -278,6 +252,7 @@ def genGetInputDefault(GetInputDefault g)'''
 	def genMacro(Macro inst) {
 		'''
 		«switch inst {  
+			IsTrue: genIsTrue(inst)
 			IsPinConnected: genIsPinConnected(inst)
 			IsElse: genElse(inst)
 			IsEndif: genEndif(inst)
@@ -317,36 +292,28 @@ def genSetOutputPin(SetOutputPin p) {
 // try to figure out a way to distinguish REGx equates from INT or DOUBLE
 // this seems to have worked!
 
-	def genEquate(Equate e) '''
-		«IF e.getValue.toUpperCase.startsWith("REG",0)»
-		private int «e.getEname»;
+	def genEquate(SpinEquate e) '''
+		«IF e.value.toUpperCase.startsWith("REG",0)»
+		private int «e.ename»;
 		«ELSE»
-		private double «e.getEname»;
+		private double «e.ename»;
 		«ENDIF»
 	'''
 
-	def genBool(Bool e) '''
-		private boolean «e.getEname»;
-	'''
-
-	def setEquateReg(Equate e) '''
-		«IF e.getValue.toUpperCase.startsWith("REG",0)»
-		«e.getEname» = sfxb.allocateReg();
+	def setEquateReg(SpinEquate e) '''
+		«IF e.value.toUpperCase.startsWith("REG",0)»
+		«e.ename» = sfxb.allocateReg();
 		«ENDIF»
 	'''
 
-	def setEquateVar(Equate e) '''
-		«IF e.getValue.toUpperCase.startsWith("REG",0)»
+	def setEquateVar(SpinEquate e) '''
+		«IF e.value.toUpperCase.startsWith("REG",0)»
 		«ELSE»
-		«e.getEname» = «e.getValue»;
+		«e.ename» = «e.value»;
 		«ENDIF»
 	'''
 	
-	def setBoolVar(Bool e) '''
-		«e.getEname» = «e.getValue»;
-		'''
-
-	def genOffset(Offset e) '''
+		def genOffset(Offset e) '''
 		int «e.getName» = «e.getLength»;
 	'''
 
