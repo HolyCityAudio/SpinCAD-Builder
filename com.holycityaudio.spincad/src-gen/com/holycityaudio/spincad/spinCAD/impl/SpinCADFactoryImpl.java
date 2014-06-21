@@ -73,10 +73,13 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
       case SpinCADPackage.CONTROL_INPUT: return createControlInput();
       case SpinCADPackage.CONTROL_OUTPUT: return createControlOutput();
       case SpinCADPackage.SPIN_ELEMENT: return createSpinElement();
-      case SpinCADPackage.EQUATE: return createEquate();
+      case SpinCADPackage.SPIN_EQUATE: return createSpinEquate();
       case SpinCADPackage.MEM: return createMem();
       case SpinCADPackage.OFFSET: return createOffset();
-      case SpinCADPackage.BOOL: return createBool();
+      case SpinCADPackage.SPIN_BOOL: return createSpinBool();
+      case SpinCADPackage.CONTROL: return createControl();
+      case SpinCADPackage.SPIN_SLIDER_LABEL: return createSpinSliderLabel();
+      case SpinCADPackage.SPIN_CHECK_BOX: return createSpinCheckBox();
       case SpinCADPackage.COMMENT: return createComment();
       case SpinCADPackage.LABEL: return createLabel();
       case SpinCADPackage.MACRO: return createMacro();
@@ -233,10 +236,10 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Equate createEquate()
+  public SpinEquate createSpinEquate()
   {
-    EquateImpl equate = new EquateImpl();
-    return equate;
+    SpinEquateImpl spinEquate = new SpinEquateImpl();
+    return spinEquate;
   }
 
   /**
@@ -266,10 +269,43 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Bool createBool()
+  public SpinBool createSpinBool()
   {
-    BoolImpl bool = new BoolImpl();
-    return bool;
+    SpinBoolImpl spinBool = new SpinBoolImpl();
+    return spinBool;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Control createControl()
+  {
+    ControlImpl control = new ControlImpl();
+    return control;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SpinSliderLabel createSpinSliderLabel()
+  {
+    SpinSliderLabelImpl spinSliderLabel = new SpinSliderLabelImpl();
+    return spinSliderLabel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SpinCheckBox createSpinCheckBox()
+  {
+    SpinCheckBoxImpl spinCheckBox = new SpinCheckBoxImpl();
+    return spinCheckBox;
   }
 
   /**

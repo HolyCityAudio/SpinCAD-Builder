@@ -6,15 +6,14 @@ import com.holycityaudio.spincad.spinCAD.Absa;
 import com.holycityaudio.spincad.spinCAD.And;
 import com.holycityaudio.spincad.spinCAD.AudioInput;
 import com.holycityaudio.spincad.spinCAD.AudioOutput;
-import com.holycityaudio.spincad.spinCAD.Bool;
 import com.holycityaudio.spincad.spinCAD.ChorusReadDelay;
 import com.holycityaudio.spincad.spinCAD.ChorusReadValue;
 import com.holycityaudio.spincad.spinCAD.ChorusScaleOffset;
 import com.holycityaudio.spincad.spinCAD.Clr;
 import com.holycityaudio.spincad.spinCAD.Comment;
+import com.holycityaudio.spincad.spinCAD.Control;
 import com.holycityaudio.spincad.spinCAD.ControlInput;
 import com.holycityaudio.spincad.spinCAD.ControlOutput;
-import com.holycityaudio.spincad.spinCAD.Equate;
 import com.holycityaudio.spincad.spinCAD.Exp;
 import com.holycityaudio.spincad.spinCAD.GetBaseAddress;
 import com.holycityaudio.spincad.spinCAD.GetDelayScaleControl;
@@ -54,9 +53,13 @@ import com.holycityaudio.spincad.spinCAD.ReadRegisterFilter;
 import com.holycityaudio.spincad.spinCAD.ScaleOffset;
 import com.holycityaudio.spincad.spinCAD.SetOutputPin;
 import com.holycityaudio.spincad.spinCAD.Skip;
+import com.holycityaudio.spincad.spinCAD.SpinBool;
 import com.holycityaudio.spincad.spinCAD.SpinCADFactory;
 import com.holycityaudio.spincad.spinCAD.SpinCADPackage;
+import com.holycityaudio.spincad.spinCAD.SpinCheckBox;
 import com.holycityaudio.spincad.spinCAD.SpinElement;
+import com.holycityaudio.spincad.spinCAD.SpinEquate;
+import com.holycityaudio.spincad.spinCAD.SpinSliderLabel;
 import com.holycityaudio.spincad.spinCAD.WriteAllpass;
 import com.holycityaudio.spincad.spinCAD.WriteDelay;
 import com.holycityaudio.spincad.spinCAD.WriteRegister;
@@ -147,7 +150,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass equateEClass = null;
+  private EClass spinEquateEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -168,7 +171,28 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass boolEClass = null;
+  private EClass spinBoolEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass controlEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass spinSliderLabelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass spinCheckBoxEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -707,9 +731,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getEquate()
+  public EClass getSpinEquate()
   {
-    return equateEClass;
+    return spinEquateEClass;
   }
 
   /**
@@ -717,9 +741,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEquate_Ename()
+  public EAttribute getSpinEquate_Ename()
   {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)spinEquateEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -727,79 +751,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEquate_Value()
+  public EAttribute getSpinEquate_Value()
   {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEquate_ControlType()
-  {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEquate_ControlName()
-  {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEquate_MinVal()
-  {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEquate_MaxVal()
-  {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEquate_Multiplier()
-  {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(6);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEquate_Precision()
-  {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(7);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEquate_Option()
-  {
-    return (EAttribute)equateEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)spinEquateEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -867,9 +821,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBool()
+  public EClass getSpinBool()
   {
-    return boolEClass;
+    return spinBoolEClass;
   }
 
   /**
@@ -877,9 +831,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBool_Ename()
+  public EAttribute getSpinBool_Name()
   {
-    return (EAttribute)boolEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)spinBoolEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -887,9 +841,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBool_Value()
+  public EAttribute getSpinBool_Value()
   {
-    return (EAttribute)boolEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)spinBoolEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -897,9 +851,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBool_ControlType()
+  public EClass getControl()
   {
-    return (EAttribute)boolEClass.getEStructuralFeatures().get(2);
+    return controlEClass;
   }
 
   /**
@@ -907,9 +861,89 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBool_ControlName()
+  public EAttribute getControl_Ename()
   {
-    return (EAttribute)boolEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)controlEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getControl_ControlName()
+  {
+    return (EAttribute)controlEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSpinSliderLabel()
+  {
+    return spinSliderLabelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSpinSliderLabel_MinVal()
+  {
+    return (EAttribute)spinSliderLabelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSpinSliderLabel_MaxVal()
+  {
+    return (EAttribute)spinSliderLabelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSpinSliderLabel_Multiplier()
+  {
+    return (EAttribute)spinSliderLabelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSpinSliderLabel_Precision()
+  {
+    return (EAttribute)spinSliderLabelEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSpinSliderLabel_Option()
+  {
+    return (EAttribute)spinSliderLabelEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSpinCheckBox()
+  {
+    return spinCheckBoxEClass;
   }
 
   /**
@@ -997,7 +1031,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIsTrue_Arg1()
+  public EAttribute getIsTrue_Variable()
   {
     return (EAttribute)isTrueEClass.getEStructuralFeatures().get(0);
   }
@@ -1875,16 +1909,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
 
     spinElementEClass = createEClass(SPIN_ELEMENT);
 
-    equateEClass = createEClass(EQUATE);
-    createEAttribute(equateEClass, EQUATE__ENAME);
-    createEAttribute(equateEClass, EQUATE__VALUE);
-    createEAttribute(equateEClass, EQUATE__CONTROL_TYPE);
-    createEAttribute(equateEClass, EQUATE__CONTROL_NAME);
-    createEAttribute(equateEClass, EQUATE__MIN_VAL);
-    createEAttribute(equateEClass, EQUATE__MAX_VAL);
-    createEAttribute(equateEClass, EQUATE__MULTIPLIER);
-    createEAttribute(equateEClass, EQUATE__PRECISION);
-    createEAttribute(equateEClass, EQUATE__OPTION);
+    spinEquateEClass = createEClass(SPIN_EQUATE);
+    createEAttribute(spinEquateEClass, SPIN_EQUATE__ENAME);
+    createEAttribute(spinEquateEClass, SPIN_EQUATE__VALUE);
 
     memEClass = createEClass(MEM);
     createEAttribute(memEClass, MEM__BUFFER);
@@ -1894,11 +1921,22 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(offsetEClass, OFFSET__NAME);
     createEAttribute(offsetEClass, OFFSET__LENGTH);
 
-    boolEClass = createEClass(BOOL);
-    createEAttribute(boolEClass, BOOL__ENAME);
-    createEAttribute(boolEClass, BOOL__VALUE);
-    createEAttribute(boolEClass, BOOL__CONTROL_TYPE);
-    createEAttribute(boolEClass, BOOL__CONTROL_NAME);
+    spinBoolEClass = createEClass(SPIN_BOOL);
+    createEAttribute(spinBoolEClass, SPIN_BOOL__NAME);
+    createEAttribute(spinBoolEClass, SPIN_BOOL__VALUE);
+
+    controlEClass = createEClass(CONTROL);
+    createEAttribute(controlEClass, CONTROL__ENAME);
+    createEAttribute(controlEClass, CONTROL__CONTROL_NAME);
+
+    spinSliderLabelEClass = createEClass(SPIN_SLIDER_LABEL);
+    createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__MIN_VAL);
+    createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__MAX_VAL);
+    createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__MULTIPLIER);
+    createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__PRECISION);
+    createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__OPTION);
+
+    spinCheckBoxEClass = createEClass(SPIN_CHECK_BOX);
 
     commentEClass = createEClass(COMMENT);
     createEAttribute(commentEClass, COMMENT__REMARK);
@@ -1912,7 +1950,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(isPinConnectedEClass, IS_PIN_CONNECTED__ARG1);
 
     isTrueEClass = createEClass(IS_TRUE);
-    createEAttribute(isTrueEClass, IS_TRUE__ARG1);
+    createEAttribute(isTrueEClass, IS_TRUE__VARIABLE);
 
     isElseEClass = createEClass(IS_ELSE);
 
@@ -2074,10 +2112,13 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     audioOutputEClass.getESuperTypes().add(this.getOutputPin());
     controlInputEClass.getESuperTypes().add(this.getInputPin());
     controlOutputEClass.getESuperTypes().add(this.getOutputPin());
-    equateEClass.getESuperTypes().add(this.getSpinElement());
+    spinEquateEClass.getESuperTypes().add(this.getSpinElement());
     memEClass.getESuperTypes().add(this.getSpinElement());
     offsetEClass.getESuperTypes().add(this.getSpinElement());
-    boolEClass.getESuperTypes().add(this.getSpinElement());
+    spinBoolEClass.getESuperTypes().add(this.getSpinElement());
+    controlEClass.getESuperTypes().add(this.getSpinElement());
+    spinSliderLabelEClass.getESuperTypes().add(this.getControl());
+    spinCheckBoxEClass.getESuperTypes().add(this.getControl());
     commentEClass.getESuperTypes().add(this.getSpinElement());
     labelEClass.getESuperTypes().add(this.getSpinElement());
     macroEClass.getESuperTypes().add(this.getSpinElement());
@@ -2149,16 +2190,9 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
 
     initEClass(spinElementEClass, SpinElement.class, "SpinElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(equateEClass, Equate.class, "Equate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEquate_Ename(), ecorePackage.getEString(), "ename", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_Value(), ecorePackage.getEString(), "value", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_ControlType(), ecorePackage.getEString(), "controlType", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_ControlName(), ecorePackage.getEString(), "controlName", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_MinVal(), ecorePackage.getEString(), "minVal", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_MaxVal(), ecorePackage.getEString(), "maxVal", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_Multiplier(), ecorePackage.getEString(), "multiplier", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_Precision(), ecorePackage.getEInt(), "precision", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEquate_Option(), ecorePackage.getEString(), "option", null, 0, 1, Equate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(spinEquateEClass, SpinEquate.class, "SpinEquate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpinEquate_Ename(), ecorePackage.getEString(), "ename", null, 0, 1, SpinEquate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpinEquate_Value(), ecorePackage.getEString(), "value", null, 0, 1, SpinEquate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(memEClass, Mem.class, "Mem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMem_Buffer(), ecorePackage.getEString(), "buffer", null, 0, 1, Mem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2168,11 +2202,22 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getOffset_Name(), ecorePackage.getEString(), "name", null, 0, 1, Offset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getOffset_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Offset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(boolEClass, Bool.class, "Bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBool_Ename(), ecorePackage.getEString(), "ename", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBool_Value(), ecorePackage.getEString(), "value", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBool_ControlType(), ecorePackage.getEString(), "controlType", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBool_ControlName(), ecorePackage.getEString(), "controlName", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(spinBoolEClass, SpinBool.class, "SpinBool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpinBool_Name(), ecorePackage.getEString(), "name", null, 0, 1, SpinBool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpinBool_Value(), ecorePackage.getEString(), "value", null, 0, 1, SpinBool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(controlEClass, Control.class, "Control", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getControl_Ename(), ecorePackage.getEString(), "ename", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getControl_ControlName(), ecorePackage.getEString(), "controlName", null, 0, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(spinSliderLabelEClass, SpinSliderLabel.class, "SpinSliderLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpinSliderLabel_MinVal(), ecorePackage.getEString(), "minVal", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpinSliderLabel_MaxVal(), ecorePackage.getEString(), "maxVal", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpinSliderLabel_Multiplier(), ecorePackage.getEString(), "multiplier", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpinSliderLabel_Precision(), ecorePackage.getEInt(), "precision", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpinSliderLabel_Option(), ecorePackage.getEString(), "option", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(spinCheckBoxEClass, SpinCheckBox.class, "SpinCheckBox", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComment_Remark(), ecorePackage.getEString(), "remark", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2186,7 +2231,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getIsPinConnected_Arg1(), ecorePackage.getEString(), "arg1", null, 0, 1, IsPinConnected.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(isTrueEClass, IsTrue.class, "IsTrue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIsTrue_Arg1(), ecorePackage.getEString(), "arg1", null, 0, 1, IsTrue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIsTrue_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, IsTrue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(isElseEClass, IsElse.class, "IsElse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

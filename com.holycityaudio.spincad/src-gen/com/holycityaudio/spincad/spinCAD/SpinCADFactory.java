@@ -104,13 +104,13 @@ public interface SpinCADFactory extends EFactory
   SpinElement createSpinElement();
 
   /**
-   * Returns a new object of class '<em>Equate</em>'.
+   * Returns a new object of class '<em>Spin Equate</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Equate</em>'.
+   * @return a new object of class '<em>Spin Equate</em>'.
    * @generated
    */
-  Equate createEquate();
+  SpinEquate createSpinEquate();
 
   /**
    * Returns a new object of class '<em>Mem</em>'.
@@ -131,13 +131,40 @@ public interface SpinCADFactory extends EFactory
   Offset createOffset();
 
   /**
-   * Returns a new object of class '<em>Bool</em>'.
+   * Returns a new object of class '<em>Spin Bool</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bool</em>'.
+   * @return a new object of class '<em>Spin Bool</em>'.
    * @generated
    */
-  Bool createBool();
+  SpinBool createSpinBool();
+
+  /**
+   * Returns a new object of class '<em>Control</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Control</em>'.
+   * @generated
+   */
+  Control createControl();
+
+  /**
+   * Returns a new object of class '<em>Spin Slider Label</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Spin Slider Label</em>'.
+   * @generated
+   */
+  SpinSliderLabel createSpinSliderLabel();
+
+  /**
+   * Returns a new object of class '<em>Spin Check Box</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Spin Check Box</em>'.
+   * @generated
+   */
+  SpinCheckBox createSpinCheckBox();
 
   /**
    * Returns a new object of class '<em>Comment</em>'.

@@ -145,11 +145,11 @@ public class SpinCADSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SpinCADPackage.EQUATE:
+      case SpinCADPackage.SPIN_EQUATE:
       {
-        Equate equate = (Equate)theEObject;
-        T result = caseEquate(equate);
-        if (result == null) result = caseSpinElement(equate);
+        SpinEquate spinEquate = (SpinEquate)theEObject;
+        T result = caseSpinEquate(spinEquate);
+        if (result == null) result = caseSpinElement(spinEquate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -169,11 +169,37 @@ public class SpinCADSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SpinCADPackage.BOOL:
+      case SpinCADPackage.SPIN_BOOL:
       {
-        Bool bool = (Bool)theEObject;
-        T result = caseBool(bool);
-        if (result == null) result = caseSpinElement(bool);
+        SpinBool spinBool = (SpinBool)theEObject;
+        T result = caseSpinBool(spinBool);
+        if (result == null) result = caseSpinElement(spinBool);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpinCADPackage.CONTROL:
+      {
+        Control control = (Control)theEObject;
+        T result = caseControl(control);
+        if (result == null) result = caseSpinElement(control);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpinCADPackage.SPIN_SLIDER_LABEL:
+      {
+        SpinSliderLabel spinSliderLabel = (SpinSliderLabel)theEObject;
+        T result = caseSpinSliderLabel(spinSliderLabel);
+        if (result == null) result = caseControl(spinSliderLabel);
+        if (result == null) result = caseSpinElement(spinSliderLabel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpinCADPackage.SPIN_CHECK_BOX:
+      {
+        SpinCheckBox spinCheckBox = (SpinCheckBox)theEObject;
+        T result = caseSpinCheckBox(spinCheckBox);
+        if (result == null) result = caseControl(spinCheckBox);
+        if (result == null) result = caseSpinElement(spinCheckBox);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -762,17 +788,17 @@ public class SpinCADSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Equate</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Spin Equate</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Equate</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Spin Equate</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEquate(Equate object)
+  public T caseSpinEquate(SpinEquate object)
   {
     return null;
   }
@@ -810,17 +836,65 @@ public class SpinCADSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Spin Bool</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Spin Bool</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBool(Bool object)
+  public T caseSpinBool(SpinBool object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Control</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Control</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseControl(Control object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Spin Slider Label</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Spin Slider Label</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpinSliderLabel(SpinSliderLabel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Spin Check Box</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Spin Check Box</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpinCheckBox(SpinCheckBox object)
   {
     return null;
   }
