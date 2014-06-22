@@ -98,7 +98,6 @@ def codeGenerate(String blockName, Program pr) {
 			private static final long serialVersionUID = 1L;
 			
 			«FOR SpinElement e : pr.elements»
-			// declare variables
 				«switch e {
 					// variables should be allocated within the CADBlock constructor
 					SpinEquate:{spcbEquate.declareVar(e)}
