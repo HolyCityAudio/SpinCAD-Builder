@@ -12,15 +12,13 @@ class spcbEquate extends BlockVariable {
 		«IF e.value.toUpperCase.startsWith("REG",0)»
 		private int «e.ename»;
 		«ELSE»
-		private double «e.ename»;
+		private double «e.ename» = «e.value»;
 		«ENDIF»
 '''}
 
 def static initialize(SpinEquate e) { '''
 		«IF e.value.toUpperCase.startsWith("REG",0)»
 		«e.ename» = sfxb.allocateReg();
-		«ELSE»
-		«e.ename» = «e.value»;
 		«ENDIF»
 '''
 	}
