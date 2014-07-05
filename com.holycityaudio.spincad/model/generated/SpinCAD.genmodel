@@ -27,6 +27,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinEquate/ename"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinEquate/value"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//SpinInt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinInt/ename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinInt/value"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Mem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Mem/buffer"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Mem/length"/>
@@ -77,6 +81,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetDelayScaleControl/length"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetDelayScaleControl/offset"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetDelayScaleControl/control"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//GetSamplesFromRatio">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetSamplesFromRatio/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetSamplesFromRatio/ratio"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetSamplesFromRatio/length"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//GetBaseAddress"/>
     <genClasses ecoreClass="SpinCAD.ecore#//SetOutputPin">

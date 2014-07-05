@@ -62,6 +62,7 @@ import com.holycityaudio.spincad.generator.spcbBool
 import com.holycityaudio.spincad.generator.spcbEquate
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
+import com.holycityaudio.spincad.spinCAD.GetSamplesFromRatio
 
 class SpinCADBlockGenerator {
  
@@ -107,7 +108,6 @@ def codeGenerate(String blockName, Program pr) {
 
 			public «blockName+"CADBlock"»(int x, int y) {
 				super(x, y);
-				controlPanelImplemented = true;
 				setName("«pr.name»");	
 				// Iterate through pin definitions and allocate or assign as needed
 				«FOR Pin p : pr.pins»
@@ -118,11 +118,19 @@ def codeGenerate(String blockName, Program pr) {
 						ControlInput:{genControlInput(p)}
 					}»
 				«ENDFOR»
-			}
+			// if any control panel elements declared, set hasControlPanel to true
+			«FOR SpinElement e : pr.elements»
+				«switch e {
+					SpinCheckBox:{setHasControlPanel()}
+					SpinSliderLabel:{setHasControlPanel()}
+				}»
+			«ENDFOR»			}
 		
 			// In the event there are parameters editable by control panel
 			public void editBlock(){ 
-				new «blockName+"ControlPanel"»(this);
+				if(hasControlPanel == true) {
+					new «blockName+"ControlPanel"»(this);
+				}
 			}	
 				
 			public void generateCode(SpinFXBlock sfxb) {
@@ -131,7 +139,7 @@ def codeGenerate(String blockName, Program pr) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					// variables should be allocated within the CADBlock constructor
-					SpinEquate:{spcbEquate.initialize(e)}
+//					SpinEquate:{spcbEquate.initialize(e)}
 					SpinBool:{spcbBool.initialize(e)}
 				}»
 			«ENDFOR»
@@ -179,6 +187,10 @@ def codeGenerate(String blockName, Program pr) {
 	}
 
 //-------------------------------------------------------------
+	def setHasControlPanel() ''' 
+		hasControlPanel = true;
+	'''
+	
 	def genAudioInput(Pin p) ''' 
 		addInputPin(this, "«p.name»");
 	'''
@@ -259,6 +271,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			SetOutputPin: genSetOutputPin(inst)
 			GetBaseAddress: genGetBaseAddress(inst)
 			GetDelayScaleControl: genGetDelayScaleControl(inst)
+			GetSamplesFromRatio: genGetSamplesFromRatio(inst)
 			}»	
 		'''
 	}
@@ -273,6 +286,13 @@ def genGetDelayScaleControl(GetDelayScaleControl g) {
 		sfxb.mulx(«g.control»);
 		«ENDIF»
 		sfxb.scaleOffset((0.95 * «g.ratio» * «g.length»)/32768.0, («g.offset» + (0.05 * «g.ratio» * «g.length»))/32768.0);
+	'''
+}	
+
+
+def genGetSamplesFromRatio(GetSamplesFromRatio g) {
+	'''
+		«g.variable» = (int) («g.ratio» * «g.length»);
 	'''
 }	
 

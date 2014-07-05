@@ -18,6 +18,7 @@ import com.holycityaudio.spincad.spinCAD.Exp;
 import com.holycityaudio.spincad.spinCAD.GetBaseAddress;
 import com.holycityaudio.spincad.spinCAD.GetDelayScaleControl;
 import com.holycityaudio.spincad.spinCAD.GetInputDefault;
+import com.holycityaudio.spincad.spinCAD.GetSamplesFromRatio;
 import com.holycityaudio.spincad.spinCAD.IsElse;
 import com.holycityaudio.spincad.spinCAD.IsEndif;
 import com.holycityaudio.spincad.spinCAD.IsPinConnected;
@@ -47,6 +48,7 @@ import com.holycityaudio.spincad.spinCAD.SpinBool;
 import com.holycityaudio.spincad.spinCAD.SpinCADPackage;
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox;
 import com.holycityaudio.spincad.spinCAD.SpinEquate;
+import com.holycityaudio.spincad.spinCAD.SpinInt;
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel;
 import com.holycityaudio.spincad.spinCAD.WriteAllpass;
 import com.holycityaudio.spincad.spinCAD.WriteDelay;
@@ -194,6 +196,14 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 				   context == grammarAccess.getMacroRule() ||
 				   context == grammarAccess.getSpinElementRule()) {
 					sequence_GetInputDefault(context, (GetInputDefault) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpinCADPackage.GET_SAMPLES_FROM_RATIO:
+				if(context == grammarAccess.getGetSamplesFromRatioRule() ||
+				   context == grammarAccess.getMacroRule() ||
+				   context == grammarAccess.getSpinElementRule()) {
+					sequence_GetSamplesFromRatio(context, (GetSamplesFromRatio) semanticObject); 
 					return; 
 				}
 				else break;
@@ -418,6 +428,13 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 				if(context == grammarAccess.getSpinElementRule() ||
 				   context == grammarAccess.getSpinEquateRule()) {
 					sequence_SpinEquate(context, (SpinEquate) semanticObject); 
+					return; 
+				}
+				else break;
+			case SpinCADPackage.SPIN_INT:
+				if(context == grammarAccess.getSpinElementRule() ||
+				   context == grammarAccess.getSpinIntRule()) {
+					sequence_SpinInt(context, (SpinInt) semanticObject); 
 					return; 
 				}
 				else break;
@@ -731,6 +748,28 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getGetInputDefaultAccess().getVariableIDTerminalRuleCall_2_0(), semanticObject.getVariable());
 		feeder.accept(grammarAccess.getGetInputDefaultAccess().getScaleSPINDOUBLEParserRuleCall_3_0(), semanticObject.getScale());
 		feeder.accept(grammarAccess.getGetInputDefaultAccess().getDefaultValSPINDOUBLEParserRuleCall_4_0(), semanticObject.getDefaultVal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (variable=ID ratio=SPINDOUBLE length=SPINDOUBLE)
+	 */
+	protected void sequence_GetSamplesFromRatio(EObject context, GetSamplesFromRatio semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.GET_SAMPLES_FROM_RATIO__VARIABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.GET_SAMPLES_FROM_RATIO__VARIABLE));
+			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.GET_SAMPLES_FROM_RATIO__RATIO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.GET_SAMPLES_FROM_RATIO__RATIO));
+			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.GET_SAMPLES_FROM_RATIO__LENGTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.GET_SAMPLES_FROM_RATIO__LENGTH));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getGetSamplesFromRatioAccess().getVariableIDTerminalRuleCall_1_0(), semanticObject.getVariable());
+		feeder.accept(grammarAccess.getGetSamplesFromRatioAccess().getRatioSPINDOUBLEParserRuleCall_2_0(), semanticObject.getRatio());
+		feeder.accept(grammarAccess.getGetSamplesFromRatioAccess().getLengthSPINDOUBLEParserRuleCall_3_0(), semanticObject.getLength());
 		feeder.finish();
 	}
 	
@@ -1195,6 +1234,25 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getSpinEquateAccess().getEnameIDTerminalRuleCall_1_0(), semanticObject.getEname());
 		feeder.accept(grammarAccess.getSpinEquateAccess().getValueSPINDOUBLEParserRuleCall_2_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (ename=ID value=INT)
+	 */
+	protected void sequence_SpinInt(EObject context, SpinInt semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.SPIN_INT__ENAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.SPIN_INT__ENAME));
+			if(transientValues.isValueTransient(semanticObject, SpinCADPackage.Literals.SPIN_INT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SpinCADPackage.Literals.SPIN_INT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getSpinIntAccess().getEnameIDTerminalRuleCall_1_0(), semanticObject.getEname());
+		feeder.accept(grammarAccess.getSpinIntAccess().getValueINTTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

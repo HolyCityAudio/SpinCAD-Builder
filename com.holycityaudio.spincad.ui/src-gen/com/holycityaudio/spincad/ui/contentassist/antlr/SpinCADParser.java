@@ -64,6 +64,7 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getControlInputAccess().getGroup(), "rule__ControlInput__Group__0");
 					put(grammarAccess.getControlOutputAccess().getGroup(), "rule__ControlOutput__Group__0");
 					put(grammarAccess.getSpinEquateAccess().getGroup(), "rule__SpinEquate__Group__0");
+					put(grammarAccess.getSpinIntAccess().getGroup(), "rule__SpinInt__Group__0");
 					put(grammarAccess.getMemAccess().getGroup(), "rule__Mem__Group__0");
 					put(grammarAccess.getOffsetAccess().getGroup(), "rule__Offset__Group__0");
 					put(grammarAccess.getSpinBoolAccess().getGroup(), "rule__SpinBool__Group__0");
@@ -77,6 +78,7 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getIsEndifAccess().getGroup(), "rule__IsEndif__Group__0");
 					put(grammarAccess.getGetInputDefaultAccess().getGroup(), "rule__GetInputDefault__Group__0");
 					put(grammarAccess.getGetDelayScaleControlAccess().getGroup(), "rule__GetDelayScaleControl__Group__0");
+					put(grammarAccess.getGetSamplesFromRatioAccess().getGroup(), "rule__GetSamplesFromRatio__Group__0");
 					put(grammarAccess.getGetBaseAddressAccess().getGroup(), "rule__GetBaseAddress__Group__0");
 					put(grammarAccess.getSetOutputPinAccess().getGroup(), "rule__SetOutputPin__Group__0");
 					put(grammarAccess.getReadRegisterAccess().getGroup(), "rule__ReadRegister__Group__0");
@@ -130,6 +132,8 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getControlOutputAccess().getNameAssignment_2(), "rule__ControlOutput__NameAssignment_2");
 					put(grammarAccess.getSpinEquateAccess().getEnameAssignment_1(), "rule__SpinEquate__EnameAssignment_1");
 					put(grammarAccess.getSpinEquateAccess().getValueAssignment_2(), "rule__SpinEquate__ValueAssignment_2");
+					put(grammarAccess.getSpinIntAccess().getEnameAssignment_1(), "rule__SpinInt__EnameAssignment_1");
+					put(grammarAccess.getSpinIntAccess().getValueAssignment_2(), "rule__SpinInt__ValueAssignment_2");
 					put(grammarAccess.getMemAccess().getBufferAssignment_1(), "rule__Mem__BufferAssignment_1");
 					put(grammarAccess.getMemAccess().getLengthAssignment_2(), "rule__Mem__LengthAssignment_2");
 					put(grammarAccess.getOffsetAccess().getNameAssignment_1(), "rule__Offset__NameAssignment_1");
@@ -157,6 +161,9 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGetDelayScaleControlAccess().getLengthAssignment_2(), "rule__GetDelayScaleControl__LengthAssignment_2");
 					put(grammarAccess.getGetDelayScaleControlAccess().getOffsetAssignment_3(), "rule__GetDelayScaleControl__OffsetAssignment_3");
 					put(grammarAccess.getGetDelayScaleControlAccess().getControlAssignment_4(), "rule__GetDelayScaleControl__ControlAssignment_4");
+					put(grammarAccess.getGetSamplesFromRatioAccess().getVariableAssignment_1(), "rule__GetSamplesFromRatio__VariableAssignment_1");
+					put(grammarAccess.getGetSamplesFromRatioAccess().getRatioAssignment_2(), "rule__GetSamplesFromRatio__RatioAssignment_2");
+					put(grammarAccess.getGetSamplesFromRatioAccess().getLengthAssignment_3(), "rule__GetSamplesFromRatio__LengthAssignment_3");
 					put(grammarAccess.getSetOutputPinAccess().getPinNameAssignment_1(), "rule__SetOutputPin__PinNameAssignment_1");
 					put(grammarAccess.getSetOutputPinAccess().getVarNameAssignment_2(), "rule__SetOutputPin__VarNameAssignment_2");
 					put(grammarAccess.getReadRegisterAccess().getArg1Assignment_1(), "rule__ReadRegister__Arg1Assignment_1");

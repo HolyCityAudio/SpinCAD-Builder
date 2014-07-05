@@ -18,6 +18,7 @@ import com.holycityaudio.spincad.spinCAD.Exp;
 import com.holycityaudio.spincad.spinCAD.GetBaseAddress;
 import com.holycityaudio.spincad.spinCAD.GetDelayScaleControl;
 import com.holycityaudio.spincad.spinCAD.GetInputDefault;
+import com.holycityaudio.spincad.spinCAD.GetSamplesFromRatio;
 import com.holycityaudio.spincad.spinCAD.InputPin;
 import com.holycityaudio.spincad.spinCAD.Inst_B15_S1_9;
 import com.holycityaudio.spincad.spinCAD.Inst_B24;
@@ -59,6 +60,7 @@ import com.holycityaudio.spincad.spinCAD.SpinCADPackage;
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox;
 import com.holycityaudio.spincad.spinCAD.SpinElement;
 import com.holycityaudio.spincad.spinCAD.SpinEquate;
+import com.holycityaudio.spincad.spinCAD.SpinInt;
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel;
 import com.holycityaudio.spincad.spinCAD.WriteAllpass;
 import com.holycityaudio.spincad.spinCAD.WriteDelay;
@@ -151,6 +153,13 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * @generated
    */
   private EClass spinEquateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass spinIntEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -256,6 +265,13 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * @generated
    */
   private EClass getDelayScaleControlEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass getSamplesFromRatioEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -761,6 +777,36 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getSpinInt()
+  {
+    return spinIntEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSpinInt_Ename()
+  {
+    return (EAttribute)spinIntEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSpinInt_Value()
+  {
+    return (EAttribute)spinIntEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMem()
   {
     return memEClass;
@@ -1154,6 +1200,46 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
   public EAttribute getGetDelayScaleControl_Control()
   {
     return (EAttribute)getDelayScaleControlEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGetSamplesFromRatio()
+  {
+    return getSamplesFromRatioEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGetSamplesFromRatio_Variable()
+  {
+    return (EAttribute)getSamplesFromRatioEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGetSamplesFromRatio_Ratio()
+  {
+    return (EAttribute)getSamplesFromRatioEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getGetSamplesFromRatio_Length()
+  {
+    return (EAttribute)getSamplesFromRatioEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1913,6 +1999,10 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(spinEquateEClass, SPIN_EQUATE__ENAME);
     createEAttribute(spinEquateEClass, SPIN_EQUATE__VALUE);
 
+    spinIntEClass = createEClass(SPIN_INT);
+    createEAttribute(spinIntEClass, SPIN_INT__ENAME);
+    createEAttribute(spinIntEClass, SPIN_INT__VALUE);
+
     memEClass = createEClass(MEM);
     createEAttribute(memEClass, MEM__BUFFER);
     createEAttribute(memEClass, MEM__LENGTH);
@@ -1967,6 +2057,11 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__LENGTH);
     createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__OFFSET);
     createEAttribute(getDelayScaleControlEClass, GET_DELAY_SCALE_CONTROL__CONTROL);
+
+    getSamplesFromRatioEClass = createEClass(GET_SAMPLES_FROM_RATIO);
+    createEAttribute(getSamplesFromRatioEClass, GET_SAMPLES_FROM_RATIO__VARIABLE);
+    createEAttribute(getSamplesFromRatioEClass, GET_SAMPLES_FROM_RATIO__RATIO);
+    createEAttribute(getSamplesFromRatioEClass, GET_SAMPLES_FROM_RATIO__LENGTH);
 
     getBaseAddressEClass = createEClass(GET_BASE_ADDRESS);
 
@@ -2113,6 +2208,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     controlInputEClass.getESuperTypes().add(this.getInputPin());
     controlOutputEClass.getESuperTypes().add(this.getOutputPin());
     spinEquateEClass.getESuperTypes().add(this.getSpinElement());
+    spinIntEClass.getESuperTypes().add(this.getSpinElement());
     memEClass.getESuperTypes().add(this.getSpinElement());
     offsetEClass.getESuperTypes().add(this.getSpinElement());
     spinBoolEClass.getESuperTypes().add(this.getSpinElement());
@@ -2128,6 +2224,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     isEndifEClass.getESuperTypes().add(this.getMacro());
     getInputDefaultEClass.getESuperTypes().add(this.getMacro());
     getDelayScaleControlEClass.getESuperTypes().add(this.getMacro());
+    getSamplesFromRatioEClass.getESuperTypes().add(this.getMacro());
     getBaseAddressEClass.getESuperTypes().add(this.getMacro());
     setOutputPinEClass.getESuperTypes().add(this.getMacro());
     instructionEClass.getESuperTypes().add(this.getSpinElement());
@@ -2194,6 +2291,10 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getSpinEquate_Ename(), ecorePackage.getEString(), "ename", null, 0, 1, SpinEquate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpinEquate_Value(), ecorePackage.getEString(), "value", null, 0, 1, SpinEquate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(spinIntEClass, SpinInt.class, "SpinInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSpinInt_Ename(), ecorePackage.getEString(), "ename", null, 0, 1, SpinInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpinInt_Value(), ecorePackage.getEInt(), "value", null, 0, 1, SpinInt.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(memEClass, Mem.class, "Mem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMem_Buffer(), ecorePackage.getEString(), "buffer", null, 0, 1, Mem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMem_Length(), ecorePackage.getEString(), "length", null, 0, 1, Mem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2248,6 +2349,11 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEAttribute(getGetDelayScaleControl_Length(), ecorePackage.getEString(), "length", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGetDelayScaleControl_Offset(), ecorePackage.getEString(), "offset", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGetDelayScaleControl_Control(), ecorePackage.getEString(), "control", null, 0, 1, GetDelayScaleControl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(getSamplesFromRatioEClass, GetSamplesFromRatio.class, "GetSamplesFromRatio", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGetSamplesFromRatio_Variable(), ecorePackage.getEString(), "variable", null, 0, 1, GetSamplesFromRatio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGetSamplesFromRatio_Ratio(), ecorePackage.getEString(), "ratio", null, 0, 1, GetSamplesFromRatio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGetSamplesFromRatio_Length(), ecorePackage.getEString(), "length", null, 0, 1, GetSamplesFromRatio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(getBaseAddressEClass, GetBaseAddress.class, "GetBaseAddress", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

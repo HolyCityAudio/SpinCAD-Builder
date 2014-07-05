@@ -39,11 +39,15 @@ ControlOutput:
 
 // --------------- Spin ASM Elements	
 SpinElement:
-	Control | SpinEquate | SpinBool | Mem | Instruction | Label | Comment | Macro | Offset;
+	SpinInt | Control | SpinEquate | SpinBool | Mem | Instruction | Label | Comment | Macro | Offset;
 
 // this now includes info to help set up control panels
 SpinEquate:
 	'equ' ename = ID value = SPINDOUBLE;
+
+// sometimes you need an integer
+SpinInt:
+	'int' ename = ID value = INT;
 
 Mem:
 	'mem' buffer = ID length = SPINREGISTER
@@ -53,7 +57,7 @@ Offset:
 	'offset' name = ID length = INT 
 ;
 
-// SpinCAD logical variable, usually associated with a Checkbox
+// SpinCAD logircal variable, usually associated with a Checkbox
 SpinBool:
 	'bool' name = ID value = BOOLEAN
 ;
@@ -83,8 +87,8 @@ Label:
 // - SpinCAD macro for conditional expressions within generateCode()
 // also for special function calls etc.
 Macro:
-	IsPinConnected | IsTrue
-  | IsElse | IsEndif | GetInputDefault | GetDelayScaleControl | SetOutputPin | GetBaseAddress
+	IsPinConnected | IsTrue | IsElse | IsEndif | GetInputDefault | 
+	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
@@ -93,6 +97,7 @@ IsElse: {IsElse} '@else';
 IsEndif: {IsEndif} "@endif";
 GetInputDefault: '@getInputDefault' name = ID variable = ID scale = SPINDOUBLE defaultVal = SPINDOUBLE;
 GetDelayScaleControl: '@getDelayScaleControl' ratio = ID length = ID offset = ID (control = ID)?;
+GetSamplesFromRatio: '@getSamplesFromRatio' variable = ID ratio = SPINDOUBLE length = SPINDOUBLE;
 GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = ID varName = ID;
 

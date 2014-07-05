@@ -153,6 +153,14 @@ public class SpinCADSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SpinCADPackage.SPIN_INT:
+      {
+        SpinInt spinInt = (SpinInt)theEObject;
+        T result = caseSpinInt(spinInt);
+        if (result == null) result = caseSpinElement(spinInt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SpinCADPackage.MEM:
       {
         Mem mem = (Mem)theEObject;
@@ -278,6 +286,15 @@ public class SpinCADSwitch<T> extends Switch<T>
         T result = caseGetDelayScaleControl(getDelayScaleControl);
         if (result == null) result = caseMacro(getDelayScaleControl);
         if (result == null) result = caseSpinElement(getDelayScaleControl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SpinCADPackage.GET_SAMPLES_FROM_RATIO:
+      {
+        GetSamplesFromRatio getSamplesFromRatio = (GetSamplesFromRatio)theEObject;
+        T result = caseGetSamplesFromRatio(getSamplesFromRatio);
+        if (result == null) result = caseMacro(getSamplesFromRatio);
+        if (result == null) result = caseSpinElement(getSamplesFromRatio);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -804,6 +821,22 @@ public class SpinCADSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Spin Int</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Spin Int</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpinInt(SpinInt object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Mem</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1039,6 +1072,22 @@ public class SpinCADSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGetDelayScaleControl(GetDelayScaleControl object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Get Samples From Ratio</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Get Samples From Ratio</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGetSamplesFromRatio(GetSamplesFromRatio object)
   {
     return null;
   }

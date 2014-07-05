@@ -74,6 +74,7 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
       case SpinCADPackage.CONTROL_OUTPUT: return createControlOutput();
       case SpinCADPackage.SPIN_ELEMENT: return createSpinElement();
       case SpinCADPackage.SPIN_EQUATE: return createSpinEquate();
+      case SpinCADPackage.SPIN_INT: return createSpinInt();
       case SpinCADPackage.MEM: return createMem();
       case SpinCADPackage.OFFSET: return createOffset();
       case SpinCADPackage.SPIN_BOOL: return createSpinBool();
@@ -89,6 +90,7 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
       case SpinCADPackage.IS_ENDIF: return createIsEndif();
       case SpinCADPackage.GET_INPUT_DEFAULT: return createGetInputDefault();
       case SpinCADPackage.GET_DELAY_SCALE_CONTROL: return createGetDelayScaleControl();
+      case SpinCADPackage.GET_SAMPLES_FROM_RATIO: return createGetSamplesFromRatio();
       case SpinCADPackage.GET_BASE_ADDRESS: return createGetBaseAddress();
       case SpinCADPackage.SET_OUTPUT_PIN: return createSetOutputPin();
       case SpinCADPackage.INSTRUCTION: return createInstruction();
@@ -240,6 +242,17 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
   {
     SpinEquateImpl spinEquate = new SpinEquateImpl();
     return spinEquate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SpinInt createSpinInt()
+  {
+    SpinIntImpl spinInt = new SpinIntImpl();
+    return spinInt;
   }
 
   /**
@@ -405,6 +418,17 @@ public class SpinCADFactoryImpl extends EFactoryImpl implements SpinCADFactory
   {
     GetDelayScaleControlImpl getDelayScaleControl = new GetDelayScaleControlImpl();
     return getDelayScaleControl;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GetSamplesFromRatio createGetSamplesFromRatio()
+  {
+    GetSamplesFromRatioImpl getSamplesFromRatio = new GetSamplesFromRatioImpl();
+    return getSamplesFromRatio;
   }
 
   /**
