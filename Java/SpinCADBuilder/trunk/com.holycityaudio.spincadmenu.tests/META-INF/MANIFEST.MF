@@ -19,6 +19,11 @@ Import-Package: junit.awtui;version="3.8.2",
  junit.textui;version="3.8.2",
  org.apache.http;version="4.1.4",
  org.apache.log4j,
- org.hamcrest.core
+ org.hamcrest.core,
+ org.junit.runner;version="4.5.0",
+ org.junit.runner.manipulation;version="4.5.0",
+ org.junit.runner.notification;version="4.5.0",
+ org.junit.runners;version="4.5.0",
+ org.junit.runners.model;version="4.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.holycityaudio.spincadmenu

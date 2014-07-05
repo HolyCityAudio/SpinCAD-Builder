@@ -113,6 +113,15 @@ public interface SpinCADFactory extends EFactory
   SpinEquate createSpinEquate();
 
   /**
+   * Returns a new object of class '<em>Spin Int</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Spin Int</em>'.
+   * @generated
+   */
+  SpinInt createSpinInt();
+
+  /**
    * Returns a new object of class '<em>Mem</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -246,6 +255,15 @@ public interface SpinCADFactory extends EFactory
    * @generated
    */
   GetDelayScaleControl createGetDelayScaleControl();
+
+  /**
+   * Returns a new object of class '<em>Get Samples From Ratio</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Get Samples From Ratio</em>'.
+   * @generated
+   */
+  GetSamplesFromRatio createGetSamplesFromRatio();
 
   /**
    * Returns a new object of class '<em>Get Base Address</em>'.

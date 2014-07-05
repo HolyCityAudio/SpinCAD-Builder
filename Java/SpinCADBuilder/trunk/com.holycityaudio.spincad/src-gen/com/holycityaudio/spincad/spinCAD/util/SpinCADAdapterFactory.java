@@ -125,6 +125,11 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
         return createSpinEquateAdapter();
       }
       @Override
+      public Adapter caseSpinInt(SpinInt object)
+      {
+        return createSpinIntAdapter();
+      }
+      @Override
       public Adapter caseMem(Mem object)
       {
         return createMemAdapter();
@@ -198,6 +203,11 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
       public Adapter caseGetDelayScaleControl(GetDelayScaleControl object)
       {
         return createGetDelayScaleControlAdapter();
+      }
+      @Override
+      public Adapter caseGetSamplesFromRatio(GetSamplesFromRatio object)
+      {
+        return createGetSamplesFromRatioAdapter();
       }
       @Override
       public Adapter caseGetBaseAddress(GetBaseAddress object)
@@ -562,6 +572,21 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.SpinInt <em>Spin Int</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.SpinInt
+   * @generated
+   */
+  public Adapter createSpinIntAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.Mem <em>Mem</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -782,6 +807,21 @@ public class SpinCADAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGetDelayScaleControlAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.holycityaudio.spincad.spinCAD.GetSamplesFromRatio <em>Get Samples From Ratio</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.holycityaudio.spincad.spinCAD.GetSamplesFromRatio
+   * @generated
+   */
+  public Adapter createGetSamplesFromRatioAdapter()
   {
     return null;
   }
