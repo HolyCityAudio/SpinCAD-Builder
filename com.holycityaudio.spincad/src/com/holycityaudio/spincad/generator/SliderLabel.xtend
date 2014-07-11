@@ -12,7 +12,17 @@ def static declareVar(SpinSliderLabel e) { '''
 '''}
 
 def static initialize(String blockName, SpinSliderLabel e) { '''
-		«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
+
+		«IF e.option != null»
+			«IF e.option == "lengthToTime"»
+				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
+			«ENDIF»
+			«IF e.option == "LOGFREQ"»
+				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(Math.log10(«e.minVal») * 100.0),(int) (Math.log10(«e.maxVal») * 100.0), (int) (Math.log10(gCB.get«e.ename»()) * 100));
+			«ENDIF»
+		«ELSE»
+
+		«ENDIF»
 		«e.ename»Slider.addChangeListener(new «blockName»SliderListener());
 		«e.ename»Label = new JLabel();
 		update«e.ename»Label();
@@ -47,6 +57,9 @@ def static genLabelUpdater(SpinSliderLabel e) {
 		«IF e.option != null»
 			«IF e.option == "lengthToTime"»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/gCB.getSamplerate()));		
+			«ENDIF»
+			«IF e.option == "LOGFREQ"»
+				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", (gCB.get«e.ename»()) + " Hz"));		
 			«ENDIF»
 		«ELSE»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.get«e.ename»()));		
