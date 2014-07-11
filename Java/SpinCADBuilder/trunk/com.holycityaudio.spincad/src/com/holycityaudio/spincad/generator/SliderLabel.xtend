@@ -59,7 +59,7 @@ def static genLabelUpdater(SpinSliderLabel e) {
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/gCB.getSamplerate()));		
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
-				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", (gCB.get«e.ename»()) + " Hz"));		
+				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", Math.pow(10.0, gCB.get«e.ename»())) + " Hz");		
 			«ENDIF»
 		«ELSE»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.get«e.ename»()));		
