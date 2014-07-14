@@ -957,7 +957,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpinSliderLabel_Multiplier()
+  public EAttribute getSpinSliderLabel_InitVal()
   {
     return (EAttribute)spinSliderLabelEClass.getEStructuralFeatures().get(2);
   }
@@ -967,7 +967,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpinSliderLabel_Precision()
+  public EAttribute getSpinSliderLabel_Multiplier()
   {
     return (EAttribute)spinSliderLabelEClass.getEStructuralFeatures().get(3);
   }
@@ -977,9 +977,19 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSpinSliderLabel_Option()
+  public EAttribute getSpinSliderLabel_Precision()
   {
     return (EAttribute)spinSliderLabelEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSpinSliderLabel_Option()
+  {
+    return (EAttribute)spinSliderLabelEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -2022,6 +2032,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     spinSliderLabelEClass = createEClass(SPIN_SLIDER_LABEL);
     createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__MIN_VAL);
     createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__MAX_VAL);
+    createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__INIT_VAL);
     createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__MULTIPLIER);
     createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__PRECISION);
     createEAttribute(spinSliderLabelEClass, SPIN_SLIDER_LABEL__OPTION);
@@ -2314,6 +2325,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
     initEClass(spinSliderLabelEClass, SpinSliderLabel.class, "SpinSliderLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSpinSliderLabel_MinVal(), ecorePackage.getEString(), "minVal", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpinSliderLabel_MaxVal(), ecorePackage.getEString(), "maxVal", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSpinSliderLabel_InitVal(), ecorePackage.getEString(), "initVal", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpinSliderLabel_Multiplier(), ecorePackage.getEString(), "multiplier", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpinSliderLabel_Precision(), ecorePackage.getEInt(), "precision", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSpinSliderLabel_Option(), ecorePackage.getEString(), "option", null, 0, 1, SpinSliderLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

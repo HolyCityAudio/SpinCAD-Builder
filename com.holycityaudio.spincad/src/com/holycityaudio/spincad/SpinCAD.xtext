@@ -67,7 +67,7 @@ SpinBool:
 Control: SpinSliderLabel | SpinCheckBox;
 
 SpinSliderLabel:
-	'@sliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
+	'@sliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
 // ename is the name of the controlled variable, controlName is the text to display, value is the init value
