@@ -649,13 +649,22 @@ public interface SpinCADPackage extends EPackage
   int SPIN_SLIDER_LABEL__MAX_VAL = CONTROL_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Init Val</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPIN_SLIDER_LABEL__INIT_VAL = CONTROL_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Multiplier</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SPIN_SLIDER_LABEL__MULTIPLIER = CONTROL_FEATURE_COUNT + 2;
+  int SPIN_SLIDER_LABEL__MULTIPLIER = CONTROL_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Precision</b></em>' attribute.
@@ -664,7 +673,7 @@ public interface SpinCADPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPIN_SLIDER_LABEL__PRECISION = CONTROL_FEATURE_COUNT + 3;
+  int SPIN_SLIDER_LABEL__PRECISION = CONTROL_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Option</b></em>' attribute.
@@ -673,7 +682,7 @@ public interface SpinCADPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPIN_SLIDER_LABEL__OPTION = CONTROL_FEATURE_COUNT + 4;
+  int SPIN_SLIDER_LABEL__OPTION = CONTROL_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Spin Slider Label</em>' class.
@@ -682,7 +691,7 @@ public interface SpinCADPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SPIN_SLIDER_LABEL_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 5;
+  int SPIN_SLIDER_LABEL_FEATURE_COUNT = CONTROL_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link com.holycityaudio.spincad.spinCAD.impl.SpinCheckBoxImpl <em>Spin Check Box</em>}' class.
@@ -2670,6 +2679,17 @@ public interface SpinCADPackage extends EPackage
   EAttribute getSpinSliderLabel_MaxVal();
 
   /**
+   * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.SpinSliderLabel#getInitVal <em>Init Val</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Init Val</em>'.
+   * @see com.holycityaudio.spincad.spinCAD.SpinSliderLabel#getInitVal()
+   * @see #getSpinSliderLabel()
+   * @generated
+   */
+  EAttribute getSpinSliderLabel_InitVal();
+
+  /**
    * Returns the meta object for the attribute '{@link com.holycityaudio.spincad.spinCAD.SpinSliderLabel#getMultiplier <em>Multiplier</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4043,6 +4063,14 @@ public interface SpinCADPackage extends EPackage
      * @generated
      */
     EAttribute SPIN_SLIDER_LABEL__MAX_VAL = eINSTANCE.getSpinSliderLabel_MaxVal();
+
+    /**
+     * The meta object literal for the '<em><b>Init Val</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SPIN_SLIDER_LABEL__INIT_VAL = eINSTANCE.getSpinSliderLabel_InitVal();
 
     /**
      * The meta object literal for the '<em><b>Multiplier</b></em>' attribute feature.

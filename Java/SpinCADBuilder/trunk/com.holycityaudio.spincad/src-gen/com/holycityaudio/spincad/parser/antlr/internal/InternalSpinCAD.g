@@ -1064,16 +1064,16 @@ ruleSpinSliderLabel returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSpinSliderLabelAccess().getMultiplierSPINDOUBLEParserRuleCall_3_2_0()); 
+	        newCompositeNode(grammarAccess.getSpinSliderLabelAccess().getInitValSPINDOUBLEParserRuleCall_3_2_0()); 
 	    }
-		lv_multiplier_5_0=ruleSPINDOUBLE		{
+		lv_initVal_5_0=ruleSPINDOUBLE		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSpinSliderLabelRule());
 	        }
        		set(
        			$current, 
-       			"multiplier",
-        		lv_multiplier_5_0, 
+       			"initVal",
+        		lv_initVal_5_0, 
         		"SPINDOUBLE");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1081,9 +1081,27 @@ ruleSpinSliderLabel returns [EObject current=null]
 )
 )(
 (
-		lv_precision_6_0=RULE_INT
+		{ 
+	        newCompositeNode(grammarAccess.getSpinSliderLabelAccess().getMultiplierSPINDOUBLEParserRuleCall_3_3_0()); 
+	    }
+		lv_multiplier_6_0=ruleSPINDOUBLE		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getSpinSliderLabelRule());
+	        }
+       		set(
+       			$current, 
+       			"multiplier",
+        		lv_multiplier_6_0, 
+        		"SPINDOUBLE");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_precision_7_0=RULE_INT
 		{
-			newLeafNode(lv_precision_6_0, grammarAccess.getSpinSliderLabelAccess().getPrecisionINTTerminalRuleCall_3_3_0()); 
+			newLeafNode(lv_precision_7_0, grammarAccess.getSpinSliderLabelAccess().getPrecisionINTTerminalRuleCall_3_4_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1092,16 +1110,16 @@ ruleSpinSliderLabel returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"precision",
-        		lv_precision_6_0, 
+        		lv_precision_7_0, 
         		"INT");
 	    }
 
 )
 )(
 (
-		lv_option_7_0=RULE_ID
+		lv_option_8_0=RULE_ID
 		{
-			newLeafNode(lv_option_7_0, grammarAccess.getSpinSliderLabelAccess().getOptionIDTerminalRuleCall_3_4_0()); 
+			newLeafNode(lv_option_8_0, grammarAccess.getSpinSliderLabelAccess().getOptionIDTerminalRuleCall_3_5_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1110,7 +1128,7 @@ ruleSpinSliderLabel returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"option",
-        		lv_option_7_0, 
+        		lv_option_8_0, 
         		"ID");
 	    }
 

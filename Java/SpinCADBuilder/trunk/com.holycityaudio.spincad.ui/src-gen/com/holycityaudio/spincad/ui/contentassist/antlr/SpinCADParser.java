@@ -144,9 +144,10 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpinSliderLabelAccess().getControlNameAssignment_2(), "rule__SpinSliderLabel__ControlNameAssignment_2");
 					put(grammarAccess.getSpinSliderLabelAccess().getMinValAssignment_3_0(), "rule__SpinSliderLabel__MinValAssignment_3_0");
 					put(grammarAccess.getSpinSliderLabelAccess().getMaxValAssignment_3_1(), "rule__SpinSliderLabel__MaxValAssignment_3_1");
-					put(grammarAccess.getSpinSliderLabelAccess().getMultiplierAssignment_3_2(), "rule__SpinSliderLabel__MultiplierAssignment_3_2");
-					put(grammarAccess.getSpinSliderLabelAccess().getPrecisionAssignment_3_3(), "rule__SpinSliderLabel__PrecisionAssignment_3_3");
-					put(grammarAccess.getSpinSliderLabelAccess().getOptionAssignment_3_4(), "rule__SpinSliderLabel__OptionAssignment_3_4");
+					put(grammarAccess.getSpinSliderLabelAccess().getInitValAssignment_3_2(), "rule__SpinSliderLabel__InitValAssignment_3_2");
+					put(grammarAccess.getSpinSliderLabelAccess().getMultiplierAssignment_3_3(), "rule__SpinSliderLabel__MultiplierAssignment_3_3");
+					put(grammarAccess.getSpinSliderLabelAccess().getPrecisionAssignment_3_4(), "rule__SpinSliderLabel__PrecisionAssignment_3_4");
+					put(grammarAccess.getSpinSliderLabelAccess().getOptionAssignment_3_5(), "rule__SpinSliderLabel__OptionAssignment_3_5");
 					put(grammarAccess.getSpinCheckBoxAccess().getEnameAssignment_1(), "rule__SpinCheckBox__EnameAssignment_1");
 					put(grammarAccess.getSpinCheckBoxAccess().getControlNameAssignment_2(), "rule__SpinCheckBox__ControlNameAssignment_2");
 					put(grammarAccess.getCommentAccess().getRemarkAssignment(), "rule__Comment__RemarkAssignment");

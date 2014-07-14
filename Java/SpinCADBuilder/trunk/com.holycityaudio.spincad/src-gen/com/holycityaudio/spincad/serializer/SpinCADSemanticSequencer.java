@@ -1259,7 +1259,18 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (ename=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT option=ID?)?)
+	 *     (
+	 *         ename=ID 
+	 *         controlName=ID 
+	 *         (
+	 *             minVal=SPINDOUBLE 
+	 *             maxVal=SPINDOUBLE 
+	 *             initVal=SPINDOUBLE 
+	 *             multiplier=SPINDOUBLE 
+	 *             precision=INT 
+	 *             option=ID?
+	 *         )?
+	 *     )
 	 */
 	protected void sequence_SpinSliderLabel(EObject context, SpinSliderLabel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

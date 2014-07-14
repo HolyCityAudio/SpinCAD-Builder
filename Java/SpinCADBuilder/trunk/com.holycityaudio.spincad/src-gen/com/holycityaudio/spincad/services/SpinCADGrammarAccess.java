@@ -498,20 +498,22 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMinValSPINDOUBLEParserRuleCall_3_0_0 = (RuleCall)cMinValAssignment_3_0.eContents().get(0);
 		private final Assignment cMaxValAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cMaxValSPINDOUBLEParserRuleCall_3_1_0 = (RuleCall)cMaxValAssignment_3_1.eContents().get(0);
-		private final Assignment cMultiplierAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cMultiplierSPINDOUBLEParserRuleCall_3_2_0 = (RuleCall)cMultiplierAssignment_3_2.eContents().get(0);
-		private final Assignment cPrecisionAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
-		private final RuleCall cPrecisionINTTerminalRuleCall_3_3_0 = (RuleCall)cPrecisionAssignment_3_3.eContents().get(0);
-		private final Assignment cOptionAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
-		private final RuleCall cOptionIDTerminalRuleCall_3_4_0 = (RuleCall)cOptionAssignment_3_4.eContents().get(0);
+		private final Assignment cInitValAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cInitValSPINDOUBLEParserRuleCall_3_2_0 = (RuleCall)cInitValAssignment_3_2.eContents().get(0);
+		private final Assignment cMultiplierAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cMultiplierSPINDOUBLEParserRuleCall_3_3_0 = (RuleCall)cMultiplierAssignment_3_3.eContents().get(0);
+		private final Assignment cPrecisionAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
+		private final RuleCall cPrecisionINTTerminalRuleCall_3_4_0 = (RuleCall)cPrecisionAssignment_3_4.eContents().get(0);
+		private final Assignment cOptionAssignment_3_5 = (Assignment)cGroup_3.eContents().get(5);
+		private final RuleCall cOptionIDTerminalRuleCall_3_5_0 = (RuleCall)cOptionAssignment_3_5.eContents().get(0);
 		
 		//SpinSliderLabel:
-		//	"@sliderLabel" ename=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT
-		//	option=ID?)?;
+		//	"@sliderLabel" ename=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE initVal=SPINDOUBLE multiplier=SPINDOUBLE
+		//	precision=INT option=ID?)?;
 		public ParserRule getRule() { return rule; }
 
-		//"@sliderLabel" ename=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT
-		//option=ID?)?
+		//"@sliderLabel" ename=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE initVal=SPINDOUBLE multiplier=SPINDOUBLE
+		//precision=INT option=ID?)?
 		public Group getGroup() { return cGroup; }
 
 		//"@sliderLabel"
@@ -529,7 +531,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getControlNameIDTerminalRuleCall_2_0() { return cControlNameIDTerminalRuleCall_2_0; }
 
-		//(minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT option=ID?)?
+		//(minVal=SPINDOUBLE maxVal=SPINDOUBLE initVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT option=ID?)?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//minVal=SPINDOUBLE
@@ -544,23 +546,29 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//SPINDOUBLE
 		public RuleCall getMaxValSPINDOUBLEParserRuleCall_3_1_0() { return cMaxValSPINDOUBLEParserRuleCall_3_1_0; }
 
-		//multiplier=SPINDOUBLE
-		public Assignment getMultiplierAssignment_3_2() { return cMultiplierAssignment_3_2; }
+		//initVal=SPINDOUBLE
+		public Assignment getInitValAssignment_3_2() { return cInitValAssignment_3_2; }
 
 		//SPINDOUBLE
-		public RuleCall getMultiplierSPINDOUBLEParserRuleCall_3_2_0() { return cMultiplierSPINDOUBLEParserRuleCall_3_2_0; }
+		public RuleCall getInitValSPINDOUBLEParserRuleCall_3_2_0() { return cInitValSPINDOUBLEParserRuleCall_3_2_0; }
+
+		//multiplier=SPINDOUBLE
+		public Assignment getMultiplierAssignment_3_3() { return cMultiplierAssignment_3_3; }
+
+		//SPINDOUBLE
+		public RuleCall getMultiplierSPINDOUBLEParserRuleCall_3_3_0() { return cMultiplierSPINDOUBLEParserRuleCall_3_3_0; }
 
 		//precision=INT
-		public Assignment getPrecisionAssignment_3_3() { return cPrecisionAssignment_3_3; }
+		public Assignment getPrecisionAssignment_3_4() { return cPrecisionAssignment_3_4; }
 
 		//INT
-		public RuleCall getPrecisionINTTerminalRuleCall_3_3_0() { return cPrecisionINTTerminalRuleCall_3_3_0; }
+		public RuleCall getPrecisionINTTerminalRuleCall_3_4_0() { return cPrecisionINTTerminalRuleCall_3_4_0; }
 
 		//option=ID?
-		public Assignment getOptionAssignment_3_4() { return cOptionAssignment_3_4; }
+		public Assignment getOptionAssignment_3_5() { return cOptionAssignment_3_5; }
 
 		//ID
-		public RuleCall getOptionIDTerminalRuleCall_3_4_0() { return cOptionIDTerminalRuleCall_3_4_0; }
+		public RuleCall getOptionIDTerminalRuleCall_3_5_0() { return cOptionIDTerminalRuleCall_3_5_0; }
 	}
 
 	public class SpinCheckBoxElements extends AbstractParserRuleElementFinder {
@@ -2644,8 +2652,8 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SpinSliderLabel:
-	//	"@sliderLabel" ename=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE multiplier=SPINDOUBLE precision=INT
-	//	option=ID?)?;
+	//	"@sliderLabel" ename=ID controlName=ID (minVal=SPINDOUBLE maxVal=SPINDOUBLE initVal=SPINDOUBLE multiplier=SPINDOUBLE
+	//	precision=INT option=ID?)?;
 	public SpinSliderLabelElements getSpinSliderLabelAccess() {
 		return (pSpinSliderLabel != null) ? pSpinSliderLabel : (pSpinSliderLabel = new SpinSliderLabelElements());
 	}
