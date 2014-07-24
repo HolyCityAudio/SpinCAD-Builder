@@ -472,7 +472,7 @@ def genChorusReadDelay(ChorusReadDelay inst) '''
 
 // this is the other instruction that uses the SPINMEM data type
 def genChorusScaleOffset(ChorusScaleOffset inst) ''' 
-	sfxb.FXchorusScaleOffset(«inst.getArg1.toUpperCase()», «inst.getArg2.toUpperCase()», «inst.getArg3»);
+	sfxb.chorusScaleOffset(«inst.getArg1.toUpperCase()», «inst.getArg2.toUpperCase()», «inst.getArg3»);
 	'''
 
 //=============================================================================
