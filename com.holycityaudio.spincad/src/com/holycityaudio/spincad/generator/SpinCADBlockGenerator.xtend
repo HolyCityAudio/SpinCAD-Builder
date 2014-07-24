@@ -63,6 +63,7 @@ import com.holycityaudio.spincad.generator.spcbEquate
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
 import com.holycityaudio.spincad.spinCAD.GetSamplesFromRatio
+import com.holycityaudio.spincad.spinCAD.ChorusScaleOffset
 
 class SpinCADBlockGenerator {
  
@@ -350,6 +351,7 @@ def genSetOutputPin(SetOutputPin p) {
 			And: genAnd(inst)
 			ChorusReadDelay: genChorusReadDelay(inst)
 			ChorusReadValue: genChorusReadValue(inst)
+			ChorusScaleOffset: genChorusScaleOffset(inst)
 			Clr: genClr(inst)
 			Exp: genExp(inst)
 			Jam: genJam(inst)
@@ -466,6 +468,11 @@ def genDelayInst(Inst_B15_S1_9 inst, String className) {
 // this is the other instruction that uses the SPINMEM data type
 def genChorusReadDelay(ChorusReadDelay inst) ''' 
 	sfxb.FXchorusReadDelay(«inst.getArg1.toUpperCase()», «inst.getArg2.toUpperCase()», "«inst.getArg3.getBuffer»", «inst.getArg3.getValue»);
+	'''
+
+// this is the other instruction that uses the SPINMEM data type
+def genChorusScaleOffset(ChorusScaleOffset inst) ''' 
+	sfxb.FXchorusScaleOffset(«inst.getArg1.toUpperCase()», «inst.getArg2.toUpperCase()», «inst.getArg3»);
 	'''
 
 //=============================================================================
