@@ -170,7 +170,7 @@ WriteDelay: 'wra' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 WriteAllpass: 'wrap' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 ReadDelay: 'rda' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 LoadSinLFO: 'wlds' arg1 = SPINREGISTER ',' arg2 = INT ',' arg3 = INT;
-LoadRampLFO: 'wldr' arg1 = SPINREGISTER ',' arg2 = INT ',' arg3 = INT;
+LoadRampLFO: 'wldr' arg1 = SPINREGISTER ',' arg2 = SPINDOUBLE ',' arg3 = INT;
 
 // Chorus instructions
 ChorusReadDelay: 'cho rda' ',' arg1 = SPINREGISTER ',' arg2 = SPINCHOREGFLAGS ',' arg3 = SPINMEM;

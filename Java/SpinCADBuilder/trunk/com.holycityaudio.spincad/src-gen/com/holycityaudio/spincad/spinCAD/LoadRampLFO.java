@@ -58,12 +58,12 @@ public interface LoadRampLFO extends Instruction
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Arg2</em>' attribute.
-   * @see #setArg2(int)
+   * @see #setArg2(String)
    * @see com.holycityaudio.spincad.spinCAD.SpinCADPackage#getLoadRampLFO_Arg2()
    * @model
    * @generated
    */
-  int getArg2();
+  String getArg2();
 
   /**
    * Sets the value of the '{@link com.holycityaudio.spincad.spinCAD.LoadRampLFO#getArg2 <em>Arg2</em>}' attribute.
@@ -73,7 +73,7 @@ public interface LoadRampLFO extends Instruction
    * @see #getArg2()
    * @generated
    */
-  void setArg2(int value);
+  void setArg2(String value);
 
   /**
    * Returns the value of the '<em><b>Arg3</b></em>' attribute.

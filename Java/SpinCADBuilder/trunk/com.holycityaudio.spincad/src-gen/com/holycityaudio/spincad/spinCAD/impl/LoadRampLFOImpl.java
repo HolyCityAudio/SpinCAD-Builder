@@ -56,7 +56,7 @@ public class LoadRampLFOImpl extends InstructionImpl implements LoadRampLFO
    * @generated
    * @ordered
    */
-  protected static final int ARG2_EDEFAULT = 0;
+  protected static final String ARG2_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getArg2() <em>Arg2</em>}' attribute.
@@ -66,7 +66,7 @@ public class LoadRampLFOImpl extends InstructionImpl implements LoadRampLFO
    * @generated
    * @ordered
    */
-  protected int arg2 = ARG2_EDEFAULT;
+  protected String arg2 = ARG2_EDEFAULT;
 
   /**
    * The default value of the '{@link #getArg3() <em>Arg3</em>}' attribute.
@@ -137,7 +137,7 @@ public class LoadRampLFOImpl extends InstructionImpl implements LoadRampLFO
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getArg2()
+  public String getArg2()
   {
     return arg2;
   }
@@ -147,9 +147,9 @@ public class LoadRampLFOImpl extends InstructionImpl implements LoadRampLFO
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setArg2(int newArg2)
+  public void setArg2(String newArg2)
   {
-    int oldArg2 = arg2;
+    String oldArg2 = arg2;
     arg2 = newArg2;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SpinCADPackage.LOAD_RAMP_LFO__ARG2, oldArg2, arg2));
@@ -212,7 +212,7 @@ public class LoadRampLFOImpl extends InstructionImpl implements LoadRampLFO
         setArg1((String)newValue);
         return;
       case SpinCADPackage.LOAD_RAMP_LFO__ARG2:
-        setArg2((Integer)newValue);
+        setArg2((String)newValue);
         return;
       case SpinCADPackage.LOAD_RAMP_LFO__ARG3:
         setArg3((Integer)newValue);
@@ -257,7 +257,7 @@ public class LoadRampLFOImpl extends InstructionImpl implements LoadRampLFO
       case SpinCADPackage.LOAD_RAMP_LFO__ARG1:
         return ARG1_EDEFAULT == null ? arg1 != null : !ARG1_EDEFAULT.equals(arg1);
       case SpinCADPackage.LOAD_RAMP_LFO__ARG2:
-        return arg2 != ARG2_EDEFAULT;
+        return ARG2_EDEFAULT == null ? arg2 != null : !ARG2_EDEFAULT.equals(arg2);
       case SpinCADPackage.LOAD_RAMP_LFO__ARG3:
         return arg3 != ARG3_EDEFAULT;
     }

@@ -874,7 +874,7 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (arg1=SPINREGISTER arg2=INT arg3=INT)
+	 *     (arg1=SPINREGISTER arg2=SPINDOUBLE arg3=INT)
 	 */
 	protected void sequence_LoadRampLFO(EObject context, LoadRampLFO semanticObject) {
 		if(errorAcceptor != null) {
@@ -888,7 +888,7 @@ public class SpinCADSemanticSequencer extends AbstractDelegatingSemanticSequence
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getLoadRampLFOAccess().getArg1SPINREGISTERParserRuleCall_1_0(), semanticObject.getArg1());
-		feeder.accept(grammarAccess.getLoadRampLFOAccess().getArg2INTTerminalRuleCall_3_0(), semanticObject.getArg2());
+		feeder.accept(grammarAccess.getLoadRampLFOAccess().getArg2SPINDOUBLEParserRuleCall_3_0(), semanticObject.getArg2());
 		feeder.accept(grammarAccess.getLoadRampLFOAccess().getArg3INTTerminalRuleCall_5_0(), semanticObject.getArg3());
 		feeder.finish();
 	}
