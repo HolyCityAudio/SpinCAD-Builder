@@ -1733,16 +1733,16 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cArg1SPINREGISTERParserRuleCall_1_0 = (RuleCall)cArg1Assignment_1.eContents().get(0);
 		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cArg2Assignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cArg2INTTerminalRuleCall_3_0 = (RuleCall)cArg2Assignment_3.eContents().get(0);
+		private final RuleCall cArg2SPINDOUBLEParserRuleCall_3_0 = (RuleCall)cArg2Assignment_3.eContents().get(0);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cArg3Assignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cArg3INTTerminalRuleCall_5_0 = (RuleCall)cArg3Assignment_5.eContents().get(0);
 		
 		//LoadRampLFO:
-		//	"wldr" arg1=SPINREGISTER "," arg2=INT "," arg3=INT;
+		//	"wldr" arg1=SPINREGISTER "," arg2=SPINDOUBLE "," arg3=INT;
 		public ParserRule getRule() { return rule; }
 
-		//"wldr" arg1=SPINREGISTER "," arg2=INT "," arg3=INT
+		//"wldr" arg1=SPINREGISTER "," arg2=SPINDOUBLE "," arg3=INT
 		public Group getGroup() { return cGroup; }
 
 		//"wldr"
@@ -1757,11 +1757,11 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
 
-		//arg2=INT
+		//arg2=SPINDOUBLE
 		public Assignment getArg2Assignment_3() { return cArg2Assignment_3; }
 
-		//INT
-		public RuleCall getArg2INTTerminalRuleCall_3_0() { return cArg2INTTerminalRuleCall_3_0; }
+		//SPINDOUBLE
+		public RuleCall getArg2SPINDOUBLEParserRuleCall_3_0() { return cArg2SPINDOUBLEParserRuleCall_3_0; }
 
 		//","
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
@@ -3021,7 +3021,7 @@ public class SpinCADGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LoadRampLFO:
-	//	"wldr" arg1=SPINREGISTER "," arg2=INT "," arg3=INT;
+	//	"wldr" arg1=SPINREGISTER "," arg2=SPINDOUBLE "," arg3=INT;
 	public LoadRampLFOElements getLoadRampLFOAccess() {
 		return (pLoadRampLFO != null) ? pLoadRampLFO : (pLoadRampLFO = new LoadRampLFOElements());
 	}

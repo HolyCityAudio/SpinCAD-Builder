@@ -3381,19 +3381,19 @@ ruleLoadRampLFO returns [EObject current=null]
     }
 (
 (
-		lv_arg2_3_0=RULE_INT
-		{
-			newLeafNode(lv_arg2_3_0, grammarAccess.getLoadRampLFOAccess().getArg2INTTerminalRuleCall_3_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getLoadRampLFOAccess().getArg2SPINDOUBLEParserRuleCall_3_0()); 
+	    }
+		lv_arg2_3_0=ruleSPINDOUBLE		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getLoadRampLFORule());
+	            $current = createModelElementForParent(grammarAccess.getLoadRampLFORule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"arg2",
         		lv_arg2_3_0, 
-        		"INT");
+        		"SPINDOUBLE");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )

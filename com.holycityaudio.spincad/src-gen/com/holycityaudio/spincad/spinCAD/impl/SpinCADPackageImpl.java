@@ -2432,7 +2432,7 @@ public class SpinCADPackageImpl extends EPackageImpl implements SpinCADPackage
 
     initEClass(loadRampLFOEClass, LoadRampLFO.class, "LoadRampLFO", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLoadRampLFO_Arg1(), ecorePackage.getEString(), "arg1", null, 0, 1, LoadRampLFO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLoadRampLFO_Arg2(), ecorePackage.getEInt(), "arg2", null, 0, 1, LoadRampLFO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLoadRampLFO_Arg2(), ecorePackage.getEString(), "arg2", null, 0, 1, LoadRampLFO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLoadRampLFO_Arg3(), ecorePackage.getEInt(), "arg3", null, 0, 1, LoadRampLFO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(chorusReadDelayEClass, ChorusReadDelay.class, "ChorusReadDelay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

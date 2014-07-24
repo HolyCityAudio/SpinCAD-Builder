@@ -10107,8 +10107,8 @@ rule__LoadRampLFO__Arg2Assignment_3
     }
 :
 (
-{ before(grammarAccess.getLoadRampLFOAccess().getArg2INTTerminalRuleCall_3_0()); }
-	RULE_INT{ after(grammarAccess.getLoadRampLFOAccess().getArg2INTTerminalRuleCall_3_0()); }
+{ before(grammarAccess.getLoadRampLFOAccess().getArg2SPINDOUBLEParserRuleCall_3_0()); }
+	ruleSPINDOUBLE{ after(grammarAccess.getLoadRampLFOAccess().getArg2SPINDOUBLEParserRuleCall_3_0()); }
 )
 
 ;

@@ -8133,26 +8133,27 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLoadRampLFO"
-    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3352:1: ruleLoadRampLFO returns [EObject current=null] : (otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) ) ) ;
+    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3352:1: ruleLoadRampLFO returns [EObject current=null] : (otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= ruleSPINDOUBLE ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) ) ) ;
     public final EObject ruleLoadRampLFO() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
-        Token lv_arg2_3_0=null;
         Token otherlv_4=null;
         Token lv_arg3_5_0=null;
         AntlrDatatypeRuleToken lv_arg1_1_0 = null;
+
+        AntlrDatatypeRuleToken lv_arg2_3_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3355:28: ( (otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) ) ) )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3356:1: (otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) ) )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3355:28: ( (otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= ruleSPINDOUBLE ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) ) ) )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3356:1: (otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= ruleSPINDOUBLE ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) ) )
             {
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3356:1: (otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) ) )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3356:3: otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= RULE_INT ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3356:1: (otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= ruleSPINDOUBLE ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) ) )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3356:3: otherlv_0= 'wldr' ( (lv_arg1_1_0= ruleSPINREGISTER ) ) otherlv_2= ',' ( (lv_arg2_3_0= ruleSPINDOUBLE ) ) otherlv_4= ',' ( (lv_arg3_5_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleLoadRampLFO7612); 
 
@@ -8193,25 +8194,30 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_2, grammarAccess.getLoadRampLFOAccess().getCommaKeyword_2());
                 
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3382:1: ( (lv_arg2_3_0= RULE_INT ) )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3383:1: (lv_arg2_3_0= RULE_INT )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3382:1: ( (lv_arg2_3_0= ruleSPINDOUBLE ) )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3383:1: (lv_arg2_3_0= ruleSPINDOUBLE )
             {
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3383:1: (lv_arg2_3_0= RULE_INT )
-            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3384:3: lv_arg2_3_0= RULE_INT
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3383:1: (lv_arg2_3_0= ruleSPINDOUBLE )
+            // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3384:3: lv_arg2_3_0= ruleSPINDOUBLE
             {
-            lv_arg2_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleLoadRampLFO7662); 
+             
+            	        newCompositeNode(grammarAccess.getLoadRampLFOAccess().getArg2SPINDOUBLEParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_ruleSPINDOUBLE_in_ruleLoadRampLFO7666);
+            lv_arg2_3_0=ruleSPINDOUBLE();
 
-            			newLeafNode(lv_arg2_3_0, grammarAccess.getLoadRampLFOAccess().getArg2INTTerminalRuleCall_3_0()); 
-            		
+            state._fsp--;
+
 
             	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getLoadRampLFORule());
+            	            current = createModelElementForParent(grammarAccess.getLoadRampLFORule());
             	        }
-                   		setWithLastConsumed(
+                   		set(
                    			current, 
                    			"arg2",
                     		lv_arg2_3_0, 
-                    		"INT");
+                    		"SPINDOUBLE");
+            	        afterParserOrEnumRuleCall();
             	    
 
             }
@@ -8219,7 +8225,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleLoadRampLFO7679); 
+            otherlv_4=(Token)match(input,35,FOLLOW_35_in_ruleLoadRampLFO7678); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getLoadRampLFOAccess().getCommaKeyword_4());
                 
@@ -8229,7 +8235,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3405:1: (lv_arg3_5_0= RULE_INT )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3406:3: lv_arg3_5_0= RULE_INT
             {
-            lv_arg3_5_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleLoadRampLFO7696); 
+            lv_arg3_5_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleLoadRampLFO7695); 
 
             			newLeafNode(lv_arg3_5_0, grammarAccess.getLoadRampLFOAccess().getArg3INTTerminalRuleCall_5_0()); 
             		
@@ -8282,13 +8288,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3432:2: iv_ruleChorusReadDelay= ruleChorusReadDelay EOF
             {
              newCompositeNode(grammarAccess.getChorusReadDelayRule()); 
-            pushFollow(FOLLOW_ruleChorusReadDelay_in_entryRuleChorusReadDelay7737);
+            pushFollow(FOLLOW_ruleChorusReadDelay_in_entryRuleChorusReadDelay7736);
             iv_ruleChorusReadDelay=ruleChorusReadDelay();
 
             state._fsp--;
 
              current =iv_ruleChorusReadDelay; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleChorusReadDelay7747); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleChorusReadDelay7746); 
 
             }
 
@@ -8330,11 +8336,11 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3443:1: (otherlv_0= 'cho rda' otherlv_1= ',' ( (lv_arg1_2_0= ruleSPINREGISTER ) ) otherlv_3= ',' ( (lv_arg2_4_0= ruleSPINCHOREGFLAGS ) ) otherlv_5= ',' ( (lv_arg3_6_0= ruleSPINMEM ) ) )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3443:3: otherlv_0= 'cho rda' otherlv_1= ',' ( (lv_arg1_2_0= ruleSPINREGISTER ) ) otherlv_3= ',' ( (lv_arg2_4_0= ruleSPINCHOREGFLAGS ) ) otherlv_5= ',' ( (lv_arg3_6_0= ruleSPINMEM ) )
             {
-            otherlv_0=(Token)match(input,51,FOLLOW_51_in_ruleChorusReadDelay7784); 
+            otherlv_0=(Token)match(input,51,FOLLOW_51_in_ruleChorusReadDelay7783); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getChorusReadDelayAccess().getChoRdaKeyword_0());
                 
-            otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleChorusReadDelay7796); 
+            otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleChorusReadDelay7795); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getChorusReadDelayAccess().getCommaKeyword_1());
                 
@@ -8347,7 +8353,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getChorusReadDelayAccess().getArg1SPINREGISTERParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleSPINREGISTER_in_ruleChorusReadDelay7817);
+            pushFollow(FOLLOW_ruleSPINREGISTER_in_ruleChorusReadDelay7816);
             lv_arg1_2_0=ruleSPINREGISTER();
 
             state._fsp--;
@@ -8369,7 +8375,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleChorusReadDelay7829); 
+            otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleChorusReadDelay7828); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getChorusReadDelayAccess().getCommaKeyword_3());
                 
@@ -8382,7 +8388,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getChorusReadDelayAccess().getArg2SPINCHOREGFLAGSParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleSPINCHOREGFLAGS_in_ruleChorusReadDelay7850);
+            pushFollow(FOLLOW_ruleSPINCHOREGFLAGS_in_ruleChorusReadDelay7849);
             lv_arg2_4_0=ruleSPINCHOREGFLAGS();
 
             state._fsp--;
@@ -8404,7 +8410,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,35,FOLLOW_35_in_ruleChorusReadDelay7862); 
+            otherlv_5=(Token)match(input,35,FOLLOW_35_in_ruleChorusReadDelay7861); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getChorusReadDelayAccess().getCommaKeyword_5());
                 
@@ -8417,7 +8423,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getChorusReadDelayAccess().getArg3SPINMEMParserRuleCall_6_0()); 
             	    
-            pushFollow(FOLLOW_ruleSPINMEM_in_ruleChorusReadDelay7883);
+            pushFollow(FOLLOW_ruleSPINMEM_in_ruleChorusReadDelay7882);
             lv_arg3_6_0=ruleSPINMEM();
 
             state._fsp--;
@@ -8472,13 +8478,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3523:2: iv_ruleChorusReadValue= ruleChorusReadValue EOF
             {
              newCompositeNode(grammarAccess.getChorusReadValueRule()); 
-            pushFollow(FOLLOW_ruleChorusReadValue_in_entryRuleChorusReadValue7919);
+            pushFollow(FOLLOW_ruleChorusReadValue_in_entryRuleChorusReadValue7918);
             iv_ruleChorusReadValue=ruleChorusReadValue();
 
             state._fsp--;
 
              current =iv_ruleChorusReadValue; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleChorusReadValue7929); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleChorusReadValue7928); 
 
             }
 
@@ -8514,11 +8520,11 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3534:1: (otherlv_0= 'cho rdal' otherlv_1= ',' ( (lv_arg1_2_0= ruleSPINREGISTER ) ) )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3534:3: otherlv_0= 'cho rdal' otherlv_1= ',' ( (lv_arg1_2_0= ruleSPINREGISTER ) )
             {
-            otherlv_0=(Token)match(input,52,FOLLOW_52_in_ruleChorusReadValue7966); 
+            otherlv_0=(Token)match(input,52,FOLLOW_52_in_ruleChorusReadValue7965); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getChorusReadValueAccess().getChoRdalKeyword_0());
                 
-            otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleChorusReadValue7978); 
+            otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleChorusReadValue7977); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getChorusReadValueAccess().getCommaKeyword_1());
                 
@@ -8531,7 +8537,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getChorusReadValueAccess().getArg1SPINREGISTERParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleSPINREGISTER_in_ruleChorusReadValue7999);
+            pushFollow(FOLLOW_ruleSPINREGISTER_in_ruleChorusReadValue7998);
             lv_arg1_2_0=ruleSPINREGISTER();
 
             state._fsp--;
@@ -8586,13 +8592,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3570:2: iv_ruleChorusScaleOffset= ruleChorusScaleOffset EOF
             {
              newCompositeNode(grammarAccess.getChorusScaleOffsetRule()); 
-            pushFollow(FOLLOW_ruleChorusScaleOffset_in_entryRuleChorusScaleOffset8035);
+            pushFollow(FOLLOW_ruleChorusScaleOffset_in_entryRuleChorusScaleOffset8034);
             iv_ruleChorusScaleOffset=ruleChorusScaleOffset();
 
             state._fsp--;
 
              current =iv_ruleChorusScaleOffset; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleChorusScaleOffset8045); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleChorusScaleOffset8044); 
 
             }
 
@@ -8633,11 +8639,11 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3581:1: (otherlv_0= 'cho sof' otherlv_1= ',' ( (lv_arg1_2_0= RULE_ID ) ) otherlv_3= ',' ( (lv_arg2_4_0= ruleSPINCHOREGFLAGS ) ) otherlv_5= ',' ( (lv_arg3_6_0= ruleSPINDOUBLE ) ) )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3581:3: otherlv_0= 'cho sof' otherlv_1= ',' ( (lv_arg1_2_0= RULE_ID ) ) otherlv_3= ',' ( (lv_arg2_4_0= ruleSPINCHOREGFLAGS ) ) otherlv_5= ',' ( (lv_arg3_6_0= ruleSPINDOUBLE ) )
             {
-            otherlv_0=(Token)match(input,53,FOLLOW_53_in_ruleChorusScaleOffset8082); 
+            otherlv_0=(Token)match(input,53,FOLLOW_53_in_ruleChorusScaleOffset8081); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getChorusScaleOffsetAccess().getChoSofKeyword_0());
                 
-            otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleChorusScaleOffset8094); 
+            otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleChorusScaleOffset8093); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getChorusScaleOffsetAccess().getCommaKeyword_1());
                 
@@ -8647,7 +8653,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3590:1: (lv_arg1_2_0= RULE_ID )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3591:3: lv_arg1_2_0= RULE_ID
             {
-            lv_arg1_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleChorusScaleOffset8111); 
+            lv_arg1_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleChorusScaleOffset8110); 
 
             			newLeafNode(lv_arg1_2_0, grammarAccess.getChorusScaleOffsetAccess().getArg1IDTerminalRuleCall_2_0()); 
             		
@@ -8667,7 +8673,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleChorusScaleOffset8128); 
+            otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleChorusScaleOffset8127); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getChorusScaleOffsetAccess().getCommaKeyword_3());
                 
@@ -8680,7 +8686,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getChorusScaleOffsetAccess().getArg2SPINCHOREGFLAGSParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleSPINCHOREGFLAGS_in_ruleChorusScaleOffset8149);
+            pushFollow(FOLLOW_ruleSPINCHOREGFLAGS_in_ruleChorusScaleOffset8148);
             lv_arg2_4_0=ruleSPINCHOREGFLAGS();
 
             state._fsp--;
@@ -8702,7 +8708,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,35,FOLLOW_35_in_ruleChorusScaleOffset8161); 
+            otherlv_5=(Token)match(input,35,FOLLOW_35_in_ruleChorusScaleOffset8160); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getChorusScaleOffsetAccess().getCommaKeyword_5());
                 
@@ -8715,7 +8721,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getChorusScaleOffsetAccess().getArg3SPINDOUBLEParserRuleCall_6_0()); 
             	    
-            pushFollow(FOLLOW_ruleSPINDOUBLE_in_ruleChorusScaleOffset8182);
+            pushFollow(FOLLOW_ruleSPINDOUBLE_in_ruleChorusScaleOffset8181);
             lv_arg3_6_0=ruleSPINDOUBLE();
 
             state._fsp--;
@@ -8770,13 +8776,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3661:2: iv_ruleReadDelayPointer= ruleReadDelayPointer EOF
             {
              newCompositeNode(grammarAccess.getReadDelayPointerRule()); 
-            pushFollow(FOLLOW_ruleReadDelayPointer_in_entryRuleReadDelayPointer8218);
+            pushFollow(FOLLOW_ruleReadDelayPointer_in_entryRuleReadDelayPointer8217);
             iv_ruleReadDelayPointer=ruleReadDelayPointer();
 
             state._fsp--;
 
              current =iv_ruleReadDelayPointer; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReadDelayPointer8228); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReadDelayPointer8227); 
 
             }
 
@@ -8811,7 +8817,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3672:1: (otherlv_0= 'rmpa' ( (lv_arg1_1_0= ruleSPINDOUBLE ) ) )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3672:3: otherlv_0= 'rmpa' ( (lv_arg1_1_0= ruleSPINDOUBLE ) )
             {
-            otherlv_0=(Token)match(input,54,FOLLOW_54_in_ruleReadDelayPointer8265); 
+            otherlv_0=(Token)match(input,54,FOLLOW_54_in_ruleReadDelayPointer8264); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getReadDelayPointerAccess().getRmpaKeyword_0());
                 
@@ -8824,7 +8830,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getReadDelayPointerAccess().getArg1SPINDOUBLEParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleSPINDOUBLE_in_ruleReadDelayPointer8286);
+            pushFollow(FOLLOW_ruleSPINDOUBLE_in_ruleReadDelayPointer8285);
             lv_arg1_1_0=ruleSPINDOUBLE();
 
             state._fsp--;
@@ -8879,13 +8885,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3704:2: iv_ruleAnd= ruleAnd EOF
             {
              newCompositeNode(grammarAccess.getAndRule()); 
-            pushFollow(FOLLOW_ruleAnd_in_entryRuleAnd8322);
+            pushFollow(FOLLOW_ruleAnd_in_entryRuleAnd8321);
             iv_ruleAnd=ruleAnd();
 
             state._fsp--;
 
              current =iv_ruleAnd; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAnd8332); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAnd8331); 
 
             }
 
@@ -8920,7 +8926,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3715:1: (otherlv_0= 'and' ( (lv_arg1_1_0= ruleBINARY24 ) ) )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3715:3: otherlv_0= 'and' ( (lv_arg1_1_0= ruleBINARY24 ) )
             {
-            otherlv_0=(Token)match(input,55,FOLLOW_55_in_ruleAnd8369); 
+            otherlv_0=(Token)match(input,55,FOLLOW_55_in_ruleAnd8368); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getAndAccess().getAndKeyword_0());
                 
@@ -8933,7 +8939,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getAndAccess().getArg1BINARY24ParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleBINARY24_in_ruleAnd8390);
+            pushFollow(FOLLOW_ruleBINARY24_in_ruleAnd8389);
             lv_arg1_1_0=ruleBINARY24();
 
             state._fsp--;
@@ -8988,13 +8994,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3747:2: iv_ruleOr= ruleOr EOF
             {
              newCompositeNode(grammarAccess.getOrRule()); 
-            pushFollow(FOLLOW_ruleOr_in_entryRuleOr8426);
+            pushFollow(FOLLOW_ruleOr_in_entryRuleOr8425);
             iv_ruleOr=ruleOr();
 
             state._fsp--;
 
              current =iv_ruleOr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOr8436); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOr8435); 
 
             }
 
@@ -9029,7 +9035,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3758:1: (otherlv_0= 'or' ( (lv_arg1_1_0= ruleBINARY24 ) ) )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3758:3: otherlv_0= 'or' ( (lv_arg1_1_0= ruleBINARY24 ) )
             {
-            otherlv_0=(Token)match(input,56,FOLLOW_56_in_ruleOr8473); 
+            otherlv_0=(Token)match(input,56,FOLLOW_56_in_ruleOr8472); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getOrAccess().getOrKeyword_0());
                 
@@ -9042,7 +9048,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getOrAccess().getArg1BINARY24ParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleBINARY24_in_ruleOr8494);
+            pushFollow(FOLLOW_ruleBINARY24_in_ruleOr8493);
             lv_arg1_1_0=ruleBINARY24();
 
             state._fsp--;
@@ -9097,13 +9103,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3790:2: iv_ruleXor= ruleXor EOF
             {
              newCompositeNode(grammarAccess.getXorRule()); 
-            pushFollow(FOLLOW_ruleXor_in_entryRuleXor8530);
+            pushFollow(FOLLOW_ruleXor_in_entryRuleXor8529);
             iv_ruleXor=ruleXor();
 
             state._fsp--;
 
              current =iv_ruleXor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleXor8540); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleXor8539); 
 
             }
 
@@ -9138,7 +9144,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3801:1: (otherlv_0= 'xor' ( (lv_arg1_1_0= ruleBINARY24 ) ) )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3801:3: otherlv_0= 'xor' ( (lv_arg1_1_0= ruleBINARY24 ) )
             {
-            otherlv_0=(Token)match(input,57,FOLLOW_57_in_ruleXor8577); 
+            otherlv_0=(Token)match(input,57,FOLLOW_57_in_ruleXor8576); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getXorAccess().getXorKeyword_0());
                 
@@ -9151,7 +9157,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getXorAccess().getArg1BINARY24ParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleBINARY24_in_ruleXor8598);
+            pushFollow(FOLLOW_ruleBINARY24_in_ruleXor8597);
             lv_arg1_1_0=ruleBINARY24();
 
             state._fsp--;
@@ -9206,13 +9212,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3833:2: iv_ruleJam= ruleJam EOF
             {
              newCompositeNode(grammarAccess.getJamRule()); 
-            pushFollow(FOLLOW_ruleJam_in_entryRuleJam8634);
+            pushFollow(FOLLOW_ruleJam_in_entryRuleJam8633);
             iv_ruleJam=ruleJam();
 
             state._fsp--;
 
              current =iv_ruleJam; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleJam8644); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleJam8643); 
 
             }
 
@@ -9246,7 +9252,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3844:1: (otherlv_0= 'jam' ( (lv_arg1_1_0= RULE_ID ) ) )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3844:3: otherlv_0= 'jam' ( (lv_arg1_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,58,FOLLOW_58_in_ruleJam8681); 
+            otherlv_0=(Token)match(input,58,FOLLOW_58_in_ruleJam8680); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getJamAccess().getJamKeyword_0());
                 
@@ -9256,7 +9262,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3849:1: (lv_arg1_1_0= RULE_ID )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3850:3: lv_arg1_1_0= RULE_ID
             {
-            lv_arg1_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleJam8698); 
+            lv_arg1_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleJam8697); 
 
             			newLeafNode(lv_arg1_1_0, grammarAccess.getJamAccess().getArg1IDTerminalRuleCall_1_0()); 
             		
@@ -9309,13 +9315,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3876:2: iv_ruleClr= ruleClr EOF
             {
              newCompositeNode(grammarAccess.getClrRule()); 
-            pushFollow(FOLLOW_ruleClr_in_entryRuleClr8739);
+            pushFollow(FOLLOW_ruleClr_in_entryRuleClr8738);
             iv_ruleClr=ruleClr();
 
             state._fsp--;
 
              current =iv_ruleClr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleClr8749); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClr8748); 
 
             }
 
@@ -9359,7 +9365,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,59,FOLLOW_59_in_ruleClr8795); 
+            otherlv_1=(Token)match(input,59,FOLLOW_59_in_ruleClr8794); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getClrAccess().getClrKeyword_1());
                 
@@ -9396,13 +9402,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3907:2: iv_ruleNot= ruleNot EOF
             {
              newCompositeNode(grammarAccess.getNotRule()); 
-            pushFollow(FOLLOW_ruleNot_in_entryRuleNot8831);
+            pushFollow(FOLLOW_ruleNot_in_entryRuleNot8830);
             iv_ruleNot=ruleNot();
 
             state._fsp--;
 
              current =iv_ruleNot; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNot8841); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNot8840); 
 
             }
 
@@ -9446,7 +9452,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,60,FOLLOW_60_in_ruleNot8887); 
+            otherlv_1=(Token)match(input,60,FOLLOW_60_in_ruleNot8886); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getNotAccess().getNotKeyword_1());
                 
@@ -9483,13 +9489,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3938:2: iv_ruleAbsa= ruleAbsa EOF
             {
              newCompositeNode(grammarAccess.getAbsaRule()); 
-            pushFollow(FOLLOW_ruleAbsa_in_entryRuleAbsa8923);
+            pushFollow(FOLLOW_ruleAbsa_in_entryRuleAbsa8922);
             iv_ruleAbsa=ruleAbsa();
 
             state._fsp--;
 
              current =iv_ruleAbsa; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbsa8933); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbsa8932); 
 
             }
 
@@ -9533,7 +9539,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleAbsa8979); 
+            otherlv_1=(Token)match(input,61,FOLLOW_61_in_ruleAbsa8978); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAbsaAccess().getAbsaKeyword_1());
                 
@@ -9570,13 +9576,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3969:2: iv_ruleSkip= ruleSkip EOF
             {
              newCompositeNode(grammarAccess.getSkipRule()); 
-            pushFollow(FOLLOW_ruleSkip_in_entryRuleSkip9015);
+            pushFollow(FOLLOW_ruleSkip_in_entryRuleSkip9014);
             iv_ruleSkip=ruleSkip();
 
             state._fsp--;
 
              current =iv_ruleSkip; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSkip9025); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSkip9024); 
 
             }
 
@@ -9612,7 +9618,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3980:1: (otherlv_0= 'skp' ( (lv_flags_1_0= RULE_ID ) ) otherlv_2= ',' ( (otherlv_3= RULE_ID ) ) )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3980:3: otherlv_0= 'skp' ( (lv_flags_1_0= RULE_ID ) ) otherlv_2= ',' ( (otherlv_3= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,62,FOLLOW_62_in_ruleSkip9062); 
+            otherlv_0=(Token)match(input,62,FOLLOW_62_in_ruleSkip9061); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getSkipAccess().getSkpKeyword_0());
                 
@@ -9622,7 +9628,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3985:1: (lv_flags_1_0= RULE_ID )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:3986:3: lv_flags_1_0= RULE_ID
             {
-            lv_flags_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSkip9079); 
+            lv_flags_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSkip9078); 
 
             			newLeafNode(lv_flags_1_0, grammarAccess.getSkipAccess().getFlagsIDTerminalRuleCall_1_0()); 
             		
@@ -9642,7 +9648,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleSkip9096); 
+            otherlv_2=(Token)match(input,35,FOLLOW_35_in_ruleSkip9095); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getSkipAccess().getCommaKeyword_2());
                 
@@ -9657,7 +9663,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getSkipRule());
             	        }
                     
-            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSkip9116); 
+            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSkip9115); 
 
             		newLeafNode(otherlv_3, grammarAccess.getSkipAccess().getLabelLabelCrossReference_3_0()); 
             	
@@ -9700,13 +9706,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4029:2: iv_ruleSPINDOUBLE= ruleSPINDOUBLE EOF
             {
              newCompositeNode(grammarAccess.getSPINDOUBLERule()); 
-            pushFollow(FOLLOW_ruleSPINDOUBLE_in_entryRuleSPINDOUBLE9153);
+            pushFollow(FOLLOW_ruleSPINDOUBLE_in_entryRuleSPINDOUBLE9152);
             iv_ruleSPINDOUBLE=ruleSPINDOUBLE();
 
             state._fsp--;
 
              current =iv_ruleSPINDOUBLE.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINDOUBLE9164); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINDOUBLE9163); 
 
             }
 
@@ -9753,7 +9759,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4041:2: kw= '-'
                     {
-                    kw=(Token)match(input,63,FOLLOW_63_in_ruleSPINDOUBLE9203); 
+                    kw=(Token)match(input,63,FOLLOW_63_in_ruleSPINDOUBLE9202); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSPINDOUBLEAccess().getHyphenMinusKeyword_0()); 
@@ -9784,7 +9790,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4046:8: this_ID_1= RULE_ID
                     {
-                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINDOUBLE9221); 
+                    this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINDOUBLE9220); 
 
                     		current.merge(this_ID_1);
                         
@@ -9800,7 +9806,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4054:6: (this_INT_2= RULE_INT (kw= '.' this_INT_4= RULE_INT )? )
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4054:11: this_INT_2= RULE_INT (kw= '.' this_INT_4= RULE_INT )?
                     {
-                    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINDOUBLE9248); 
+                    this_INT_2=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINDOUBLE9247); 
 
                     		current.merge(this_INT_2);
                         
@@ -9818,12 +9824,12 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4062:2: kw= '.' this_INT_4= RULE_INT
                             {
-                            kw=(Token)match(input,64,FOLLOW_64_in_ruleSPINDOUBLE9267); 
+                            kw=(Token)match(input,64,FOLLOW_64_in_ruleSPINDOUBLE9266); 
 
                                     current.merge(kw);
                                     newLeafNode(kw, grammarAccess.getSPINDOUBLEAccess().getFullStopKeyword_1_1_1_0()); 
                                 
-                            this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINDOUBLE9282); 
+                            this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINDOUBLE9281); 
 
                             		current.merge(this_INT_4);
                                 
@@ -9878,13 +9884,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4084:2: iv_ruleSPINREGISTER= ruleSPINREGISTER EOF
             {
              newCompositeNode(grammarAccess.getSPINREGISTERRule()); 
-            pushFollow(FOLLOW_ruleSPINREGISTER_in_entryRuleSPINREGISTER9332);
+            pushFollow(FOLLOW_ruleSPINREGISTER_in_entryRuleSPINREGISTER9331);
             iv_ruleSPINREGISTER=ruleSPINREGISTER();
 
             state._fsp--;
 
              current =iv_ruleSPINREGISTER.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINREGISTER9343); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINREGISTER9342); 
 
             }
 
@@ -9935,7 +9941,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4095:6: this_ID_0= RULE_ID
                     {
-                    this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINREGISTER9383); 
+                    this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINREGISTER9382); 
 
                     		current.merge(this_ID_0);
                         
@@ -9948,7 +9954,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4103:10: this_INT_1= RULE_INT
                     {
-                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINREGISTER9409); 
+                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINREGISTER9408); 
 
                     		current.merge(this_INT_1);
                         
@@ -9991,13 +9997,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4120:2: iv_ruleSPINCHOREGFLAGS= ruleSPINCHOREGFLAGS EOF
             {
              newCompositeNode(grammarAccess.getSPINCHOREGFLAGSRule()); 
-            pushFollow(FOLLOW_ruleSPINCHOREGFLAGS_in_entryRuleSPINCHOREGFLAGS9455);
+            pushFollow(FOLLOW_ruleSPINCHOREGFLAGS_in_entryRuleSPINCHOREGFLAGS9454);
             iv_ruleSPINCHOREGFLAGS=ruleSPINCHOREGFLAGS();
 
             state._fsp--;
 
              current =iv_ruleSPINCHOREGFLAGS.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINCHOREGFLAGS9466); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINCHOREGFLAGS9465); 
 
             }
 
@@ -10050,7 +10056,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4131:6: this_INT_0= RULE_INT
                     {
-                    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINCHOREGFLAGS9506); 
+                    this_INT_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINCHOREGFLAGS9505); 
 
                     		current.merge(this_INT_0);
                         
@@ -10074,7 +10080,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4139:11: this_ID_1= RULE_ID (kw= '|' this_ID_3= RULE_ID )*
                             {
-                            this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINCHOREGFLAGS9533); 
+                            this_ID_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINCHOREGFLAGS9532); 
 
                             		current.merge(this_ID_1);
                                 
@@ -10096,12 +10102,12 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                             	case 1 :
                             	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4147:2: kw= '|' this_ID_3= RULE_ID
                             	    {
-                            	    kw=(Token)match(input,65,FOLLOW_65_in_ruleSPINCHOREGFLAGS9552); 
+                            	    kw=(Token)match(input,65,FOLLOW_65_in_ruleSPINCHOREGFLAGS9551); 
 
                             	            current.merge(kw);
                             	            newLeafNode(kw, grammarAccess.getSPINCHOREGFLAGSAccess().getVerticalLineKeyword_1_1_0()); 
                             	        
-                            	    this_ID_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINCHOREGFLAGS9567); 
+                            	    this_ID_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINCHOREGFLAGS9566); 
 
                             	    		current.merge(this_ID_3);
                             	        
@@ -10159,13 +10165,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4169:2: iv_ruleSPINMEM= ruleSPINMEM EOF
             {
              newCompositeNode(grammarAccess.getSPINMEMRule()); 
-            pushFollow(FOLLOW_ruleSPINMEM_in_entryRuleSPINMEM9616);
+            pushFollow(FOLLOW_ruleSPINMEM_in_entryRuleSPINMEM9615);
             iv_ruleSPINMEM=ruleSPINMEM();
 
             state._fsp--;
 
              current =iv_ruleSPINMEM; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINMEM9626); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINMEM9625); 
 
             }
 
@@ -10210,7 +10216,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getSPINMEMAccess().getBufferSPINBUFParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleSPINBUF_in_ruleSPINMEM9672);
+            pushFollow(FOLLOW_ruleSPINBUF_in_ruleSPINMEM9671);
             lv_buffer_0_0=ruleSPINBUF();
 
             state._fsp--;
@@ -10256,7 +10262,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4199:1: (lv_value_1_0= RULE_INT )
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4200:3: lv_value_1_0= RULE_INT
                     {
-                    lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINMEM9690); 
+                    lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSPINMEM9689); 
 
                     			newLeafNode(lv_value_1_0, grammarAccess.getSPINMEMAccess().getValueINTTerminalRuleCall_1_0_0()); 
                     		
@@ -10293,7 +10299,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                     	            current = createModelElement(grammarAccess.getSPINMEMRule());
                     	        }
                             
-                    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINMEM9721); 
+                    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINMEM9720); 
 
                     		newLeafNode(otherlv_2, grammarAccess.getSPINMEMAccess().getOffsetOffsetCrossReference_1_1_0()); 
                     	
@@ -10342,13 +10348,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4240:2: iv_ruleSPINBUF= ruleSPINBUF EOF
             {
              newCompositeNode(grammarAccess.getSPINBUFRule()); 
-            pushFollow(FOLLOW_ruleSPINBUF_in_entryRuleSPINBUF9760);
+            pushFollow(FOLLOW_ruleSPINBUF_in_entryRuleSPINBUF9759);
             iv_ruleSPINBUF=ruleSPINBUF();
 
             state._fsp--;
 
              current =iv_ruleSPINBUF.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINBUF9771); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSPINBUF9770); 
 
             }
 
@@ -10382,7 +10388,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4251:1: (this_ID_0= RULE_ID (kw= '#' | kw= '^' )? (kw= '+' | kw= '-' )? )
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4251:6: this_ID_0= RULE_ID (kw= '#' | kw= '^' )? (kw= '+' | kw= '-' )?
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINBUF9811); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleSPINBUF9810); 
 
             		current.merge(this_ID_0);
                 
@@ -10403,7 +10409,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4259:2: kw= '#'
                     {
-                    kw=(Token)match(input,66,FOLLOW_66_in_ruleSPINBUF9830); 
+                    kw=(Token)match(input,66,FOLLOW_66_in_ruleSPINBUF9829); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSPINBUFAccess().getNumberSignKeyword_1_0()); 
@@ -10414,7 +10420,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4266:2: kw= '^'
                     {
-                    kw=(Token)match(input,67,FOLLOW_67_in_ruleSPINBUF9849); 
+                    kw=(Token)match(input,67,FOLLOW_67_in_ruleSPINBUF9848); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSPINBUFAccess().getCircumflexAccentKeyword_1_1()); 
@@ -10439,7 +10445,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4272:2: kw= '+'
                     {
-                    kw=(Token)match(input,68,FOLLOW_68_in_ruleSPINBUF9865); 
+                    kw=(Token)match(input,68,FOLLOW_68_in_ruleSPINBUF9864); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSPINBUFAccess().getPlusSignKeyword_2_0()); 
@@ -10450,7 +10456,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4279:2: kw= '-'
                     {
-                    kw=(Token)match(input,63,FOLLOW_63_in_ruleSPINBUF9884); 
+                    kw=(Token)match(input,63,FOLLOW_63_in_ruleSPINBUF9883); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getSPINBUFAccess().getHyphenMinusKeyword_2_1()); 
@@ -10494,13 +10500,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4294:2: iv_ruleBINARY24= ruleBINARY24 EOF
             {
              newCompositeNode(grammarAccess.getBINARY24Rule()); 
-            pushFollow(FOLLOW_ruleBINARY24_in_entryRuleBINARY249927);
+            pushFollow(FOLLOW_ruleBINARY24_in_entryRuleBINARY249926);
             iv_ruleBINARY24=ruleBINARY24();
 
             state._fsp--;
 
              current =iv_ruleBINARY24.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBINARY249938); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBINARY249937); 
 
             }
 
@@ -10560,12 +10566,12 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4305:3: (kw= '%' this_INT_1= RULE_INT )
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4306:2: kw= '%' this_INT_1= RULE_INT
                     {
-                    kw=(Token)match(input,69,FOLLOW_69_in_ruleBINARY249978); 
+                    kw=(Token)match(input,69,FOLLOW_69_in_ruleBINARY249977); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBINARY24Access().getPercentSignKeyword_0_0_0()); 
                         
-                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleBINARY249993); 
+                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleBINARY249992); 
 
                     		current.merge(this_INT_1);
                         
@@ -10596,7 +10602,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4318:7: this_ID_2= RULE_ID
                     	    {
-                    	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBINARY2410015); 
+                    	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBINARY2410014); 
 
                     	    		current.merge(this_ID_2);
                     	        
@@ -10624,7 +10630,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4326:6: (kw= '$' (this_INT_4= RULE_INT )* (this_ID_5= RULE_ID )* )
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4327:2: kw= '$' (this_INT_4= RULE_INT )* (this_ID_5= RULE_ID )*
                     {
-                    kw=(Token)match(input,70,FOLLOW_70_in_ruleBINARY2410043); 
+                    kw=(Token)match(input,70,FOLLOW_70_in_ruleBINARY2410042); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBINARY24Access().getDollarSignKeyword_1_0()); 
@@ -10644,7 +10650,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4332:6: this_INT_4= RULE_INT
                     	    {
-                    	    this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleBINARY2410059); 
+                    	    this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleBINARY2410058); 
 
                     	    		current.merge(this_INT_4);
                     	        
@@ -10681,7 +10687,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4339:8: this_ID_5= RULE_ID
                     	    {
-                    	    this_ID_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBINARY2410082); 
+                    	    this_ID_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleBINARY2410081); 
 
                     	    		current.merge(this_ID_5);
                     	        
@@ -10736,13 +10742,13 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
             // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4356:2: iv_ruleBOOLEAN= ruleBOOLEAN EOF
             {
              newCompositeNode(grammarAccess.getBOOLEANRule()); 
-            pushFollow(FOLLOW_ruleBOOLEAN_in_entryRuleBOOLEAN10131);
+            pushFollow(FOLLOW_ruleBOOLEAN_in_entryRuleBOOLEAN10130);
             iv_ruleBOOLEAN=ruleBOOLEAN();
 
             state._fsp--;
 
              current =iv_ruleBOOLEAN.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBOOLEAN10142); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBOOLEAN10141); 
 
             }
 
@@ -10792,7 +10798,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4368:2: kw= 'true'
                     {
-                    kw=(Token)match(input,71,FOLLOW_71_in_ruleBOOLEAN10180); 
+                    kw=(Token)match(input,71,FOLLOW_71_in_ruleBOOLEAN10179); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBOOLEANAccess().getTrueKeyword_0()); 
@@ -10803,7 +10809,7 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
                 case 2 :
                     // ../com.holycityaudio.spincad/src-gen/com/holycityaudio/spincad/parser/antlr/internal/InternalSpinCAD.g:4375:2: kw= 'false'
                     {
-                    kw=(Token)match(input,72,FOLLOW_72_in_ruleBOOLEAN10199); 
+                    kw=(Token)match(input,72,FOLLOW_72_in_ruleBOOLEAN10198); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getBOOLEANAccess().getFalseKeyword_1()); 
@@ -11130,108 +11136,108 @@ public class InternalSpinCADParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleLoadRampLFO7575 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_50_in_ruleLoadRampLFO7612 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_ruleSPINREGISTER_in_ruleLoadRampLFO7633 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleLoadRampLFO7645 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleLoadRampLFO7662 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleLoadRampLFO7679 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleLoadRampLFO7696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleChorusReadDelay_in_entryRuleChorusReadDelay7737 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleChorusReadDelay7747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleChorusReadDelay7784 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleChorusReadDelay7796 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleSPINREGISTER_in_ruleChorusReadDelay7817 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleChorusReadDelay7829 = new BitSet(new long[]{0x0000000800000030L});
-    public static final BitSet FOLLOW_ruleSPINCHOREGFLAGS_in_ruleChorusReadDelay7850 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleChorusReadDelay7862 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleSPINMEM_in_ruleChorusReadDelay7883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleChorusReadValue_in_entryRuleChorusReadValue7919 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleChorusReadValue7929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_ruleChorusReadValue7966 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleChorusReadValue7978 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleSPINREGISTER_in_ruleChorusReadValue7999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleChorusScaleOffset_in_entryRuleChorusScaleOffset8035 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleChorusScaleOffset8045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleChorusScaleOffset8082 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleChorusScaleOffset8094 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleChorusScaleOffset8111 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleChorusScaleOffset8128 = new BitSet(new long[]{0x0000000800000030L});
-    public static final BitSet FOLLOW_ruleSPINCHOREGFLAGS_in_ruleChorusScaleOffset8149 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleChorusScaleOffset8161 = new BitSet(new long[]{0x8000000000000030L});
-    public static final BitSet FOLLOW_ruleSPINDOUBLE_in_ruleChorusScaleOffset8182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReadDelayPointer_in_entryRuleReadDelayPointer8218 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReadDelayPointer8228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleReadDelayPointer8265 = new BitSet(new long[]{0x8000000000000030L});
-    public static final BitSet FOLLOW_ruleSPINDOUBLE_in_ruleReadDelayPointer8286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAnd_in_entryRuleAnd8322 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAnd8332 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleAnd8369 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
-    public static final BitSet FOLLOW_ruleBINARY24_in_ruleAnd8390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOr_in_entryRuleOr8426 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOr8436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleOr8473 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
-    public static final BitSet FOLLOW_ruleBINARY24_in_ruleOr8494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleXor_in_entryRuleXor8530 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleXor8540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_ruleXor8577 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
-    public static final BitSet FOLLOW_ruleBINARY24_in_ruleXor8598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleJam_in_entryRuleJam8634 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleJam8644 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleJam8681 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleJam8698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleClr_in_entryRuleClr8739 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleClr8749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_59_in_ruleClr8795 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNot_in_entryRuleNot8831 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNot8841 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_60_in_ruleNot8887 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbsa_in_entryRuleAbsa8923 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbsa8933 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleAbsa8979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSkip_in_entryRuleSkip9015 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSkip9025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_62_in_ruleSkip9062 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSkip9079 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleSkip9096 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSkip9116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSPINDOUBLE_in_entryRuleSPINDOUBLE9153 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSPINDOUBLE9164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleSPINDOUBLE9203 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINDOUBLE9221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINDOUBLE9248 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_64_in_ruleSPINDOUBLE9267 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINDOUBLE9282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSPINREGISTER_in_entryRuleSPINREGISTER9332 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSPINREGISTER9343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINREGISTER9383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINREGISTER9409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSPINCHOREGFLAGS_in_entryRuleSPINCHOREGFLAGS9455 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSPINCHOREGFLAGS9466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINCHOREGFLAGS9506 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINCHOREGFLAGS9533 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleSPINCHOREGFLAGS9552 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINCHOREGFLAGS9567 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSPINMEM_in_entryRuleSPINMEM9616 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSPINMEM9626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSPINBUF_in_ruleSPINMEM9672 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINMEM9690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINMEM9721 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSPINBUF_in_entryRuleSPINBUF9760 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSPINBUF9771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINBUF9811 = new BitSet(new long[]{0x8000000000000002L,0x000000000000001CL});
-    public static final BitSet FOLLOW_66_in_ruleSPINBUF9830 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_67_in_ruleSPINBUF9849 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_68_in_ruleSPINBUF9865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_63_in_ruleSPINBUF9884 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBINARY24_in_entryRuleBINARY249927 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBINARY249938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_69_in_ruleBINARY249978 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleBINARY249993 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBINARY2410015 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_70_in_ruleBINARY2410043 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleBINARY2410059 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBINARY2410082 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_ruleBOOLEAN_in_entryRuleBOOLEAN10131 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBOOLEAN10142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_71_in_ruleBOOLEAN10180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleBOOLEAN10199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleLoadRampLFO7645 = new BitSet(new long[]{0x8000000000000030L});
+    public static final BitSet FOLLOW_ruleSPINDOUBLE_in_ruleLoadRampLFO7666 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleLoadRampLFO7678 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleLoadRampLFO7695 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleChorusReadDelay_in_entryRuleChorusReadDelay7736 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleChorusReadDelay7746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleChorusReadDelay7783 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleChorusReadDelay7795 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleSPINREGISTER_in_ruleChorusReadDelay7816 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleChorusReadDelay7828 = new BitSet(new long[]{0x0000000800000030L});
+    public static final BitSet FOLLOW_ruleSPINCHOREGFLAGS_in_ruleChorusReadDelay7849 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleChorusReadDelay7861 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleSPINMEM_in_ruleChorusReadDelay7882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleChorusReadValue_in_entryRuleChorusReadValue7918 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleChorusReadValue7928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleChorusReadValue7965 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleChorusReadValue7977 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleSPINREGISTER_in_ruleChorusReadValue7998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleChorusScaleOffset_in_entryRuleChorusScaleOffset8034 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleChorusScaleOffset8044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_ruleChorusScaleOffset8081 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleChorusScaleOffset8093 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleChorusScaleOffset8110 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleChorusScaleOffset8127 = new BitSet(new long[]{0x0000000800000030L});
+    public static final BitSet FOLLOW_ruleSPINCHOREGFLAGS_in_ruleChorusScaleOffset8148 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleChorusScaleOffset8160 = new BitSet(new long[]{0x8000000000000030L});
+    public static final BitSet FOLLOW_ruleSPINDOUBLE_in_ruleChorusScaleOffset8181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReadDelayPointer_in_entryRuleReadDelayPointer8217 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReadDelayPointer8227 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleReadDelayPointer8264 = new BitSet(new long[]{0x8000000000000030L});
+    public static final BitSet FOLLOW_ruleSPINDOUBLE_in_ruleReadDelayPointer8285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAnd_in_entryRuleAnd8321 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAnd8331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleAnd8368 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
+    public static final BitSet FOLLOW_ruleBINARY24_in_ruleAnd8389 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOr_in_entryRuleOr8425 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOr8435 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleOr8472 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
+    public static final BitSet FOLLOW_ruleBINARY24_in_ruleOr8493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleXor_in_entryRuleXor8529 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleXor8539 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_ruleXor8576 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000060L});
+    public static final BitSet FOLLOW_ruleBINARY24_in_ruleXor8597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleJam_in_entryRuleJam8633 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleJam8643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleJam8680 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleJam8697 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClr_in_entryRuleClr8738 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClr8748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_59_in_ruleClr8794 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNot_in_entryRuleNot8830 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNot8840 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_60_in_ruleNot8886 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbsa_in_entryRuleAbsa8922 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbsa8932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleAbsa8978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSkip_in_entryRuleSkip9014 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSkip9024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_62_in_ruleSkip9061 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSkip9078 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleSkip9095 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSkip9115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSPINDOUBLE_in_entryRuleSPINDOUBLE9152 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSPINDOUBLE9163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleSPINDOUBLE9202 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINDOUBLE9220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINDOUBLE9247 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_64_in_ruleSPINDOUBLE9266 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINDOUBLE9281 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSPINREGISTER_in_entryRuleSPINREGISTER9331 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSPINREGISTER9342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINREGISTER9382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINREGISTER9408 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSPINCHOREGFLAGS_in_entryRuleSPINCHOREGFLAGS9454 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSPINCHOREGFLAGS9465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINCHOREGFLAGS9505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINCHOREGFLAGS9532 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleSPINCHOREGFLAGS9551 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINCHOREGFLAGS9566 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSPINMEM_in_entryRuleSPINMEM9615 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSPINMEM9625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSPINBUF_in_ruleSPINMEM9671 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSPINMEM9689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINMEM9720 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSPINBUF_in_entryRuleSPINBUF9759 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSPINBUF9770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleSPINBUF9810 = new BitSet(new long[]{0x8000000000000002L,0x000000000000001CL});
+    public static final BitSet FOLLOW_66_in_ruleSPINBUF9829 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_67_in_ruleSPINBUF9848 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_68_in_ruleSPINBUF9864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_63_in_ruleSPINBUF9883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBINARY24_in_entryRuleBINARY249926 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBINARY249937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_69_in_ruleBINARY249977 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleBINARY249992 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBINARY2410014 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_70_in_ruleBINARY2410042 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleBINARY2410058 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBINARY2410081 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_ruleBOOLEAN_in_entryRuleBOOLEAN10130 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBOOLEAN10141 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_71_in_ruleBOOLEAN10179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_72_in_ruleBOOLEAN10198 = new BitSet(new long[]{0x0000000000000002L});
 
 }

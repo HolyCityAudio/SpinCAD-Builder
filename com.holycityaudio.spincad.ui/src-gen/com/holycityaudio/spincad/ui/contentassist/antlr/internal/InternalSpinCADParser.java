@@ -26944,21 +26944,25 @@ public class InternalSpinCADParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LoadRampLFO__Arg2Assignment_3"
-    // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10104:1: rule__LoadRampLFO__Arg2Assignment_3 : ( RULE_INT ) ;
+    // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10104:1: rule__LoadRampLFO__Arg2Assignment_3 : ( ruleSPINDOUBLE ) ;
     public final void rule__LoadRampLFO__Arg2Assignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10108:1: ( ( RULE_INT ) )
-            // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10109:1: ( RULE_INT )
+            // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10108:1: ( ( ruleSPINDOUBLE ) )
+            // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10109:1: ( ruleSPINDOUBLE )
             {
-            // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10109:1: ( RULE_INT )
-            // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10110:1: RULE_INT
+            // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10109:1: ( ruleSPINDOUBLE )
+            // ../com.holycityaudio.spincad.ui/src-gen/com/holycityaudio/spincad/ui/contentassist/antlr/internal/InternalSpinCAD.g:10110:1: ruleSPINDOUBLE
             {
-             before(grammarAccess.getLoadRampLFOAccess().getArg2INTTerminalRuleCall_3_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__LoadRampLFO__Arg2Assignment_320578); 
-             after(grammarAccess.getLoadRampLFOAccess().getArg2INTTerminalRuleCall_3_0()); 
+             before(grammarAccess.getLoadRampLFOAccess().getArg2SPINDOUBLEParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_ruleSPINDOUBLE_in_rule__LoadRampLFO__Arg2Assignment_320578);
+            ruleSPINDOUBLE();
+
+            state._fsp--;
+
+             after(grammarAccess.getLoadRampLFOAccess().getArg2SPINDOUBLEParserRuleCall_3_0()); 
 
             }
 
@@ -28360,7 +28364,7 @@ public class InternalSpinCADParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__LoadRampLFO__Group__1__Impl_in_rule__LoadRampLFO__Group__114189 = new BitSet(new long[]{0x0000020000000000L});
     public static final BitSet FOLLOW_rule__LoadRampLFO__Group__2_in_rule__LoadRampLFO__Group__114192 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__LoadRampLFO__Arg1Assignment_1_in_rule__LoadRampLFO__Group__1__Impl14219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__LoadRampLFO__Group__2__Impl_in_rule__LoadRampLFO__Group__214249 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__LoadRampLFO__Group__2__Impl_in_rule__LoadRampLFO__Group__214249 = new BitSet(new long[]{0x0000000000008030L});
     public static final BitSet FOLLOW_rule__LoadRampLFO__Group__3_in_rule__LoadRampLFO__Group__214252 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_41_in_rule__LoadRampLFO__Group__2__Impl14280 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__LoadRampLFO__Group__3__Impl_in_rule__LoadRampLFO__Group__314311 = new BitSet(new long[]{0x0000020000000000L});
@@ -28601,7 +28605,7 @@ public class InternalSpinCADParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_INT_in_rule__LoadSinLFO__Arg2Assignment_320485 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__LoadSinLFO__Arg3Assignment_520516 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSPINREGISTER_in_rule__LoadRampLFO__Arg1Assignment_120547 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__LoadRampLFO__Arg2Assignment_320578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSPINDOUBLE_in_rule__LoadRampLFO__Arg2Assignment_320578 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__LoadRampLFO__Arg3Assignment_520609 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSPINREGISTER_in_rule__ChorusReadDelay__Arg1Assignment_220640 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSPINCHOREGFLAGS_in_rule__ChorusReadDelay__Arg2Assignment_420671 = new BitSet(new long[]{0x0000000000000002L});
