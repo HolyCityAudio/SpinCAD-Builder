@@ -53,8 +53,9 @@ public class SpinCADMenuGenerator implements IGenerator {
         boolean _matched = false;
         if (!_matched) {
           if (m instanceof TEST_ITEM) {
+            final TEST_ITEM _tEST_ITEM = (TEST_ITEM)m;
             _matched=true;
-            this.genTestItem(((TEST_ITEM)m), resource, fsa);
+            this.genTestItem(_tEST_ITEM, resource, fsa);
           }
         }
         _builder.newLineIfNotEmpty();
@@ -353,12 +354,13 @@ public class SpinCADMenuGenerator implements IGenerator {
           boolean _matched = false;
           if (!_matched) {
             if (m instanceof MENU_ITEM) {
+              final MENU_ITEM _mENU_ITEM = (MENU_ITEM)m;
               _matched=true;
-              CharSequence _importMenuItem = this.importMenuItem(((MENU_ITEM)m));
+              CharSequence _importMenuItem = this.importMenuItem(_mENU_ITEM);
               _switchResult = _importMenuItem;
             }
           }
-          _builder.append(_switchResult, "\t");
+          _builder.append(_switchResult, "	");
           _builder.newLineIfNotEmpty();
         }
       }
@@ -385,7 +387,7 @@ public class SpinCADMenuGenerator implements IGenerator {
       Resource _eResource = mn.eResource();
       String _className = this.className(_eResource);
       String _plus = (_className + "Menu");
-      _builder.append(_plus, "\t");
+      _builder.append(_plus, "	");
       _builder.append(" {");
       _builder.newLineIfNotEmpty();
       _builder.newLine();
@@ -397,7 +399,7 @@ public class SpinCADMenuGenerator implements IGenerator {
       Resource _eResource_1 = mn.eResource();
       String _className_1 = this.className(_eResource_1);
       String _plus_1 = (_className_1 + "Menu");
-      _builder.append(_plus_1, "\t");
+      _builder.append(_plus_1, "	");
       _builder.append("(final SpinCADFrame f, final SpinCADPanel panel, JMenuBar menuBar) {");
       _builder.newLineIfNotEmpty();
       _builder.newLine();
@@ -409,13 +411,14 @@ public class SpinCADMenuGenerator implements IGenerator {
           boolean _matched_1 = false;
           if (!_matched_1) {
             if (m_1 instanceof MENU_HEADER) {
+              final MENU_HEADER _mENU_HEADER = (MENU_HEADER)m_1;
               _matched_1=true;
               String _xblockexpression_1 = null;
               {
-                String _name = ((MENU_HEADER)m_1).getName();
+                String _name = _mENU_HEADER.getName();
                 String _menuName = this.getMenuName(_name);
                 menuNameY = _menuName;
-                String _genMenu = this.genMenu(((MENU_HEADER)m_1));
+                String _genMenu = this.genMenu(_mENU_HEADER);
                 _xblockexpression_1 = (_genMenu);
               }
               _switchResult_1 = _xblockexpression_1;
@@ -423,12 +426,13 @@ public class SpinCADMenuGenerator implements IGenerator {
           }
           if (!_matched_1) {
             if (m_1 instanceof MENU_ITEM) {
+              final MENU_ITEM _mENU_ITEM = (MENU_ITEM)m_1;
               _matched_1=true;
-              CharSequence _genMenuItem = this.genMenuItem(((MENU_ITEM)m_1), menuNameY);
+              CharSequence _genMenuItem = this.genMenuItem(_mENU_ITEM, menuNameY);
               _switchResult_1 = _genMenuItem;
             }
           }
-          _builder.append(_switchResult_1, "\t");
+          _builder.append(_switchResult_1, "	");
           _builder.newLineIfNotEmpty();
         }
       }
@@ -486,7 +490,7 @@ public class SpinCADMenuGenerator implements IGenerator {
     _builder.append("\t\t");
     _builder.append("SpinCADBlock pcB = new ");
     String _className_2 = m.getClassName();
-    _builder.append(_className_2, "\t\t");
+    _builder.append(_className_2, "		");
     _builder.append("CADBlock(50, 100);");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
