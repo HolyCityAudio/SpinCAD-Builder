@@ -98,6 +98,7 @@ def codeGenerate(String blockName, Program pr) {
 		public class «blockName+"CADBlock"» extends SpinCADBlock {
 
 			private static final long serialVersionUID = 1L;
+			private «blockName+"ControlPanel"» cp = null;
 			
 			«FOR SpinElement e : pr.elements»
 				«switch e {
@@ -129,9 +130,15 @@ def codeGenerate(String blockName, Program pr) {
 		
 			// In the event there are parameters editable by control panel
 			public void editBlock(){ 
-				if(hasControlPanel == true) {
-					new «blockName+"ControlPanel"»(this);
+				if(cp == null) {
+					if(hasControlPanel == true) {
+						cp = new «blockName+"ControlPanel"»(this);
+					}
 				}
+			}
+			
+			public void clearCP() {
+				cp = null;
 			}	
 				
 			public void generateCode(SpinFXBlock sfxb) {

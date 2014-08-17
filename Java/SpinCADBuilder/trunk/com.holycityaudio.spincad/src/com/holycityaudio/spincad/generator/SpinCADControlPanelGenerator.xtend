@@ -6,13 +6,10 @@ package com.holycityaudio.spincad.generator
 //import com.google.inject.Inject
 
 import com.holycityaudio.spincad.spinCAD.Program
-import com.holycityaudio.spincad.spinCAD.SpinElementimport com.holycityaudio.spincad.spinCAD.SpinEquate
-import com.holycityaudio.spincad.spinCAD.SpinBool
-import com.holycityaudio.spincad.generator.SliderLabel
+import com.holycityaudio.spincad.spinCAD.SpinElementimport com.holycityaudio.spincad.generator.SliderLabel
 import com.holycityaudio.spincad.generator.CheckBox
-import com.holycityaudio.spincad.generator.spcbBool
 
-import javax.naming.ldap.Control
+
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 
@@ -48,6 +45,8 @@ class SpinCADControlPanelGenerator {
 		import javax.swing.SwingUtilities;
 		import javax.swing.event.ChangeEvent;
 		import javax.swing.event.ChangeListener;
+		import java.awt.event.WindowEvent;
+		import java.awt.event.WindowListener;
 		import java.awt.event.ItemEvent;
 		import javax.swing.BoxLayout;
 		import javax.swing.JSlider;
@@ -85,11 +84,13 @@ class SpinCADControlPanelGenerator {
 					SpinSliderLabel: { SliderLabel.initialize(blockName, e)}
 				}»
 			«ENDFOR»
-
+				
+				frame.addWindowListener(new MyWindowListener());
 				frame.setVisible(true);		
 				frame.pack();
 				frame.setResizable(false);
 				frame.setLocation(gCB.getX() + 100, gCB.getY() + 100);
+				frame.setAlwaysOnTop(true);
 			}
 		});
 		}
@@ -124,6 +125,40 @@ class SpinCADControlPanelGenerator {
 				SpinSliderLabel: { SliderLabel.genLabelUpdater(e)}
 			}»
 		«ENDFOR»
+		
+		class MyWindowListener implements WindowListener
+		{
+		@Override
+			public void windowActivated(WindowEvent arg0) {
+			}
+
+		@Override
+			public void windowClosed(WindowEvent arg0) {
+			}
+
+		@Override
+			public void windowClosing(WindowEvent arg0) {
+				gCB.clearCP();
+			}
+
+		@Override
+			public void windowDeactivated(WindowEvent arg0) {
+			}
+
+		@Override
+		public void windowDeiconified(WindowEvent arg0) {
+		}
+
+		@Override
+		public void windowIconified(WindowEvent arg0) {
+
+		}
+
+		@Override
+		public void windowOpened(WindowEvent arg0) {
+		}
+	}
+		
 	}
 	'''
 	}	
