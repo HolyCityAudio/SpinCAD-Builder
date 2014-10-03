@@ -64,6 +64,9 @@ import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
 import com.holycityaudio.spincad.spinCAD.GetSamplesFromRatio
 import com.holycityaudio.spincad.spinCAD.ChorusScaleOffset
+import com.holycityaudio.spincad.spinCAD.IsGreaterThan
+import com.holycityaudio.spincad.spinCAD.IsLessThan
+import com.holycityaudio.spincad.spinCAD.IsEqualTo
 
 class SpinCADBlockGenerator {
  
@@ -230,8 +233,6 @@ def codeGenerate(String blockName, Program pr) {
 	// TODO the idea of isPinConnected() is to create conditional sections within codeGenerate() 
 	// of any given block.  For example, if the pin is connected, then take the value of the source.
 	// Otherwise, assign a default value.  Maybe I can generalize that last part a bit better.
-	// This needs an instruction assigned in the grammar, etc.
-	// Delete the println part once it's working OK
 	
 	def genIsPinConnected(IsPinConnected p) {
 		'''
@@ -244,7 +245,26 @@ def codeGenerate(String blockName, Program pr) {
 		if(«p.variable» == true) {
 		'''
 	}
-		def genElse(IsElse e) '''
+
+	def genIsGreaterThan(IsGreaterThan p) {
+		'''
+		if(«p.variable» > «p.value») {
+		'''
+	}
+
+	def genIsLessThan(IsLessThan p) {
+		'''
+		if(«p.variable» < «p.value») {
+		'''
+	}
+
+	def genIsEqualTo(IsEqualTo p) {
+		'''
+		if(«p.variable» == «p.value») {
+		'''
+	}
+		
+	def genElse(IsElse e) '''
 	} else {
 	'''
 	
@@ -273,6 +293,9 @@ def genGetInputDefault(GetInputDefault g)'''
 		«switch inst {  
 			IsTrue: genIsTrue(inst)
 			IsPinConnected: genIsPinConnected(inst)
+			IsGreaterThan: genIsGreaterThan(inst)
+			IsLessThan: genIsLessThan(inst)
+			IsEqualTo: genIsEqualTo(inst)
 			IsElse: genElse(inst)
 			IsEndif: genEndif(inst)
 			GetInputDefault: genGetInputDefault(inst)

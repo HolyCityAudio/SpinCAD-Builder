@@ -87,11 +87,15 @@ Label:
 // - SpinCAD macro for conditional expressions within generateCode()
 // also for special function calls etc.
 Macro:
-	IsPinConnected | IsTrue | IsElse | IsEndif | GetInputDefault | 
+	IsPinConnected | IsTrue | IsElse | IsEndif | IsGreaterThan | IsEqualTo |
+	IsLessThan | GetInputDefault | 
 	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
+IsGreaterThan returns IsGreaterThan: '@isGreaterThan' variable = ID value = INT;
+IsLessThan returns IsLessThan: '@isLessThan' variable = ID value = INT;
+IsEqualTo returns IsEqualTo: '@isEqualTo' variable = ID value = INT;
 IsTrue returns IsTrue: '@isTrue' variable = ID;
 IsElse: {IsElse} '@else';
 IsEndif: {IsEndif} "@endif";

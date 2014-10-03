@@ -66,6 +66,18 @@
     <genClasses ecoreClass="SpinCAD.ecore#//IsPinConnected">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsPinConnected/arg1"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//IsGreaterThan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsGreaterThan/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsGreaterThan/value"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//IsLessThan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsLessThan/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsLessThan/value"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//IsEqualTo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsEqualTo/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsEqualTo/value"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//IsTrue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsTrue/variable"/>
     </genClasses>

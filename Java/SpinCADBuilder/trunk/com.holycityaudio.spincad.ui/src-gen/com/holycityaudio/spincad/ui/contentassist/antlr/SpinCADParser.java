@@ -73,6 +73,9 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpinCheckBoxAccess().getGroup(), "rule__SpinCheckBox__Group__0");
 					put(grammarAccess.getLabelAccess().getGroup(), "rule__Label__Group__0");
 					put(grammarAccess.getIsPinConnectedAccess().getGroup(), "rule__IsPinConnected__Group__0");
+					put(grammarAccess.getIsGreaterThanAccess().getGroup(), "rule__IsGreaterThan__Group__0");
+					put(grammarAccess.getIsLessThanAccess().getGroup(), "rule__IsLessThan__Group__0");
+					put(grammarAccess.getIsEqualToAccess().getGroup(), "rule__IsEqualTo__Group__0");
 					put(grammarAccess.getIsTrueAccess().getGroup(), "rule__IsTrue__Group__0");
 					put(grammarAccess.getIsElseAccess().getGroup(), "rule__IsElse__Group__0");
 					put(grammarAccess.getIsEndifAccess().getGroup(), "rule__IsEndif__Group__0");
@@ -153,6 +156,12 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCommentAccess().getRemarkAssignment(), "rule__Comment__RemarkAssignment");
 					put(grammarAccess.getLabelAccess().getNameAssignment_0(), "rule__Label__NameAssignment_0");
 					put(grammarAccess.getIsPinConnectedAccess().getArg1Assignment_1(), "rule__IsPinConnected__Arg1Assignment_1");
+					put(grammarAccess.getIsGreaterThanAccess().getVariableAssignment_1(), "rule__IsGreaterThan__VariableAssignment_1");
+					put(grammarAccess.getIsGreaterThanAccess().getValueAssignment_2(), "rule__IsGreaterThan__ValueAssignment_2");
+					put(grammarAccess.getIsLessThanAccess().getVariableAssignment_1(), "rule__IsLessThan__VariableAssignment_1");
+					put(grammarAccess.getIsLessThanAccess().getValueAssignment_2(), "rule__IsLessThan__ValueAssignment_2");
+					put(grammarAccess.getIsEqualToAccess().getVariableAssignment_1(), "rule__IsEqualTo__VariableAssignment_1");
+					put(grammarAccess.getIsEqualToAccess().getValueAssignment_2(), "rule__IsEqualTo__ValueAssignment_2");
 					put(grammarAccess.getIsTrueAccess().getVariableAssignment_1(), "rule__IsTrue__VariableAssignment_1");
 					put(grammarAccess.getGetInputDefaultAccess().getNameAssignment_1(), "rule__GetInputDefault__NameAssignment_1");
 					put(grammarAccess.getGetInputDefaultAccess().getVariableAssignment_2(), "rule__GetInputDefault__VariableAssignment_2");
