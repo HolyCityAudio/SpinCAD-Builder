@@ -67,6 +67,7 @@ import com.holycityaudio.spincad.spinCAD.ChorusScaleOffset
 import com.holycityaudio.spincad.spinCAD.IsGreaterThan
 import com.holycityaudio.spincad.spinCAD.IsLessThan
 import com.holycityaudio.spincad.spinCAD.IsEqualTo
+import com.holycityaudio.spincad.spinCAD.MinusDouble
 
 class SpinCADBlockGenerator {
  
@@ -236,7 +237,7 @@ def codeGenerate(String blockName, Program pr) {
 	
 	def genIsPinConnected(IsPinConnected p) {
 		'''
-		if(this.getPin("«p.arg1»").getPinConnection() != null) {
+		if(this.getPin("«p.arg1»").isConnected() == true) {
 		'''
 	}
 	
@@ -303,6 +304,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			GetBaseAddress: genGetBaseAddress(inst)
 			GetDelayScaleControl: genGetDelayScaleControl(inst)
 			GetSamplesFromRatio: genGetSamplesFromRatio(inst)
+			MinusDouble: genMinusDouble(inst)
 			}»	
 		'''
 	}
@@ -320,6 +322,12 @@ def genGetDelayScaleControl(GetDelayScaleControl g) {
 	'''
 }	
 
+
+def genMinusDouble(MinusDouble mp) {
+	'''
+		double «mp.varName» = «mp.high» - «mp.low»;
+	'''
+}
 
 def genGetSamplesFromRatio(GetSamplesFromRatio g) {
 	'''

@@ -64,7 +64,7 @@ SpinBool:
 
 //---------------------------------------------
 // -- Control Panel objects 
-Control: SpinSliderLabel | SpinCheckBox;
+Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel;
 
 SpinSliderLabel:
 	'@sliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
@@ -73,6 +73,10 @@ SpinSliderLabel:
 // ename is the name of the controlled variable, controlName is the text to display, value is the init value
 SpinCheckBox:
 	'@checkbox' ename = ID controlName = ID
+;
+
+LogFreqSliderLabel:
+	'@logFreqSliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
 //------------------------------------------------------------
@@ -89,7 +93,8 @@ Label:
 Macro:
 	IsPinConnected | IsTrue | IsElse | IsEndif | IsGreaterThan | IsEqualTo |
 	IsLessThan | GetInputDefault | 
-	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio
+	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio |
+	MinusDouble
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
@@ -104,7 +109,7 @@ GetDelayScaleControl: '@getDelayScaleControl' ratio = ID length = ID offset = ID
 GetSamplesFromRatio: '@getSamplesFromRatio' variable = ID ratio = SPINDOUBLE length = SPINDOUBLE;
 GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = ID varName = ID;
-
+MinusDouble: '@minusDouble' varName = ID high = ID low = ID;
 
 //------------------------ regular Spin ASM instructions
 Instruction:

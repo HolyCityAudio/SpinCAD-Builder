@@ -71,6 +71,8 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpinSliderLabelAccess().getGroup(), "rule__SpinSliderLabel__Group__0");
 					put(grammarAccess.getSpinSliderLabelAccess().getGroup_3(), "rule__SpinSliderLabel__Group_3__0");
 					put(grammarAccess.getSpinCheckBoxAccess().getGroup(), "rule__SpinCheckBox__Group__0");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getGroup(), "rule__LogFreqSliderLabel__Group__0");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getGroup_3(), "rule__LogFreqSliderLabel__Group_3__0");
 					put(grammarAccess.getLabelAccess().getGroup(), "rule__Label__Group__0");
 					put(grammarAccess.getIsPinConnectedAccess().getGroup(), "rule__IsPinConnected__Group__0");
 					put(grammarAccess.getIsGreaterThanAccess().getGroup(), "rule__IsGreaterThan__Group__0");
@@ -84,6 +86,7 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGetSamplesFromRatioAccess().getGroup(), "rule__GetSamplesFromRatio__Group__0");
 					put(grammarAccess.getGetBaseAddressAccess().getGroup(), "rule__GetBaseAddress__Group__0");
 					put(grammarAccess.getSetOutputPinAccess().getGroup(), "rule__SetOutputPin__Group__0");
+					put(grammarAccess.getMinusDoubleAccess().getGroup(), "rule__MinusDouble__Group__0");
 					put(grammarAccess.getReadRegisterAccess().getGroup(), "rule__ReadRegister__Group__0");
 					put(grammarAccess.getWriteRegisterLowshelfAccess().getGroup(), "rule__WriteRegisterLowshelf__Group__0");
 					put(grammarAccess.getWriteRegisterHighshelfAccess().getGroup(), "rule__WriteRegisterHighshelf__Group__0");
@@ -153,6 +156,14 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSpinSliderLabelAccess().getOptionAssignment_3_5(), "rule__SpinSliderLabel__OptionAssignment_3_5");
 					put(grammarAccess.getSpinCheckBoxAccess().getEnameAssignment_1(), "rule__SpinCheckBox__EnameAssignment_1");
 					put(grammarAccess.getSpinCheckBoxAccess().getControlNameAssignment_2(), "rule__SpinCheckBox__ControlNameAssignment_2");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getEnameAssignment_1(), "rule__LogFreqSliderLabel__EnameAssignment_1");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getControlNameAssignment_2(), "rule__LogFreqSliderLabel__ControlNameAssignment_2");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getMinValAssignment_3_0(), "rule__LogFreqSliderLabel__MinValAssignment_3_0");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getMaxValAssignment_3_1(), "rule__LogFreqSliderLabel__MaxValAssignment_3_1");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getInitValAssignment_3_2(), "rule__LogFreqSliderLabel__InitValAssignment_3_2");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getMultiplierAssignment_3_3(), "rule__LogFreqSliderLabel__MultiplierAssignment_3_3");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getPrecisionAssignment_3_4(), "rule__LogFreqSliderLabel__PrecisionAssignment_3_4");
+					put(grammarAccess.getLogFreqSliderLabelAccess().getOptionAssignment_3_5(), "rule__LogFreqSliderLabel__OptionAssignment_3_5");
 					put(grammarAccess.getCommentAccess().getRemarkAssignment(), "rule__Comment__RemarkAssignment");
 					put(grammarAccess.getLabelAccess().getNameAssignment_0(), "rule__Label__NameAssignment_0");
 					put(grammarAccess.getIsPinConnectedAccess().getArg1Assignment_1(), "rule__IsPinConnected__Arg1Assignment_1");
@@ -176,6 +187,9 @@ public class SpinCADParser extends AbstractContentAssistParser {
 					put(grammarAccess.getGetSamplesFromRatioAccess().getLengthAssignment_3(), "rule__GetSamplesFromRatio__LengthAssignment_3");
 					put(grammarAccess.getSetOutputPinAccess().getPinNameAssignment_1(), "rule__SetOutputPin__PinNameAssignment_1");
 					put(grammarAccess.getSetOutputPinAccess().getVarNameAssignment_2(), "rule__SetOutputPin__VarNameAssignment_2");
+					put(grammarAccess.getMinusDoubleAccess().getVarNameAssignment_1(), "rule__MinusDouble__VarNameAssignment_1");
+					put(grammarAccess.getMinusDoubleAccess().getHighAssignment_2(), "rule__MinusDouble__HighAssignment_2");
+					put(grammarAccess.getMinusDoubleAccess().getLowAssignment_3(), "rule__MinusDouble__LowAssignment_3");
 					put(grammarAccess.getReadRegisterAccess().getArg1Assignment_1(), "rule__ReadRegister__Arg1Assignment_1");
 					put(grammarAccess.getReadRegisterAccess().getArg2Assignment_3(), "rule__ReadRegister__Arg2Assignment_3");
 					put(grammarAccess.getWriteRegisterLowshelfAccess().getArg1Assignment_1(), "rule__WriteRegisterLowshelf__Arg1Assignment_1");
