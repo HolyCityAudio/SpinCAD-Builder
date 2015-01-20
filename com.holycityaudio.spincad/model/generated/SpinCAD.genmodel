@@ -4,7 +4,7 @@
     editorDirectory="/com.holycityaudio.spincad.editor/src" modelPluginID="com.holycityaudio.spincad"
     forceOverwrite="true" modelName="SpinCAD" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="com.holycityaudio.spincad.edit"
-    editorPluginID="com.holycityaudio.spincad.editor" runtimeVersion="2.9">
+    editorPluginID="com.holycityaudio.spincad.editor" runtimeVersion="2.10">
   <genPackages prefix="SpinCAD" basePackage="com.holycityaudio.spincad" disposableProviderFactory="true"
       fileExtensions="spincad" ecorePackage="SpinCAD.ecore#/">
     <genClasses ecoreClass="SpinCAD.ecore#//Program">
