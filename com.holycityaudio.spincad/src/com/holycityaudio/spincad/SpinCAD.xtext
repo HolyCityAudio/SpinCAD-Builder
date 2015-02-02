@@ -220,7 +220,7 @@ Not returns Not: {Not} 'not';
 Absa returns Absa: {Absa} 'absa';
 
 //Then there's Skip
-Skip: 'skp' flags = ID ',' label = [Label];
+Skip: 'skp' flags = ID ('|' ID)* ',' label = [Label];
 
 //----------  semi-colon comment terminal rule  --------------
 terminal SC_COMMENT: ';' !('\n'|'\r')* ('\r'? '\n');
