@@ -28,10 +28,10 @@ package com.holycityaudio.spincad.generator
 import com.holycityaudio.spincad.spinCAD.Program
 import com.holycityaudio.spincad.spinCAD.SpinElementimport com.holycityaudio.spincad.generator.SliderLabel
 import com.holycityaudio.spincad.generator.CheckBox
-
-
+import com.holycityaudio.spincad.generator.RadioButton
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox
+import com.holycityaudio.spincad.spinCAD.LFOSelectRadioButton
 
 class SpinCADControlPanelGenerator {
 	
@@ -84,6 +84,8 @@ class SpinCADControlPanelGenerator {
 				«switch e {
 					SpinSliderLabel: { SliderLabel.declareVar(e) }
 					SpinCheckBox: { CheckBox.declareVar(e) }
+					LFOSelectRadioButton: { RadioButton.declareVar(e) }
+					}
 				}»
 			«ENDFOR»
 
