@@ -85,7 +85,7 @@ SpinBool:
 
 //---------------------------------------------
 // -- Control Panel objects 
-Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel;
+Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel | LFOSelectRadioButton;
 
 SpinSliderLabel:
 	'@sliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
@@ -98,6 +98,10 @@ SpinCheckBox:
 
 LogFreqSliderLabel:
 	'@logFreqSliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
+;
+
+LFOSelectRadioButton:
+	'@lfoSelectRadioButton' ename = ID controlName = ID
 ;
 
 //------------------------------------------------------------
