@@ -27,7 +27,7 @@ import com.holycityaudio.spincad.generator.CheckBox
 import com.holycityaudio.spincad.generator.RadioButton
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox
-import com.holycityaudio.spincad.spinCAD.LFOSelectRadioButton
+import com.holycityaudio.spincad.spinCAD.SpinRadioButton
 
 class SpinCADControlPanelGenerator {
 	
@@ -76,7 +76,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 				«switch e {
 					SpinSliderLabel: { SliderLabel.declareVar(e) }
 					SpinCheckBox: { CheckBox.declareVar(e) }
-					LFOSelectRadioButton: { RadioButton.declareVar(e) }
+					SpinRadioButton: { RadioButton.declareVar(e) }
 				}»
 			«ENDFOR»
 
@@ -95,7 +95,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 				«switch e {
 					SpinCheckBox: { CheckBox.initialize(blockName, e)}
 					SpinSliderLabel: { SliderLabel.initialize(blockName, e)}
-					LFOSelectRadioButton: { RadioButton.initialize(blockName, e) }
+					SpinRadioButton: { RadioButton.initialize(blockName, e) }
 				}»
 			«ENDFOR»
 				frame.addWindowListener(new MyWindowListener());
@@ -128,8 +128,12 @@ def genControlPanelCode(String blockName, Program pr) { '''
 				}»
 			«ENDFOR»
 			}
-			
 
+			@Override
+			public void itemStateChanged(ItemEvent arg0) {
+				// TODO Auto-generated method stub
+			}
+		}
 		«FOR SpinElement e : pr.elements»
 			«switch e {
 				SpinSliderLabel: { SliderLabel.genLabelUpdater(e)}
@@ -164,10 +168,10 @@ def genControlPanelCode(String blockName, Program pr) { '''
 
 		}
 
-		@Override
-		public void windowOpened(WindowEvent arg0) {
+			@Override
+			public void windowOpened(WindowEvent arg0) {
+			}
 		}
-	}
 		
 	}
 	'''
