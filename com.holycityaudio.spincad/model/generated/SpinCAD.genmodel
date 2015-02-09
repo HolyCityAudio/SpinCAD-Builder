@@ -55,6 +55,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/precision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/option"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//SliderLabelCheckBox">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/minVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/maxVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/initVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/multiplier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/precision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/option"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//SpinCheckBox"/>
     <genClasses ecoreClass="SpinCAD.ecore#//LogFreqSliderLabel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreqSliderLabel/minVal"/>
@@ -64,6 +72,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreqSliderLabel/precision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreqSliderLabel/option"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//SpinRadioButton"/>
     <genClasses ecoreClass="SpinCAD.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Comment/remark"/>
     </genClasses>

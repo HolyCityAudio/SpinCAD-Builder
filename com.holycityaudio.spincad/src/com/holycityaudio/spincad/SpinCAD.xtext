@@ -78,17 +78,21 @@ Offset:
 	'offset' name = ID length = INT 
 ;
 
-// SpinCAD logircal variable, usually associated with a Checkbox
+// SpinCAD logical variable, usually associated with a Checkbox
 SpinBool:
 	'bool' name = ID value = BOOLEAN
 ;
 
 //---------------------------------------------
 // -- Control Panel objects 
-Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel | SpinRadioButton;
+Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel | SpinRadioButton | SliderLabelCheckBox;
 
 SpinSliderLabel:
 	'@sliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
+;
+
+SliderLabelCheckBox: 
+	'@sliderLabelCheckBox' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
 // ename is the name of the controlled variable, controlName is the text to display, value is the init value
