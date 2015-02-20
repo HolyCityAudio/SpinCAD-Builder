@@ -21,19 +21,21 @@
  */ 
  package com.holycityaudio.spincad.generator
 
+import com.holycityaudio.spincad.spinCAD.SpinSliderLabelCheckBox
+
 //import com.holycityaudio.spincad.spinCAD.SliderLabelCheckBox;
 
 class SliderLabelCheckBox extends ControlPanel {
 
 // this will generate setters and getters in the CADBlock class
 
-def static declareVar(SliderLabelCheckBox e) { '''
+def static declareVar(SpinSliderLabelCheckBox e) { '''
 		JSlider «e.ename»Slider;
 		JLabel  «e.ename»Label;	
 		JCheckBox  «e.ename»CheckBox;	
 '''}
 
-def static initialize(String blockName, SliderLabelCheckBox e) { '''
+def static initialize(String blockName, SpinSliderLabelCheckBox e) { '''
 
 		«IF e.option != null»
 			«IF e.option == "lengthToTime"»
@@ -70,7 +72,7 @@ def static initialize(String blockName, SliderLabelCheckBox e) { '''
 '''
 	}
 	
-def static genSetterGetter(SliderLabelCheckBox e) { '''
+def static genSetterGetter(SpinSliderLabelCheckBox e) { '''
 	public void set«e.ename»(double __param) {
 		«e.ename» = __param;	
 	}
@@ -90,7 +92,7 @@ def static genSetterGetter(SliderLabelCheckBox e) { '''
 }
 	
 // this will generate the proper style of listener
-def static genChangeListener(SliderLabelCheckBox e) { '''
+def static genChangeListener(SpinSliderLabelCheckBox e) { '''
 		if(ce.getSource() == «e.ename»Slider) {
 			gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
 			update«e.ename»Label();
@@ -98,7 +100,7 @@ def static genChangeListener(SliderLabelCheckBox e) { '''
 '''
 }
 
-def static genLabelUpdater(SliderLabelCheckBox e) {
+def static genLabelUpdater(SpinSliderLabelCheckBox e) {
 	'''
 		private void update«e.ename»Label() {
 		«IF e.option != null»

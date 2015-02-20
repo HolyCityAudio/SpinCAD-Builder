@@ -28,6 +28,7 @@ import com.holycityaudio.spincad.generator.RadioButton
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 import com.holycityaudio.spincad.spinCAD.SpinRadioButton
+import com.holycityaudio.spincad.spinCAD.SpinSliderLabelCheckBox
 
 class SpinCADControlPanelGenerator {
 	
@@ -95,6 +96,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 				«switch e {
 					SpinCheckBox: { CheckBox.initialize(blockName, e)}
 					SpinSliderLabel: { SliderLabel.initialize(blockName, e)}
+					SpinSliderLabelCheckBox: { SliderLabelCheckBox.initialize(blockName, e)}
 					SpinRadioButton: { RadioButton.initialize(blockName, e) }
 				}»
 			«ENDFOR»
@@ -114,6 +116,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					SpinSliderLabel: { SliderLabel.genChangeListener(e)}
+					SpinSliderLabelCheckBox: { SliderLabelCheckBox.genChangeListener(e)}
 				}»
 			«ENDFOR»
 			}

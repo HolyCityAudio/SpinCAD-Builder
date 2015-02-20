@@ -90,6 +90,7 @@ import com.holycityaudio.spincad.spinCAD.IsGreaterThan
 import com.holycityaudio.spincad.spinCAD.IsLessThan
 import com.holycityaudio.spincad.spinCAD.IsEqualTo
 import com.holycityaudio.spincad.spinCAD.MinusDouble
+import com.holycityaudio.spincad.spinCAD.ReadChorusTap
 
 class SpinCADBlockGenerator {
  
@@ -325,6 +326,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			SetOutputPin: genSetOutputPin(inst)
 			GetBaseAddress: genGetBaseAddress(inst)
 			GetDelayScaleControl: genGetDelayScaleControl(inst)
+			ReadChorusTap: genReadChorusTap(inst)
 			GetSamplesFromRatio: genGetSamplesFromRatio(inst)
 			MinusDouble: genMinusDouble(inst)
 			}»	
@@ -344,6 +346,16 @@ def genGetDelayScaleControl(GetDelayScaleControl g) {
 	'''
 }	
 
+// cho rda,SIN0,SIN|REG|COMPC,delayl^
+// cho rda,SIN0,SIN, delayl^+1
+
+def genReadChorusTap(ReadChorusTap g) {
+	'''
+		int chorusCenter = (int) (0.5 * «g.ratio» * «g.offset» + 0.25 * «g.ratio» * «g.length»); 
+		sfxb.chorusReadDelay(«g.LFO», SIN|REG|COMPC, chorusCenter );
+		sfxb.chorusReadDelay(«g.LFO», SIN, chorusCenter + 1);
+	'''
+}	
 
 def genMinusDouble(MinusDouble mp) {
 	'''
