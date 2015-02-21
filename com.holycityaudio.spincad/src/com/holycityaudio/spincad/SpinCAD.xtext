@@ -123,7 +123,7 @@ Macro:
 	IsPinConnected | IsTrue | IsElse | IsEndif | IsGreaterThan | IsEqualTo |
 	IsLessThan | GetInputDefault | ReadChorusTap |
 	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio |
-	MinusDouble
+	MinusDouble | DivideDouble
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
@@ -140,6 +140,7 @@ GetSamplesFromRatio: '@getSamplesFromRatio' variable = ID ratio = SPINDOUBLE len
 GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = ID varName = ID;
 MinusDouble: '@minusDouble' varName = ID high = ID low = ID;
+DivideDouble: '@divideDouble' varName = ID high = ID low = ID;
 
 //------------------------ regular Spin ASM instructions
 Instruction:

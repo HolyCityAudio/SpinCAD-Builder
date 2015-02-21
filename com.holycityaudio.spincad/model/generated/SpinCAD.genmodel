@@ -134,6 +134,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//MinusDouble/high"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//MinusDouble/low"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//DivideDouble">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/high"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/low"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Instruction"/>
     <genClasses ecoreClass="SpinCAD.ecore#//Inst_B6_S1_14">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_B6_S1_14/arg1"/>

@@ -91,6 +91,7 @@ import com.holycityaudio.spincad.spinCAD.IsLessThan
 import com.holycityaudio.spincad.spinCAD.IsEqualTo
 import com.holycityaudio.spincad.spinCAD.MinusDouble
 import com.holycityaudio.spincad.spinCAD.ReadChorusTap
+import com.holycityaudio.spincad.spinCAD.DivideDouble
 
 class SpinCADBlockGenerator {
  
@@ -329,6 +330,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			ReadChorusTap: genReadChorusTap(inst)
 			GetSamplesFromRatio: genGetSamplesFromRatio(inst)
 			MinusDouble: genMinusDouble(inst)
+			DivideDouble: genDivideDouble(inst)
 			}»	
 		'''
 	}
@@ -348,12 +350,15 @@ def genGetDelayScaleControl(GetDelayScaleControl g) {
 
 // cho rda,SIN0,SIN|REG|COMPC,delayl^
 // cho rda,SIN0,SIN, delayl^+1
+// int chorusCenter = (int) (delayOffset +  (0.5 * tap1Center * delayLength) + (0.25 *  delayLength)); 
 
 def genReadChorusTap(ReadChorusTap g) {
 	'''
-		int chorusCenter = (int) (0.5 * «g.ratio» * «g.offset» + 0.25 * «g.ratio» * «g.length»); 
-		sfxb.chorusReadDelay(«g.LFO», SIN|REG|COMPC, chorusCenter );
-		sfxb.chorusReadDelay(«g.LFO», SIN, chorusCenter + 1);
+		{
+			int chorusCenter = (int) («g.offset» + (0.5 * «g.ratio» * «g.length») +  0.25 * «g.length»); 
+			sfxb.chorusReadDelay(«g.LFO», SIN|REG|COMPC, chorusCenter );
+			sfxb.chorusReadDelay(«g.LFO», SIN, chorusCenter + 1);
+		}
 	'''
 }	
 
@@ -363,6 +368,11 @@ def genMinusDouble(MinusDouble mp) {
 	'''
 }
 
+def genDivideDouble(DivideDouble mp) {
+	'''
+		double «mp.varName» = «mp.high» / «mp.low»;
+	'''
+}
 def genGetSamplesFromRatio(GetSamplesFromRatio g) {
 	'''
 		«g.variable» = (int) («g.ratio» * «g.length»);
