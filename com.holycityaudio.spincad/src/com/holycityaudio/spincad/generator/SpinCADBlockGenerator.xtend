@@ -373,6 +373,7 @@ def genDivideDouble(DivideDouble mp) {
 		double «mp.varName» = «mp.high» / «mp.low»;
 	'''
 }
+
 def genGetSamplesFromRatio(GetSamplesFromRatio g) {
 	'''
 		«g.variable» = (int) («g.ratio» * «g.length»);

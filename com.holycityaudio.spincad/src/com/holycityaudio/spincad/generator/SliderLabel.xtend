@@ -42,16 +42,16 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(Math.log10(«e.minVal») * 100.0),(int) (Math.log10(«e.maxVal») * 100.0), (int) (Math.log10(gCB.get«e.ename»()) * 100));
 			«ENDIF»
 			«IF e.option == "LINEAR"»
-				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»)));
+				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "SINLFOFREQ"»
-				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»)));
+				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "RAMPLFOFREQ"»
-				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»)));
+				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "BOOSTCUT"»
-				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»)));
+				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»));
 			«ENDIF»
 		«ELSE»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
@@ -93,6 +93,9 @@ def static genLabelUpdater(SpinSliderLabel e) {
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", Math.pow(10.0, gCB.get«e.ename»())) + " Hz");		
+			«ENDIF»
+			«IF e.option == "SINLFOFREQ"»
+				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", coeffToLFORate(gCB.get«e.ename»())));		
 			«ENDIF»
 		«ELSE»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.get«e.ename»()));		

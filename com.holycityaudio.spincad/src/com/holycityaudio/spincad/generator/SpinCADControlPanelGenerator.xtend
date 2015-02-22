@@ -66,9 +66,10 @@ def genControlPanelCode(String blockName, Program pr) { '''
 		import javax.swing.JLabel;
 		import javax.swing.JCheckBox;
 		
+		import com.holycityaudio.SpinCAD.spinCADControlPanel;
 		import com.holycityaudio.SpinCAD.CADBlocks.«blockName+"CADBlock"»;
 
-		public class «blockName+"ControlPanel"» {
+		public class «blockName+"ControlPanel"» extends spinCADControlPanel {
 		private JFrame frame;
 
 		private «blockName+"CADBlock"» gCB;
