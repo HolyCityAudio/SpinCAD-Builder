@@ -25,73 +25,68 @@
  */
 package com.holycityaudio.spincad.generator
 
-//import com.google.inject.Inject 
-import com.holycityaudio.spincad.spinCAD.SpinElement
-import com.holycityaudio.spincad.spinCAD.Instruction
-import com.holycityaudio.spincad.spinCAD.Mem
-import com.holycityaudio.spincad.spinCAD.Program
-import com.holycityaudio.spincad.spinCAD.AudioInput
-import com.holycityaudio.spincad.spinCAD.AudioOutput
-import com.holycityaudio.spincad.spinCAD.ControlOutput
-import com.holycityaudio.spincad.spinCAD.ControlInput
-import com.holycityaudio.spincad.spinCAD.InputPin
-import com.holycityaudio.spincad.spinCAD.Macro
-import com.holycityaudio.spincad.spinCAD.Pin
-import com.holycityaudio.spincad.spinCAD.Offset
-import com.holycityaudio.spincad.spinCAD.IsPinConnected
-import com.holycityaudio.spincad.spinCAD.IsElse
-import com.holycityaudio.spincad.spinCAD.IsEndif
-import com.holycityaudio.spincad.spinCAD.GetInputDefault
-import com.holycityaudio.spincad.spinCAD.SetOutputPin
-import com.holycityaudio.spincad.spinCAD.GetBaseAddress
-import com.holycityaudio.spincad.spinCAD.GetDelayScaleControl
-import java.awt.Label
+//import com.google.inject.Inject
+
 import com.holycityaudio.spincad.spinCAD.Absa
 import com.holycityaudio.spincad.spinCAD.And
+import com.holycityaudio.spincad.spinCAD.AudioInput
+import com.holycityaudio.spincad.spinCAD.AudioOutput
 import com.holycityaudio.spincad.spinCAD.ChorusReadDelay
 import com.holycityaudio.spincad.spinCAD.ChorusReadValue
+import com.holycityaudio.spincad.spinCAD.ChorusScaleOffset
 import com.holycityaudio.spincad.spinCAD.Clr
+import com.holycityaudio.spincad.spinCAD.ControlInput
+import com.holycityaudio.spincad.spinCAD.ControlOutput
+import com.holycityaudio.spincad.spinCAD.DivideDouble
 import com.holycityaudio.spincad.spinCAD.Exp
+import com.holycityaudio.spincad.spinCAD.GetBaseAddress
+import com.holycityaudio.spincad.spinCAD.GetDelayScaleControl
+import com.holycityaudio.spincad.spinCAD.GetInputDefault
+import com.holycityaudio.spincad.spinCAD.GetSamplesFromRatio
+import com.holycityaudio.spincad.spinCAD.InputPin
+import com.holycityaudio.spincad.spinCAD.Inst_B15_S1_9
+import com.holycityaudio.spincad.spinCAD.Instruction
+import com.holycityaudio.spincad.spinCAD.IsElse
+import com.holycityaudio.spincad.spinCAD.IsEndif
+import com.holycityaudio.spincad.spinCAD.IsEqualTo
+import com.holycityaudio.spincad.spinCAD.IsGreaterThan
+import com.holycityaudio.spincad.spinCAD.IsLessThan
+import com.holycityaudio.spincad.spinCAD.IsPinConnected
+import com.holycityaudio.spincad.spinCAD.IsTrue
 import com.holycityaudio.spincad.spinCAD.Jam
 import com.holycityaudio.spincad.spinCAD.Ldax
 import com.holycityaudio.spincad.spinCAD.LoadRampLFO
 import com.holycityaudio.spincad.spinCAD.LoadSinLFO
-import com.holycityaudio.spincad.spinCAD.Or
+import com.holycityaudio.spincad.spinCAD.Log
+import com.holycityaudio.spincad.spinCAD.Macro
+import com.holycityaudio.spincad.spinCAD.Maxx
+import com.holycityaudio.spincad.spinCAD.Mem
+import com.holycityaudio.spincad.spinCAD.MinusDouble
+import com.holycityaudio.spincad.spinCAD.Mulx
 import com.holycityaudio.spincad.spinCAD.Not
-import com.holycityaudio.spincad.spinCAD.Skip
-import com.holycityaudio.spincad.spinCAD.Xor
-import com.holycityaudio.spincad.spinCAD.WriteRegisterHighshelf
-import com.holycityaudio.spincad.spinCAD.WriteRegisterLowshelf
-import com.holycityaudio.spincad.spinCAD.WriteRegister
-import com.holycityaudio.spincad.spinCAD.WriteDelay
-import com.holycityaudio.spincad.spinCAD.WriteAllpass
-import com.holycityaudio.spincad.spinCAD.ScaleOffset
-import com.holycityaudio.spincad.spinCAD.ReadRegisterFilter
-import com.holycityaudio.spincad.spinCAD.ReadRegister
+import com.holycityaudio.spincad.spinCAD.Offset
+import com.holycityaudio.spincad.spinCAD.Or
+import com.holycityaudio.spincad.spinCAD.Pin
+import com.holycityaudio.spincad.spinCAD.Program
+import com.holycityaudio.spincad.spinCAD.ReadChorusTap
 import com.holycityaudio.spincad.spinCAD.ReadDelay
 import com.holycityaudio.spincad.spinCAD.ReadDelayPointer
-import com.holycityaudio.spincad.spinCAD.Log
-import com.holycityaudio.spincad.spinCAD.Maxx
-import com.holycityaudio.spincad.spinCAD.Mulx
-import com.holycityaudio.spincad.spinCAD.Inst_B15_S1_9
+import com.holycityaudio.spincad.spinCAD.ReadRegister
+import com.holycityaudio.spincad.spinCAD.ReadRegisterFilter
+import com.holycityaudio.spincad.spinCAD.ScaleOffset
+import com.holycityaudio.spincad.spinCAD.SetOutputPin
+import com.holycityaudio.spincad.spinCAD.Skip
 import com.holycityaudio.spincad.spinCAD.SpinBool
+import com.holycityaudio.spincad.spinCAD.SpinElement
 import com.holycityaudio.spincad.spinCAD.SpinEquate
-import com.holycityaudio.spincad.spinCAD.IsTrue
-
-import com.holycityaudio.spincad.generator.SliderLabel
-import com.holycityaudio.spincad.generator.CheckBox
-import com.holycityaudio.spincad.generator.spcbBool
-import com.holycityaudio.spincad.generator.spcbEquate
-import com.holycityaudio.spincad.spinCAD.SpinCheckBox
-import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
-import com.holycityaudio.spincad.spinCAD.GetSamplesFromRatio
-import com.holycityaudio.spincad.spinCAD.ChorusScaleOffset
-import com.holycityaudio.spincad.spinCAD.IsGreaterThan
-import com.holycityaudio.spincad.spinCAD.IsLessThan
-import com.holycityaudio.spincad.spinCAD.IsEqualTo
-import com.holycityaudio.spincad.spinCAD.MinusDouble
-import com.holycityaudio.spincad.spinCAD.ReadChorusTap
-import com.holycityaudio.spincad.spinCAD.DivideDouble
+import com.holycityaudio.spincad.spinCAD.WriteAllpass
+import com.holycityaudio.spincad.spinCAD.WriteDelay
+import com.holycityaudio.spincad.spinCAD.WriteRegister
+import com.holycityaudio.spincad.spinCAD.WriteRegisterHighshelf
+import com.holycityaudio.spincad.spinCAD.WriteRegisterLowshelf
+import com.holycityaudio.spincad.spinCAD.Xor
+import java.awt.Label
+import javafx.scene.control.ComboBox
 
 class SpinCADBlockGenerator {
  
@@ -151,8 +146,9 @@ def codeGenerate(String blockName, Program pr) {
 			// if any control panel elements declared, set hasControlPanel to true
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					SpinCheckBox:{setHasControlPanel()}
-					SpinSliderLabel:{setHasControlPanel()}
+					CheckBox:{setHasControlPanel()}
+					ComboBox:{setHasControlPanel()}
+					SliderLabel:{setHasControlPanel()}
 				}»
 			«ENDFOR»			}
 		
@@ -214,8 +210,8 @@ def codeGenerate(String blockName, Program pr) {
 			// create setters and getter for control panel variables
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					SpinCheckBox:{CheckBox.genSetterGetter(e)}
-					SpinSliderLabel:{SliderLabel.genSetterGetter(e)}
+					CheckBox:{CheckBox.genSetterGetter(e)}
+					SliderLabel:{SliderLabel.genSetterGetter(e)}
 				}»
 			«ENDFOR»
 		}	

@@ -21,19 +21,17 @@
  */ 
  package com.holycityaudio.spincad.generator
 
-import com.holycityaudio.spincad.spinCAD.SpinCheckBox
-
 class CheckBox extends ControlPanel {
 
 // creates variable in CADBlock
 // may not want to actually do this in practice
-def static declareVar(SpinCheckBox e) { '''
+def static declareVar(CheckBox e) { '''
 		JCheckBox «e.ename»CheckBox;
 '''}
 
 // this will generate setters and getters in the CADBlock class
 
-def static genSetterGetter(SpinCheckBox b) { '''
+def static genSetterGetter(CheckBox b) { '''
 	public void set«b.ename»(boolean __param) {
 		«b.ename» = __param;	
 	}
@@ -45,14 +43,14 @@ def static genSetterGetter(SpinCheckBox b) { '''
 }
 	
 // this will generate the proper style of listener
-def static genItemListener(SpinCheckBox b) { '''
+def static genItemListener(CheckBox b) { '''
 		if(ce.getSource() == «b.ename»CheckBox) {
 			gCB.set«b.ename»((boolean) («b.ename»CheckBox.isSelected()));
 		}
 '''
 }
 
-def static initialize(String blockName, SpinCheckBox b) { '''
+def static initialize(String blockName, CheckBox b) { '''
 		«b.ename»CheckBox = new JCheckBox();
 		«b.ename»CheckBox.setText("«b.controlName»");
 		«b.ename»CheckBox.addItemListener(new «blockName»ItemListener());

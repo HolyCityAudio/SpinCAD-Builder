@@ -25,10 +25,6 @@ import com.holycityaudio.spincad.spinCAD.Program
 import com.holycityaudio.spincad.spinCAD.SpinElementimport com.holycityaudio.spincad.generator.SliderLabel
 import com.holycityaudio.spincad.generator.CheckBox
 import com.holycityaudio.spincad.generator.RadioButton
-import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
-import com.holycityaudio.spincad.spinCAD.SpinCheckBox
-import com.holycityaudio.spincad.spinCAD.SpinRadioButton
-import com.holycityaudio.spincad.spinCAD.SpinSliderLabelCheckBox
 
 class SpinCADControlPanelGenerator {
 	
@@ -76,9 +72,9 @@ def genControlPanelCode(String blockName, Program pr) { '''
 		// declare the controls
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					SpinSliderLabel: { SliderLabel.declareVar(e) }
-					SpinCheckBox: { CheckBox.declareVar(e) }
-					SpinRadioButton: { RadioButton.declareVar(e) }
+					SliderLabel: { SliderLabel.declareVar(e) }
+					CheckBox: { CheckBox.declareVar(e) }
+					RadioButton: { RadioButton.declareVar(e) }
 				}»
 			«ENDFOR»
 
@@ -95,10 +91,10 @@ def genControlPanelCode(String blockName, Program pr) { '''
 
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					SpinCheckBox: { CheckBox.initialize(blockName, e)}
-					SpinSliderLabel: { SliderLabel.initialize(blockName, e)}
-					SpinSliderLabelCheckBox: { SliderLabelCheckBox.initialize(blockName, e)}
-					SpinRadioButton: { RadioButton.initialize(blockName, e) }
+					CheckBox: { CheckBox.initialize(blockName, e)}
+					SliderLabel: { SliderLabel.initialize(blockName, e)}
+					SliderLabelCheckBox: { SliderLabelCheckBox.initialize(blockName, e)}
+					RadioButton: { RadioButton.initialize(blockName, e) }
 				}»
 			«ENDFOR»
 				frame.addWindowListener(new MyWindowListener());
@@ -116,8 +112,8 @@ def genControlPanelCode(String blockName, Program pr) { '''
 		public void stateChanged(ChangeEvent ce) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					SpinSliderLabel: { SliderLabel.genChangeListener(e)}
-					SpinSliderLabelCheckBox: { SliderLabelCheckBox.genChangeListener(e)}
+					SliderLabel: { SliderLabel.genChangeListener(e)}
+					SliderLabelCheckBox: { SliderLabelCheckBox.genChangeListener(e)}
 				}»
 			«ENDFOR»
 			}
@@ -128,7 +124,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 		public void stateChanged(ChangeEvent ce) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					SpinCheckBox: { CheckBox.genItemListener(e)}
+					CheckBox: { CheckBox.genItemListener(e)}
 				}»
 			«ENDFOR»
 			}
@@ -140,7 +136,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 		}
 		«FOR SpinElement e : pr.elements»
 			«switch e {
-				SpinSliderLabel: { SliderLabel.genLabelUpdater(e)}
+				SliderLabel: { SliderLabel.genLabelUpdater(e)}
 			}»
 		«ENDFOR»
 		

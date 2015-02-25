@@ -85,18 +85,18 @@ SpinBool:
 
 //---------------------------------------------
 // -- Control Panel objects 
-Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel | SpinRadioButton | SpinSliderLabelCheckBox;
+Control: SliderLabel | CheckBox | LogFreqSliderLabel | RadioButton | SliderLabelCheckBox | ComboBox;
 
-SpinSliderLabel:
+SliderLabel:
 	'@sliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
-SpinSliderLabelCheckBox: 
+SliderLabelCheckBox: 
 	'@sliderLabelCheckBox' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
 // ename is the name of the controlled variable, controlName is the text to display, value is the init value
-SpinCheckBox:
+CheckBox:
 	'@checkbox' ename = ID controlName = ID
 ;
 
@@ -104,8 +104,12 @@ LogFreqSliderLabel:
 	'@logFreqSliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
-SpinRadioButton:
+RadioButton:
 	'@spinRadioButton' ename = ID controlName = ID
+;
+
+ComboBox:
+	'@comboBox' ename = ID option0 = STRING option1 = STRING (option2 = STRING (option3 = STRING)?)?
 ;
 
 //------------------------------------------------------------
@@ -261,5 +265,14 @@ BINARY24:
 ;
 
 BOOLEAN: "true" | "false"
+;
 	
+terminal QUOTEDSTRING: 
+	'"' !('\n'|'\r')* '"'	
+;
+
+terminal fragment ESCAPED_CHAR : '\\' ('n'|'t'|'r'|'\\');
+terminal STRING  : 
+      '"' ( ESCAPED_CHAR | !('\\'|'"') )* '"' |
+      "'" ( ESCAPED_CHAR | !('\\'|"'") )* "'"
 ;

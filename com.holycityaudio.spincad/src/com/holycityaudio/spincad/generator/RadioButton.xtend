@@ -21,19 +21,17 @@
  */ 
  package com.holycityaudio.spincad.generator
 
-import com.holycityaudio.spincad.spinCAD.SpinRadioButton
-
 class RadioButton extends ControlPanel {
 
 // creates variable in CADBlock
 // may not want to actually do this in practice
-def static declareVar(SpinRadioButton e) { '''
+def static declareVar(RadioButton e) { '''
 		JRadioButton «e.ename»RadioButton;
 '''}
 
 // this will generate setters and getters in the CADBlock class
 
-def static genSetterGetter(SpinRadioButton b) { '''
+def static genSetterGetter(RadioButton b) { '''
 	public void set«b.ename»(boolean __param) {
 		«b.ename» = __param;	
 	}
@@ -45,14 +43,14 @@ def static genSetterGetter(SpinRadioButton b) { '''
 }
 	
 // this will generate the proper style of listener
-def static genItemListener(SpinRadioButton b) { '''
+def static genItemListener(RadioButton b) { '''
 		if(ce.getSource() == «b.ename»CheckBox) {
 			gCB.set«b.ename»((boolean) («b.ename»CheckBox.isSelected()));
 		}
 '''
 }
 
-def static initialize(String blockName, SpinRadioButton b) { '''
+def static initialize(String blockName, RadioButton b) { '''
 		«b.ename»CheckBox = new JCheckBox();
 		«b.ename»CheckBox.setText("«b.controlName»");
 		«b.ename»CheckBox.addItemListener(new «blockName»ItemListener());
