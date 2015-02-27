@@ -109,7 +109,7 @@ RadioButton:
 ;
 
 ComboBox:
-	'@comboBox' ename = ID option0 = STRING option1 = STRING (option2 = STRING (option3 = STRING)?)?
+	'@comboBox' ename = ID optiona = STRING optionb = STRING
 ;
 
 //------------------------------------------------------------

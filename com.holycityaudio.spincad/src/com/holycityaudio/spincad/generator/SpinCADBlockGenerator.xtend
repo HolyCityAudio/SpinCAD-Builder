@@ -86,7 +86,6 @@ import com.holycityaudio.spincad.spinCAD.WriteRegisterHighshelf
 import com.holycityaudio.spincad.spinCAD.WriteRegisterLowshelf
 import com.holycityaudio.spincad.spinCAD.Xor
 import java.awt.Label
-import javafx.scene.control.ComboBox
 
 class SpinCADBlockGenerator {
  
@@ -147,7 +146,7 @@ def codeGenerate(String blockName, Program pr) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					CheckBox:{setHasControlPanel()}
-					ComboBox:{setHasControlPanel()}
+//					ComboBox:{setHasControlPanel()}
 					SliderLabel:{setHasControlPanel()}
 				}»
 			«ENDFOR»			}
