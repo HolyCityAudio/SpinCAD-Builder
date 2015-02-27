@@ -21,16 +21,18 @@
  */ 
  package com.holycityaudio.spincad.generator
 
-class SliderLabel extends ControlPanel {
+import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
+
+class spcbSliderLabel extends ControlPanel {
 
 // this will generate setters and getters in the CADBlock class
 
-def static declareVar(SliderLabel e) { '''
+def static declareVar(SpinSliderLabel e) { '''
 		JSlider «e.ename»Slider;
 		JLabel  «e.ename»Label;	
 '''}
 
-def static initialize(String blockName, SliderLabel e) { '''
+def static initialize(String blockName, SpinSliderLabel e) { '''
 
 		«IF e.option != null»
 			«IF e.option == "lengthToTime"»
@@ -62,7 +64,7 @@ def static initialize(String blockName, SliderLabel e) { '''
 '''
 	}
 	
-def static genSetterGetter(SliderLabel e) { '''
+def static genSetterGetter(SpinSliderLabel e) { '''
 	public void set«e.ename»(double __param) {
 		«e.ename» = __param;	
 	}
@@ -74,7 +76,7 @@ def static genSetterGetter(SliderLabel e) { '''
 }
 	
 // this will generate the proper style of listener
-def static genChangeListener(SliderLabel e) { '''
+def static genChangeListener(SpinSliderLabel e) { '''
 		if(ce.getSource() == «e.ename»Slider) {
 			gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
 			update«e.ename»Label();
@@ -82,7 +84,7 @@ def static genChangeListener(SliderLabel e) { '''
 '''
 }
 
-def static genLabelUpdater(SliderLabel e) {
+def static genLabelUpdater(SpinSliderLabel e) {
 	'''
 		private void update«e.ename»Label() {
 		«IF e.option != null»

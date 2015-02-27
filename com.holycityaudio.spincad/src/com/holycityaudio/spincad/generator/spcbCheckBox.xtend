@@ -1,5 +1,5 @@
 /* SpinCAD Builder - DSP Development Tool for the Spin FV-1 
- * CheckBox.xtend
+ * spcbCheckBox.xtend
  * This file supplies template code generation for the CheckBox data type.
  * This turns into a Java Swing Checkbox in a Control Panel.
  * 
@@ -21,17 +21,19 @@
  */ 
  package com.holycityaudio.spincad.generator
 
-class CheckBox extends ControlPanel {
+import com.holycityaudio.spincad.spinCAD.SpinCheckBox
+
+class spcbCheckBox extends ControlPanel {
 
 // creates variable in CADBlock
 // may not want to actually do this in practice
-def static declareVar(CheckBox e) { '''
+def static declareVar(SpinCheckBox e) { '''
 		JCheckBox «e.ename»CheckBox;
 '''}
 
 // this will generate setters and getters in the CADBlock class
 
-def static genSetterGetter(CheckBox b) { '''
+def static genSetterGetter(SpinCheckBox b) { '''
 	public void set«b.ename»(boolean __param) {
 		«b.ename» = __param;	
 	}
@@ -43,14 +45,14 @@ def static genSetterGetter(CheckBox b) { '''
 }
 	
 // this will generate the proper style of listener
-def static genItemListener(CheckBox b) { '''
+def static genItemListener(SpinCheckBox b) { '''
 		if(ce.getSource() == «b.ename»CheckBox) {
 			gCB.set«b.ename»((boolean) («b.ename»CheckBox.isSelected()));
 		}
 '''
 }
 
-def static initialize(String blockName, CheckBox b) { '''
+def static initialize(String blockName, SpinCheckBox b) { '''
 		«b.ename»CheckBox = new JCheckBox();
 		«b.ename»CheckBox.setText("«b.controlName»");
 		«b.ename»CheckBox.addItemListener(new «blockName»ItemListener());
