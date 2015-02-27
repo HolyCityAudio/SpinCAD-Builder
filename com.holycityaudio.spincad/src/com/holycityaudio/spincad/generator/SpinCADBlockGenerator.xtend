@@ -86,6 +86,10 @@ import com.holycityaudio.spincad.spinCAD.WriteRegisterHighshelf
 import com.holycityaudio.spincad.spinCAD.WriteRegisterLowshelf
 import com.holycityaudio.spincad.spinCAD.Xor
 import java.awt.Label
+import com.holycityaudio.spincad.generator.spcbSliderLabel
+import com.holycityaudio.spincad.spinCAD.SpinComboBox
+import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
+import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 
 class SpinCADBlockGenerator {
  
@@ -145,9 +149,9 @@ def codeGenerate(String blockName, Program pr) {
 			// if any control panel elements declared, set hasControlPanel to true
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					CheckBox:{setHasControlPanel()}
-//					ComboBox:{setHasControlPanel()}
-					SliderLabel:{setHasControlPanel()}
+					spcbCheckBox:{setHasControlPanel()}
+					spcbComboBox:{setHasControlPanel()}
+					spcbSliderLabel:{setHasControlPanel()}
 				}»
 			«ENDFOR»			}
 		
@@ -209,8 +213,9 @@ def codeGenerate(String blockName, Program pr) {
 			// create setters and getter for control panel variables
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					CheckBox:{CheckBox.genSetterGetter(e)}
-					SliderLabel:{SliderLabel.genSetterGetter(e)}
+					SpinSliderLabel:{spcbSliderLabel.genSetterGetter(e)}
+					SpinCheckBox:{spcbCheckBox.genSetterGetter(e)}
+					SpinComboBox:{spcbComboBox.genSetterGetter(e)}
 				}»
 			«ENDFOR»
 		}	
