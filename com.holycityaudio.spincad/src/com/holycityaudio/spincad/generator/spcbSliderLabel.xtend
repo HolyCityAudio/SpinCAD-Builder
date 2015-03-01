@@ -59,7 +59,9 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 		«e.ename»Slider.addChangeListener(new «blockName»SliderListener());
 		«e.ename»Label = new JLabel();
 		update«e.ename»Label();
+		frame.add(Box.createRigidArea(new Dimension(5,4)));			
 		frame.getContentPane().add(«e.ename»Label);
+		frame.add(Box.createRigidArea(new Dimension(5,4)));			
 		frame.getContentPane().add(«e.ename»Slider);		
 '''
 	}

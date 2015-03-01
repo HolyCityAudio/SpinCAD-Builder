@@ -43,7 +43,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Control" eSuperTypes="#//SpinElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SliderLabel" eSuperTypes="#//Control">
+  <eClassifiers xsi:type="ecore:EClass" name="SpinSliderLabel" eSuperTypes="#//Control">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -61,7 +61,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="option" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//Control">
+  <eClassifiers xsi:type="ecore:EClass" name="SpinCheckBox" eSuperTypes="#//Control">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LogFreqSliderLabel" eSuperTypes="#//Control">
@@ -73,12 +73,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="option" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RadioButton" eSuperTypes="#//Control">
+  <eClassifiers xsi:type="ecore:EClass" name="SpinRadioButton" eSuperTypes="#//Control">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ComboBox" eSuperTypes="#//Control">
+  <eClassifiers xsi:type="ecore:EClass" name="SpinComboBox" eSuperTypes="#//Control">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optiona" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="optionb" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optionc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optiond" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//SpinElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="remark" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

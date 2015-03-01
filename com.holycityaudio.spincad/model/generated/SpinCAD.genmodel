@@ -46,14 +46,14 @@
     <genClasses ecoreClass="SpinCAD.ecore#//Control">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Control/ename"/>
     </genClasses>
-    <genClasses ecoreClass="SpinCAD.ecore#//SliderLabel">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabel/controlName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabel/minVal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabel/maxVal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabel/initVal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabel/multiplier"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabel/precision"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabel/option"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//SpinSliderLabel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/controlName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/minVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/maxVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/initVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/multiplier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/precision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/option"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//SliderLabelCheckBox">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/controlName"/>
@@ -64,8 +64,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/precision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/option"/>
     </genClasses>
-    <genClasses ecoreClass="SpinCAD.ecore#//CheckBox">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//CheckBox/controlName"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//SpinCheckBox">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinCheckBox/controlName"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//LogFreqSliderLabel">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreqSliderLabel/controlName"/>
@@ -76,12 +76,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreqSliderLabel/precision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreqSliderLabel/option"/>
     </genClasses>
-    <genClasses ecoreClass="SpinCAD.ecore#//RadioButton">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//RadioButton/controlName"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//SpinRadioButton">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinRadioButton/controlName"/>
     </genClasses>
-    <genClasses ecoreClass="SpinCAD.ecore#//ComboBox">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ComboBox/optiona"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ComboBox/optionb"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//SpinComboBox">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinComboBox/optiona"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinComboBox/optionb"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinComboBox/optionc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinComboBox/optiond"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Comment/remark"/>

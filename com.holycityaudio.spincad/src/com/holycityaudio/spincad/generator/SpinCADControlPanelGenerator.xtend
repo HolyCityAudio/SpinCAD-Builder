@@ -28,6 +28,7 @@ import com.holycityaudio.spincad.generator.spcbRadioButton
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 import com.holycityaudio.spincad.spinCAD.SpinRadioButton
+import com.holycityaudio.spincad.spinCAD.SpinComboBox
 
 class SpinCADControlPanelGenerator {
 	
@@ -64,6 +65,9 @@ def genControlPanelCode(String blockName, Program pr) { '''
 		import javax.swing.JSlider;
 		import javax.swing.JLabel;
 		import javax.swing.JCheckBox;
+		import javax.swing.JComboBox;
+		import javax.swing.Box;
+		import java.awt.Dimension;
 		
 		import com.holycityaudio.SpinCAD.spinCADControlPanel;
 		import com.holycityaudio.SpinCAD.CADBlocks.«blockName+"CADBlock"»;
@@ -77,6 +81,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 				«switch e {
 					SpinSliderLabel: { spcbSliderLabel.declareVar(e) }
 					SpinCheckBox: { spcbCheckBox.declareVar(e) }
+					SpinComboBox: { spcbComboBox.declareVar(e) }
 					SpinRadioButton: { spcbRadioButton.declareVar(e) }
 				}»
 			«ENDFOR»
@@ -95,6 +100,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					SpinCheckBox: { spcbCheckBox.initialize(blockName, e)}
+					SpinComboBox: { spcbComboBox.initialize(blockName, e)}
 					SpinSliderLabel: { spcbSliderLabel.initialize(blockName, e)}
 					SliderLabelCheckBox: { SliderLabelCheckBox.initialize(blockName, e)}
 					SpinRadioButton: { spcbRadioButton.initialize(blockName, e) }
@@ -128,6 +134,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					SpinCheckBox: { spcbCheckBox.genItemListener(e)}
+					SpinComboBox: { spcbComboBox.genItemListener(e)}
 				}»
 			«ENDFOR»
 			}

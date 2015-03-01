@@ -131,6 +131,7 @@ def codeGenerate(String blockName, Program pr) {
 					// variables should be allocated within the CADBlock constructor
 					SpinEquate:{spcbEquate.declareVar(e)}
 					SpinBool:{spcbBool.declareVar(e)}
+					SpinComboBox:{spcbComboBox.declareVar(e)}
 				}»
 			«ENDFOR»
 
@@ -149,9 +150,9 @@ def codeGenerate(String blockName, Program pr) {
 			// if any control panel elements declared, set hasControlPanel to true
 			«FOR SpinElement e : pr.elements»
 				«switch e {
-					spcbCheckBox:{setHasControlPanel()}
-					spcbComboBox:{setHasControlPanel()}
-					spcbSliderLabel:{setHasControlPanel()}
+					SpinCheckBox:{setHasControlPanel()}
+					SpinComboBox:{setHasControlPanel()}
+					SpinSliderLabel:{setHasControlPanel()}
 				}»
 			«ENDFOR»			}
 		

@@ -109,7 +109,7 @@ SpinRadioButton:
 ;
 
 SpinComboBox:
-	'@comboBox' ename = ID optiona = STRING optionb = STRING
+	'@comboBox' ename = ID optiona = STRING optionb = STRING (optionc = STRING (optiond = STRING)?)?
 ;
 
 //------------------------------------------------------------
