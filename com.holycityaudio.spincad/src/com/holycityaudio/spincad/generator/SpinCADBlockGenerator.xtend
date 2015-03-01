@@ -107,7 +107,7 @@ def codeGenerate(String blockName, Program pr) {
  * 
  *   This program is distributed in the hope that it will be useful, 
  *   but WITHOUT ANY WARRANTY; without even the implied warranty of 
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
  *   GNU General Public License for more details. 
  * 
  *   You should have received a copy of the GNU General Public License 
@@ -131,7 +131,6 @@ def codeGenerate(String blockName, Program pr) {
 					// variables should be allocated within the CADBlock constructor
 					SpinEquate:{spcbEquate.declareVar(e)}
 					SpinBool:{spcbBool.declareVar(e)}
-					SpinComboBox:{spcbComboBox.declareVar(e)}
 				}»
 			«ENDFOR»
 
