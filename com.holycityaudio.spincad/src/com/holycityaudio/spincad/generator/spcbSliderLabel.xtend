@@ -56,13 +56,13 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 		«ELSE»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 		«ENDIF»
-		«e.ename»Slider.addChangeListener(new «blockName»SliderListener());
-		«e.ename»Label = new JLabel();
-		update«e.ename»Label();
-		frame.add(Box.createRigidArea(new Dimension(5,4)));			
-		frame.getContentPane().add(«e.ename»Label);
-		frame.add(Box.createRigidArea(new Dimension(5,4)));			
-		frame.getContentPane().add(«e.ename»Slider);		
+			«e.ename»Slider.addChangeListener(new «blockName»SliderListener());
+			«e.ename»Label = new JLabel();
+			update«e.ename»Label();
+			frame.add(Box.createRigidArea(new Dimension(5,4)));			
+			frame.getContentPane().add(«e.ename»Label);
+			frame.add(Box.createRigidArea(new Dimension(5,4)));			
+			frame.getContentPane().add(«e.ename»Slider);		
 '''
 	}
 	

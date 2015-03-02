@@ -58,6 +58,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
 		import javax.swing.SwingUtilities;
 		import javax.swing.event.ChangeEvent;
 		import javax.swing.event.ChangeListener;
+		import java.awt.event.ActionEvent;
 		import java.awt.event.WindowEvent;
 		import java.awt.event.WindowListener;
 		import java.awt.event.ItemEvent;
@@ -68,7 +69,6 @@ def genControlPanelCode(String blockName, Program pr) { '''
 		import javax.swing.JComboBox;
 		import javax.swing.Box;
 		import java.awt.Dimension;
-		
 		import com.holycityaudio.SpinCAD.spinCADControlPanel;
 		import com.holycityaudio.SpinCAD.CADBlocks.«blockName+"CADBlock"»;
 
@@ -134,14 +134,25 @@ def genControlPanelCode(String blockName, Program pr) { '''
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					SpinCheckBox: { spcbCheckBox.genItemListener(e)}
-					SpinComboBox: { spcbComboBox.genItemListener(e)}
 				}»
 			«ENDFOR»
 			}
-
-			@Override
+			
+		@Override
 			public void itemStateChanged(ItemEvent arg0) {
 				// TODO Auto-generated method stub
+			}
+		}
+		
+		// add action listener 
+		class «blockName»ActionListener implements java.awt.event.ActionListener { 
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+			«FOR SpinElement e : pr.elements»
+				«switch e {
+					SpinComboBox: { spcbComboBox.genActionListener(e)}
+				}»
+			«ENDFOR»
 			}
 		}
 		«FOR SpinElement e : pr.elements»
