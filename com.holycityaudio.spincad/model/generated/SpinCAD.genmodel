@@ -151,6 +151,21 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/high"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/low"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//DivideInt">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideInt/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideInt/high"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideInt/low"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//MultiplyDouble">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//MultiplyDouble/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//MultiplyDouble/high"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//MultiplyDouble/low"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//SetChorusWidth">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SetChorusWidth/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SetChorusWidth/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SetChorusWidth/scale"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Instruction"/>
     <genClasses ecoreClass="SpinCAD.ecore#//Inst_B6_S1_14">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Inst_B6_S1_14/arg1"/>

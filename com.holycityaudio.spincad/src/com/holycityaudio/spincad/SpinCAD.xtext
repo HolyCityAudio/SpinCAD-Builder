@@ -125,9 +125,9 @@ Label:
 // also for special function calls etc.
 Macro:
 	IsPinConnected | IsTrue | IsElse | IsEndif | IsGreaterThan | IsEqualTo |
-	IsLessThan | GetInputDefault | ReadChorusTap |
+	IsLessThan | GetInputDefault | ReadChorusTap | SetChorusWidth |
 	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio |
-	MinusDouble | DivideDouble
+	MinusDouble | DivideDouble | DivideInt | MultiplyDouble 
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
@@ -145,6 +145,10 @@ GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = ID varName = ID;
 MinusDouble: '@minusDouble' varName = ID high = ID low = ID;
 DivideDouble: '@divideDouble' varName = ID high = ID low = ID;
+DivideInt: '@divideInt' varName = ID high = ID low = INT;
+MultiplyDouble: '@multiplyDouble' varName = ID high = ID low = ID;
+
+SetChorusWidth: '@setChorusWidth' varName = ID length = ID scale = ID;
 
 //------------------------ regular Spin ASM instructions
 Instruction:

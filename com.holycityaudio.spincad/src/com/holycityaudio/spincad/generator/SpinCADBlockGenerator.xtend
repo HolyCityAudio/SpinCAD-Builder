@@ -90,6 +90,9 @@ import com.holycityaudio.spincad.generator.spcbSliderLabel
 import com.holycityaudio.spincad.spinCAD.SpinComboBox
 import com.holycityaudio.spincad.spinCAD.SpinSliderLabel
 import com.holycityaudio.spincad.spinCAD.SpinCheckBox
+import com.holycityaudio.spincad.spinCAD.SetChorusWidth
+import com.holycityaudio.spincad.spinCAD.DivideInt
+import com.holycityaudio.spincad.spinCAD.MultiplyDouble
 
 class SpinCADBlockGenerator {
  
@@ -331,6 +334,8 @@ def genGetInputDefault(GetInputDefault g)'''
 			GetSamplesFromRatio: genGetSamplesFromRatio(inst)
 			MinusDouble: genMinusDouble(inst)
 			DivideDouble: genDivideDouble(inst)
+			DivideInt: genDivideInt(inst)
+			MultiplyDouble: genMultiplyDouble(inst)
 			}»	
 		'''
 	}
@@ -362,6 +367,13 @@ def genReadChorusTap(ReadChorusTap g) {
 	'''
 }	
 
+def genSetChorusWidth(SetChorusWidth g) {
+	'''
+		{
+			
+		}
+	'''
+}	
 def genMinusDouble(MinusDouble mp) {
 	'''
 		double «mp.varName» = «mp.high» - «mp.low»;
@@ -374,6 +386,18 @@ def genDivideDouble(DivideDouble mp) {
 	'''
 }
 
+def genDivideInt(DivideInt mp) {
+	'''
+		int «mp.varName» = (int)(«mp.high» / «mp.low»);
+	'''
+}
+
+def genMultiplyDouble(MultiplyDouble mp) {
+	'''
+		double «mp.varName» = «mp.high» * «mp.low»;
+	'''
+}
+
 def genGetSamplesFromRatio(GetSamplesFromRatio g) {
 	'''
 		«g.variable» = (int) («g.ratio» * «g.length»);
@@ -383,7 +407,7 @@ def genGetSamplesFromRatio(GetSamplesFromRatio g) {
 def genGetBaseAddress(GetBaseAddress g) {
 	'''
 	int	delayOffset = sfxb.getDelayMemAllocated() + 1;
-	'''
+'''
 }	
 
 def genSetOutputPin(SetOutputPin p) {
@@ -416,7 +440,7 @@ def genSetOutputPin(SetOutputPin p) {
 		«ENDIF»
 	'''
 	
-		def genOffset(Offset e) '''
+	def genOffset(Offset e) '''
 		int «e.getName» = «e.getLength»;
 	'''
 
