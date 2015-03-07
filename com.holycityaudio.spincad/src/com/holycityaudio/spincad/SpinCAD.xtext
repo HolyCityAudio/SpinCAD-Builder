@@ -127,7 +127,7 @@ Macro:
 	IsPinConnected | IsTrue | IsElse | IsEndif | IsGreaterThan | IsEqualTo |
 	IsLessThan | GetInputDefault | ReadChorusTap | SetChorusWidth |
 	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio |
-	MinusDouble | DivideDouble | DivideInt | MultiplyDouble 
+	MinusDouble | DivideDouble | DivideInt | MultiplyDouble | SemitonesToRmpRate
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
@@ -141,6 +141,7 @@ GetInputDefault: '@getInputDefault' name = ID variable = ID scale = SPINDOUBLE d
 GetDelayScaleControl: '@getDelayScaleControl' ratio = ID length = ID offset = ID (control = ID)?;
 ReadChorusTap: '@readChorusTap' LFO = INT SINCOS = INT ratio = ID length = ID offset = ID;
 GetSamplesFromRatio: '@getSamplesFromRatio' variable = ID ratio = SPINDOUBLE length = SPINDOUBLE;
+SemitonesToRmpRate: '@semitonesToRmpRate' variable = ID semitones = INT;
 GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = ID varName = ID;
 MinusDouble: '@minusDouble' varName = ID high = ID low = ID;
@@ -217,7 +218,7 @@ ScaleOffset: 'sof' arg1 = SPINDOUBLE ',' arg2 = SPINDOUBLE ;
 WriteDelay: 'wra' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 WriteAllpass: 'wrap' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 ReadDelay: 'rda' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
-LoadSinLFO: 'wlds' arg1 = SPINREGISTER ',' arg2 = INT ',' arg3 = INT;
+LoadSinLFO: 'wlds' arg1 = SPINREGISTER ',' arg2 = SPINDOUBLE',' arg3 = INT;
 LoadRampLFO: 'wldr' arg1 = SPINREGISTER ',' arg2 = SPINDOUBLE ',' arg3 = INT;
 
 // Chorus instructions
@@ -271,10 +272,6 @@ BINARY24:
 BOOLEAN: "true" | "false"
 ;
 	
-terminal QUOTEDSTRING: 
-	'"' !('\n'|'\r')* '"'	
-;
-
 terminal fragment ESCAPED_CHAR : '\\' ('n'|'t'|'r'|'\\');
 terminal STRING  : 
       '"' ( ESCAPED_CHAR | !('\\'|'"') )* '"' |

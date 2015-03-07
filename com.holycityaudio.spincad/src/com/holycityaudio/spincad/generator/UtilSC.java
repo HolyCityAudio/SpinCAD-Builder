@@ -34,6 +34,7 @@ public class UtilSC {
 		int refIndex = indexOf(rtl.getLabel());
 		// TODO - this needs to be modified, since another label or comment might be 
 		// between the two end points, it should not be counted
+		// also need to eliminate macros from the count.
 		int c = countComments(rtl, labelIndex, refIndex) + 1;
 		return (refIndex - labelIndex) - c;
 	}
@@ -56,8 +57,8 @@ public class UtilSC {
 			for(int ii = start; ii < end; ii++) {
 				EObject getLine = siblings.get(ii);
 				String line = getLine.toString();
-//				System.out.println(line);
-				if(line.contains("CommentImpl") || line.contains("LabelImpl")) {
+				if(line.contains("CommentImpl") || line.contains("LabelImpl") || line.contains("SemitonesToRmpRateImpl")) {
+//					System.out.println(line);
 					comments = comments + 1;
 				}
 			}

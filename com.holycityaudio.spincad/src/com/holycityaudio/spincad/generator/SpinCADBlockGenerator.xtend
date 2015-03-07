@@ -93,6 +93,7 @@ import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 import com.holycityaudio.spincad.spinCAD.SetChorusWidth
 import com.holycityaudio.spincad.spinCAD.DivideInt
 import com.holycityaudio.spincad.spinCAD.MultiplyDouble
+import com.holycityaudio.spincad.spinCAD.SemitonesToRmpRate
 
 class SpinCADBlockGenerator {
  
@@ -252,7 +253,6 @@ def codeGenerate(String blockName, Program pr) {
 		if(sp != null) {
 			«p.varName» = sp.getRegister();
 		}
-
 	'''
 	
 	def setOutput(Pin p) '''
@@ -332,6 +332,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			GetDelayScaleControl: genGetDelayScaleControl(inst)
 			ReadChorusTap: genReadChorusTap(inst)
 			GetSamplesFromRatio: genGetSamplesFromRatio(inst)
+			SemitonesToRmpRate: genSemitonesToRmpRate(inst)
 			MinusDouble: genMinusDouble(inst)
 			DivideDouble: genDivideDouble(inst)
 			DivideInt: genDivideInt(inst)
@@ -391,6 +392,17 @@ def genDivideInt(DivideInt mp) {
 		int «mp.varName» = (int)(«mp.high» / «mp.low»);
 	'''
 }
+
+def genSemitonesToRmpRate(SemitonesToRmpRate mp) {
+	'''
+	«IF (mp.semitones > 0)»
+		double «mp.variable» = (16384.0 * Math.pow(2.0, («mp.semitones»/12.0) - 1))/32768.0;
+	«ELSE»
+		double «mp.variable» = (-8192.0 * Math.pow(2.0, (-«mp.semitones»/12.0) - 1))/32768.0;
+	«ENDIF»
+	'''
+}
+
 
 def genMultiplyDouble(MultiplyDouble mp) {
 	'''
@@ -531,11 +543,11 @@ def genSetOutputPin(SetOutputPin p) {
 	'''
 
 	def genWldr(LoadRampLFO inst) '''
-	sfxb.loadRampLFO(«inst.getArg1.spinRegs», «inst.getArg2», «inst.getArg3»);
+	sfxb.loadRampLFO((int) «inst.getArg1.spinRegs», (int) «inst.getArg2», (int) «inst.getArg3»);
 	'''
 
 def genWlds(LoadSinLFO inst) '''
-	sfxb.loadSinLFO(«inst.getArg1.spinRegs», «inst.getArg2», «inst.getArg3»);
+	sfxb.loadSinLFO((int) «inst.getArg1.spinRegs»,(int) «inst.getArg2», (int) «inst.getArg3»);
 	'''
 // B15_S1_9 instructions - RDA, WRA, WRAP - B15 is SPINMEM data type
 

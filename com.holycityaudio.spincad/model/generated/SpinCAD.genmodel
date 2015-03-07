@@ -136,6 +136,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetSamplesFromRatio/ratio"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetSamplesFromRatio/length"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//SemitonesToRmpRate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SemitonesToRmpRate/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SemitonesToRmpRate/semitones"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//GetBaseAddress"/>
     <genClasses ecoreClass="SpinCAD.ecore#//SetOutputPin">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SetOutputPin/pinName"/>

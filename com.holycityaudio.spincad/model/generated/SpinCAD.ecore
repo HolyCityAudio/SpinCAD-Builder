@@ -133,6 +133,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ratio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemitonesToRmpRate" eSuperTypes="#//Macro">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semitones" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GetBaseAddress" eSuperTypes="#//Macro"/>
   <eClassifiers xsi:type="ecore:EClass" name="SetOutputPin" eSuperTypes="#//Macro">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="pinName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -203,7 +207,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ReadDelay" eSuperTypes="#//Inst_B15_S1_9"/>
   <eClassifiers xsi:type="ecore:EClass" name="LoadSinLFO" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg2" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="arg3" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LoadRampLFO" eSuperTypes="#//Instruction">
