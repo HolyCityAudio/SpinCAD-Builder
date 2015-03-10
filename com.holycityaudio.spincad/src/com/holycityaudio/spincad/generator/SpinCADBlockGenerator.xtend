@@ -258,7 +258,7 @@ def codeGenerate(String blockName, Program pr) {
 	def setOutput(Pin p) '''
 		this.getPin("«p.name»").setRegister(«p.varName»);
 	'''
-	// TODO the idea of isPinConnected() is to create conditional sections within codeGenerate() 
+	// the idea of isPinConnected() is to create conditional sections within codeGenerate() 
 	// of any given block.  For example, if the pin is connected, then take the value of the source.
 	// Otherwise, assign a default value.  Maybe I can generalize that last part a bit better.
 	
@@ -395,14 +395,16 @@ def genDivideInt(DivideInt mp) {
 
 def genSemitonesToRmpRate(SemitonesToRmpRate mp) {
 	'''
-	«IF (mp.semitones > 0)»
-		double «mp.variable» = (16384.0 * Math.pow(2.0, («mp.semitones»/12.0) - 1))/32768.0;
-	«ELSE»
-		double «mp.variable» = (-8192.0 * Math.pow(2.0, (-«mp.semitones»/12.0) - 1))/32768.0;
-	«ENDIF»
+	double «mp.variable» = 0.0;
+	if(«mp.semitones» > 0) {
+		«mp.variable» = (16384.0 * Math.pow(2.0, («mp.semitones»/12.0) - 1))/32768.0;
+	}
+	else
+	{
+		«mp.variable» = (-8192.0 * Math.pow(2.0, (-«mp.semitones»/12.0) - 1))/32768.0;
+	}
 	'''
 }
-
 
 def genMultiplyDouble(MultiplyDouble mp) {
 	'''

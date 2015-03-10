@@ -141,7 +141,7 @@ GetInputDefault: '@getInputDefault' name = ID variable = ID scale = SPINDOUBLE d
 GetDelayScaleControl: '@getDelayScaleControl' ratio = ID length = ID offset = ID (control = ID)?;
 ReadChorusTap: '@readChorusTap' LFO = INT SINCOS = INT ratio = ID length = ID offset = ID;
 GetSamplesFromRatio: '@getSamplesFromRatio' variable = ID ratio = SPINDOUBLE length = SPINDOUBLE;
-SemitonesToRmpRate: '@semitonesToRmpRate' variable = ID semitones = INT;
+SemitonesToRmpRate: '@semitonesToRmpRate' variable = ID semitones = SPINDOUBLE;
 GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = ID varName = ID;
 MinusDouble: '@minusDouble' varName = ID high = ID low = ID;

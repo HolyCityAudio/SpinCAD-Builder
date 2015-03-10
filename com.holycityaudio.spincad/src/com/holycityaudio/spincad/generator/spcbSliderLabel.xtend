@@ -41,6 +41,10 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 			«IF e.option == "LOGFREQ"»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(Math.log10(«e.minVal») * 100.0),(int) (Math.log10(«e.maxVal») * 100.0), (int) (Math.log10(gCB.get«e.ename»()) * 100));
 			«ENDIF»
+			«IF e.option == "DBLEVEL"»
+			// dB level slider goes in steps of 1 dB
+				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal»),(int) («e.maxVal»), (int) (20 * Math.log10(gCB.get«e.ename»())));
+			«ENDIF»
 			«IF e.option == "LINEAR"»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»));
 			«ENDIF»
@@ -68,7 +72,11 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 	
 def static genSetterGetter(SpinSliderLabel e) { '''
 	public void set«e.ename»(double __param) {
+		«IF e.option == "DBLEVEL"»
+		«e.ename» = Math.pow(10.0, __param/20.0);	
+		«ELSE»
 		«e.ename» = __param;	
+		«ENDIF»
 	}
 
 	public double get«e.ename»() {
@@ -98,6 +106,9 @@ def static genLabelUpdater(SpinSliderLabel e) {
 			«ENDIF»
 			«IF e.option == "SINLFOFREQ"»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", coeffToLFORate(gCB.get«e.ename»())));		
+			«ENDIF»
+			«IF e.option == "DBLEVEL"»
+				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f dB", (20 * Math.log10(gCB.get«e.ename»()))));		
 			«ENDIF»
 		«ELSE»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.get«e.ename»()));		
