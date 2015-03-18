@@ -259,7 +259,7 @@ SPINCHOREGFLAGS:
 ;
 
 SPINMEM: 
-	buffer = SPINBUF (value = INT | offset=[Offset])?
+	buffer = SPINBUF (value = INT ('*' scale = ID)? | offset=[Offset])?
 ;
 
 SPINBUF: ID('#'|'^')?('+'|'-')?

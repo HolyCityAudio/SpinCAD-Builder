@@ -249,6 +249,7 @@
     <genClasses ecoreClass="SpinCAD.ecore#//SPINMEM">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SPINMEM/buffer"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SPINMEM/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SPINMEM/scale"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//SPINMEM/offset"/>
     </genClasses>
   </genPackages>

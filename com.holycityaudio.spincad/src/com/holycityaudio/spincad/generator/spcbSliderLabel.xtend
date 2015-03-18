@@ -39,7 +39,8 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
-				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(Math.log10(«e.minVal») * 100.0),(int) (Math.log10(«e.maxVal») * 100.0), (int) (Math.log10(gCB.get«e.ename»()) * 100));
+//				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(Math.log10(«e.minVal») * 100.0),(int) (Math.log10(«e.maxVal») * 100.0), (int) (Math.log10(gCB.get«e.ename»()) * 100));
+				«e.ename»Slider = gCB.LogFilterSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»());
 			«ENDIF»
 			«IF e.option == "DBLEVEL"»
 			// dB level slider goes in steps of 1 dB
@@ -88,7 +89,11 @@ def static genSetterGetter(SpinSliderLabel e) { '''
 // this will generate the proper style of listener
 def static genChangeListener(SpinSliderLabel e) { '''
 		if(ce.getSource() == «e.ename»Slider) {
+		«IF e.option == "LOGFREQ"»
+			gCB.set«e.ename»((double) gCB.freqToFilt(gCB.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»)));
+		«ELSE»
 			gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
+		«ENDIF»
 			update«e.ename»Label();
 		}
 '''
@@ -102,7 +107,8 @@ def static genLabelUpdater(SpinSliderLabel e) {
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/gCB.getSamplerate()));		
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
-				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", Math.pow(10.0, gCB.get«e.ename»())) + " Hz");		
+//				kflLabel.setText("HF damping freq 1:" + String.format("%4.1f", gCB.filtToFreq(gCB.getkfl())) + " Hz");		
+				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.filtToFreq(gCB.get«e.ename»())) + " Hz");		
 			«ENDIF»
 			«IF e.option == "SINLFOFREQ"»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", coeffToLFORate(gCB.get«e.ename»())));		

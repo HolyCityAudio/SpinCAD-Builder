@@ -568,9 +568,13 @@ def genWriteAllpass(WriteAllpass inst) {
 	
 def genDelayInst(Inst_B15_S1_9 inst, String className) { 
 		
+		var scale = "1.0";
+		if(inst.arg1.getScale != null) {
+				scale = inst.arg1.getScale;
+		}
 		if(inst.arg1.getBuffer.endsWith("+") || inst.arg1.getBuffer.endsWith("-")) {
 	 		if(inst.getArg1.getValue != 0) {'''
-			sfxb.«className»("«inst.getArg1.getBuffer»", «inst.getArg1.getValue», «inst.getArg2»);
+			sfxb.«className»("«inst.getArg1.getBuffer»", (int)(«inst.getArg1.getValue» * «scale»), «inst.getArg2»);
 			'''
 			} 
 			else {
