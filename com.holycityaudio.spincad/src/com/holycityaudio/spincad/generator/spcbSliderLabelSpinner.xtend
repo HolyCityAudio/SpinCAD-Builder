@@ -76,18 +76,34 @@ def static initialize(String blockName, SliderLabelSpinner e) { '''
 			format.setMaximumFractionDigits(2);  
 			editor.getTextField().setHorizontalAlignment(SwingConstants.CENTER);  
 			Dimension d = «e.ename»Spinner.getPreferredSize();  
-			d.width = 55;  
+			d.width = 25;  
 			«e.ename»Spinner.setPreferredSize(d);  
 			
 			update«e.ename»Spinner();
 			«e.ename»Spinner.addChangeListener(new «blockName»Listener());
+			
+			JPanel topLine = new JPanel();
+			topLine.setLayout(new BoxLayout(topLine, BoxLayout.X_AXIS));
 
-			frame.add(Box.createRigidArea(new Dimension(5,4)));			
-			frame.getContentPane().add(«e.ename»Label);
-			frame.add(Box.createRigidArea(new Dimension(5,4)));			
-			frame.getContentPane().add(«e.ename»Spinner);		
-			frame.add(Box.createRigidArea(new Dimension(5,4)));			
-			frame.getContentPane().add(«e.ename»Slider);		
+			topLine.add(Box.createRigidArea(new Dimension(35,4)));			
+			topLine.add(«e.ename»Label);
+			topLine.add(Box.createRigidArea(new Dimension(35,4)));			
+			topLine.add(«e.ename»Spinner);
+			
+			Border border2 = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
+			topLine.setBorder(border2);
+
+			Border border1 = BorderFactory.createBevelBorder(BevelBorder.RAISED);
+			JPanel innerPanel = new JPanel();
+				
+			innerPanel.setLayout(new BoxLayout(innerPanel, BoxLayout.Y_AXIS));
+			innerPanel.add(Box.createRigidArea(new Dimension(5,4)));			
+			innerPanel.add(topLine);
+			innerPanel.add(Box.createRigidArea(new Dimension(5,4)));			
+			innerPanel.add(«e.ename»Slider);		
+			innerPanel.setBorder(border1);
+
+			frame.add(innerPanel);
 '''
 	}
 	
@@ -109,6 +125,9 @@ def static genSetterGetter(SliderLabelSpinner e) { '''
 // this will generate the proper style of listener
 // when slider moves, update the spinner
 def static genChangeListener(SliderLabelSpinner e) { '''
+		if(silentGUIChange == true) 
+			return;
+
 		if(ce.getSource() == «e.ename»Slider) {
 		«IF e.option == "LOGFREQ"»
 			gCB.set«e.ename»((double) gCB.freqToFilt(gCB.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»)));

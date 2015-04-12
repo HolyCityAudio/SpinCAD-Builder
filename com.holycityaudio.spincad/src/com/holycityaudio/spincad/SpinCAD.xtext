@@ -92,7 +92,7 @@ SpinSliderLabel:
 ;
 
 SliderLabelSpinner:
-	'@sliderLabelSpinner' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
+	'@sliderLabelSpinner' ename = ID controlName = (ID | STRING) (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
 SliderLabelCheckBox: 

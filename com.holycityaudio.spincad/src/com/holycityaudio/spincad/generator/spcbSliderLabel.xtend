@@ -39,7 +39,6 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
-//				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(Math.log10(«e.minVal») * 100.0),(int) (Math.log10(«e.maxVal») * 100.0), (int) (Math.log10(gCB.get«e.ename»()) * 100));
 				«e.ename»Slider = gCB.LogFilterSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»());
 			«ENDIF»
 			«IF e.option == "DBLEVEL"»
@@ -61,13 +60,21 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 		«ELSE»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 		«ENDIF»
-			«e.ename»Slider.addChangeListener(new «blockName»SliderListener());
+			«e.ename»Slider.addChangeListener(new «blockName»Listener());
 			«e.ename»Label = new JLabel();
 			update«e.ename»Label();
-			frame.add(Box.createRigidArea(new Dimension(5,4)));			
-			frame.getContentPane().add(«e.ename»Label);
-			frame.add(Box.createRigidArea(new Dimension(5,4)));			
-			frame.getContentPane().add(«e.ename»Slider);		
+			
+			Border «e.ename»border = BorderFactory.createBevelBorder(BevelBorder.RAISED);
+			JPanel «e.ename»innerPanel = new JPanel();
+				
+			«e.ename»innerPanel.setLayout(new BoxLayout(«e.ename»innerPanel, BoxLayout.Y_AXIS));
+			«e.ename»innerPanel.add(Box.createRigidArea(new Dimension(5,4)));			
+			«e.ename»innerPanel.add(«e.ename»Label);
+			«e.ename»innerPanel.add(Box.createRigidArea(new Dimension(5,4)));			
+			«e.ename»innerPanel.add(«e.ename»Slider);		
+			«e.ename»innerPanel.setBorder(«e.ename»border);
+
+			frame.add(«e.ename»innerPanel);
 '''
 	}
 	
