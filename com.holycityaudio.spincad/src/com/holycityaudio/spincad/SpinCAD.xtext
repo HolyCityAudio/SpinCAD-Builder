@@ -85,10 +85,14 @@ SpinBool:
 
 //---------------------------------------------
 // -- Control Panel objects 
-Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel | SpinRadioButton | SliderLabelCheckBox | SpinComboBox;
+Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel | SpinRadioButton | SliderLabelCheckBox | SpinComboBox | SliderLabelSpinner;
 
 SpinSliderLabel:
 	'@sliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
+;
+
+SliderLabelSpinner:
+	'@sliderLabelSpinner' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
 SliderLabelCheckBox: 
@@ -127,7 +131,8 @@ Macro:
 	IsPinConnected | IsTrue | IsElse | IsEndif | IsGreaterThan | IsEqualTo |
 	IsLessThan | GetInputDefault | ReadChorusTap | SetChorusWidth |
 	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio |
-	MinusDouble | DivideDouble | DivideInt | MultiplyDouble | SemitonesToRmpRate
+	MinusDouble | DivideDouble | DivideInt | MultiplyDouble | SemitonesToRmpRate |
+	Equals
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
@@ -146,6 +151,7 @@ GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = ID varName = ID;
 MinusDouble: '@minusDouble' varName = ID high = ID low = ID;
 DivideDouble: '@divideDouble' varName = ID high = ID low = ID;
+Equals: '@equals' varName = ID value = SPINDOUBLE;
 DivideInt: '@divideInt' varName = ID high = ID low = INT;
 MultiplyDouble: '@multiplyDouble' varName = ID high = ID low = ID;
 
@@ -219,7 +225,7 @@ WriteDelay: 'wra' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 WriteAllpass: 'wrap' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 ReadDelay: 'rda' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 LoadSinLFO: 'wlds' arg1 = SPINREGISTER ',' arg2 = SPINDOUBLE',' arg3 = INT;
-LoadRampLFO: 'wldr' arg1 = SPINREGISTER ',' arg2 = SPINDOUBLE ',' arg3 = INT;
+LoadRampLFO: 'wldr' arg1 = SPINREGISTER ',' arg2 = SPINREGISTER ',' arg3 = SPINREGISTER;
 
 // Chorus instructions
 ChorusReadDelay: 'cho rda' ',' arg1 = SPINREGISTER ',' arg2 = SPINCHOREGFLAGS ',' arg3 = SPINMEM;
@@ -251,7 +257,7 @@ SPINDOUBLE:
 ;
  
 SPINREGISTER: 
-	(ID | INT )
+	('-')?(ID | INT )
 ;
 
 SPINCHOREGFLAGS: 

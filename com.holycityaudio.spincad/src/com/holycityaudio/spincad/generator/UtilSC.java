@@ -57,7 +57,7 @@ public class UtilSC {
 			for(int ii = start; ii < end; ii++) {
 				EObject getLine = siblings.get(ii);
 				String line = getLine.toString();
-				if(line.contains("CommentImpl") || line.contains("LabelImpl") || line.contains("SemitonesToRmpRateImpl")) {
+				if(line.contains("CommentImpl") || line.contains("LabelImpl") || line.contains("SemitonesToRmpRateImpl") || line.contains("IsEqualToImpl") || line.contains("IsElseImpl") || line.contains("IsEndifImpl")) {
 //					System.out.println(line);
 					comments = comments + 1;
 				}

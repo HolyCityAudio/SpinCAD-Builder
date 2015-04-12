@@ -55,6 +55,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/precision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinSliderLabel/option"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//SliderLabelSpinner">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelSpinner/controlName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelSpinner/minVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelSpinner/maxVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelSpinner/initVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelSpinner/multiplier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelSpinner/precision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelSpinner/option"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//SliderLabelCheckBox">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/controlName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SliderLabelCheckBox/minVal"/>
@@ -154,6 +163,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/varName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/high"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/low"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//Equals">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equals/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equals/value"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//DivideInt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideInt/varName"/>

@@ -94,6 +94,8 @@ import com.holycityaudio.spincad.spinCAD.SetChorusWidth
 import com.holycityaudio.spincad.spinCAD.DivideInt
 import com.holycityaudio.spincad.spinCAD.MultiplyDouble
 import com.holycityaudio.spincad.spinCAD.SemitonesToRmpRate
+import com.holycityaudio.spincad.spinCAD.Equals
+import com.holycityaudio.spincad.spinCAD.SliderLabelSpinner
 
 class SpinCADBlockGenerator {
  
@@ -156,6 +158,7 @@ def codeGenerate(String blockName, Program pr) {
 					SpinCheckBox:{setHasControlPanel()}
 					SpinComboBox:{setHasControlPanel()}
 					SpinSliderLabel:{setHasControlPanel()}
+					SliderLabelSpinner:{setHasControlPanel()}
 				}»
 			«ENDFOR»			}
 		
@@ -218,6 +221,7 @@ def codeGenerate(String blockName, Program pr) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					SpinSliderLabel:{spcbSliderLabel.genSetterGetter(e)}
+					SliderLabelSpinner:{spcbSliderLabelSpinner.genSetterGetter(e)}
 					SpinCheckBox:{spcbCheckBox.genSetterGetter(e)}
 					SpinComboBox:{spcbComboBox.genSetterGetter(e)}
 				}»
@@ -335,6 +339,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			SemitonesToRmpRate: genSemitonesToRmpRate(inst)
 			MinusDouble: genMinusDouble(inst)
 			DivideDouble: genDivideDouble(inst)
+			Equals: genEquals(inst)
 			DivideInt: genDivideInt(inst)
 			MultiplyDouble: genMultiplyDouble(inst)
 			}»	
@@ -409,6 +414,12 @@ def genSemitonesToRmpRate(SemitonesToRmpRate mp) {
 def genMultiplyDouble(MultiplyDouble mp) {
 	'''
 		double «mp.varName» = «mp.high» * «mp.low»;
+	'''
+}
+
+def genEquals(Equals mp) { 
+	'''
+		«mp.varName» = «mp.value»;
 	'''
 }
 
