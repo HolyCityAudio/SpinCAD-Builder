@@ -24,7 +24,7 @@ grammar com.holycityaudio.spincad.SpinCAD with org.eclipse.xtext.common.Terminal
 generate spinCAD "http://www.holycityaudio.com/spincad/SpinCAD"
 
 Program:
-	'@name' name = ID
+	'@name' name = (ID | STRING)
 	(pins += Pin)+ 
 	(elements += SpinElement)+
 	;
@@ -43,19 +43,19 @@ OutputPin:
 ;
 
 AudioInput:
-	'@audioInput' varName = ID name = ID
+	'@audioInput' varName = ID name = (ID | STRING)
 ;
 
 AudioOutput:
-	'@audioOutput' varName = ID name = ID
+	'@audioOutput' varName = ID name = (ID | STRING)
 ;
 
 ControlInput:
-	'@controlInput' varName = ID name = ID
+	'@controlInput' varName = ID name = (ID | STRING)
 ;
 
 ControlOutput:
-	'@controlOutput' varName = ID name = ID
+	'@controlOutput' varName = ID name = (ID | STRING)
 ;
 
 // --------------- Spin ASM Elements	
@@ -88,7 +88,7 @@ SpinBool:
 Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel | SpinRadioButton | SliderLabelCheckBox | SpinComboBox | SliderLabelSpinner;
 
 SpinSliderLabel:
-	'@sliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
+	'@sliderLabel' ename = ID controlName = (ID | STRING) (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
 SliderLabelSpinner:
@@ -96,20 +96,20 @@ SliderLabelSpinner:
 ;
 
 SliderLabelCheckBox: 
-	'@sliderLabelCheckBox' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
+	'@sliderLabelCheckBox' ename = ID controlName = (ID | STRING) (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
 // ename is the name of the controlled variable, controlName is the text to display, value is the init value
 SpinCheckBox:
-	'@checkbox' ename = ID controlName = ID
+	'@checkbox' ename = ID controlName = (ID | STRING)
 ;
 
 LogFreqSliderLabel:
-	'@logFreqSliderLabel' ename = ID controlName = ID (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
+	'@logFreqSliderLabel' ename = ID controlName = (ID | STRING) (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
 ;
 
 SpinRadioButton:
-	'@spinRadioButton' ename = ID controlName = ID
+	'@spinRadioButton' ename = ID controlName = (ID | STRING)
 ;
 
 SpinComboBox:
@@ -135,7 +135,7 @@ Macro:
 	Equals
 ;
 
-IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = ID;
+IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = (ID | STRING);
 IsGreaterThan returns IsGreaterThan: '@isGreaterThan' variable = ID value = INT;
 IsLessThan returns IsLessThan: '@isLessThan' variable = ID value = INT;
 IsEqualTo returns IsEqualTo: '@isEqualTo' variable = ID value = INT;
@@ -148,7 +148,7 @@ ReadChorusTap: '@readChorusTap' LFO = INT SINCOS = INT ratio = ID length = ID of
 GetSamplesFromRatio: '@getSamplesFromRatio' variable = ID ratio = SPINDOUBLE length = SPINDOUBLE;
 SemitonesToRmpRate: '@semitonesToRmpRate' variable = ID semitones = SPINDOUBLE;
 GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
-SetOutputPin: '@setOutputPin' pinName = ID varName = ID;
+SetOutputPin: '@setOutputPin' pinName = (ID | STRING) varName = ID;
 MinusDouble: '@minusDouble' varName = ID high = ID low = ID;
 DivideDouble: '@divideDouble' varName = ID high = ID low = ID;
 Equals: '@equals' varName = ID value = SPINDOUBLE;
@@ -224,7 +224,7 @@ ScaleOffset: 'sof' arg1 = SPINDOUBLE ',' arg2 = SPINDOUBLE ;
 WriteDelay: 'wra' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 WriteAllpass: 'wrap' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
 ReadDelay: 'rda' arg1 = SPINMEM ',' arg2 = SPINDOUBLE;
-LoadSinLFO: 'wlds' arg1 = SPINREGISTER ',' arg2 = SPINDOUBLE',' arg3 = INT;
+LoadSinLFO: 'wlds' arg1 = SPINREGISTER ',' arg2 = SPINDOUBLE ',' arg3 = SPINDOUBLE;
 LoadRampLFO: 'wldr' arg1 = SPINREGISTER ',' arg2 = SPINREGISTER ',' arg3 = SPINREGISTER;
 
 // Chorus instructions

@@ -62,9 +62,11 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 		«ENDIF»
 			«e.ename»Slider.addChangeListener(new «blockName»Listener());
 			«e.ename»Label = new JLabel();
+			Border «e.ename»Border1 = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
+			«e.ename»Label.setBorder(«e.ename»Border1);
 			update«e.ename»Label();
 			
-			Border «e.ename»border = BorderFactory.createBevelBorder(BevelBorder.RAISED);
+			Border «e.ename»border2 = BorderFactory.createBevelBorder(BevelBorder.RAISED);
 			JPanel «e.ename»innerPanel = new JPanel();
 				
 			«e.ename»innerPanel.setLayout(new BoxLayout(«e.ename»innerPanel, BoxLayout.Y_AXIS));
@@ -72,7 +74,7 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 			«e.ename»innerPanel.add(«e.ename»Label);
 			«e.ename»innerPanel.add(Box.createRigidArea(new Dimension(5,4)));			
 			«e.ename»innerPanel.add(«e.ename»Slider);		
-			«e.ename»innerPanel.setBorder(«e.ename»border);
+			«e.ename»innerPanel.setBorder(«e.ename»border2);
 
 			frame.add(«e.ename»innerPanel);
 '''
