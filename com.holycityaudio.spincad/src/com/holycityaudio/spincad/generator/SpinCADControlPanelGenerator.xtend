@@ -141,23 +141,20 @@ public «blockName+"ControlPanel"»(«blockName+"CADBlock"» genericCADBlock) {
 			}
 		}
 
-		// add item listener 
+		// add item state changed listener for Checkbox
 		class «blockName»ItemListener implements java.awt.event.ItemListener { 
-		public void stateChanged(ChangeEvent ce) {
+			
+		@Override
+			public void itemStateChanged(ItemEvent arg0) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					SpinCheckBox: { spcbCheckBox.genItemListener(e)}
 				}»
 			«ENDFOR»
 			}
-			
-		@Override
-			public void itemStateChanged(ItemEvent arg0) {
-				// TODO Auto-generated method stub
-			}
 		}
 		
-		// add action listener 
+		// add action listener for Combo Box
 		class «blockName»ActionListener implements java.awt.event.ActionListener { 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

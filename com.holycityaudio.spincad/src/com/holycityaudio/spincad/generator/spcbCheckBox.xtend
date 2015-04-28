@@ -46,17 +46,17 @@ def static genSetterGetter(SpinCheckBox b) { '''
 	
 // this will generate the proper style of listener
 def static genItemListener(SpinCheckBox b) { '''
-		if(ce.getSource() == «b.ename»CheckBox) {
+		if(arg0.getSource() == «b.ename»CheckBox) {
 			gCB.set«b.ename»((boolean) («b.ename»CheckBox.isSelected()));
 		}
 '''
 }
 
 def static initialize(String blockName, SpinCheckBox b) { '''
-		«b.ename»CheckBox = new JCheckBox();
-		«b.ename»CheckBox.setText("«b.controlName»");
-		«b.ename»CheckBox.addItemListener(new «blockName»ItemListener());
-		frame.getContentPane().add(«b.ename»CheckBox);		
+
+			«b.ename»CheckBox = new JCheckBox("«b.controlName»", gCB.get«b.ename»());
+			«b.ename»CheckBox.addItemListener(new «blockName»ItemListener());
+			frame.getContentPane().add(«b.ename»CheckBox);		
 '''
 	}
 }

@@ -28,11 +28,11 @@ class spcbBool extends BlockVariable {
 // this will generate setters and getters in the CADBlock class
 
 def static declareVar(SpinBool e) { '''
-		boolean «e.name»;
+		boolean «e.name» = «e.value»;
 '''}
 
 def static initialize(SpinBool e) { '''
-		«e.name» = «e.value»;
+//		«e.name» = «e.value»;
 '''
 	}
 }
