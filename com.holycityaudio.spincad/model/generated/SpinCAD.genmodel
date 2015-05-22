@@ -93,6 +93,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinComboBox/optionb"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinComboBox/optionc"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinComboBox/optiond"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinComboBox/optione"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinComboBox/optionf"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Comment">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Comment/remark"/>

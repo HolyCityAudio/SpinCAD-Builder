@@ -64,6 +64,12 @@ def static initialize(String blockName, SpinComboBox b) { '''
 		«IF b.optiond != null»	
 			«b.ename»ComboBox.addItem("«b.optiond»");
 		«ENDIF»
+		«IF b.optione != null»	
+			«b.ename»ComboBox.addItem("«b.optione»");
+		«ENDIF»
+		«IF b.optionf != null»	
+			«b.ename»ComboBox.addItem("«b.optionf»");
+		«ENDIF»
 			«b.ename»ComboBox.setSelectedIndex(gCB.get«b.ename»());
 			frame.add(Box.createRigidArea(new Dimension(5,8)));			
 			frame.getContentPane().add(«b.ename»ComboBox);

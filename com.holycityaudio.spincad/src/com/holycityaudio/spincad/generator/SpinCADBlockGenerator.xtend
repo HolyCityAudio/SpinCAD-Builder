@@ -406,7 +406,7 @@ def genSemitonesToRmpRate(SemitonesToRmpRate mp) {
 	}
 	else
 	{
-		«mp.variable» = (-8192.0 * Math.pow(2.0, (-«mp.semitones»/12.0) - 1))/32768.0;
+		«mp.variable» = (-32.0 * Math.pow(2.0, (-«mp.semitones»/12.0) - 1))/32768.0;
 	}
 	'''
 }
