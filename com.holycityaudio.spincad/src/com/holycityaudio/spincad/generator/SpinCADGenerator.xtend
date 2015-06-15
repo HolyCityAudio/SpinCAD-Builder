@@ -41,8 +41,8 @@ class SpinCADGenerator implements IGenerator {
 		fsa.generateFile(pkage + resource.className+"CADBlock.java", toCADBlockCode(resource.contents.head as Program))
 		pkage = "/com/holycityaudio/SpinCAD/ControlPanel/"
 		fsa.generateFile(pkage + resource.className+"ControlPanel.java", toControlPanelCode(resource.contents.head as Program))
-		pkage = "/com/holycityaudio/SpinCAD/test/"
-		fsa.generateFile(pkage + resource.className+"Test.java", toTestCode(resource.contents.head as Program))
+//		pkage = "/com/holycityaudio/SpinCAD/test/"
+//		fsa.generateFile(pkage + resource.className+"Test.java", toTestCode(resource.contents.head as Program))
 	}
 	
 	def className(Resource res) {

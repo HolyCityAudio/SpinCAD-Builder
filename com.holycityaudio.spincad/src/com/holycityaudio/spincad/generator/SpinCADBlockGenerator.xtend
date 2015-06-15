@@ -122,6 +122,7 @@ def codeGenerate(String blockName, Program pr) {
  */ 
 		package com.holycityaudio.SpinCAD.CADBlocks;
 	
+		import java.awt.Color;
 		import com.holycityaudio.SpinCAD.SpinCADBlock;
 		import com.holycityaudio.SpinCAD.SpinCADPin;
 		import com.holycityaudio.SpinCAD.SpinFXBlock;
@@ -137,12 +138,15 @@ def codeGenerate(String blockName, Program pr) {
 					// variables should be allocated within the CADBlock constructor
 					SpinEquate:{spcbEquate.declareVar(e)}
 					SpinBool:{spcbBool.declareVar(e)}
-				}»
+				}» 
 			«ENDFOR»
 
 			public «blockName+"CADBlock"»(int x, int y) {
 				super(x, y);
-				setName("«pr.name»");	
+				setName("«pr.name»");					
+			«IF pr.color != null»	
+				setBorderColor(new Color(«pr.color»));
+			«ENDIF»
 				// Iterate through pin definitions and allocate or assign as needed
 				«FOR Pin p : pr.pins»
 					«switch p {
@@ -236,23 +240,23 @@ def codeGenerate(String blockName, Program pr) {
 	'''
 	
 	def genAudioInput(Pin p) ''' 
-		addInputPin(this, "«p.name»");
+		addInputPin(this, "«p.label»");
 	'''
 	
 	def genAudioOutput(Pin p) '''
-		addOutputPin(this, "«p.name»");
+		addOutputPin(this, "«p.label»");
 	'''
 
 	def genControlInput(Pin p) '''
-		addControlInputPin(this, "«p.name»");
+		addControlInputPin(this, "«p.label»");
 	'''
 	
 	def genControlOutput(Pin p) '''
-		addControlOutputPin(this, "«p.name»");
+		addControlOutputPin(this, "«p.label»");
 	'''
 	
 	def connect(Pin p) '''
-		sp = this.getPin("«p.name»").getPinConnection();
+		sp = this.getPin("«p.label»").getPinConnection();
 		int «p.varName» = -1;
 		if(sp != null) {
 			«p.varName» = sp.getRegister();
@@ -260,7 +264,7 @@ def codeGenerate(String blockName, Program pr) {
 	'''
 	
 	def setOutput(Pin p) '''
-		this.getPin("«p.name»").setRegister(«p.varName»);
+		this.getPin("«p.label»").setRegister(«p.varName»);
 	'''
 	// the idea of isPinConnected() is to create conditional sections within codeGenerate() 
 	// of any given block.  For example, if the pin is connected, then take the value of the source.
@@ -310,7 +314,7 @@ def codeGenerate(String blockName, Program pr) {
 
 def genGetInputDefault(GetInputDefault g)'''
 		if(«g.variable» != -1) {
-			System.out.println("Pin is Connected! " + "«g.name»"); 
+			System.out.println("Pin is Connected! " + "«g.label»"); 
 			sfxb.readRegister(«g.variable», «g.scale»);
 		}
 		else

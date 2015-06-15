@@ -9,12 +9,13 @@
       fileExtensions="spincad" ecorePackage="SpinCAD.ecore#/">
     <genClasses ecoreClass="SpinCAD.ecore#//Program">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Program/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Program/color"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Program/pins"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SpinCAD.ecore#//Program/elements"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Pin">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Pin/varName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Pin/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Pin/label"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//InputPin"/>
     <genClasses ecoreClass="SpinCAD.ecore#//OutputPin"/>
@@ -40,7 +41,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Offset/length"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//SpinBool">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinBool/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinBool/label"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinBool/value"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Control">
@@ -124,7 +125,7 @@
     <genClasses ecoreClass="SpinCAD.ecore#//IsElse"/>
     <genClasses ecoreClass="SpinCAD.ecore#//IsEndif"/>
     <genClasses ecoreClass="SpinCAD.ecore#//GetInputDefault">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/label"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/variable"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/scale"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/defaultVal"/>

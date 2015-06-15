@@ -25,6 +25,7 @@ generate spinCAD "http://www.holycityaudio.com/spincad/SpinCAD"
 
 Program:
 	'@name' name = (ID | STRING)
+	('@color' color = STRING)?
 	(pins += Pin)+ 
 	(elements += SpinElement)+
 	;
@@ -43,19 +44,19 @@ OutputPin:
 ;
 
 AudioInput:
-	'@audioInput' varName = ID name = (ID | STRING)
+	'@audioInput' varName = ID label = (ID | STRING)
 ;
 
 AudioOutput:
-	'@audioOutput' varName = ID name = (ID | STRING)
+	'@audioOutput' varName = ID label = (ID | STRING)
 ;
 
 ControlInput:
-	'@controlInput' varName = ID name = (ID | STRING)
+	'@controlInput' varName = ID label = (ID | STRING)
 ;
 
 ControlOutput:
-	'@controlOutput' varName = ID name = (ID | STRING)
+	'@controlOutput' varName = ID label = (ID | STRING)
 ;
 
 // --------------- Spin ASM Elements	
@@ -80,7 +81,7 @@ Offset:
 
 // SpinCAD logical variable, usually associated with a Checkbox
 SpinBool:
-	'bool' name = ID value = BOOLEAN
+	'bool' label = ID value = BOOLEAN
 ;
 
 //---------------------------------------------
@@ -142,7 +143,7 @@ IsEqualTo returns IsEqualTo: '@isEqualTo' variable = ID value = INT;
 IsTrue returns IsTrue: '@isTrue' variable = ID;
 IsElse: {IsElse} '@else';
 IsEndif: {IsEndif} "@endif";
-GetInputDefault: '@getInputDefault' name = ID variable = ID scale = SPINDOUBLE defaultVal = SPINDOUBLE;
+GetInputDefault: '@getInputDefault' label = ID variable = ID scale = SPINDOUBLE defaultVal = SPINDOUBLE;
 GetDelayScaleControl: '@getDelayScaleControl' ratio = ID length = ID offset = ID (control = ID)?;
 ReadChorusTap: '@readChorusTap' LFO = INT SINCOS = INT ratio = ID length = ID offset = ID;
 GetSamplesFromRatio: '@getSamplesFromRatio' variable = ID ratio = SPINDOUBLE length = SPINDOUBLE;

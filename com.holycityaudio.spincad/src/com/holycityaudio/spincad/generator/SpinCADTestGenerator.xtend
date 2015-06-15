@@ -121,7 +121,7 @@ def conAudioInput(Pin p, int i) {
 	'''	
 	{
 		SpinCADPin p1 = i.getPin("Output «i»");
-		SpinCADPin p2 = m.getPin("«p.name»");
+		SpinCADPin p2 = m.getPin("«p.label»");
 		p2.setConnection(i, p1);
 	}
 	'''
@@ -131,7 +131,7 @@ def conAudioOutput(Pin p, int i) {
 	'''	
 	{
 		SpinCADPin p1 = o.getPin("Input «i»");
-		SpinCADPin p2 = m.getPin("«p.name»");
+		SpinCADPin p2 = m.getPin("«p.label»");
 		p2.setConnection(o, p1);
 	}
 	'''
@@ -143,7 +143,7 @@ def conControlInput(Pin p, int i) {
 		Pot«i-1»CADBlock pot«i-1» = new Pot«i-1»CADBlock(25, 150 + 40 * «i»);
 		f.dropBlock(p, pot«i-1»);
 		SpinCADPin p1 = pot«i-1».getPin("Output 1");
-		SpinCADPin p2 = m.getPin("«p.name»");
+		SpinCADPin p2 = m.getPin("«p.label»");
 		p2.setConnection(pot«i-1», p1);
 	}
 	'''
