@@ -32,7 +32,7 @@ def static declareVar(SliderLabelSpinner e) { '''
 		JSlider «e.ename»Slider;
 		JLabel  «e.ename»Label;
 		JSpinner  «e.ename»Spinner;	
-		private boolean silentGUIChange = false;	
+		private boolean «e.ename»silentGUIChange = false;	
 '''}
 
 def static initialize(String blockName, SliderLabelSpinner e) { '''
@@ -67,43 +67,43 @@ def static initialize(String blockName, SliderLabelSpinner e) { '''
 			
 			«e.ename»Label = new JLabel("«e.controlName»");
 
-			SpinnerNumberModel «e.ename»SpinnerNumberModel = new SpinnerNumberModel(SpinCADBlock.filtToFreq(gCB.getfilt()) * 100, 0.51, 10000.00, 0.01);
+			SpinnerNumberModel «e.ename»SpinnerNumberModel = new SpinnerNumberModel(SpinCADBlock.filtToFreq(gCB.get«e.ename»()) * 100, 0.51, 10000.00, 0.01);
 
 			«e.ename»Spinner = new JSpinner(«e.ename»SpinnerNumberModel);
-			JSpinner.NumberEditor editor = (JSpinner.NumberEditor)«e.ename»Spinner.getEditor();  
-			DecimalFormat format = editor.getFormat();  
- 			format.setMinimumFractionDigits(2);  
-			format.setMaximumFractionDigits(2);  
-			editor.getTextField().setHorizontalAlignment(SwingConstants.CENTER);  
-			Dimension d = «e.ename»Spinner.getPreferredSize();  
-			d.width = 25;  
-			«e.ename»Spinner.setPreferredSize(d);  
+			JSpinner.NumberEditor «e.ename»editor = (JSpinner.NumberEditor)«e.ename»Spinner.getEditor();  
+			DecimalFormat «e.ename»format = «e.ename»editor.getFormat();  
+ 			«e.ename»format.setMinimumFractionDigits(2);  
+			«e.ename»format.setMaximumFractionDigits(2);  
+			«e.ename»editor.getTextField().setHorizontalAlignment(SwingConstants.CENTER);  
+			Dimension «e.ename»d = «e.ename»Spinner.getPreferredSize();  
+			«e.ename»d.width = 25;  
+			«e.ename»Spinner.setPreferredSize(«e.ename»d);  
 			
 			update«e.ename»Spinner();
 			«e.ename»Spinner.addChangeListener(new «blockName»Listener());
 			
-			JPanel topLine = new JPanel();
-			topLine.setLayout(new BoxLayout(topLine, BoxLayout.X_AXIS));
+			JPanel «e.ename»topLine = new JPanel();
+			«e.ename»topLine.setLayout(new BoxLayout(«e.ename»topLine, BoxLayout.X_AXIS));
 
-			topLine.add(Box.createRigidArea(new Dimension(35,4)));			
-			topLine.add(«e.ename»Label);
-			topLine.add(Box.createRigidArea(new Dimension(35,4)));			
-			topLine.add(«e.ename»Spinner);
+			«e.ename»topLine.add(Box.createRigidArea(new Dimension(35,4)));			
+			«e.ename»topLine.add(«e.ename»Label);
+			«e.ename»topLine.add(Box.createRigidArea(new Dimension(35,4)));			
+			«e.ename»topLine.add(«e.ename»Spinner);
 			
-			Border border2 = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
-			topLine.setBorder(border2);
+			Border «e.ename»border2 = BorderFactory.createBevelBorder(BevelBorder.LOWERED);
+			«e.ename»topLine.setBorder(«e.ename»border2);
 
-			Border border1 = BorderFactory.createBevelBorder(BevelBorder.RAISED);
-			JPanel innerPanel = new JPanel();
+			Border «e.ename»border1 = BorderFactory.createBevelBorder(BevelBorder.RAISED);
+			JPanel «e.ename»innerPanel = new JPanel();
 				
-			innerPanel.setLayout(new BoxLayout(innerPanel, BoxLayout.Y_AXIS));
-			innerPanel.add(Box.createRigidArea(new Dimension(5,4)));			
-			innerPanel.add(topLine);
-			innerPanel.add(Box.createRigidArea(new Dimension(5,4)));			
-			innerPanel.add(«e.ename»Slider);		
-			innerPanel.setBorder(border1);
+			«e.ename»innerPanel.setLayout(new BoxLayout(«e.ename»innerPanel, BoxLayout.Y_AXIS));
+			«e.ename»innerPanel.add(Box.createRigidArea(new Dimension(5,4)));			
+			«e.ename»innerPanel.add(«e.ename»topLine);
+			«e.ename»innerPanel.add(Box.createRigidArea(new Dimension(5,4)));			
+			«e.ename»innerPanel.add(«e.ename»Slider);		
+			«e.ename»innerPanel.setBorder(«e.ename»border1);
 
-			frame.add(innerPanel);
+			frame.add(«e.ename»innerPanel);
 '''
 	}
 	
@@ -125,7 +125,7 @@ def static genSetterGetter(SliderLabelSpinner e) { '''
 // this will generate the proper style of listener
 // when slider moves, update the spinner
 def static genChangeListener(SliderLabelSpinner e) { '''
-		if(silentGUIChange == true) 
+		if(«e.ename»silentGUIChange == true) 
 			return;
 
 		if(ce.getSource() == «e.ename»Slider) {
@@ -153,14 +153,14 @@ def static genSpinnerSliderUpdaterA(SliderLabelSpinner e) {
 			SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					silentGUIChange = true;
+					«e.ename»silentGUIChange = true;
 		«IF e.option != null»
 			«IF e.option == "lengthToTime"»
 			// XXX debug
 				«e.ename»Spinner.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/gCB.getSamplerate()));		
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
-				«e.ename»Spinner.setValue(gCB.filtToFreq(gCB.getfilt()));
+				«e.ename»Spinner.setValue(gCB.filtToFreq(gCB.get«e.ename»()));
 			«ENDIF»
 			«IF e.option == "SINLFOFREQ"»
 			// XXX debug
@@ -176,7 +176,7 @@ def static genSpinnerSliderUpdaterA(SliderLabelSpinner e) {
 		«ENDIF»
 				}
 				finally {
-					silentGUIChange = false;   	    	  
+					«e.ename»silentGUIChange = false;   	    	  
 				}
 			}
 		});
@@ -186,7 +186,7 @@ def static genSpinnerSliderUpdaterA(SliderLabelSpinner e) {
 			SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					silentGUIChange = true;
+					«e.ename»silentGUIChange = true;
 		«IF e.option != null»
 			«IF e.option == "lengthToTime"»
 // TBD
@@ -205,7 +205,7 @@ def static genSpinnerSliderUpdaterA(SliderLabelSpinner e) {
 		«ENDIF»
 				}
 				finally {
-					silentGUIChange = false;   	    	  
+					«e.ename»silentGUIChange = false;   	    	  
 				}
 			}
 		});
