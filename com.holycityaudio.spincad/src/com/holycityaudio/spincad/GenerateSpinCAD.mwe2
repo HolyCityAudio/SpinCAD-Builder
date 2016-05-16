@@ -4,9 +4,9 @@ import org.eclipse.emf.mwe.utils.*
 import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
-var grammarURI = "classpath:/com/holycityaudio/spincad/SpinCAD.xtext"
-var fileExtensions = "spincad"
 var projectName = "com.holycityaudio.spincad"
+var grammarURI = "platform:/resource/${projectName}/src/com/holycityaudio/spincad/SpinCAD.xtext"
+var fileExtensions = "spincad"
 var runtimeProject = "../${projectName}"
 var generateXtendStub = true
 var encoding = "UTF-8"

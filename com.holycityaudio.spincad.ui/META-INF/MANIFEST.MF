@@ -23,5 +23,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.holycityaudio.spincad.ui.quickfix,
  com.holycityaudio.spincad.ui.contentassist,
  com.holycityaudio.spincad.ui.contentassist.antlr,
- com.holycityaudio.spincad.ui.internal
+ com.holycityaudio.spincad.ui.internal,
+ com.holycityaudio.spincad.ui.contentassist.antlr.internal
 Bundle-Activator: com.holycityaudio.spincad.ui.internal.SpinCADActivator
