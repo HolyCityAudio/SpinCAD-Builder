@@ -33,11 +33,16 @@ def static declareVar(SpinSliderLabel e) { '''
 '''}
 
 def static initialize(String blockName, SpinSliderLabel e) { '''
-
+//
+// these functions translate between slider values, which have to be integers, to whatever in program value you wish.
+//
 		«IF e.option != null»
 			«IF e.option == "lengthToTime"»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»
+			«IF e.option == "timeToFilt"»
+				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
+			«ENDIF»			
 			«IF e.option == "LOGFREQ"»
 				«e.ename»Slider = gCB.LogFilterSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»());
 			«ENDIF»
@@ -115,6 +120,9 @@ def static genLabelUpdater(SpinSliderLabel e) {
 			«IF e.option == "lengthToTime"»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/gCB.getSamplerate()));		
 			«ENDIF»
+			«IF e.option == "timeToFilt"»
+				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", (gCB.get«e.ename»())) + " ms");		
+			«ENDIF»			
 			«IF e.option == "LOGFREQ"»
 //				kflLabel.setText("HF damping freq 1:" + String.format("%4.1f", gCB.filtToFreq(gCB.getkfl())) + " Hz");		
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.filtToFreq(gCB.get«e.ename»())) + " Hz");		
