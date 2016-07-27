@@ -38,11 +38,12 @@ def static declareVar(SliderLabelSpinner e) { '''
 def static initialize(String blockName, SliderLabelSpinner e) { '''
 
 		«IF e.option != null»
-			«IF e.option == "lengthToTime"»
+			«IF e.option == "LENGTHTOTIME"»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
-				«e.ename»Slider = SpinCADBlock.LogFilterSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»());
+			// multiplier is points per decade here
+				«e.ename»Slider = SpinCADBlock.LogSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»(), "«e.option»", «e.multiplier»);
 			«ENDIF»
 			«IF e.option == "DBLEVEL"»
 			// dB level slider goes in steps of 1 dB
@@ -155,7 +156,7 @@ def static genSpinnerSliderUpdaterA(SliderLabelSpinner e) {
 				try {
 					«e.ename»silentGUIChange = true;
 		«IF e.option != null»
-			«IF e.option == "lengthToTime"»
+			«IF e.option == "LENGTHTOTIME"»
 			// XXX debug
 				«e.ename»Spinner.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/gCB.getSamplerate()));		
 			«ENDIF»
@@ -188,7 +189,7 @@ def static genSpinnerSliderUpdaterA(SliderLabelSpinner e) {
 				try {
 					«e.ename»silentGUIChange = true;
 		«IF e.option != null»
-			«IF e.option == "lengthToTime"»
+			«IF e.option == "LENGTHTOTIME"»
 // TBD
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»

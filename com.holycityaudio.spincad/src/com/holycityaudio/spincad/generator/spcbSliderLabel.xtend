@@ -37,14 +37,15 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 // these functions translate between slider values, which have to be integers, to whatever in program value you wish.
 //
 		«IF e.option != null»
-			«IF e.option == "lengthToTime"»
+			«IF e.option == "LENGTHTOTIME"»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»
-			«IF e.option == "filtToTime"»
+			«IF e.option == "FILTTOTIME"»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) gCB.filtToTime(gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»			
 			«IF e.option == "LOGFREQ"»
-				«e.ename»Slider = SpinCADBlock.LogFilterSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»());
+			// multiplier is points per decade here
+				«e.ename»Slider = SpinCADBlock.LogSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»(), "«e.option»", «e.multiplier»);
 			«ENDIF»
 			«IF e.option == "DBLEVEL"»
 			// dB level slider goes in steps of 1 dB
@@ -107,7 +108,7 @@ def static genChangeListener(SpinSliderLabel e) { '''
 			«IF e.option == "LOGFREQ"»
 				gCB.set«e.ename»((double) SpinCADBlock.freqToFilt(SpinCADBlock.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»)));
 			«ELSE»					
-				«IF e.option == "filtToTime"»
+				«IF e.option == "FILTTOTIME"»
 					gCB.set«e.ename»((double) SpinCADBlock.timeToFilt(«e.ename»Slider.getValue()/«e.multiplier»));
 			    «ELSE»
 					gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));			    					
@@ -125,10 +126,10 @@ def static genLabelUpdater(SpinSliderLabel e) {
 	'''
 		private void update«e.ename»Label() {
 		«IF e.option != null»
-			«IF e.option == "lengthToTime"»
+			«IF e.option == "LENGTHTOTIME"»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/ElmProgram.getSamplerate()));		
 			«ENDIF»
-			«IF e.option == "filtToTime"»
+			«IF e.option == "FILTTOTIME"»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", SpinCADBlock.filtToTime(gCB.get«e.ename»())) + " ms");		
 			«ENDIF»			
 			«IF e.option == "LOGFREQ"»

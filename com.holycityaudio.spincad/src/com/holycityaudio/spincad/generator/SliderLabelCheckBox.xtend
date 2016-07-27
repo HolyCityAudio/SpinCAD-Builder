@@ -36,7 +36,7 @@ def static declareVar(SliderLabelCheckBox e) { '''
 def static initialize(String blockName, SliderLabelCheckBox e) { '''
 
 		«IF e.option != null»
-			«IF e.option == "lengthToTime"»
+			«IF e.option == "LENGTHTOTIME"»
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
@@ -102,7 +102,7 @@ def static genLabelUpdater(SliderLabelCheckBox e) {
 	'''
 		private void update«e.ename»Label() {
 		«IF e.option != null»
-			«IF e.option == "lengthToTime"»
+			«IF e.option == "LENGTHTOTIME"»
 				«e.ename»Label.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/gCB.getSamplerate()));		
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
