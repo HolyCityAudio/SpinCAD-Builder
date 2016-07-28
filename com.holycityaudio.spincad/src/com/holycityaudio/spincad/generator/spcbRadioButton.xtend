@@ -94,7 +94,7 @@ def static initialize(String blockName, SpinRadioButton b) { '''
 		public void itemStateChanged(ItemEvent arg0) {
 			
 		}
-	}
+		}
 '''
 	}
 }
