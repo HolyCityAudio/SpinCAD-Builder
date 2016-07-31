@@ -1,10 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: com.holycityaudio.spincad
-Bundle-Vendor: Holy_City_Audio
+Bundle-Name: %Bundle-Name
+Bundle-Vendor: %Bundle-Vendor
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: com.holycityaudio.spincad; singleton:=true
-Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.xbase;resolution:=optional;visibility:=reexport,
  org.eclipse.xtext.generator;resolution:=optional,
@@ -24,14 +23,14 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.holycityaudio.spincad,
+ com.holycityaudio.spincad.formatting,
+ com.holycityaudio.spincad.generator,
+ com.holycityaudio.spincad.parser.antlr,
+ com.holycityaudio.spincad.parser.antlr.internal;x-internal:=true,
+ com.holycityaudio.spincad.scoping,
+ com.holycityaudio.spincad.serializer,
  com.holycityaudio.spincad.services,
  com.holycityaudio.spincad.spinCAD,
  com.holycityaudio.spincad.spinCAD.impl,
  com.holycityaudio.spincad.spinCAD.util,
- com.holycityaudio.spincad.serializer,
- com.holycityaudio.spincad.parser.antlr,
- com.holycityaudio.spincad.parser.antlr.internal,
- com.holycityaudio.spincad.validation,
- com.holycityaudio.spincad.scoping,
- com.holycityaudio.spincad.generator,
- com.holycityaudio.spincad.formatting
+ com.holycityaudio.spincad.validation

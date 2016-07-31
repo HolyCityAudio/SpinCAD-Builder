@@ -41,7 +41,7 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "FILTTOTIME"»
-				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) gCB.filtToTime(gCB.get«e.ename»() * «e.multiplier»));
+				«e.ename»Slider = new JSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) SpinCADBlock.filtToTime(gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»			
 			«IF e.option == "LOGFREQ"»
 			// multiplier is points per decade here

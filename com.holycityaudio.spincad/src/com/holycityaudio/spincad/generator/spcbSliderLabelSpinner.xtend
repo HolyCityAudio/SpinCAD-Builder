@@ -131,7 +131,7 @@ def static genChangeListener(SliderLabelSpinner e) { '''
 
 		if(ce.getSource() == «e.ename»Slider) {
 		«IF e.option == "LOGFREQ"»
-			gCB.set«e.ename»((double) gCB.freqToFilt(gCB.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»)));
+			gCB.set«e.ename»((double) SpinCADBlock.freqToFilt(SpinCADBlock.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»)));
 		«ELSE»
 			gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
 		«ENDIF»
@@ -139,7 +139,7 @@ def static genChangeListener(SliderLabelSpinner e) { '''
 		}
 		if(ce.getSource() == «e.ename»Spinner) {
 		«IF e.option == "LOGFREQ"»
-			gCB.set«e.ename»(gCB.freqToFilt((double)(«e.ename»Spinner.getValue())));
+			gCB.set«e.ename»(SpinCADBlock.freqToFilt((double)(«e.ename»Spinner.getValue())));
 		«ELSE»
 			gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
 		«ENDIF»
@@ -161,7 +161,7 @@ def static genSpinnerSliderUpdaterA(SliderLabelSpinner e) {
 				«e.ename»Spinner.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/gCB.getSamplerate()));		
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
-				«e.ename»Spinner.setValue(gCB.filtToFreq(gCB.get«e.ename»()));
+				«e.ename»Spinner.setValue(SpinCADBlock.filtToFreq(gCB.get«e.ename»()));
 			«ENDIF»
 			«IF e.option == "SINLFOFREQ"»
 			// XXX debug
@@ -193,7 +193,7 @@ def static genSpinnerSliderUpdaterA(SliderLabelSpinner e) {
 // TBD
 			«ENDIF»
 			«IF e.option == "LOGFREQ"»
-				«e.ename»Slider.setValue((int) (100 * Math.log10(gCB.filtToFreq(gCB.get«e.ename»()))));		
+				«e.ename»Slider.setValue((int) (100 * Math.log10(SpinCADBlock.filtToFreq(gCB.get«e.ename»()))));		
 			«ENDIF»
 			«IF e.option == "SINLFOFREQ"»
 // TBD

@@ -55,6 +55,7 @@ def genControlPanelCode(String blockName, Program pr) { '''
  *     
  */ 
 package com.holycityaudio.SpinCAD.ControlPanel;
+
 import org.andrewkilpatrick.elmGen.ElmProgram;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -83,9 +84,9 @@ import com.holycityaudio.SpinCAD.SpinCADBlock;
 import com.holycityaudio.SpinCAD.spinCADControlPanel;
 import com.holycityaudio.SpinCAD.CADBlocks.«blockName+"CADBlock"»;
 
+@SuppressWarnings("unused")
 public class «blockName+"ControlPanel"» extends spinCADControlPanel {
 	private JFrame frame;
-
 	private «blockName+"CADBlock"» gCB;
 	// declare the controls
 	«FOR SpinElement e : pr.elements»
