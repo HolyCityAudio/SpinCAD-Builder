@@ -145,7 +145,7 @@ IsElse: {IsElse} '@else';
 IsEndif: {IsEndif} "@endif";
 GetInputDefault: '@getInputDefault' label = ID variable = ID scale = SPINDOUBLE defaultVal = SPINDOUBLE;
 GetDelayScaleControl: '@getDelayScaleControl' ratio = ID length = ID offset = ID (control = ID)?;
-ReadChorusTap: '@readChorusTap' LFO = INT SINCOS = INT ratio = ID length = ID offset = ID;
+ReadChorusTap: '@readChorusTap' lfo = ID phase = INT ratio = ID length = ID offset = ID;
 GetSamplesFromRatio: '@getSamplesFromRatio' variable = ID ratio = SPINDOUBLE length = SPINDOUBLE;
 SemitonesToRmpRate: '@semitonesToRmpRate' variable = ID semitones = SPINDOUBLE;
 GetBaseAddress: {GetBaseAddress} '@getBaseAddress';

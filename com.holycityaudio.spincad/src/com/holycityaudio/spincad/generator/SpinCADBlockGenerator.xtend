@@ -371,8 +371,23 @@ def genReadChorusTap(ReadChorusTap g) {
 	'''
 		{
 			int chorusCenter = (int) («g.offset» + (0.5 * «g.ratio» * «g.length») +  0.25 * «g.length»); 
-			sfxb.chorusReadDelay(«g.LFO», SIN|REG|COMPC, chorusCenter );
-			sfxb.chorusReadDelay(«g.LFO», SIN, chorusCenter + 1);
+// need to allow 4 phases of LFO
+		«IF g.phase == 0»
+			sfxb.chorusReadDelay((int)«g.lfo», SIN|REG|COMPC, chorusCenter );
+			sfxb.chorusReadDelay((int)«g.lfo», SIN, chorusCenter + 1);
+		«ENDIF»		
+		«IF g.phase == 1»
+			sfxb.chorusReadDelay((int)«g.lfo», SIN|REG|COMPC|COMPA, chorusCenter );
+			sfxb.chorusReadDelay((int)«g.lfo», SIN|COMPA, chorusCenter + 1);
+		«ENDIF»		
+		«IF g.phase == 2»
+			sfxb.chorusReadDelay((int)«g.lfo», COS|REG|COMPC, chorusCenter );
+			sfxb.chorusReadDelay((int)«g.lfo», COS, chorusCenter + 1);
+		«ENDIF»		
+		«IF g.phase == 3»
+			sfxb.chorusReadDelay((int)«g.lfo», COS|REG|COMPC|COMPA, chorusCenter );
+			sfxb.chorusReadDelay((int)«g.lfo», COS|COMPA, chorusCenter + 1);
+		«ENDIF»		
 		}
 	'''
 }	
