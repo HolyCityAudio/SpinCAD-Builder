@@ -3,7 +3,7 @@
  * This file supplies template code generation for the SpinCADBlock data type.
  * This turns into a Java boolean.
  * 
- * Copyright (C) 2015 - Gary Worsham 
+ * Copyright (C) 2015-2019 - Gary Worsham 
  * 
  *   This program is free software: you can redistribute it and/or modify 
  *   it under the terms of the GNU General Public License as published by 
@@ -53,6 +53,7 @@ import com.holycityaudio.spincad.spinCAD.IsGreaterThan
 import com.holycityaudio.spincad.spinCAD.IsLessThan
 import com.holycityaudio.spincad.spinCAD.IsPinConnected
 import com.holycityaudio.spincad.spinCAD.IsTrue
+import com.holycityaudio.spincad.spinCAD.IsOr
 import com.holycityaudio.spincad.spinCAD.Jam
 import com.holycityaudio.spincad.spinCAD.Ldax
 import com.holycityaudio.spincad.spinCAD.LoadRampLFO
@@ -95,6 +96,7 @@ import com.holycityaudio.spincad.spinCAD.DivideInt
 import com.holycityaudio.spincad.spinCAD.MultiplyDouble
 import com.holycityaudio.spincad.spinCAD.SemitonesToRmpRate
 import com.holycityaudio.spincad.spinCAD.Equals
+import com.holycityaudio.spincad.spinCAD.EqualsBool
 import com.holycityaudio.spincad.spinCAD.SliderLabelSpinner
 
 class SpinCADBlockGenerator {
@@ -294,6 +296,12 @@ def codeGenerate(String blockName, Program pr) {
 		'''
 	}
 
+	def genIsOr(IsOr p) {
+		'''
+		if(«p.var1» || «p.var2» == «p.value») {
+		'''
+	}
+
 	def genIsEqualTo(IsEqualTo p) {
 		'''
 		if(«p.variable» == «p.value») {
@@ -334,6 +342,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			IsEqualTo: genIsEqualTo(inst)
 			IsElse: genElse(inst)
 			IsEndif: genEndif(inst)
+			IsOr: genIsOr(inst)
 			GetInputDefault: genGetInputDefault(inst)
 			SetOutputPin: genSetOutputPin(inst)
 			GetBaseAddress: genGetBaseAddress(inst)
@@ -344,6 +353,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			MinusDouble: genMinusDouble(inst)
 			DivideDouble: genDivideDouble(inst)
 			Equals: genEquals(inst)
+			EqualsBool: genEqualsBool(inst)
 			DivideInt: genDivideInt(inst)
 			MultiplyDouble: genMultiplyDouble(inst)
 			}»	
@@ -370,23 +380,24 @@ def genGetDelayScaleControl(GetDelayScaleControl g) {
 def genReadChorusTap(ReadChorusTap g) {
 	'''
 		{
-			int chorusCenter = (int) («g.offset» + (0.5 * «g.ratio» * «g.length») +  0.25 * «g.length»); 
+			// careful to not put center point too close to the end or beginning
+			int chorusCenter = (int) («g.offset» + (0.9 * «g.ratio» * «g.length») +  0.05 * «g.length»); 
 // need to allow 4 phases of LFO
 		«IF g.phase == 0»
 			sfxb.chorusReadDelay((int)«g.lfo», SIN|REG|COMPC, chorusCenter );
 			sfxb.chorusReadDelay((int)«g.lfo», SIN, chorusCenter + 1);
 		«ENDIF»		
 		«IF g.phase == 1»
-			sfxb.chorusReadDelay((int)«g.lfo», SIN|REG|COMPC|COMPA, chorusCenter );
-			sfxb.chorusReadDelay((int)«g.lfo», SIN|COMPA, chorusCenter + 1);
+			sfxb.chorusReadDelay((int)«g.lfo», SIN|REG|COMPA, chorusCenter );
+			sfxb.chorusReadDelay((int)«g.lfo», SIN|COMPC|COMPA, chorusCenter + 1);
 		«ENDIF»		
 		«IF g.phase == 2»
 			sfxb.chorusReadDelay((int)«g.lfo», COS|REG|COMPC, chorusCenter );
 			sfxb.chorusReadDelay((int)«g.lfo», COS, chorusCenter + 1);
 		«ENDIF»		
 		«IF g.phase == 3»
-			sfxb.chorusReadDelay((int)«g.lfo», COS|REG|COMPC|COMPA, chorusCenter );
-			sfxb.chorusReadDelay((int)«g.lfo», COS|COMPA, chorusCenter + 1);
+			sfxb.chorusReadDelay((int)«g.lfo», COS|REG|COMPA, chorusCenter );
+			sfxb.chorusReadDelay((int)«g.lfo», COS|COMPC|COMPA, chorusCenter + 1);
 		«ENDIF»		
 		}
 	'''
@@ -441,6 +452,13 @@ def genEquals(Equals mp) {
 		«mp.varName» = «mp.value»;
 	'''
 }
+
+def genEqualsBool(EqualsBool mp) { 
+	'''
+		«mp.varName» = «mp.value»;
+	'''
+}
+
 
 def genGetSamplesFromRatio(GetSamplesFromRatio g) {
 	'''
