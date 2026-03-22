@@ -137,7 +137,7 @@ Macro:
 	IsLessThan | GetInputDefault | ReadChorusTap | SetChorusWidth |
 	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio |
 	MinusDouble | DivideDouble | DivideInt | MultiplyDouble | SemitonesToRmpRate |
-	Equals | EqualsBool
+ 	RatioToLogOffset | Equals | EqualsBool
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = (ID | STRING);
@@ -158,6 +158,7 @@ GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = (ID | STRING) varName = ID;
 MinusDouble: '@minusDouble' varName = ID high = ID low = ID;
 DivideDouble: '@divideDouble' varName = ID high = ID low = ID;
+RatioToLogOffset: '@ratioToLogOffset' varName = ID ratio = ID;
 Equals: '@equals' varName = ID value = SPINDOUBLE;
 EqualsBool: '@equalsBool' varName = ID value = BOOLEAN;
 DivideInt: '@divideInt' varName = ID high = ID low = INT;

@@ -94,6 +94,7 @@ import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 import com.holycityaudio.spincad.spinCAD.SetChorusWidth
 import com.holycityaudio.spincad.spinCAD.DivideInt
 import com.holycityaudio.spincad.spinCAD.MultiplyDouble
+import com.holycityaudio.spincad.spinCAD.RatioToLogOffset
 import com.holycityaudio.spincad.spinCAD.SemitonesToRmpRate
 import com.holycityaudio.spincad.spinCAD.Equals
 import com.holycityaudio.spincad.spinCAD.EqualsBool
@@ -352,6 +353,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			SemitonesToRmpRate: genSemitonesToRmpRate(inst)
 			MinusDouble: genMinusDouble(inst)
 			DivideDouble: genDivideDouble(inst)
+			RatioToLogOffset: genRatioToLogOffset(inst)
 			Equals: genEquals(inst)
 			EqualsBool: genEqualsBool(inst)
 			DivideInt: genDivideInt(inst)
@@ -418,7 +420,13 @@ def genMinusDouble(MinusDouble mp) {
 
 def genDivideDouble(DivideDouble mp) {
 	'''
-		double «mp.varName» = «mp.high» / «mp.low»;
+		double «mp.varName» = «mp.high» / «mp.low»; 
+	'''
+}
+
+def genRatioToLogOffset(RatioToLogOffset mp) {
+	'''
+		double «mp.varName» = -Math.log(«mp.ratio»)/(16 * Math.log(2));
 	'''
 }
 
