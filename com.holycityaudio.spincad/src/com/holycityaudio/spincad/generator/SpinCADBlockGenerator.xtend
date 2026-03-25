@@ -228,7 +228,7 @@ def codeGenerate(String blockName, Program pr) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					SpinSliderLabel:{spcbSliderLabel.genSetterGetter(e)}
-					SliderLabelSpinner:{spcbSliderLabelSpinner.genSetterGetter(e)}
+					SliderLabelSpinner:{spcbSliderLabel.genSetterGetter(e)}
 					SpinCheckBox:{spcbCheckBox.genSetterGetter(e)}
 					SpinComboBox:{spcbComboBox.genSetterGetter(e)}
 				}»

@@ -70,6 +70,7 @@ import javax.swing.JSlider;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.Box;
@@ -80,6 +81,7 @@ import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
 import java.awt.Dimension;
 import java.text.DecimalFormat;
+import com.holycityaudio.SpinCAD.FineControlSlider;
 import com.holycityaudio.SpinCAD.SpinCADBlock;
 import com.holycityaudio.SpinCAD.spinCADControlPanel;
 import com.holycityaudio.SpinCAD.CADBlocks.«blockName+"CADBlock"»;
@@ -92,7 +94,7 @@ public class «blockName+"ControlPanel"» extends spinCADControlPanel {
 	«FOR SpinElement e : pr.elements»
 		«switch e {
 		SpinSliderLabel: { spcbSliderLabel.declareVar(e) }
-		SliderLabelSpinner: { spcbSliderLabelSpinner.declareVar(e) }
+		SliderLabelSpinner: { spcbSliderLabel.declareVar(e) }
 		SpinCheckBox: { spcbCheckBox.declareVar(e) }
 		SpinComboBox: { spcbComboBox.declareVar(e) }
 		SpinRadioButton: { spcbRadioButton.declareVar(e) }
@@ -115,7 +117,7 @@ public «blockName+"ControlPanel"»(«blockName+"CADBlock"» genericCADBlock) {
 					SpinCheckBox: { spcbCheckBox.initialize(blockName, e)}
 					SpinComboBox: { spcbComboBox.initialize(blockName, e)}
 					SpinSliderLabel: { spcbSliderLabel.initialize(blockName, e)}
-					SliderLabelSpinner: { spcbSliderLabelSpinner.initialize(blockName, e)}
+					SliderLabelSpinner: { spcbSliderLabel.initialize(blockName, e)}
 					SliderLabelCheckBox: { SliderLabelCheckBox.initialize(blockName, e)}
 					SpinRadioButton: { spcbRadioButton.initialize(blockName, e) }
 				}»
@@ -135,7 +137,7 @@ public «blockName+"ControlPanel"»(«blockName+"CADBlock"» genericCADBlock) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					SpinSliderLabel: { spcbSliderLabel.genChangeListener(e)}
-					SliderLabelSpinner: { spcbSliderLabelSpinner.genChangeListener(e)}
+					SliderLabelSpinner: { spcbSliderLabel.genChangeListener(e)}
 					SliderLabelCheckBox: { SliderLabelCheckBox.genChangeListener(e)}
 				}»
 			«ENDFOR»
@@ -169,7 +171,7 @@ public «blockName+"ControlPanel"»(«blockName+"CADBlock"» genericCADBlock) {
 		«FOR SpinElement e : pr.elements»
 			«switch e {
 				SpinSliderLabel: { spcbSliderLabel.genLabelUpdater(e) }
-				SliderLabelSpinner: { spcbSliderLabelSpinner.genSpinnerSliderUpdaterA(e) } 
+				SliderLabelSpinner: { spcbSliderLabel.genLabelUpdater(e) }
 			}»
 		«ENDFOR»
 		
