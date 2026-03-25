@@ -107,7 +107,6 @@ public «blockName+"ControlPanel"»(«blockName+"CADBlock"» genericCADBlock) {
 			public void run() {
 
 				frame = new JFrame();
-				gCB.controlPanelFrame = frame;
 				frame.setTitle("«pr.name»");
 				frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
