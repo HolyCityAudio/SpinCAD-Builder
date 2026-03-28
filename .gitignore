@@ -1,0 +1,27 @@
+# Compiled class files
+**/bin/
+
+# Xtend generated output
+**/xtend-gen/
+
+# Xtext/ANTLR generated output
+**/src-gen/
+
+# ANTLR generator jar
+.antlr-generator-*.jar
+
+# Xtend trace and binary files
+**/*._trace
+**/*.xtendbin
+
+# Xtext binary
+**/*.xtextbin
+
+# Generated plugin XML
+**/plugin.xml_gen
+
+# Generated genmodel
+**/generated/*.genmodel
+
+# Eclipse launch configs in generated dirs
+**/.launch/
