@@ -3,8 +3,8 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.holycityaudio.spincad/src-gen" editDirectory="/com.holycityaudio.spincad.edit/src"
     editorDirectory="/com.holycityaudio.spincad.editor/src" modelPluginID="com.holycityaudio.spincad"
     forceOverwrite="true" modelName="SpinCAD" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="6.0" copyrightFields="false" editPluginID="com.holycityaudio.spincad.edit"
-    editorPluginID="com.holycityaudio.spincad.editor" runtimeVersion="2.11">
+    complianceLevel="8.0" copyrightFields="false" editPluginID="com.holycityaudio.spincad.edit"
+    editorPluginID="com.holycityaudio.spincad.editor" runtimeVersion="2.20">
   <genPackages prefix="SpinCAD" basePackage="com.holycityaudio.spincad" disposableProviderFactory="true"
       fileExtensions="spincad" ecorePackage="SpinCAD.ecore#/">
     <genClasses ecoreClass="SpinCAD.ecore#//Program">
@@ -86,6 +86,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreqSliderLabel/precision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreqSliderLabel/option"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//LogFreq2SliderLabel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreq2SliderLabel/controlName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreq2SliderLabel/minVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreq2SliderLabel/maxVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreq2SliderLabel/initVal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreq2SliderLabel/multiplier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreq2SliderLabel/precision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//LogFreq2SliderLabel/option"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//SpinRadioButton">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//SpinRadioButton/controlName"/>
     </genClasses>
@@ -124,6 +133,11 @@
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//IsElse"/>
     <genClasses ecoreClass="SpinCAD.ecore#//IsEndif"/>
+    <genClasses ecoreClass="SpinCAD.ecore#//IsOr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsOr/var1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsOr/var2"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//IsOr/value"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//GetInputDefault">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/label"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetInputDefault/variable"/>
@@ -137,8 +151,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//GetDelayScaleControl/control"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//ReadChorusTap">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ReadChorusTap/LFO"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ReadChorusTap/SINCOS"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ReadChorusTap/lfo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ReadChorusTap/phase"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ReadChorusTap/ratio"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ReadChorusTap/length"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//ReadChorusTap/offset"/>
@@ -167,9 +181,17 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/high"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideDouble/low"/>
     </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//RatioToLogOffset">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//RatioToLogOffset/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//RatioToLogOffset/ratio"/>
+    </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//Equals">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equals/varName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//Equals/value"/>
+    </genClasses>
+    <genClasses ecoreClass="SpinCAD.ecore#//EqualsBool">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//EqualsBool/varName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//EqualsBool/value"/>
     </genClasses>
     <genClasses ecoreClass="SpinCAD.ecore#//DivideInt">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SpinCAD.ecore#//DivideInt/varName"/>
