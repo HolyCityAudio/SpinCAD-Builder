@@ -3,7 +3,7 @@
  * This file supplies template code generation for the SliderLabel data type.
  * This turns into a Java Swing JSlider with an associated JLabel.
  * 
- * Copyright (C)2015 - Gary Worsham 
+ * Copyright (C) 2013 - 2026 - Gary Worsham 
  * 
  *   This program is free software: you can redistribute it and/or modify 
  *   it under the terms of the GNU General Public License as published by 

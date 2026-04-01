@@ -3,7 +3,7 @@
  * This file is triggered by code generation and calls the SpinCADBlock,
  * SpinCADControlPanel, and SpinCADTest generator files as needed.
  * 
- * Copyright (C) 2015 - Gary Worsham 
+ * Copyright (C) 2013 - 2026 - Gary Worsham 
  * 
  *   This program is free software: you can redistribute it and/or modify 
  *   it under the terms of the GNU General Public License as published by 

@@ -2,7 +2,7 @@
  * SpinCAD.xtext
  * This file is the main Xtext grammar (parser) code for the SpinCAD Builder language.
  * 
- * Copyright (c) 2015-2019 - Gary Worsham 
+ * Copyright (C) 2013 - 2026 - Gary Worsham 
  * 
  *   This program is free software: you can redistribute it and/or modify 
  *   it under the terms of the GNU General Public License as published by 

@@ -3,7 +3,7 @@
  * This file provides utilities for the SpinCAD Builder language which I could not
  * figure out how to write in Xtend.
  * 
- * Copyright (C)2015 - Gary Worsham 
+ * Copyright (C) 2013 - 2026 - Gary Worsham 
  * 
  *   This program is free software: you can redistribute it and/or modify 
  *   it under the terms of the GNU General Public License as published by 

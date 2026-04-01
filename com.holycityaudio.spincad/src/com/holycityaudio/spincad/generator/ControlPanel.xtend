@@ -3,7 +3,7 @@
  * This file looks like an attempt to define a Control Panel type.
  * Not sure if it's actually used at this time..
  * 
- * Copyright (C)2015 - Gary Worsham 
+ * Copyright (C) 2013 - 2026 - Gary Worsham 
  * 
  *   This program is free software: you can redistribute it and/or modify 
  *   it under the terms of the GNU General Public License as published by 

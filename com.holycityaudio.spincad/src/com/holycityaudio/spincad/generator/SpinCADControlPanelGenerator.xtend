@@ -2,7 +2,7 @@
  * SpinCADControlPanelGenerator.xtend
  * This file supplies template code generation for the SpinCAD Control Panels.
  * 
- * Copyright (C) 2015 - Gary Worsham 
+ * Copyright (C) 2013 - 2026 - Gary Worsham 
  * 
  *   This program is free software: you can redistribute it and/or modify 
  *   it under the terms of the GNU General Public License as published by 
@@ -37,7 +37,7 @@ class SpinCADControlPanelGenerator {
 def genControlPanelCode(String blockName, Program pr) { '''
 /* SpinCAD Designer - DSP Development Tool for the Spin FV-1 
  * «blockName»ControlPanel.java
- * Copyright (C) 2015 - Gary Worsham 
+ * Copyright (C) 2013 - 2026 - Gary Worsham 
  * Based on ElmGen by Andrew Kilpatrick 
  * 
  *   This program is free software: you can redistribute it and/or modify 

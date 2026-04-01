@@ -3,7 +3,7 @@
  * This file supplies template code generation for the Bool data type.
  * This turns into a Java boolean.
  * 
- * Copyright (C) 2015 - Gary Worsham 
+ * Copyright (C) 2013 - 2026 - Gary Worsham 
  * 
  *   This program is free software: you can redistribute it and/or modify 
  *   it under the terms of the GNU General Public License as published by 
@@ -38,7 +38,7 @@ def genTestHeader(String blockName) {
 	'''
 /* SpinCAD Designer - DSP Development Tool for the Spin FV-1 
  * «blockName+"Test"».java
- * Copyright (C) 2015 - Gary Worsham 
+ * Copyright (C) 2013 - 2026 - Gary Worsham 
  * Based on ElmGen by Andrew Kilpatrick 
  * 
  *   This program is free software: you can redistribute it and/or modify 
