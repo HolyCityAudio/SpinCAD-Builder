@@ -137,7 +137,8 @@ Macro:
 	IsLessThan | GetInputDefault | ReadChorusTap | SetChorusWidth |
 	GetDelayScaleControl | SetOutputPin | GetBaseAddress | GetSamplesFromRatio |
 	MinusDouble | DivideDouble | DivideInt | MultiplyDouble | SemitonesToRmpRate |
- 	RatioToLogOffset | Equals | EqualsBool
+	SemitonesToWldrRate |
+ 	RatioToLogOffset | Log2Double | PowDouble | Equals | EqualsBool
 ;
 
 IsPinConnected returns IsPinConnected: '@isPinConnected' arg1 = (ID | STRING);
@@ -154,6 +155,7 @@ GetDelayScaleControl: '@getDelayScaleControl' ratio = ID length = ID offset = ID
 ReadChorusTap: '@readChorusTap' lfo = ID phase = INT ratio = ID length = ID offset = ID;
 GetSamplesFromRatio: '@getSamplesFromRatio' variable = ID ratio = SPINDOUBLE length = SPINDOUBLE;
 SemitonesToRmpRate: '@semitonesToRmpRate' variable = ID semitones = SPINDOUBLE;
+SemitonesToWldrRate: '@semitonesToWldrRate' variable = ID semitones = SPINDOUBLE;
 GetBaseAddress: {GetBaseAddress} '@getBaseAddress';
 SetOutputPin: '@setOutputPin' pinName = (ID | STRING) varName = ID;
 MinusDouble: '@minusDouble' varName = ID high = ID low = ID;
@@ -163,6 +165,8 @@ Equals: '@equals' varName = ID value = SPINDOUBLE;
 EqualsBool: '@equalsBool' varName = ID value = BOOLEAN;
 DivideInt: '@divideInt' varName = ID high = ID low = INT;
 MultiplyDouble: '@multiplyDouble' varName = ID high = ID low = ID;
+Log2Double: '@log2Double' varName = ID input = ID;
+PowDouble: '@powDouble' varName = ID base = ID exponent = ID;
 
 SetChorusWidth: '@setChorusWidth' varName = ID length = ID scale = ID;
 
@@ -288,6 +292,7 @@ BOOLEAN: "true" | "false"
 ;
 	
 terminal fragment ESCAPED_CHAR : '\\' ('n'|'t'|'r'|'\\');
+@Override 
 terminal STRING  : 
       '"' ( ESCAPED_CHAR | !('\\'|'"') )* '"' |
       "'" ( ESCAPED_CHAR | !('\\'|"'") )* "'"

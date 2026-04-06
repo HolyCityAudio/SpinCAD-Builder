@@ -95,7 +95,10 @@ import com.holycityaudio.spincad.spinCAD.SetChorusWidth
 import com.holycityaudio.spincad.spinCAD.DivideInt
 import com.holycityaudio.spincad.spinCAD.MultiplyDouble
 import com.holycityaudio.spincad.spinCAD.RatioToLogOffset
+import com.holycityaudio.spincad.spinCAD.Log2Double
+import com.holycityaudio.spincad.spinCAD.PowDouble
 import com.holycityaudio.spincad.spinCAD.SemitonesToRmpRate
+import com.holycityaudio.spincad.spinCAD.SemitonesToWldrRate
 import com.holycityaudio.spincad.spinCAD.Equals
 import com.holycityaudio.spincad.spinCAD.EqualsBool
 import com.holycityaudio.spincad.spinCAD.SliderLabelSpinner
@@ -351,6 +354,7 @@ def genGetInputDefault(GetInputDefault g)'''
 			ReadChorusTap: genReadChorusTap(inst)
 			GetSamplesFromRatio: genGetSamplesFromRatio(inst)
 			SemitonesToRmpRate: genSemitonesToRmpRate(inst)
+			SemitonesToWldrRate: genSemitonesToWldrRate(inst)
 			MinusDouble: genMinusDouble(inst)
 			DivideDouble: genDivideDouble(inst)
 			RatioToLogOffset: genRatioToLogOffset(inst)
@@ -358,6 +362,8 @@ def genGetInputDefault(GetInputDefault g)'''
 			EqualsBool: genEqualsBool(inst)
 			DivideInt: genDivideInt(inst)
 			MultiplyDouble: genMultiplyDouble(inst)
+			Log2Double: genLog2Double(inst)
+			PowDouble: genPowDouble(inst)
 			}»	
 		'''
 	}
@@ -430,6 +436,18 @@ def genRatioToLogOffset(RatioToLogOffset mp) {
 	'''
 }
 
+def genLog2Double(Log2Double mp) {
+	'''
+		double «mp.varName» = Math.log(«mp.input») / Math.log(2);
+	'''
+}
+
+def genPowDouble(PowDouble mp) {
+	'''
+		double «mp.varName» = Math.pow(«mp.base», «mp.exponent»);
+	'''
+}
+
 def genDivideInt(DivideInt mp) {
 	'''
 		int «mp.varName» = (int)(«mp.high» / «mp.low»);
@@ -438,14 +456,13 @@ def genDivideInt(DivideInt mp) {
 
 def genSemitonesToRmpRate(SemitonesToRmpRate mp) {
 	'''
-	double «mp.variable» = 0.0;
-	if(«mp.semitones» > 0) {
-		«mp.variable» = (16384.0 * Math.pow(2.0, («mp.semitones»/12.0) - 1))/32768.0;
-	}
-	else
-	{
-		«mp.variable» = (-32.0 * Math.pow(2.0, (-«mp.semitones»/12.0) - 1))/32768.0;
-	}
+	double «mp.variable» = (16384.0 * (Math.pow(2.0, «mp.semitones»/12.0) - 1))/32768.0;
+	'''
+}
+
+def genSemitonesToWldrRate(SemitonesToWldrRate mp) {
+	'''
+	int «mp.variable» = (int)(16384.0 * (Math.pow(2.0, «mp.semitones»/12.0) - 1));
 	'''
 }
 
