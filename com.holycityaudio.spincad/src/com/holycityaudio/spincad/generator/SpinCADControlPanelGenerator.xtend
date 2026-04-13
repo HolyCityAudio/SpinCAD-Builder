@@ -30,6 +30,7 @@ import com.holycityaudio.spincad.spinCAD.SpinCheckBox
 import com.holycityaudio.spincad.spinCAD.SpinRadioButton
 import com.holycityaudio.spincad.spinCAD.SpinComboBox
 import com.holycityaudio.spincad.spinCAD.SliderLabelSpinner
+import com.holycityaudio.spincad.spinCAD.SpinSubdivision
 
 class SpinCADControlPanelGenerator {
 	
@@ -99,6 +100,7 @@ public class «blockName+"ControlPanel"» extends spinCADControlPanel {
 		SpinCheckBox: { spcbCheckBox.declareVar(e) }
 		SpinComboBox: { spcbComboBox.declareVar(e) }
 		SpinRadioButton: { spcbRadioButton.declareVar(e) }
+		SpinSubdivision: { spcbSubdivision.declareVar(e) }
 	}»
 	«ENDFOR»
 
@@ -120,6 +122,7 @@ public «blockName+"ControlPanel"»(«blockName+"CADBlock"» genericCADBlock) {
 					SliderLabelSpinner: { spcbSliderLabel.initialize(blockName, e)}
 					SliderLabelCheckBox: { SliderLabelCheckBox.initialize(blockName, e)}
 					SpinRadioButton: { spcbRadioButton.initialize(blockName, e) }
+					SpinSubdivision: { spcbSubdivision.initialize(blockName, pr) }
 				}»
 			«ENDFOR»
 				frame.addWindowListener(new MyWindowListener());
@@ -158,12 +161,13 @@ public «blockName+"ControlPanel"»(«blockName+"CADBlock"» genericCADBlock) {
 		}
 		
 		// add action listener for Combo Box
-		class «blockName»ActionListener implements java.awt.event.ActionListener { 
+		class «blockName»ActionListener implements java.awt.event.ActionListener {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 			«FOR SpinElement e : pr.elements»
 				«switch e {
 					SpinComboBox: { spcbComboBox.genActionListener(e)}
+					SpinSubdivision: { spcbSubdivision.genActionListener(e, pr)}
 				}»
 			«ENDFOR»
 			}

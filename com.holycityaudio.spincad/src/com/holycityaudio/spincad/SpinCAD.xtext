@@ -86,7 +86,7 @@ SpinBool:
 
 //---------------------------------------------
 // -- Control Panel objects 
-Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel | LogFreq2SliderLabel | SpinRadioButton | SliderLabelCheckBox | SpinComboBox | SliderLabelSpinner;
+Control: SpinSliderLabel | SpinCheckBox | LogFreqSliderLabel | LogFreq2SliderLabel | SpinRadioButton | SliderLabelCheckBox | SpinComboBox | SliderLabelSpinner | SpinSubdivision;
 
 SpinSliderLabel:
 	'@sliderLabel' ename = ID controlName = (ID | STRING) (minVal = SPINDOUBLE maxVal = SPINDOUBLE initVal = SPINDOUBLE multiplier = SPINDOUBLE precision = INT (option = ID)?)?
@@ -119,6 +119,10 @@ SpinRadioButton:
 
 SpinComboBox:
 	'@comboBox' ename = ID optiona = STRING optionb = STRING (optionc = STRING (optiond = STRING (optione = STRING (optionf = STRING)?)?)?)?
+;
+
+SpinSubdivision:
+	{SpinSubdivision} '@subdivision'
 ;
 
 //------------------------------------------------------------

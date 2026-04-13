@@ -102,6 +102,7 @@ import com.holycityaudio.spincad.spinCAD.SemitonesToWldrRate
 import com.holycityaudio.spincad.spinCAD.Equals
 import com.holycityaudio.spincad.spinCAD.EqualsBool
 import com.holycityaudio.spincad.spinCAD.SliderLabelSpinner
+import com.holycityaudio.spincad.spinCAD.SpinSubdivision
 
 class SpinCADBlockGenerator {
  
@@ -144,7 +145,8 @@ def codeGenerate(String blockName, Program pr) {
 					// variables should be allocated within the CADBlock constructor
 					SpinEquate:{spcbEquate.declareVar(e)}
 					SpinBool:{spcbBool.declareVar(e)}
-				}» 
+					SpinSubdivision:{spcbSubdivision.declareBlockVar(e)}
+				}»
 			«ENDFOR»
 
 			public «blockName+"CADBlock"»(int x, int y) {
@@ -169,6 +171,7 @@ def codeGenerate(String blockName, Program pr) {
 					SpinComboBox:{setHasControlPanel()}
 					SpinSliderLabel:{setHasControlPanel()}
 					SliderLabelSpinner:{setHasControlPanel()}
+					SpinSubdivision:{setHasControlPanel()}
 				}»
 			«ENDFOR»			}
 		
@@ -234,6 +237,7 @@ def codeGenerate(String blockName, Program pr) {
 					SliderLabelSpinner:{spcbSliderLabel.genSetterGetter(e)}
 					SpinCheckBox:{spcbCheckBox.genSetterGetter(e)}
 					SpinComboBox:{spcbComboBox.genSetterGetter(e)}
+					SpinSubdivision:{spcbSubdivision.genSetterGetter(e)}
 				}»
 			«ENDFOR»
 		}	

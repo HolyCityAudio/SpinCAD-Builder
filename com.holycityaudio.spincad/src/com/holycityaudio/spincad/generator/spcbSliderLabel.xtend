@@ -58,8 +58,8 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 			«ENDIF»
 			// ---------------------------------------------						
 			«IF e.option == "DBLEVEL"»
-			// dB level slider goes in steps of 1 dB
-				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal»),(int) («e.maxVal»), (int) (20 * Math.log10(gCB.get«e.ename»())));
+			// dB level slider: multiplier sets steps per dB (e.g. 10 = 0.1 dB steps)
+				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (20 * Math.log10(gCB.get«e.ename»()) * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "LINEAR"»
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»));
@@ -72,6 +72,9 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 			«ENDIF»
 			«IF e.option == "BOOSTCUT"»
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»));
+			«ENDIF»
+			«IF e.option == "SUBDIVISION"»
+				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»
 		«ELSE»
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
@@ -116,10 +119,10 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 						«e.ename»Slider.setValue(sliderVal);
 						gCB.set«e.ename»((double) sliderVal / «e.multiplier»);
 				«ELSEIF e.option == "DBLEVEL"»
-						int sliderVal = (int) Math.round(val);
+						int sliderVal = (int) Math.round(val * «e.multiplier»);
 						sliderVal = Math.max(«e.ename»Slider.getMinimum(), Math.min(«e.ename»Slider.getMaximum(), sliderVal));
 						«e.ename»Slider.setValue(sliderVal);
-						gCB.set«e.ename»((double) sliderVal);
+						gCB.set«e.ename»((double) sliderVal / «e.multiplier»);
 				«ELSE»
 						int sliderVal = (int) Math.round(val * «e.multiplier»);
 						sliderVal = Math.max(«e.ename»Slider.getMinimum(), Math.min(«e.ename»Slider.getMaximum(), sliderVal));
@@ -214,12 +217,15 @@ def static genLabelUpdater(SpinSliderLabel e) {
 				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", coeffToLFORate(gCB.get«e.ename»())));		
 			«ENDIF»
 			«IF e.option == "DBLEVEL"»
-				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f dB", (20 * Math.log10(gCB.get«e.ename»()))));		
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f dB", (20 * Math.log10(gCB.get«e.ename»()))));
+			«ENDIF»
+			«IF e.option == "SUBDIVISION"»
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.get«e.ename»()));
 			«ENDIF»
 		«ELSE»
-				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.get«e.ename»()));		
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", gCB.get«e.ename»()));
 		«ENDIF»
-		}		
+		}
 	'''
 	}
 
@@ -255,8 +261,8 @@ def static initialize(String blockName, SliderLabelSpinner e) { '''
 			«ENDIF»
 			// ---------------------------------------------
 			«IF e.option == "DBLEVEL"»
-			// dB level slider goes in steps of 1 dB
-				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal»),(int) («e.maxVal»), (int) (20 * Math.log10(gCB.get«e.ename»())));
+			// dB level slider: multiplier sets steps per dB (e.g. 10 = 0.1 dB steps)
+				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (20 * Math.log10(gCB.get«e.ename»()) * «e.multiplier»));
 			«ENDIF»
 			«IF e.option == "LINEAR"»
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»));
@@ -269,6 +275,9 @@ def static initialize(String blockName, SliderLabelSpinner e) { '''
 			«ENDIF»
 			«IF e.option == "BOOSTCUT"»
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) ((gCB.get«e.ename»()) * «e.multiplier»));
+			«ENDIF»
+			«IF e.option == "SUBDIVISION"»
+				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 			«ENDIF»
 		«ELSE»
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
@@ -313,10 +322,10 @@ def static initialize(String blockName, SliderLabelSpinner e) { '''
 						«e.ename»Slider.setValue(sliderVal);
 						gCB.set«e.ename»((double) sliderVal / «e.multiplier»);
 				«ELSEIF e.option == "DBLEVEL"»
-						int sliderVal = (int) Math.round(val);
+						int sliderVal = (int) Math.round(val * «e.multiplier»);
 						sliderVal = Math.max(«e.ename»Slider.getMinimum(), Math.min(«e.ename»Slider.getMaximum(), sliderVal));
 						«e.ename»Slider.setValue(sliderVal);
-						gCB.set«e.ename»((double) sliderVal);
+						gCB.set«e.ename»((double) sliderVal / «e.multiplier»);
 				«ELSE»
 						int sliderVal = (int) Math.round(val * «e.multiplier»);
 						sliderVal = Math.max(«e.ename»Slider.getMinimum(), Math.min(«e.ename»Slider.getMaximum(), sliderVal));
