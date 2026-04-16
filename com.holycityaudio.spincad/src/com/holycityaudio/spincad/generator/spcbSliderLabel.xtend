@@ -56,7 +56,13 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 			// multiplier is points per decade here
 				«e.ename»Slider = SpinCADBlock.LogSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»(), "«e.option»", «e.multiplier»);
 			«ENDIF»
-			// ---------------------------------------------						
+			// ---------------------------------------------
+			// QFACTOR is a log-scale Q slider; stored value = 1/Q
+			«IF e.option == "QFACTOR"»
+			// multiplier is points per decade here
+				«e.ename»Slider = SpinCADBlock.LogSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»(), "«e.option»", «e.multiplier»);
+			«ENDIF»
+			// ---------------------------------------------
 			«IF e.option == "DBLEVEL"»
 			// dB level slider: multiplier sets steps per dB (e.g. 10 = 0.1 dB steps)
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (20 * Math.log10(gCB.get«e.ename»()) * «e.multiplier»));
@@ -79,6 +85,9 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 		«ELSE»
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 		«ENDIF»
+			«IF e.option == "DBLEVEL"»
+				«e.ename»Slider.setSubdivision((int) «e.multiplier»);
+			«ENDIF»
 			«e.ename»Slider.addChangeListener(new «blockName»Listener());
 			«e.ename»Field = new JTextField();
 			«e.ename»Field.setHorizontalAlignment(JTextField.CENTER);
@@ -100,6 +109,11 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 						sliderVal = Math.max(«e.ename»Slider.getMinimum(), Math.min(«e.ename»Slider.getMaximum(), sliderVal));
 						«e.ename»Slider.setValue(sliderVal);
 						gCB.set«e.ename»(SpinCADBlock.freqToFiltSVF(SpinCADBlock.sliderToLogval(sliderVal, «e.multiplier»)));
+				«ELSEIF e.option == "QFACTOR"»
+						int sliderVal = SpinCADBlock.logvalToSlider(val, «e.multiplier»);
+						sliderVal = Math.max(«e.ename»Slider.getMinimum(), Math.min(«e.ename»Slider.getMaximum(), sliderVal));
+						«e.ename»Slider.setValue(sliderVal);
+						gCB.set«e.ename»(1.0 / SpinCADBlock.sliderToLogval(sliderVal, «e.multiplier»));
 				«ELSEIF e.option == "LENGTHTOTIME"»
 						double samples = val * ElmProgram.getSamplerate() / 1000.0;
 						int sliderVal = (int) Math.round(samples * «e.multiplier»);
@@ -156,7 +170,7 @@ def static initialize(String blockName, SpinSliderLabel e) { '''
 			frame.add(«e.ename»innerPanel);
 '''
 	}
-	
+
 def static genSetterGetter(SpinSliderLabel e) { '''
 	public void set«e.ename»(double __param) {
 		«IF e.option == "DBLEVEL"»
@@ -178,18 +192,22 @@ def static genChangeListener(SpinSliderLabel e) { '''
 		«IF e.option != null»
 			«IF e.option == "LOGFREQ"»
 				gCB.set«e.ename»((double) SpinCADBlock.freqToFilt(SpinCADBlock.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»)));
-			«ELSE»					
+			«ELSE»
 				«IF e.option == "LOGFREQ2"»
 					gCB.set«e.ename»((double) SpinCADBlock.freqToFiltSVF(SpinCADBlock.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»)));
-				«ELSE»									
-					«IF e.option == "FILTTOTIME"»
-						gCB.set«e.ename»((double) SpinCADBlock.timeToFilt(«e.ename»Slider.getValue()/«e.multiplier»/1000.0));
-			    	«ELSE»
-						gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));			    					
+				«ELSE»
+					«IF e.option == "QFACTOR"»
+						gCB.set«e.ename»(1.0 / SpinCADBlock.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»));
+					«ELSE»
+						«IF e.option == "FILTTOTIME"»
+							gCB.set«e.ename»((double) SpinCADBlock.timeToFilt(«e.ename»Slider.getValue()/«e.multiplier»/1000.0));
+				    	«ELSE»
+							gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
+						«ENDIF»
 					«ENDIF»
 				«ENDIF»
-			«ENDIF» 
-		«ELSE»	
+			«ENDIF»
+		«ELSE»
 			gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
 		«ENDIF»
 			update«e.ename»Label();
@@ -202,19 +220,22 @@ def static genLabelUpdater(SpinSliderLabel e) {
 		private void update«e.ename»Label() {
 		«IF e.option != null»
 			«IF e.option == "LENGTHTOTIME"»
-				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/ElmProgram.getSamplerate()));		
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", (1000 * gCB.get«e.ename»())/ElmProgram.getSamplerate()));
 			«ENDIF»
 			«IF e.option == "FILTTOTIME"»
-				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", SpinCADBlock.filtToTime(gCB.get«e.ename»()) * 1000) + " ms");		
-			«ENDIF»			
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", SpinCADBlock.filtToTime(gCB.get«e.ename»()) * 1000) + " ms");
+			«ENDIF»
 			«IF e.option == "LOGFREQ"»
-				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", SpinCADBlock.filtToFreq(gCB.get«e.ename»())) + " Hz");		
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", SpinCADBlock.filtToFreq(gCB.get«e.ename»())) + " Hz");
 			«ENDIF»
 			«IF e.option == "LOGFREQ2"»
-				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", SpinCADBlock.filtToFreqSVF(gCB.get«e.ename»())) + " Hz");		
-			«ENDIF»			
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", SpinCADBlock.filtToFreqSVF(gCB.get«e.ename»())) + " Hz");
+			«ENDIF»
+			«IF e.option == "QFACTOR"»
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", 1.0 / gCB.get«e.ename»()));
+			«ENDIF»
 			«IF e.option == "SINLFOFREQ"»
-				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", coeffToLFORate(gCB.get«e.ename»())));		
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", coeffToLFORate(gCB.get«e.ename»())));
 			«ENDIF»
 			«IF e.option == "DBLEVEL"»
 				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f dB", (20 * Math.log10(gCB.get«e.ename»()))));
@@ -260,6 +281,12 @@ def static initialize(String blockName, SliderLabelSpinner e) { '''
 				«e.ename»Slider = SpinCADBlock.LogSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»(), "«e.option»", «e.multiplier»);
 			«ENDIF»
 			// ---------------------------------------------
+			// QFACTOR is a log-scale Q slider; stored value = 1/Q
+			«IF e.option == "QFACTOR"»
+			// multiplier is points per decade here
+				«e.ename»Slider = SpinCADBlock.LogSlider(«e.minVal»,«e.maxVal»,gCB.get«e.ename»(), "«e.option»", «e.multiplier»);
+			«ENDIF»
+			// ---------------------------------------------
 			«IF e.option == "DBLEVEL"»
 			// dB level slider: multiplier sets steps per dB (e.g. 10 = 0.1 dB steps)
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (20 * Math.log10(gCB.get«e.ename»()) * «e.multiplier»));
@@ -282,6 +309,9 @@ def static initialize(String blockName, SliderLabelSpinner e) { '''
 		«ELSE»
 				«e.ename»Slider = new FineControlSlider(JSlider.HORIZONTAL, (int)(«e.minVal» * «e.multiplier»),(int) («e.maxVal» * «e.multiplier»), (int) (gCB.get«e.ename»() * «e.multiplier»));
 		«ENDIF»
+			«IF e.option == "DBLEVEL"»
+				«e.ename»Slider.setSubdivision((int) «e.multiplier»);
+			«ENDIF»
 			«e.ename»Slider.addChangeListener(new «blockName»Listener());
 			«e.ename»Field = new JTextField();
 			«e.ename»Field.setHorizontalAlignment(JTextField.CENTER);
@@ -303,6 +333,11 @@ def static initialize(String blockName, SliderLabelSpinner e) { '''
 						sliderVal = Math.max(«e.ename»Slider.getMinimum(), Math.min(«e.ename»Slider.getMaximum(), sliderVal));
 						«e.ename»Slider.setValue(sliderVal);
 						gCB.set«e.ename»(SpinCADBlock.freqToFiltSVF(SpinCADBlock.sliderToLogval(sliderVal, «e.multiplier»)));
+				«ELSEIF e.option == "QFACTOR"»
+						int sliderVal = SpinCADBlock.logvalToSlider(val, «e.multiplier»);
+						sliderVal = Math.max(«e.ename»Slider.getMinimum(), Math.min(«e.ename»Slider.getMaximum(), sliderVal));
+						«e.ename»Slider.setValue(sliderVal);
+						gCB.set«e.ename»(1.0 / SpinCADBlock.sliderToLogval(sliderVal, «e.multiplier»));
 				«ELSEIF e.option == "LENGTHTOTIME"»
 						double samples = val * ElmProgram.getSamplerate() / 1000.0;
 						int sliderVal = (int) Math.round(samples * «e.multiplier»);
@@ -384,10 +419,14 @@ def static genChangeListener(SliderLabelSpinner e) { '''
 				«IF e.option == "LOGFREQ2"»
 					gCB.set«e.ename»((double) SpinCADBlock.freqToFiltSVF(SpinCADBlock.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»)));
 				«ELSE»
-					«IF e.option == "FILTTOTIME"»
-						gCB.set«e.ename»((double) SpinCADBlock.timeToFilt(«e.ename»Slider.getValue()/«e.multiplier»/1000.0));
-			    	«ELSE»
-						gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
+					«IF e.option == "QFACTOR"»
+						gCB.set«e.ename»(1.0 / SpinCADBlock.sliderToLogval((int)(«e.ename»Slider.getValue()), «e.multiplier»));
+					«ELSE»
+						«IF e.option == "FILTTOTIME"»
+							gCB.set«e.ename»((double) SpinCADBlock.timeToFilt(«e.ename»Slider.getValue()/«e.multiplier»/1000.0));
+				    	«ELSE»
+							gCB.set«e.ename»((double) («e.ename»Slider.getValue()/«e.multiplier»));
+						«ENDIF»
 					«ENDIF»
 				«ENDIF»
 			«ENDIF»
@@ -414,6 +453,9 @@ def static genLabelUpdater(SliderLabelSpinner e) {
 			«ENDIF»
 			«IF e.option == "LOGFREQ2"»
 				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", SpinCADBlock.filtToFreqSVF(gCB.get«e.ename»())) + " Hz");
+			«ENDIF»
+			«IF e.option == "QFACTOR"»
+				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", 1.0 / gCB.get«e.ename»()));
 			«ENDIF»
 			«IF e.option == "SINLFOFREQ"»
 				«e.ename»Field.setText("«e.controlName» " + String.format("%4.«e.precision»f", coeffToLFORate(gCB.get«e.ename»())));
